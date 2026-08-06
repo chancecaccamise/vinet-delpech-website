@@ -1,6 +1,13 @@
-# Vinet-Delpech Website
+# Vinet-Puranik Website
 
-Marketing website for Vinet-Delpech, built with Next.js (App Router), TypeScript, and Tailwind CSS v4.
+Marketing site for Distillerie Vinet-Puranik — a family-owned Cognac-region
+distillery creating bespoke and private-label spirits for international trade
+partners. Single-page cinematic editorial experience built with Next.js
+(App Router), TypeScript, and Tailwind CSS v4.
+
+> ⚠️ This project uses a **modified Next.js 16.2.10** with breaking changes.
+> Read `AGENTS.md` and consult `node_modules/next/dist/docs/` before writing
+> Next.js code.
 
 ## Getting started
 
@@ -22,35 +29,78 @@ npm run lint    # run ESLint
 ```
 src/
   app/
-    layout.tsx        Root layout: fonts, metadata, Header + Footer
-    page.tsx          Homepage (hero, services preview, CTA)
-    globals.css       Design tokens (colors, fonts) + Tailwind import
-    about/            /about page
-    services/         /services page
-    contact/          /contact page (includes a not-yet-wired form)
+    layout.tsx           Root layout: fonts, metadata, Header/Footer, AgeGate
+    page.tsx             Homepage (hero → savoir-faire → know-how → collection
+                         → heritage → world-of → contact)
+    visit/               /visit hub + /visit/tours + /visit/tastings
+    globals.css          Design tokens, type scale, motion, component classes
+    actions/contact.ts   Server Action for the enquiry form
+    icon.svg             Favicon (VD monogram)
+    opengraph-image.tsx  Generated OG/social image
+    robots.ts sitemap.ts SEO files
+    not-found.tsx        On-brand 404
   components/
-    Header.tsx        Sticky nav with mobile menu
-    Footer.tsx        Site footer
-    Container.tsx     Max-width layout wrapper
+    Header.tsx           Fixed nav: logo left, 4 megamenu groups (Rémy-style
+                         panels), locale pill + CTA right, mobile drawer
+    Footer.tsx           Multi-column footer + responsible-drinking notice
+    AgeGate.tsx          Legal-age gate: date-of-birth entry, cookie-backed
+                         for 30 days, no flash on either side
+    InlineScript.tsx     Script that runs before first paint (no-flash helper)
+    PageHero.tsx         Dark editorial hero band for interior pages
+    ExperienceSection.tsx One tour/tasting offering as an editorial block
+    Reveal.tsx           Scroll fade/rise reveal (reduced-motion safe)
+    Parallax.tsx         Subtle scroll parallax (reduced-motion safe)
+    StatsBand.tsx        Count-up production figures
+    BrandRail.tsx        Horizontal brand showcase (scroll-snap + arrows,
+                         /#brand-<slug> deep links)
+    ContactForm.tsx      Enquiry form (useActionState + Server Action)
+    PlaceholderFrame.tsx Labeled placeholder frames awaiting photography
   lib/
-    site.ts           Central config: name, tagline, nav, contact details
-    clsx.ts           Tiny classname helper
+    site.ts              ALL content: copy, nav groups, stats, brands,
+                         visit/tours/tastings, contact
+    age-gate.ts          Age-gate cookie, inline script + date-of-birth checks
+    clsx.ts              Tiny classname helper
 ```
 
-## Customizing
+## Editing content
 
-Most content and branding is centralized so it's easy to change:
+**Everything editorial lives in [`src/lib/site.ts`](src/lib/site.ts)** — name,
+tagline, navigation, services, production stats, brand portfolio, heritage
+milestones, contact details, legal links, age-gate copy. Components only
+render what that file provides.
 
-- **Name, tagline, contact info, navigation** — edit `src/lib/site.ts`.
-- **Colors and fonts** — edit the CSS variables in `src/app/globals.css`
-  (including the `--accent` brand color and the dark-mode overrides).
-- **Page copy** — the current text is placeholder; edit each page under
-  `src/app/`.
+Design tokens (palette, type scale, motion timing) live at the top of
+[`src/app/globals.css`](src/app/globals.css).
+
+## Contact form delivery
+
+The enquiry form validates server-side (with a honeypot for spam) and sends
+via the [Resend](https://resend.com) HTTP API when configured:
+
+| Env var              | Purpose                                        |
+| -------------------- | ---------------------------------------------- |
+| `RESEND_API_KEY`     | Enables real delivery (required in production) |
+| `CONTACT_TO_EMAIL`   | Recipient (defaults to `siteConfig.email`)     |
+| `CONTACT_FROM_EMAIL` | Verified sender address                        |
+
+Without a key: in development the enquiry is logged to the server console; in
+production the visitor is shown the direct email address instead — nothing is
+silently dropped.
 
 ## To do before launch
 
-- Replace all placeholder copy with real content.
-- Set the real brand `--accent` color and confirm the palette.
-- Wire up the contact form (`src/app/contact/page.tsx`) to an email service
-  or API route — it currently does not submit anywhere.
-- Add real favicon / Open Graph images and confirm `siteConfig.url`.
+- [ ] **Verify production figures** in `knowHow.stats` (`src/lib/site.ts`)
+      with the house — pot stills, bottling lines, hectares, export countries.
+- [ ] **Confirm the visit programme** in `tours` / `tastings` / `visit`
+      (`src/lib/site.ts`) — offerings, durations, group sizes, prices and
+      opening arrangements are structured placeholders.
+- [ ] Replace `PlaceholderFrame` slots with real photography/video — every
+      frame is captioned with what belongs there (hero expects a background
+      video; see the comment in `page.tsx`).
+- [ ] Set `RESEND_API_KEY` / `CONTACT_TO_EMAIL` / `CONTACT_FROM_EMAIL`.
+- [ ] Confirm the production domain in `siteConfig.url`.
+- [ ] Point `siteConfig.social` at the house's real LinkedIn/Instagram.
+- [ ] Create the legal pages linked from the footer (`footerContent.legalLinks`).
+- [ ] When French content ships, add an `fr` dictionary in `site.ts` and point
+      `siteConfig.locales.alternates.fr` at `/fr` (currently links to the
+      existing FR production site).

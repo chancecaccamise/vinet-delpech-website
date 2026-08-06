@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next *)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha vinetDelpechLogoBlack.png)",
+      "WebFetch(domain:lesbruleriesmodernes.com)",
+      "WebFetch(domain:www.maca-spirits.com)",
+      "WebFetch(domain:tijuca.fr)",
+      "WebFetch(domain:gin40.com)",
+      "WebFetch(domain:www.maison-mounicq.com)",
+      "WebSearch",
+      "Bash(awk '{print $5, $9, $10, $11, $12}')",
+      "Bash(cd /Users/chancecaccamise/vinet-delpech-website && mkdir -p assets/products-source && cp public/products/* assets/products-source/ && ls assets/products-source | wc -l)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(node timeline.mjs)",
+      "Bash(sed -i '' 's/await page.waitForTimeout\\(90\\);/await page.waitForTimeout\\(220\\);/' timeline.mjs)",
+      "Bash(sed -i '' -e 's|/\\\\* Solid dark button for the feature panels on parchment\\\\. \\\\*/|/* Solid dark button for the feature panels on light sections. */|' -e 's|/\\\\* Underline swaps to the darker gold once the header sits on parchment\\\\. \\\\*/|/* Underline swaps to the darker gold once the header sits on a light bar. */|' src/app/globals.css)",
+      "Bash(sed -i '' 's|Horizontal glide-through showcase of the house.s brands, on parchment\\\\.|Horizontal glide-through showcase of the house’s brands, on a light section.|' src/components/BrandRail.tsx)",
+      "Bash(sed -i '' 's|// Two palettes for one bar: white-on-hero while transparent, ink-on-parchment|// Two palettes for one bar: white-on-hero while transparent, ink-on-light|' src/components/Header.tsx)",
+      "Bash(node palette.mjs)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha public/media/VSOPGraphic.png)",
+      "Bash(node eyebrow.mjs)",
+      "Bash(sips -g pixelWidth -g pixelHeight public/media/distilleryImage.jpg)",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/66b22979-b948-4b3e-8c74-f7dfc45d960d/scratchpad/heights.mjs)",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/66b22979-b948-4b3e-8c74-f7dfc45d960d/scratchpad/fit.mjs)",
+      "Bash(node --experimental-strip-types \"/private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/dob.test.mts\")",
+      "Bash(grep -v \"ExperimentalWarning\\\\|Use \\\\`node --trace\")",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(grep -o 'vd_age_verified[^\"]\\\\{0,40\\\\}' home.html)",
+      "Bash(curl -s http://localhost:3000/visit)",
+      "Bash(grep -o 'age-gate[^,{]*[,{][^}]*}' gate.css)",
+      "Bash(node --experimental-strip-types \"/private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/script.test.mts\")",
+      "Bash(command -v chromium)",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/e2e.mjs)",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/console.mjs)",
+      "Bash(pkill -f \"next start\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/modes.mjs)",
+      "Bash(node /private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/2706cf10-7d20-4245-a850-e776c853ccdc/scratchpad/shots.mjs)",
+      "Bash(pkill -f \"remote-debugging-port=9222\")",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('public/media/vinetDelpechPresidentPortrait.jpg'\\);let i=2;while\\(i<s.length\\){if\\(s[i]!==0xFF\\){i++;continue}const m=s[i+1];if\\(m>=0xC0&&m<=0xCF&&m!==0xC4&&m!==0xC8&&m!==0xCC\\){console.log\\('h',s.readUInt16BE\\(i+5\\),'w',s.readUInt16BE\\(i+7\\)\\);break}i+=2+s.readUInt16BE\\(i+2\\)}\")",
+      "Bash(node -e ' *)",
+      "Bash(ffprobe -v error -show_entries stream=codec_name,width,height,duration,bit_rate -of default=noprint_wrappers=1 public/media/HeroVideoVinetDelpech.mp4)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/claude-501/-Users-chancecaccamise-vinet-delpech-website/66b22979-b948-4b3e-8c74-f7dfc45d960d/scratchpad/public/products"
+    ]
+  }
+}

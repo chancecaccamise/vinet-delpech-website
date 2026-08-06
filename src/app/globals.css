@@ -1,17 +1,49 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Design tokens.
+
+   Sections below the hero alternate pure white and a neutral off-white; the
+   dark tones remain for the video hero, interior page heroes and the footer.
+   `--off-white` doubles as the light text colour on those dark surfaces.
+
+   Contrast notes (WCAG):
+   - gold     #c5a05a on night     #0f0b08 ≈ 7.5:1 (AA small text ✓)
+   - gold-ink #6b3f1d on white     #ffffff ≈ 8.9:1 (AAA small text ✓)
+   - gold-ink #6b3f1d on off-white #f5f5f3 ≈ 8.3:1 (AAA small text ✓)
+   `--gold` stays the light accent for dark surfaces; `--gold-ink` is the
+   dark accent for the white / off-white sections.
+   - ink      #1c1510 on off-white #f5f5f3 ≈ 15.4:1
+--------------------------------------------------------------------------- */
 :root {
+  --night: #0f0b08;
+  --espresso: #191210;
+  --umber: #221912;
+  --off-white: #f5f5f3;
+  --ink: #1c1510;
+  --gold: #c5a05a;
+  --gold-ink: #6b3f1d;
+
   --background: #ffffff;
-  --foreground: #15110e;
-  --accent: #b98245;
-  --cream: #efe4d6;
+  --foreground: var(--ink);
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-slow: 1100ms;
+  --dur-med: 700ms;
 }
 
 @theme inline {
+  --color-night: var(--night);
+  --color-espresso: var(--espresso);
+  --color-umber: var(--umber);
+  --color-off-white: var(--off-white);
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
+  --color-gold-ink: var(--gold-ink);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-display);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -19,8 +51,10 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -28,15 +62,156 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: #b98245;
-  color: #ffffff;
+  background: var(--gold-ink);
+  color: var(--off-white);
 }
 
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Anchor targets clear the fixed header. */
 [id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 6rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Typography
+--------------------------------------------------------------------------- */
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.display-xl {
+  font-size: clamp(2.9rem, 7.2vw, 6.4rem);
+  line-height: 0.98;
+}
+
+.display-lg {
+  font-size: clamp(2.2rem, 4.6vw, 4.2rem);
+}
+
+.display-md {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+}
+
+.display-sm {
+  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+}
+
+/* ---------------------------------------------------------------------------
+   Buttons & links
+--------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 300ms var(--ease-lux),
+    border-color 300ms var(--ease-lux),
+    color 300ms var(--ease-lux);
+}
+
+.btn-gold {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--night);
+}
+
+.btn-gold:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline-light {
+  border: 1px solid color-mix(in srgb, var(--off-white) 55%, transparent);
+  color: var(--off-white);
+}
+
+.btn-outline-light:hover {
+  border-color: var(--off-white);
+  background: var(--off-white);
+  color: var(--night);
+}
+
+.btn-outline-dark {
+  border: 1px solid color-mix(in srgb, var(--ink) 70%, transparent);
+  color: var(--ink);
+}
+
+.btn-outline-dark:hover {
+  background: var(--ink);
+  color: var(--off-white);
+}
+
+/* Primary filled button on the white / off-white sections. `.btn-gold` keeps
+   the pale gold for dark surfaces, where a dark fill would disappear. */
+.btn-accent {
+  border: 1px solid var(--gold-ink);
+  background: var(--gold-ink);
+  color: var(--off-white);
+}
+
+.btn-accent:hover {
+  background: transparent;
+  color: var(--gold-ink);
+}
+
+.btn-outline-gold {
+  border: 1px solid color-mix(in srgb, var(--gold-ink) 45%, transparent);
+  color: var(--gold-ink);
+}
+
+.btn-outline-gold:hover {
+  border-color: var(--gold-ink);
+  background: var(--gold-ink);
+  color: var(--off-white);
+}
+
+.btn-sm {
+  min-height: 2.4rem;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.6rem;
+}
+
+/* Megamenu panel — slow, refined entrance; none under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .megapanel:not([hidden]) {
+    animation: panel-in 480ms var(--ease-lux);
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
 }
 
 .nav-link {
@@ -47,116 +222,389 @@ body {
 .nav-link::after {
   position: absolute;
   left: 50%;
-  bottom: -12px;
+  bottom: -10px;
   width: 0;
   height: 1px;
   content: "";
-  background: currentColor;
+  background: var(--gold);
   transform: translateX(-50%);
-  transition: width 180ms ease;
+  transition: width 400ms var(--ease-lux);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current="true"]::after {
   width: 100%;
 }
 
-.btn {
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  padding: 0.9rem 1.35rem;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  text-transform: uppercase;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    opacity 180ms ease;
+/* Underline swaps to the darker gold once the header sits on a light bar. */
+.nav-link-ink::after {
+  background: var(--gold-ink);
 }
 
-.btn-gold {
-  border: 1px solid #b98245;
-  background: #b98245;
-  color: #ffffff;
-}
-
-.btn-gold:hover {
-  background: #9c6630;
-  border-color: #9c6630;
-}
-
-.btn-outline-light {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  color: #ffffff;
-}
-
-.btn-outline-light:hover {
-  background: #ffffff;
-  color: #15110e;
-}
-
-.section-kicker {
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #a8753d;
-}
-
-.section-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.35rem, 6vw, 5.4rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 0.98;
-  text-transform: uppercase;
-}
-
-.image-placeholder {
+/* Understated text link with a sliding gold rule. */
+.link-quiet {
   position: relative;
-  min-height: 360px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 1.5rem;
-  color: rgba(255, 255, 255, 0.78);
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 0.4rem;
 }
 
-.image-placeholder::before {
+.link-quiet::after {
   position: absolute;
-  inset: 1rem;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
   content: "";
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: currentColor;
+  opacity: 0.35;
+  transition: opacity 300ms var(--ease-lux);
 }
 
-.image-placeholder::after {
+.link-quiet:hover::after,
+.link-quiet:focus-visible::after {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Hairlines & frames
+--------------------------------------------------------------------------- */
+.hairline-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 65%, transparent) 18%,
+    color-mix(in srgb, var(--gold) 65%, transparent) 82%,
+    transparent
+  );
+}
+
+/* Same rule in the dark accent, for the light sections. */
+.hairline-accent {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold-ink) 55%, transparent) 18%,
+    color-mix(in srgb, var(--gold-ink) 55%, transparent) 82%,
+    transparent
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Image placeholders — elegant labeled frames awaiting real photography.
+   Aspect ratio is set inline via the `--frame-aspect` custom property.
+--------------------------------------------------------------------------- */
+.frame {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+  aspect-ratio: var(--frame-aspect, 16 / 9);
+  width: 100%;
+  padding: 1.25rem;
+  color: color-mix(in srgb, var(--off-white) 72%, transparent);
+}
+
+.frame-fill {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 24rem;
+}
+
+.frame--dark {
+  background:
+    radial-gradient(circle at 30% 22%, color-mix(in srgb, var(--gold) 38%, transparent), transparent 42%),
+    linear-gradient(135deg, #14100b, #3d2b1a 48%, #0d0a07);
+}
+
+.frame--light {
+  background:
+    radial-gradient(circle at 68% 18%, rgba(255, 255, 255, 0.75), transparent 32%),
+    linear-gradient(135deg, #eeedea, #dcdbd7 55%, #c2c1bc);
+}
+
+/* Caption and hairline invert on the light frame. */
+.frame--light > figcaption {
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+.frame--light::before {
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+/* Inner hairline. */
+.frame::before {
+  position: absolute;
+  inset: 0.875rem;
+  content: "";
+  border: 1px solid color-mix(in srgb, var(--off-white) 26%, transparent);
+  pointer-events: none;
+}
+
+/* Soft photographic grain. */
+.frame::after {
   position: absolute;
   inset: 0;
   content: "";
-  background:
-    linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.12) 46% 47%, transparent 47% 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.34), transparent 52%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
-.image-placeholder span {
+.frame > figcaption {
   position: relative;
   z-index: 1;
-  max-width: 220px;
-  font-size: 0.68rem;
-  font-weight: 800;
+  max-width: 16rem;
+  font-size: 0.62rem;
+  font-weight: 600;
   letter-spacing: 0.22em;
-  line-height: 1.6;
+  line-height: 1.7;
   text-transform: uppercase;
 }
 
-@media (max-width: 1023px) {
-  .section-title {
-    letter-spacing: 0.05em;
+/* ---------------------------------------------------------------------------
+   Motion — slow, luxurious reveals. The hidden initial state only applies
+   when scripting is enabled and the visitor allows motion, so content is
+   never lost without JavaScript and never animated against their wishes.
+--------------------------------------------------------------------------- */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(2.25rem);
+    transition:
+      opacity var(--dur-slow) var(--ease-lux),
+      transform var(--dur-slow) var(--ease-lux);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .parallax-layer {
+    will-change: transform;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Hero scroll cue — a slow falling thread of gold.
+--------------------------------------------------------------------------- */
+.scroll-cue {
+  position: relative;
+  width: 1px;
+  height: 4.5rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--off-white) 18%, transparent);
+}
+
+.scroll-cue::after {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 40%;
+  content: "";
+  background: var(--gold);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-cue::after {
+    animation: cue-fall 2.6s var(--ease-lux) infinite;
+  }
+
+  @keyframes cue-fall {
+    0% {
+      transform: translateY(-100%);
+    }
+    60%,
+    100% {
+      transform: translateY(280%);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Savoir-faire grid — hairline dividers with a growing gold rule on hover.
+--------------------------------------------------------------------------- */
+.metier {
+  position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.metier::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  content: "";
+  background: var(--gold-ink);
+  transition: width 700ms var(--ease-lux);
+}
+
+.metier:hover::before,
+.metier:focus-within::before {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+   Collection rail — CSS scroll-snap, buttons enhance.
+--------------------------------------------------------------------------- */
+.rail {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail > * {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rail {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Form fields
+--------------------------------------------------------------------------- */
+.field {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  background: #ffffff;
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--ink);
+  border-radius: 0;
+  transition: border-color 300ms var(--ease-lux);
+}
+
+.field::placeholder {
+  color: color-mix(in srgb, var(--ink) 42%, transparent);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--gold-ink);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 62%, transparent);
+}
+
+select.field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a5628' stroke-width='1.25'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+select.field option {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* Dark-surface variant of .field, the way .btn-accent pairs with .btn-gold.
+   Must stay after .field — it wins the tie on source order, not specificity. */
+.field-dark {
+  border-color: color-mix(in srgb, var(--off-white) 24%, transparent);
+  background: color-mix(in srgb, var(--off-white) 6%, transparent);
+  color: var(--off-white);
+}
+
+.field-dark::placeholder {
+  color: color-mix(in srgb, var(--off-white) 34%, transparent);
+}
+
+.field-dark:focus,
+.field-dark[aria-invalid="true"] {
+  border-color: var(--gold);
+}
+
+/* ---------------------------------------------------------------------------
+   Age gate — date-of-birth entry
+
+   The overlay ships in the HTML of every page and is toggled purely by
+   `data-age-gate` on <html>: the server-rendered default is "open", and an
+   inline <head> script removes it before the first paint for visitors
+   carrying the verification cookie. No JS is needed to *show* the gate, so it
+   can never flash in late; no JS runs to *hide* it, so it can never flash out.
+
+   Note this is intentionally NOT behind `@media (scripting: enabled)` — unlike
+   `.reveal`, where an unsupporting browser fails safe, here it would fail
+   open. The no-JS escape hatch is a <noscript> style block in the layout.
+--------------------------------------------------------------------------- */
+.age-gate {
+  display: none;
+}
+
+html[data-age-gate="open"] .age-gate {
+  display: flex;
+}
+
+/* Scroll lock without inline styles, so it is active from the first frame. */
+html[data-age-gate="open"],
+html[data-age-gate="open"] body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.dob-input {
+  padding: 0.95rem 0.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Functional labels, so they sit well clear of 4.5:1 on --espresso. Don't
+   take this below ~55% — the decorative fine print can, these can't. */
+.dob-label {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--off-white) 62%, transparent);
+}
+
+/* Only the panel animates. Fading the backdrop in would briefly reveal the
+   very page the gate exists to cover. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  html[data-age-gate="open"] .age-gate-panel {
+    animation: age-gate-in 520ms var(--ease-lux) both;
+  }
+
+  @keyframes age-gate-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
   }
 }
