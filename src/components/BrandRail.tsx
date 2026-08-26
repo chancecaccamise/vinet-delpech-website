@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Brand } from "@/lib/site";
-import { localizePath, type Locale } from "@/lib/i18n";
-import { fill } from "@/lib/content";
+import type { Locale } from "@/lib/i18n";
+import { getBrandCta } from "@/lib/content";
 import type { Content } from "@/lib/content/en";
-import { PlaceholderFrame } from "@/components/PlaceholderFrame";
+import { BrandCard } from "@/components/BrandCard";
 import { clsx } from "@/lib/clsx";
 
 /**
@@ -74,7 +72,7 @@ export function BrandRail({
   }, []);
 
   const arrow =
-    "absolute top-[26%] z-10 hidden h-12 w-12 items-center justify-center text-ink/50 transition-colors duration-300 hover:text-gold-ink disabled:pointer-events-none disabled:opacity-0 lg:flex";
+    "absolute top-[26%] z-10 hidden h-12 w-12 items-center justify-center text-ink/50 transition-colors duration-300 hover:text-blue disabled:pointer-events-none disabled:opacity-0 lg:flex";
 
   return (
     <div className="relative">
@@ -108,52 +106,11 @@ export function BrandRail({
             id={`brand-${brand.slug}`}
             className="w-[70vw] sm:w-[38vw] lg:w-[25vw] xl:w-[22vw]"
           >
-            <div className="group flex h-full flex-col text-center">
-              {brand.image ? (
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <Image
-                    src={brand.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 25vw, (min-width: 640px) 38vw, 70vw"
-                    className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.03]"
-                  />
-                </div>
-              ) : (
-                <PlaceholderFrame
-                  label={brand.frameLabel}
-                  aspect="4 / 5"
-                  tone="light"
-                  className="transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.03]"
-                />
-              )}
-              <h3 className="mt-7 text-sm font-semibold uppercase leading-6 tracking-[0.14em] text-ink">
-                {brand.name}
-              </h3>
-              <p className="eyebrow mt-2 text-gold-ink">{brand.category}</p>
-              <p className="mt-3 flex-1 px-2 text-sm leading-7 text-ink/55">{brand.descriptor}</p>
-              <div className="mt-6">
-                {brand.url ? (
-                  <a
-                    href={brand.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={fill(labels.viewDetailsAria, { name: brand.name })}
-                    className="btn btn-outline-gold btn-sm"
-                  >
-                    {labels.viewDetails}
-                  </a>
-                ) : (
-                  <Link
-                    href={localizePath(locale, `/#brand-${brand.slug}`)}
-                    aria-label={fill(labels.viewDetailsAria, { name: brand.name })}
-                    className="btn btn-outline-gold btn-sm"
-                  >
-                    {labels.viewDetails}
-                  </Link>
-                )}
-              </div>
-            </div>
+            <BrandCard
+              brand={brand}
+              cta={getBrandCta(locale, brand, labels)}
+              sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 25vw, (min-width: 640px) 38vw, 70vw"
+            />
           </li>
         ))}
       </ul>

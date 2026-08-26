@@ -33,7 +33,12 @@ export const config = {
   // Everything except Next internals and the files that must stay at the root:
   // robots.txt, sitemap.xml, the icon and the OG image are single-URL assets
   // and must not be pushed under a locale.
+  //
+  // The public asset folders are listed here too — /media, /products, and the
+  // /spirits and /awards folders the house range arrived with. Miss one and its
+  // images 307 to /en/... instead of being served, which shows up as silently
+  // broken packshots rather than as an error.
   matcher: [
-    "/((?!_next|api|favicon.ico|icon.svg|robots.txt|sitemap.xml|opengraph-image|media|products).*)",
+    "/((?!_next|api|favicon.ico|icon.svg|robots.txt|sitemap.xml|opengraph-image|media|products|spirits|awards).*)",
   ],
 };

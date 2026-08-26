@@ -47,7 +47,7 @@ function StatFigure({
   return (
     <div className="border-l border-ink/15 pl-4 sm:pl-5">
       <div
-        className={clsx("display whitespace-nowrap text-gold-ink tabular-nums", figureClassName)}
+        className={clsx("display whitespace-nowrap text-blue tabular-nums", figureClassName)}
         aria-hidden="true"
       >
         <span ref={numberRef}>{stat.value.toLocaleString("en-GB")}</span>

@@ -38,7 +38,7 @@ export function isLocale(value: string): value is Locale {
 /**
  * Prefix an app-relative path with a locale.
  *
- * Content stores hrefs unprefixed (`/visit`, `/#contact`) so the same content
+ * Content stores hrefs unprefixed (`/visit`, `/contact`) so the same content
  * tree works for every language; this is the single place a prefix is added.
  * External URLs and bare fragments are returned untouched.
  */

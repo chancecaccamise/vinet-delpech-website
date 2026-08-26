@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { siteConfig, visitEntryHrefs } from "@/lib/site";
+import { siteConfig, visitEntryHrefs, visitEntryImages, visitEstateImage } from "@/lib/site";
 import { isLocale, localizePath } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
 import { languageAlternates } from "@/app/[locale]/layout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { PlaceholderFrame } from "@/components/PlaceholderFrame";
 
 type Params = { locale: string };
 
@@ -42,7 +42,7 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
     <>
       <PageHero title={visit.title} intro={visit.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="#book" className="btn btn-gold">
+          <Link href="#book" className="btn btn-cream">
             {visit.bookCta}
           </Link>
           <Link href="#practical" className="btn btn-outline-light">
@@ -52,7 +52,7 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
       </PageHero>
 
       {/* What to expect */}
-      <section aria-label={visit.expectLabel} className="bg-off-white py-24 text-ink sm:py-32">
+      <section aria-label={visit.expectLabel} className="bg-white py-24 text-ink sm:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <div className="grid gap-12 sm:grid-cols-3">
             {visit.expect.map((item, index) => (
@@ -74,16 +74,19 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
                   className="group block"
                 >
                   <div className="overflow-hidden">
-                    <PlaceholderFrame
-                      label={entry.frameLabel}
-                      aspect="16 / 10"
-                      tone="dark"
-                      className="transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
-                    />
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={visitEntryImages[index]}
+                        alt=""
+                        fill
+                        sizes="(min-width: 768px) 45vw, 90vw"
+                        className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
+                      />
+                    </div>
                   </div>
                   <h2 className="display display-md mt-7 uppercase tracking-[0.06em]">{entry.title}</h2>
                   <p className="mt-3 max-w-md text-sm leading-7 text-ink/60">{entry.body}</p>
-                  <span className="link-quiet mt-6 text-gold-ink">{visit.discover}</span>
+                  <span className="link-quiet mt-6 text-blue">{visit.discover}</span>
                 </Link>
               </Reveal>
             ))}
@@ -92,7 +95,7 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
       </section>
 
       {/* Book a visit */}
-      <section id="book" className="bg-off-white py-24 text-ink sm:py-32">
+      <section id="book" className="bg-cream py-24 text-ink sm:py-32">
         <div className="mx-auto max-w-[1320px] px-6 text-center lg:px-10">
           <Reveal>
             <h2 className="display display-lg mt-4 uppercase tracking-[0.05em]">{visit.book.heading}</h2>
@@ -102,10 +105,10 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
           </Reveal>
           <Reveal delay={300}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-              <Link href={localizePath(locale, "/#contact")} className="btn btn-accent">
+              <Link href={localizePath(locale, "/contact")} className="btn btn-blue">
                 {visit.book.ctaLabel}
               </Link>
-              <a href={mailHref} className="link-quiet text-gold-ink">
+              <a href={mailHref} className="link-quiet text-blue">
                 {siteConfig.email}
               </a>
             </div>
@@ -114,7 +117,7 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
       </section>
 
       {/* Practical information */}
-      <section id="practical" className="bg-off-white py-24 text-ink sm:py-32">
+      <section id="practical" className="bg-white py-24 text-ink sm:py-32">
         <div className="mx-auto grid max-w-[1320px] gap-14 px-6 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-5">
             <Reveal>
@@ -135,11 +138,15 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal delay={200}>
-              <PlaceholderFrame
-                label={visit.mapLabel}
-                aspect="4 / 3"
-                tone="light"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={visitEstateImage}
+                  alt={visit.mapLabel}
+                  fill
+                  sizes="(min-width: 1024px) 46vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
           </div>
         </div>

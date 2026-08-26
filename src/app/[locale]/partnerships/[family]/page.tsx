@@ -7,13 +7,15 @@ import {
   findSpiritFamily,
   getBrandsInFamily,
   getContent,
+  getHouseBrands,
+  getPartnerBrandsInFamily,
   getSpiritFamilies,
   pluralize,
-  fill,
 } from "@/lib/content";
 import { languageAlternates } from "@/app/[locale]/layout";
 import { PageHero } from "@/components/PageHero";
 import { BrandGrid } from "@/components/BrandGrid";
+import { BrandStory } from "@/components/BrandStory";
 import { Reveal } from "@/components/Reveal";
 
 type Params = { locale: string; family: string };
@@ -60,30 +62,85 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
   if (!family) notFound();
 
   const c = getContent(locale);
+  // The category's bottles, split by who they belong to: the house's own get
+  // the long-form brochure treatment, the partners' stay as cards linking out.
   const brands = getBrandsInFamily(locale, family.slug);
+  const houseBrands = getHouseBrands(locale, family.slug);
+  const partnerBrands = getPartnerBrandsInFamily(locale, family.slug);
   const others = getSpiritFamilies(locale).filter((entry) => entry.slug !== family.slug);
+
+  // Bands alternate white then cream down from the navy hero. Which sections
+  // exist varies by category — brandy and liqueurs are house-only, rum and gin
+  // partner-only — so the sequence is computed rather than written into each
+  // section, otherwise a category that skips one ends up with two bands of the
+  // same colour touching.
+  const bandOrder = [
+    houseBrands.length > 0 ? "house" : null,
+    partnerBrands.length > 0 ? "partners" : null,
+    "others",
+  ].filter((name): name is string => name !== null);
+  const band = (name: string) =>
+    bandOrder.indexOf(name) % 2 === 0 ? "bg-white" : "bg-cream";
 
   return (
     <>
       <PageHero title={family.title} intro={family.intro}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-off-white/45">
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
           {pluralize(c.partnerships.inCollectionOne, c.partnerships.inCollectionOther, brands.length)}
         </p>
       </PageHero>
 
-      <section aria-label={`${family.name} brands`} className="bg-off-white py-20 text-ink sm:py-28">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-          <BrandGrid brands={brands} labels={c.partnerships} />
+      {houseBrands.length > 0 && (
+        <section
+          aria-label={c.partnerships.houseHeading}
+          className={`${band("house")} py-20 text-ink sm:py-28`}
+        >
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+            <Reveal>
+              <p className="eyebrow text-ink/45">{c.partnerships.houseHeading}</p>
+            </Reveal>
+            {houseBrands.map((brand, index) => (
+              <BrandStory
+                key={brand.slug}
+                locale={locale}
+                brand={brand}
+                labels={c.houseBrands.labels}
+                flip={index % 2 === 1}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
-          <Reveal delay={200}>
-            <p className="eyebrow mt-16 text-ink/45">{c.partnerships.note}</p>
-          </Reveal>
-        </div>
-      </section>
+      {/* Brandy and liqueurs are house-only, so the partner grid — and the
+          distribution note, which is a partner fact — drop away entirely
+          rather than leaving an empty three-column track behind. */}
+      {partnerBrands.length > 0 && (
+        <section
+          aria-label={c.partnerships.partnerHeading}
+          className={`${band("partners")} py-20 text-ink sm:py-28`}
+        >
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+            {houseBrands.length > 0 && (
+              <Reveal>
+                <h2 className="display display-md mb-12 uppercase tracking-[0.05em]">
+                  {c.partnerships.partnerHeading}
+                </h2>
+              </Reveal>
+            )}
+
+            <BrandGrid locale={locale} brands={partnerBrands} labels={c.partnerships} />
+
+            <Reveal delay={200}>
+              <p className="eyebrow mt-16 text-ink/45">{c.partnerships.note}</p>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Sideways navigation: the other categories, so a visitor can move
           across the collection without going back up to the megamenu. */}
-      <section aria-label="Other categories" className="bg-white py-20 text-ink sm:py-24">
+      <section aria-label="Other categories" className={`${band("others")} py-20 text-ink sm:py-24`}>
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
             <h2 className="display display-md uppercase tracking-[0.05em]">{c.partnerships.otherCategories}</h2>
@@ -92,7 +149,7 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
                 <li key={entry.slug}>
                   <Link
                     href={localizePath(locale, `/partnerships/${entry.slug}`)}
-                    className="link-quiet text-gold-ink"
+                    className="link-quiet text-blue"
                   >
                     {entry.name}
                   </Link>
@@ -101,12 +158,12 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
             </ul>
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
-              <Link href={localizePath(locale, "/#contact")} className="btn btn-accent">
+              <Link href={localizePath(locale, "/contact")} className="btn btn-blue">
                 {c.partnerships.ctaLabel}
               </Link>
               <Link
                 href={localizePath(locale, "/partnerships")}
-                className="link-quiet text-gold-ink"
+                className="link-quiet text-blue"
               >
                 {c.partnerships.backToAll}
               </Link>

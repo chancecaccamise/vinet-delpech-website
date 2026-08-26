@@ -8,7 +8,7 @@ import { getContent } from "@/lib/content";
  * route inherits it, and so a link shared from the Spanish edition previews in
  * Spanish.
  */
-export const alt = `${siteConfig.name} — ${getContent(defaultLocale).metadata.homeTitle}`;
+export const alt = `${siteConfig.name}: ${getContent(defaultLocale).metadata.homeTitle}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -17,9 +17,9 @@ export function generateStaticParams() {
 }
 
 // Brand tokens mirrored from globals.css (ImageResponse can't read CSS vars).
-const NIGHT = "#0f0b08";
-const PARCHMENT = "#f5eee3";
-const GOLD = "#c5a05a";
+const CREAM = "#f7f1de";
+const BLUE = "#1b4fa5";
+const NAVY = "#0b2a5b";
 
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: raw } = await params;
@@ -35,8 +35,8 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: `radial-gradient(circle at 62% 30%, rgba(197,160,90,0.28), transparent 40%), ${NIGHT}`,
-          color: PARCHMENT,
+          background: CREAM,
+          color: NAVY,
           fontFamily: "Georgia, serif",
         }}
       >
@@ -47,7 +47,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
             left: 36,
             right: 36,
             bottom: 36,
-            border: `1px solid rgba(245,238,227,0.25)`,
+            border: `1px solid rgba(27,79,165,0.35)`,
             display: "flex",
           }}
         />
@@ -59,12 +59,13 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 9999,
-            border: `2px solid ${GOLD}`,
+            border: `2px solid ${BLUE}`,
             fontSize: 44,
             letterSpacing: -2,
+            color: BLUE,
           }}
         >
-          VD
+          VP
         </div>
         <div
           style={{
@@ -82,7 +83,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
             marginTop: 28,
             width: 220,
             height: 1,
-            background: GOLD,
+            background: BLUE,
             display: "flex",
           }}
         />
@@ -92,7 +93,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
             fontSize: 26,
             letterSpacing: 6,
             textTransform: "uppercase",
-            color: GOLD,
+            color: BLUE,
             display: "flex",
           }}
         >

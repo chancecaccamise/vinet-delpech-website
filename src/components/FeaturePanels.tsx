@@ -14,7 +14,7 @@ import { clsx } from "@/lib/clsx";
  */
 export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
   return (
-    <section aria-label="Featured" className="bg-off-white text-ink">
+    <section aria-label="Featured" className="bg-cream text-ink">
       {panels.map((panel) => {
         const isSpec = Boolean(panel.figures?.length || panel.details?.length);
         return (
@@ -78,7 +78,7 @@ export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
                 <Reveal delay={350}>
                   <dl className="mt-7 grid gap-2.5 border-t border-ink/12 pt-6">
                     {panel.details.map((detail) => (
-                      <div key={detail.label} className="grid gap-0.5 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                      <div key={detail.label} className="grid gap-0.5 sm:grid-cols-[9.5rem_1fr] sm:gap-4">
                         <dt className="eyebrow text-ink/45 sm:pt-0.5">{detail.label}</dt>
                         <dd className="m-0 text-sm leading-6 text-ink/70">{detail.body}</dd>
                       </div>
@@ -88,7 +88,7 @@ export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
               )}
 
               <Reveal delay={450}>
-                <Link href={panel.cta.href} className={clsx("btn btn-accent", isSpec ? "mt-7" : "mt-10")}>
+                <Link href={panel.cta.href} className={clsx("btn btn-blue", isSpec ? "mt-7" : "mt-10")}>
                   {panel.cta.label}
                 </Link>
               </Reveal>

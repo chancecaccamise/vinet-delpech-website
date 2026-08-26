@@ -8,11 +8,13 @@ import { locales } from "@/lib/i18n";
  */
 const routes: { path: string; priority: number }[] = [
   { path: "", priority: 1 },
+  { path: "/about", priority: 0.8 },
   { path: "/partnerships", priority: 0.8 },
   ...spiritFamilySlugs.map((slug) => ({ path: `/partnerships/${slug}`, priority: 0.7 })),
   { path: "/visit", priority: 0.8 },
   { path: "/visit/tours", priority: 0.7 },
   { path: "/visit/tastings", priority: 0.7 },
+  { path: "/contact", priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

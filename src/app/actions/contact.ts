@@ -87,7 +87,7 @@ export async function submitEnquiry(
           from: `${siteConfig.name} website <${fromEmail}>`,
           to: [toEmail],
           reply_to: email,
-          subject: `[${enquiryType}] Enquiry from ${name}${company ? ` — ${company}` : ""}`,
+          subject: `[${enquiryType}] Enquiry from ${name}${company ? `, ${company}` : ""}`,
           text: body,
         }),
       });

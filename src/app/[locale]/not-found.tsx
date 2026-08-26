@@ -17,12 +17,12 @@ export default function NotFound() {
   const c = getContent(locale).notFound;
 
   return (
-    <section className="flex min-h-svh items-center justify-center bg-night px-6 text-center text-off-white">
+    <section className="flex min-h-svh items-center justify-center bg-navy px-6 text-center text-cream">
       <div>
         <h1 className="display display-lg mt-6 uppercase tracking-[0.06em]">{c.title}</h1>
-        <p className="mx-auto mt-6 max-w-md text-sm leading-7 text-off-white/65">{c.body}</p>
+        <p className="mx-auto mt-6 max-w-md text-sm leading-7 text-cream/65">{c.body}</p>
         <div className="mt-10">
-          <Link href={localizePath(locale, "/")} className="btn btn-gold">
+          <Link href={localizePath(locale, "/")} className="btn btn-cream">
             {c.cta}
           </Link>
         </div>

@@ -83,6 +83,11 @@ export function Header({
     closeTimer.current = window.setTimeout(() => setOpenMenu(null), CLOSE_DELAY);
   }, [cancelScheduledClose]);
 
+  const closeMenuNow = useCallback(() => {
+    cancelScheduledClose();
+    setOpenMenu(null);
+  }, [cancelScheduledClose]);
+
   const closeAll = useCallback(() => {
     cancelScheduledClose();
     setOpenMenu(null);
@@ -166,7 +171,7 @@ export function Header({
   // whole header crosses over together.
   const c = solid
     ? { text: "text-ink", hairline: "border-ink/15" }
-    : { text: "text-off-white", hairline: "border-off-white/25" };
+    : { text: "text-cream", hairline: "border-cream/25" };
 
   return (
     <header
@@ -178,24 +183,15 @@ export function Header({
     >
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-[60] focus:bg-off-white focus:px-4 focus:py-2 focus:text-ink"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ink"
       >
         {ui.skipToContent}
       </a>
 
-      {/* Legibility scrim over hero imagery; fades out once the bar turns solid. */}
-      <div
-        aria-hidden="true"
-        className={clsx(
-          "pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-night/80 via-night/30 to-transparent transition-opacity duration-700",
-          solid && "opacity-0",
-        )}
-      />
-
       <div
         className={clsx(
           "relative border-b transition-[background-color,border-color,backdrop-filter] duration-500",
-          solid ? "border-ink/10 bg-off-white/95 backdrop-blur-md" : "border-transparent bg-transparent",
+          solid ? "border-ink/10 bg-white/95 backdrop-blur-md" : "border-transparent bg-transparent",
         )}
       >
         <div
@@ -215,7 +211,7 @@ export function Header({
               "mr-4 flex h-11 w-11 flex-col items-center justify-center gap-1.5 border transition-colors duration-300 lg:hidden",
               c.hairline,
               c.text,
-              solid ? "hover:border-gold-ink hover:text-gold-ink" : "hover:border-gold hover:text-gold",
+              solid ? "hover:border-blue hover:text-blue" : "hover:border-sand hover:text-sand",
             )}
           >
             <span
@@ -235,7 +231,7 @@ export function Header({
           {/* Persistent house lockup — home lives here, like Rémy. */}
           <Link
             href={localizePath(locale, "/#home")}
-            aria-label={`${siteConfig.name} — ${ui.home}`}
+            aria-label={`${siteConfig.name}, ${ui.home}`}
             className="group flex min-w-0 items-center"
             onClick={closeAll}
           >
@@ -257,23 +253,29 @@ export function Header({
               // real routes do. Locale-prefixed hrefs mean the old
               // `startsWith("/#")` test no longer identifies an anchor.
               const routeActive = !group.href.includes("#") && pathname.startsWith(group.href);
-              const active = openMenu === index || routeActive;
+              // Contact carries no panel, so it announces itself as an ordinary
+              // link and reaching it dismisses whichever menu was open.
+              const hasMenu = Boolean(group.links?.length);
+              const active = (hasMenu && openMenu === index) || routeActive;
               return (
-                <div key={group.label} onMouseEnter={() => openNow(index)}>
+                <div
+                  key={group.label}
+                  onMouseEnter={() => (hasMenu ? openNow(index) : closeMenuNow())}
+                >
                   <Link
                     ref={(node) => {
                       triggerRefs.current[index] = node;
                     }}
                     href={group.href}
-                    aria-expanded={openMenu === index}
-                    aria-controls={`megamenu-${index}`}
-                    aria-haspopup="true"
+                    aria-expanded={hasMenu ? openMenu === index : undefined}
+                    aria-controls={hasMenu ? `megamenu-${index}` : undefined}
+                    aria-haspopup={hasMenu ? "true" : undefined}
                     aria-current={active ? "true" : undefined}
-                    onFocus={() => openNow(index)}
+                    onFocus={() => (hasMenu ? openNow(index) : closeMenuNow())}
                     onClick={closeAll}
                     className={clsx(
                       "nav-link text-[11px] font-semibold uppercase tracking-[0.24em] transition-colors duration-300",
-                      solid ? "nav-link-ink text-ink/75 hover:text-ink" : "text-off-white/85 hover:text-off-white",
+                      solid ? "nav-link-ink text-ink/75 hover:text-ink" : "text-cream/85 hover:text-cream",
                     )}
                   >
                     {group.label}
@@ -298,12 +300,13 @@ export function Header({
             and toggled with the `hidden` attribute; only one open at a time.
         -------------------------------------------------------------- */}
         <div className="absolute inset-x-0 top-full max-lg:hidden">
-          {nav.map((group, index) => (
+          {nav.map((group, index) =>
+            !group.links?.length || !group.featured ? null : (
             <div
               key={group.label}
               id={`megamenu-${index}`}
               hidden={openMenu !== index}
-              className="megapanel border-b border-ink/10 bg-off-white/97 shadow-2xl backdrop-blur-xl"
+              className="megapanel border-b border-ink/10 bg-white/97 shadow-2xl backdrop-blur-xl"
             >
               <div className="mx-auto grid max-w-[1480px] grid-cols-[0.9fr_1px_1.5fr] gap-12 px-5 py-12 sm:px-8 lg:px-12">
                 <ul className="m-0 list-none space-y-1 p-0">
@@ -314,7 +317,7 @@ export function Header({
                         onClick={closeAll}
                         className="group/link block py-2 text-sm text-ink/65 transition-colors duration-300 hover:text-ink"
                       >
-                        <span className="border-b border-transparent pb-0.5 transition-colors duration-300 group-hover/link:border-gold-ink">
+                        <span className="border-b border-transparent pb-0.5 transition-colors duration-300 group-hover/link:border-blue">
                           {link.label}
                         </span>
                       </Link>
@@ -325,7 +328,7 @@ export function Header({
                       <Link
                         href={group.viewAll.href}
                         onClick={closeAll}
-                        className="link-quiet text-gold-ink"
+                        className="link-quiet text-blue"
                       >
                         {group.viewAll.label}
                       </Link>
@@ -367,7 +370,7 @@ export function Header({
                             />
                           )}
                         </div>
-                        <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/80 transition-colors duration-300 group-hover/card:text-gold-ink">
+                        <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/80 transition-colors duration-300 group-hover/card:text-blue">
                           {item.label}
                         </p>
                       </Link>
@@ -376,7 +379,8 @@ export function Header({
                 </div>
               </div>
             </div>
-          ))}
+            ),
+          )}
         </div>
       </div>
 
@@ -386,23 +390,46 @@ export function Header({
       {drawerOpen && (
         <div
           id="mobile-menu"
-          className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-ink/10 bg-off-white/97 px-6 pb-16 pt-6 text-ink backdrop-blur-xl lg:hidden"
+          className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-ink/10 bg-white/97 px-6 pb-16 pt-6 text-ink backdrop-blur-xl lg:hidden"
         >
           <nav aria-label={ui.mobileNavigation} className="mx-auto flex max-w-xl flex-col">
-            {nav.map((group, index) => (
+            {nav.map((group, index) => {
+              const links = group.links;
+              const featured = group.featured;
+
+              // Menu-less groups are a single row that navigates, not an
+              // accordion with nothing to unfold.
+              if (!links?.length) {
+                return (
+                  <div key={group.label} className="border-b border-ink/10">
+                    <Link
+                      href={group.href}
+                      onClick={closeAll}
+                      className="flex w-full items-center justify-between py-5 text-left font-serif text-2xl uppercase tracking-[0.14em] text-ink/85 transition-colors duration-300 hover:text-blue"
+                    >
+                      {group.label}
+                      <span aria-hidden="true" className="text-blue">
+                        &rarr;
+                      </span>
+                    </Link>
+                  </div>
+                );
+              }
+
+              return (
               <div key={group.label} className="border-b border-ink/10">
                 <button
                   type="button"
                   aria-expanded={expandedGroup === index}
                   aria-controls={`drawer-group-${index}`}
                   onClick={() => setExpandedGroup(expandedGroup === index ? null : index)}
-                  className="flex w-full items-center justify-between py-5 text-left font-serif text-2xl uppercase tracking-[0.14em] text-ink/85 transition-colors duration-300 hover:text-gold-ink"
+                  className="flex w-full items-center justify-between py-5 text-left font-serif text-2xl uppercase tracking-[0.14em] text-ink/85 transition-colors duration-300 hover:text-blue"
                 >
                   {group.label}
                   <span
                     aria-hidden="true"
                     className={clsx(
-                      "text-gold-ink transition-transform duration-300",
+                      "text-blue transition-transform duration-300",
                       expandedGroup === index && "rotate-45",
                     )}
                   >
@@ -411,7 +438,7 @@ export function Header({
                 </button>
                 <div id={`drawer-group-${index}`} hidden={expandedGroup !== index} className="pb-6">
                   <ul className="m-0 list-none space-y-1 p-0">
-                    {group.links.map((link) => (
+                    {links.map((link) => (
                       <li key={`${link.label}-${link.href}`}>
                         <Link
                           href={link.href}
@@ -427,14 +454,14 @@ export function Header({
                         Partnerships features three of its own categories, so
                         without this the drawer lists Cognac, Gin and Rum
                         twice. */}
-                    {group.featured.items
-                      .filter((item) => !group.links.some((link) => link.href === item.href))
+                    {featured?.items
+                      .filter((item) => !links.some((link) => link.href === item.href))
                       .map((item) => (
                         <li key={item.label}>
                           <Link
                             href={item.href}
                             onClick={closeAll}
-                            className="block py-2 text-sm text-gold-ink/85 transition-colors duration-300 hover:text-gold-ink"
+                            className="block py-2 text-sm text-blue/85 transition-colors duration-300 hover:text-blue"
                           >
                             {item.label}
                           </Link>
@@ -443,12 +470,13 @@ export function Header({
                   </ul>
                 </div>
               </div>
-            ))}
+              );
+            })}
 
             <Link
-              href={localizePath(locale, "/#contact")}
+              href={localizePath(locale, "/contact")}
               onClick={closeAll}
-              className="btn btn-accent mt-8 self-start"
+              className="btn btn-blue mt-8 self-start"
             >
               {ui.startAProject}
             </Link>

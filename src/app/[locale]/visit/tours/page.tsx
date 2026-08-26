@@ -41,12 +41,12 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
   return (
     <>
       <PageHero title={page.title} intro={[page.intro]}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-off-white/45">
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
           {page.note}
         </p>
       </PageHero>
 
-      <section aria-label={page.title} className="bg-off-white text-ink">
+      <section aria-label={page.title} className="bg-white text-ink">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           {items.map((experience, index) => (
             <ExperienceSection
@@ -61,7 +61,7 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
       </section>
 
       {/* Cross-link */}
-      <section className="bg-off-white py-20 text-ink sm:py-24">
+      <section className="bg-cream py-20 text-ink sm:py-24">
         <div className="mx-auto max-w-[1320px] px-6 text-center lg:px-10">
           <Reveal>
             <h2 className="display display-md mt-4 uppercase tracking-[0.06em]">
@@ -74,7 +74,7 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
               >
                 {page.crossLinkCta}
               </Link>
-              <Link href={localizePath(locale, "/visit")} className="link-quiet text-gold-ink">
+              <Link href={localizePath(locale, "/visit")} className="link-quiet text-blue">
                 {page.crossLinkBack}
               </Link>
             </div>

@@ -47,15 +47,15 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
     <>
       <PageHero title={c.partnerships.title} intro={c.partnerships.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href={localizePath(locale, "/#contact")} className="btn btn-gold">
+          <Link href={localizePath(locale, "/contact")} className="btn btn-cream">
             {c.partnerships.ctaLabel}
           </Link>
         </div>
       </PageHero>
 
-      <section aria-label={c.metadata.partnershipsTitle} className="bg-off-white py-20 text-ink sm:py-28">
+      <section aria-label={c.metadata.partnershipsTitle} className="bg-white py-20 text-ink sm:py-28">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-          <ul className="m-0 grid list-none gap-x-10 gap-y-14 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="m-0 grid list-none gap-x-10 gap-y-14 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {families.map((family, index) => {
               const count = getBrandsInFamily(locale, family.slug).length;
               // `h-full` is carried down through the Reveal wrapper so the
@@ -84,7 +84,7 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
                       {/* The count is the honest measure of the category — it
                           tells a trade visitor how deep the house's range runs
                           before they click. */}
-                      <p className="eyebrow mt-2 text-gold-ink">
+                      <p className="eyebrow mt-2 text-blue">
                         {pluralize(
                           c.partnerships.brandCountOne,
                           c.partnerships.brandCountOther,
@@ -92,7 +92,7 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
                         )}
                       </p>
                       <p className="mt-3 flex-1 text-sm leading-7 text-ink/60">{family.summary}</p>
-                      <span className="link-quiet mt-5 text-gold-ink">
+                      <span className="link-quiet mt-5 text-blue">
                         {fill(c.partnerships.explore, { name: family.name })}
                       </span>
                     </Link>

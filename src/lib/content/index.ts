@@ -5,15 +5,25 @@ import { fr } from "@/lib/content/fr";
 import { es } from "@/lib/content/es";
 import {
   brandAssets,
+  experienceImages,
   familyAssets,
   featurePanelAssets,
+  groupFigures,
+  houseBrandAssets,
   knowHowFigures,
+  leaderPortraits,
   serviceSlugs,
   tastingSlugs,
+  tastingSenses,
   tourSlugs,
   type Brand,
+  type BrandAward,
   type Experience,
+  type FeatureFigure,
   type FeaturePanel,
+  type HouseBrand,
+  type LabelledAward,
+  type LeaderKey,
   type NavGroup,
   type Service,
   type SpiritFamily,
@@ -59,6 +69,128 @@ export function getBrandsInFamily(locale: Locale, family: SpiritFamilySlug): Bra
   return getBrands(locale).filter((brand) => brand.family === family);
 }
 
+
+/**
+ * The house's own bottles, with the brochure's long-form copy attached.
+ *
+ * Driven off `houseBrandAssets` rather than the combined list, so `asset.slug`
+ * is the narrow nine-member union and `c.houseBrands.items[...]` resolves to a
+ * single uniform shape.
+ */
+export function getHouseBrands(locale: Locale, family?: SpiritFamilySlug): HouseBrand[] {
+  const c = getContent(locale);
+  const labels = c.houseBrands.labels;
+
+  return houseBrandAssets
+    .filter((asset) => !family || asset.family === family)
+    .map((asset) => {
+      const copy = c.houseBrands.items[asset.slug];
+      const figures: readonly FeatureFigure[] = ("figures" in asset ? asset.figures : []).map(
+        (figure) => ({
+          value: figure.value,
+          suffix: figure.suffix,
+          label: labels.figures[figure.key],
+        }),
+      );
+      // An award tile reading just "92 points" with no competition behind it
+      // reads as invented. The unattributed scores stay in site.ts under their
+      // TODO(confirm) and return here once the house names the panel.
+      // Typed as the broad award shape on purpose: the inferred filter
+      // predicate would otherwise erase the score branch below, which must
+      // survive for the day a score arrives with its competition named.
+      const attributed: readonly BrandAward[] = ("awards" in asset ? asset.awards : []).filter(
+        (award) => award.rank !== "score" || "competition" in award,
+      );
+      const awards: readonly LabelledAward[] = attributed.map(
+        (award) => ({
+          ...award,
+          label:
+            award.rank === "score"
+              ? fill(labels.ranks.score, { score: award.score ?? 0 })
+              : labels.ranks[award.rank],
+        }),
+      );
+
+      return {
+        ...asset,
+        ...c.brands[asset.slug],
+        heritage: copy.heritage,
+        story: copy.story,
+        storyFrameLabel: copy.storyFrameLabel,
+        notes: tastingSenses.map((sense) => ({ sense, note: copy.notes[sense] })),
+        figures,
+        awards,
+      };
+    });
+}
+
+/** The partner bottles of one category — the house's own render separately. */
+export function getPartnerBrandsInFamily(locale: Locale, family: SpiritFamilySlug): Brand[] {
+  return getBrands(locale).filter(
+    (brand) => brand.family === family && brand.origin === "partner",
+  );
+}
+
+export type BrandCardCta = {
+  href: string;
+  label: string;
+  ariaLabel: string;
+  /** Producer pages open in a new tab; in-site anchors do not. */
+  external: boolean;
+};
+
+/**
+ * One decision point for both card consumers — the rail and the grid — so the
+ * two can never disagree about where a card leads.
+ *
+ * A partner bottle sends you to the producer's own page. A house bottle has no
+ * such page: its story sits on the category page, so the card scrolls there
+ * and says "read the story" rather than promising a spec sheet elsewhere.
+ */
+export function getBrandCta(
+  locale: Locale,
+  brand: Brand,
+  labels: Content["partnerships"],
+): BrandCardCta | undefined {
+  if (brand.url) {
+    return {
+      href: brand.url,
+      external: true,
+      label: labels.viewDetails,
+      ariaLabel: fill(labels.viewDetailsAria, { name: brand.name }),
+    };
+  }
+  if (brand.origin === "house") {
+    return {
+      href: localizePath(locale, `/partnerships/${brand.family}#brand-${brand.slug}`),
+      external: false,
+      label: labels.readTheStory,
+      ariaLabel: fill(labels.readTheStoryAria, { name: brand.name }),
+    };
+  }
+  return undefined;
+}
+
+/** The two people who speak for the house, for the leadership pair on /about. */
+export function getLeaders(locale: Locale) {
+  const c = getContent(locale);
+  return (Object.keys(leaderPortraits) as LeaderKey[]).map((key) => ({
+    key,
+    portrait: leaderPortraits[key],
+    ...c.leadership.leaders[key],
+  }));
+}
+
+/** Sawnee Group figures, values from site.ts and labels from the dictionary. */
+export function getGroupFigures(locale: Locale): FeatureFigure[] {
+  const labels = getContent(locale).group.figureLabels;
+  return groupFigures.map((figure) => ({
+    value: figure.value,
+    suffix: figure.suffix,
+    label: labels[figure.key],
+  }));
+}
+
 export function getSpiritFamilies(locale: Locale): SpiritFamily[] {
   const c = getContent(locale);
   return familyAssets.map((asset) => ({ ...asset, ...c.families[asset.slug] }));
@@ -100,10 +232,18 @@ export function getFeaturePanels(locale: Locale): FeaturePanel[] {
       ...asset,
       title: isKnowHow ? knowHow.title : (copy as { title: string }).title,
       body: isKnowHow ? knowHow.body : (copy as { body: string }).body,
-      cta: { label: copy.ctaLabel, href: localizePath(locale, "/#contact") },
+      cta: { label: copy.ctaLabel, href: localizePath(locale, "/contact") },
       frameLabel: copy.frameLabel,
       figures: isKnowHow ? knowHow.figures : undefined,
-      details: isKnowHow ? knowHow.details : undefined,
+      // The bespoke panel carries the six métiers: the private-label and
+      // white-label service list that had sat fully translated but unrendered
+      // in `savoirFaire` since the redesign.
+      details: isKnowHow
+        ? knowHow.details
+        : getServices(locale).map((service) => ({
+            label: service.title,
+            body: service.body,
+          })),
     };
   });
 }
@@ -114,6 +254,7 @@ export function getTours(locale: Locale): Experience[] {
     slug,
     ...c.tours.items[slug],
     price: c.experiences.onEnquiry,
+    image: experienceImages[slug],
   }));
 }
 
@@ -123,6 +264,7 @@ export function getTastings(locale: Locale): Experience[] {
     slug,
     ...c.tastings.items[slug],
     price: c.experiences.onEnquiry,
+    image: experienceImages[slug],
   }));
 }
 
@@ -136,20 +278,28 @@ export function getNav(locale: Locale): NavGroup[] {
   const path = (p: string) => localizePath(locale, p);
   const families = getSpiritFamilies(locale);
 
-  const aboutHrefs = ["/#bespoke", "/#know-how", "/#timeline", "/#president", "/#know-how"];
-  const visitHrefs = ["/visit", "/visit/tours", "/visit/tastings", "/visit#book", "/visit#practical"];
-  const contactHrefs = ["/#contact", "/#contact", "/#contact", "/visit#book"];
+  const aboutHrefs = ["/#bespoke", "/#know-how", "/about", "/#leadership", "/#timeline"];
+  // "#practical" stays on the page itself; the dropdown stops listing it.
+  const visitHrefs = ["/visit", "/visit/tours", "/visit/tastings", "/visit#book"];
 
   return [
     {
       label: c.nav.about.label,
-      href: path("/#know-how"),
+      href: path("/about"),
       links: c.nav.about.links.map((label, index) => ({ label, href: path(aboutHrefs[index]) })),
       featured: {
         heading: c.nav.about.featuredHeading,
         items: [
-          { ...c.nav.about.featured[0], href: path("/#know-how") },
-          { ...c.nav.about.featured[1], href: path("/#timeline") },
+          {
+            ...c.nav.about.featured[0],
+            href: path("/#know-how"),
+            image: "/media/estate/nav-production.webp",
+          },
+          {
+            ...c.nav.about.featured[1],
+            href: path("/#timeline"),
+            image: "/media/estate/nav-heritage.webp",
+          },
         ],
       },
       viewAll: { label: c.nav.about.viewAll, href: path("/#know-how") },
@@ -189,23 +339,28 @@ export function getNav(locale: Locale): NavGroup[] {
       featured: {
         heading: c.nav.visit.featuredHeading,
         items: [
-          { ...c.nav.visit.featured[0], href: path("/visit/tours#cellar-and-distillery-tour") },
-          { ...c.nav.visit.featured[1], href: path("/visit/tastings#signature-tasting") },
+          {
+            ...c.nav.visit.featured[0],
+            href: path("/visit/tours#cellar-and-distillery-tour"),
+            image: "/media/estate/nav-tour.webp",
+          },
+          {
+            ...c.nav.visit.featured[1],
+            href: path("/visit/tastings#signature-tasting"),
+            // A vineyard shot rather than the still house: the tasting card should
+            // read as fruit and place, and a fresh filename dodges the four-hour
+            // image cache that a same-name swap would sit behind.
+            image: "/media/estate/nav-tasting-vines.webp",
+          },
         ],
       },
       viewAll: { label: c.nav.visit.viewAll, href: path("/visit") },
     },
     {
+      // No `links`/`featured`: Contact is a plain link straight to the
+      // enquiry form, so the header gives it no panel.
       label: c.nav.contact.label,
-      href: path("/#contact"),
-      links: c.nav.contact.links.map((label, index) => ({
-        label,
-        href: path(contactHrefs[index]),
-      })),
-      featured: {
-        heading: c.nav.contact.featuredHeading,
-        items: [{ ...c.nav.contact.featured[0], href: path("/#contact") }],
-      },
+      href: path("/contact"),
     },
   ];
 }

@@ -14,16 +14,17 @@ import type { Content } from "@/lib/content/en";
 export const es = {
   hero: {
     eyebrow: "Distillerie Vinet-Puranik · Cognac, Francia",
-    support: "Expertos en espirituosos a medida",
+    support: "Una herencia francesa. Una presencia global.",
     primaryCtaLabel: "Iniciar un proyecto",
-    posterLabel: "Apertura — bodega de barricas, travelling lento",
+    posterLabel: "Apertura: bodega de barricas, travelling lento",
     scroll: "Desplazar",
   },
 
   maisonStatement: {
     kicker: "La casa",
-    line: "Un espirituoso empieza mucho antes del alambique: empieza con una conversación.",
-    body: "Vinet-Puranik escucha primero: su mercado, su ambición, sus limitaciones. Después la casa compone —uva y cereal, barrica y tiempo— hasta que el líquido responde.",
+    line: "De la tierra a la copa. De la viña a la botella. Su sueño hecho botella.",
+    body: "Vinet-Puranik es una destilería de rica herencia y raíces profundas. No vendemos solo productos: ofrecemos una experiencia, un modo de vida. Elaboramos cada producto en la destilería: de la viña a las bodegas, pasando por la destilación, hasta el embotellado.",
+    origin: "100 % hecho en Francia",
   },
 
   savoirFaire: {
@@ -79,91 +80,345 @@ export const es = {
     },
   },
 
+  // La página « nuestra historia ». Los `marks` son las palabras clave de la
+  // casa; cada una lleva una frase de apoyo, para que la lista sea una
+  // declaración y no un listado suelto.
+  about: {
+    title: "Nuestra historia",
+    metaDescription:
+      "Una destilería independiente en la región de Cognac: saber hacer secular, el arte de la destilación y espirituosos premium elaborados en Francia, de la viña a la botella.",
+    intro: [
+      "Vinet-Puranik es una destilería de rica herencia y raíces profundas: dos familias, una casa y un patio en Brie-sous-Archiac donde cada etapa de un espirituoso ocurre bajo el mismo techo.",
+      "Una casa no es un catálogo. Lo que ofrecemos es una experiencia y un modo de vida: su proyecto acompañado desde la primera conversación hasta la caja sellada.",
+    ],
+    projectCta: "Iniciar un proyecto",
+    visitCta: "Visitar la finca",
+    marksLabel: "Lo que defiende la casa",
+    marks: [
+      {
+        label: "Destilería independiente",
+        body: "Una casa en Brie-sous-Archiac, en manos de las dos familias que la levantaron.",
+      },
+      {
+        label: "Saber hacer secular",
+        body: "Alambiques, bodegas y mesas de ensamblaje trabajados a mano desde 1777.",
+      },
+      {
+        label: "El arte de la destilación",
+        body: "Uva y cereal, barrica y tiempo: compuestos hasta que el líquido responde al brief.",
+      },
+      {
+        label: "Herencia francesa",
+        body: "Viñedos de Fins Bois y Petite Champagne, una finca charentesa y las appellations que la acompañan.",
+      },
+      {
+        label: "Productos premium y de lujo",
+        body: "Espirituosos vestidos y acabados para la gama alta, tanto en series cortas como en grandes volúmenes.",
+      },
+    ],
+    skillsLabel: "Nuestras competencias",
+    skills: [
+      {
+        title: "Calidad",
+        body: "Una búsqueda permanente de mejora, del espirituoso y el ensamblaje a la caja terminada.",
+      },
+      {
+        title: "Fiabilidad",
+        body: "Volúmenes, plazos y pliegos cumplidos: líneas flexibles y un único interlocutor.",
+      },
+      {
+        title: "Exportación mundial",
+        body: "Estatus OEA, aduanas y etiquetado gestionados para socios en más de veinte países.",
+      },
+    ],
+    crossLinkTitle: "Seguir por la casa",
+    crossLinkHistory: "Nuestra cronología",
+    crossLinkPresident: "Unas palabras de la dirección",
+    crossLinkPartnerships: "Las marcas que moldeamos",
+  },
+
   collection: {
     kicker: "La colección",
     title: "Marcas moldeadas por la casa",
     intro:
-      "Espirituosos creados para y con nuestros socios: la prueba de un registro amplio, entre categorías, barricas y mercados.",
+      "La gama propia de la casa, y las marcas de distribución que moldea para sus socios: la prueba de un registro amplio, entre categorías, barricas y mercados.",
     distributionNote: "Distribuido en Francia por Mähler-Besse.",
     allProducts: "Todos nuestros productos",
   },
 
   brands: {
+    "puranique-vodka": {
+      category: "Vodka ultra-premium · nueve destilaciones",
+      descriptor:
+        "Trigo francés fino, destilado nueve veces y filtrado con precisión: un perfil rotundo y sutil, redondo en boca, nítido en el final.",
+      frameLabel: "Packshot: Puranique Vodka, etiqueta tricolor",
+    },
+    "puranique-cognac-vs": {
+      category: "Cognac V.S · dos años mínimo",
+      descriptor:
+        "Joven y expresivo, envejecido al menos dos años en roble francés: fruta de huerta sobre un carácter suave y accesible.",
+      frameLabel: "Packshot: Puranique Cognac V.S",
+    },
+    "puranique-cognac-vsop": {
+      category: "Cognac V.S.O.P · cuatro años mínimo",
+      descriptor:
+        "Eaux-de-vie seleccionadas a mano y envejecidas al menos cuatro años, algunas mucho más: fruta seca, vainilla y especia sobre un final largo.",
+      frameLabel: "Packshot: Puranique Cognac V.S.O.P",
+    },
+    "jus-d-manguier": {
+      category: "Licor de mango",
+      descriptor:
+        "Mangos Alphonso auténticos trabajados en Cognac, sin aditivos artificiales: jugoso, equilibrado e inconfundiblemente tropical.",
+      frameLabel: "Packshot: licor de mango Jus d'Manguier",
+    },
+    mangeaux: {
+      category: "Licor de mango sobre cognac",
+      descriptor:
+        "Una base de cognac premiada infusionada con mango Alphonso: ámbar brillante, sobre fruta madura, corteza confitada y pan de especias.",
+      frameLabel: "Packshot: licor de cognac y mango Mangeaux",
+    },
+    "puranique-pineau-blanc": {
+      category: "Pineau des Charentes · Blanco",
+      descriptor:
+        "Mosto de montils y ugni blanc ensamblado con cognac del viñedo familiar: generoso, vivo y ligeramente cítrico.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Blanco",
+    },
+    "puranique-pineau-rouge": {
+      category: "Pineau des Charentes · Tinto",
+      descriptor:
+        "Mosto de merlot y cabernet sauvignon con eau-de-vie de Cognac: vivo y redondo, sobre frutos del bosque y de hueso.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Tinto",
+    },
+    "montlieu-xo": {
+      category: "Brandy X.O · tres años mínimo",
+      descriptor:
+        "Una selección cuidada de uva, destilada en columna y envejecida al menos tres años en roble: elegante, equilibrado, aromático.",
+      frameLabel: "Packshot: brandy Montlieu X.O",
+    },
+    "glen-mac-clay": {
+      category: "Blended Scotch Whisky · tres años mínimo",
+      descriptor:
+        "Seleccionado en el sur de las Highlands, ensamblado con una malta sin turba y madurado en barrica de Bourbon: pera, manzana y uva.",
+      frameLabel: "Packshot: Glen Mac Clay Blended Scotch Whisky",
+    },
     "hold-up": {
       category: "Ginebra · 43 %",
       descriptor:
         "Ginebra artesanal destilada en alambique de cobre: el enebro se encuentra con el haba tonka, el anís y un ligero filo cítrico.",
-      frameLabel: "Packshot — botella de ginebra Hold Up",
+      frameLabel: "Packshot: botella de ginebra Hold Up",
     },
     "palisson-batch-01": {
       category: "Single malt francés · 43 %",
       descriptor:
         "Single malt charentés de doble destilación, envejecido al menos tres años en roble del Limousin que antes contuvo cognac.",
-      frameLabel: "Packshot — single malt Palisson Batch 01",
+      frameLabel: "Packshot: single malt Palisson Batch 01",
     },
     "brigitte-et-louise-blanc": {
       category: "Aperitivo · 17,5 %",
       descriptor:
         "Mosto de uva ensamblado con eau-de-vie de cognac de una finca familiar: fruta y flores blancas, amplio y redondo.",
-      frameLabel: "Packshot — Brigitte et Louise Blanc",
+      frameLabel: "Packshot: Brigitte et Louise Blanc",
     },
     "brigitte-et-louise-rouge": {
       category: "Aperitivo · 17,5 %",
       descriptor:
         "Mosto de merlot y cabernet sauvignon con eau-de-vie de cognac: vivo y redondo, sobre sotobosque y fruta de hueso.",
-      frameLabel: "Packshot — Brigitte et Louise Rouge",
+      frameLabel: "Packshot: Brigitte et Louise Rouge",
     },
     "maca-rum": {
       category: "Ron especiado",
       descriptor:
         "Destilado en Mauricio, envejecido y afinado en Francia: canela envolvente y el misterio redondo del haba tonka.",
-      frameLabel: "Packshot — botella de ron MACA",
+      frameLabel: "Packshot: botella de ron MACA",
     },
     tijuca: {
       category: "Ron blended · Brasil",
       descriptor:
         "Cobrizo con reflejos dorados; la madera y las especias dejan paso a vainilla, pimienta y miel, con final de coco.",
-      frameLabel: "Packshot — ron brasileño TIJUCA",
+      frameLabel: "Packshot: ron brasileño TIJUCA",
     },
     "gigi-en-provence": {
       category: "Ginebra ecológica · 44 %",
       descriptor:
         "Ginebra ecológica provenzal: violeta y enebro sobre limón, con romero, cilantro y una nota discreta de oliva.",
-      frameLabel: "Packshot — ginebra Gigi en Provence",
+      frameLabel: "Packshot: ginebra Gigi en Provence",
     },
     "patte-blanche": {
       category: "Cognac ecológico",
       descriptor:
         "Cognac certificado ECOCERT, destilado a mano en Arthenac sin insumos artificiales, de la viña a la copa: VS, VSOP y XO.",
-      frameLabel: "Packshot — cognac ecológico Patte Blanche",
+      frameLabel: "Packshot: cognac ecológico Patte Blanche",
     },
     sephina: {
       category: "Spirit drink · 30 %",
       descriptor:
         "Ensamblado en la casa: 56 % de cognac VSOP con 44 % de Pineau des Charentes. Ciruela pasa, frutos secos, nuez y roble tostado.",
-      frameLabel: "Packshot — spirit drink Sephina",
+      frameLabel: "Packshot: spirit drink Sephina",
     },
     gin40: {
       category: "Ginebra · 50 cl",
       descriptor:
         "Destilada artesanalmente en el suroeste de Francia con influencia de Las Landas: enebro, pino y mora silvestre.",
-      frameLabel: "Packshot — botella GIN40",
+      frameLabel: "Packshot: botella GIN40",
     },
     "nade-vodka-2022": {
       category: "Vodka · 40 %",
       descriptor:
         "Destilado a partir de uvas bordelesas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
-      frameLabel: "Packshot — Nade Vodka añada 2022",
+      frameLabel: "Packshot: Nade Vodka añada 2022",
     },
     "nade-vodka-2019": {
       category: "Vodka · 40 %",
       descriptor:
         "Reposado cuatro meses en barricas de vino tinto de Fronsac: levemente rosado con matices dorados, en menos de 250 botellas numeradas.",
-      frameLabel: "Packshot — Nade Vodka añada 2019",
+      frameLabel: "Packshot: Nade Vodka añada 2019",
+    },
+  },
+
+  houseBrands: {
+    labels: {
+      houseMark: "Una marca Vinet-Puranik",
+      heritage: "Herencia y oficio",
+      story: "La historia",
+      tasting: "Notas de cata",
+      awards: "Distinciones",
+      senses: { eye: "Vista", nose: "Nariz", palate: "Boca" },
+      ranks: { gold: "Oro", silver: "Plata", bronze: "Bronce", score: "{score} puntos" },
+      figures: { distillations: "destilaciones", ageing: "años en roble, mínimo" },
+      ctaLabel: "Iniciar un proyecto",
+      brandSiteLabel: "puraniques.com",
+    },
+    items: {
+      "puranique-vodka": {
+        heritage:
+          "Arraigada en las tradiciones destiladoras del suroeste de Francia, Puranique Vodka refleja generaciones de oficio y cuidado. Elaborada con trigo francés fino y destilada nueve veces, cada botella lleva la mano del maestro destilador.",
+        story:
+          "Cada botella empieza por el mejor trigo francés, elegido por su pureza. Bajo la guía de nuestro maestro de bodega atraviesa una destilación exigente repetida nueve veces y después un filtrado cuidadoso. El resultado es un perfil rotundo y sutil: redondo en boca, nítido en el final. Para servir sola o en el centro de un cóctel.",
+        notes: {
+          eye: "Cristalina y limpia",
+          nose: "Fresca y agradable",
+          palate: "Redonda, suave y delicada",
+        },
+        storyFrameLabel: "Ambiente: Puranique Vodka servida con hielo y cítricos",
+      },
+      "puranique-cognac-vs": {
+        heritage:
+          "Arraigado en las tradiciones de Cognac, Puranique V.S refleja el espíritu esencial de su origen. Envejecido en roble francés un mínimo de dos años, cada lote lo guían maestros de bodega fieles a técnicas contrastadas, para un cognac claro y expresivo.",
+        story:
+          "Un cognac joven y vibrante, elaborado en la región de Cognac y envejecido al menos dos años en barrica de roble francés. El ensamblaje destaca la fruta crujiente y un carácter suave y accesible, tan cómodo en coctelería como servido solo. Su frescura y su claridad son la cara audaz del cognac contemporáneo.",
+        notes: {
+          eye: "Fruta de huerta fresca",
+          nose: "Vainilla y roble ligero",
+          palate: "Final suave y accesible",
+        },
+        storyFrameLabel: "Ambiente: Puranique Cognac V.S en la mesa de un café parisino",
+      },
+      "puranique-cognac-vsop": {
+        heritage:
+          "Elaborado en la región de Cognac, Puranique V.S.O.P bebe de una reserva profunda de eaux-de-vie seleccionadas a mano. Envejecido al menos cuatro años, con ensamblajes más viejos que le suman complejidad, se afina mediante una crianza y un ensamblaje meticulosos.",
+        story:
+          "Una expresión refinada envejecida al menos cuatro años, con eaux-de-vie seleccionadas que han madurado mucho más tiempo en roble. Destilado en Cognac, revela capas de fruta seca, vainilla y especia sobre un final largo y suave: herencia, paciencia y profundidad en cada sorbo.",
+        notes: {
+          eye: "Fruta seca y miel",
+          nose: "Vainilla, roble tostado, un punto de especia",
+          palate: "Final redondo y persistente",
+        },
+        storyFrameLabel: "Ambiente: Puranique Cognac V.S.O.P servido en copa balón",
+      },
+      "jus-d-manguier": {
+        heritage:
+          "Elaborado en la histórica región de Cognac, Jus d'Manguier une la tradición con la elegancia tropical. Cada lote parte de mangos Alphonso auténticos, conocidos por su dulzor vibrante y su aroma intenso, trabajados con precisión y sin aditivos artificiales.",
+        story:
+          "Un licor de mango que toma su sabor del mango Alphonso, apreciado por su dulzor, su riqueza y su profundidad. Fruta natural, destilación francesa, nada artificial. Para servir frío, con hielo o como base de coctelería.",
+        notes: {
+          eye: "Mango tropical jugoso",
+          nose: "Dulzor equilibrado, chispa cítrica",
+          palate: "Final nítido y refrescante",
+        },
+        storyFrameLabel: "Ambiente: Jus d'Manguier servido largo con hielo",
+      },
+      mangeaux: {
+        heritage:
+          "Mangeaux empieza como cognac. Cada lote parte de la base de cognac de la casa y recibe después una lenta infusión de mango Alphonso: el oficio del cognac llevando una fruta tropical.",
+        story:
+          "Nacido de la idea de unir el dominio de la destilación francesa con el sabor tropical, Mangeaux se asienta sobre un cognac premiado, distinguido con una medalla de plata en el concurso New York Spirits & Wine. Sobre esa base infusionamos los mangos Alphonso más apreciados, para un licor ámbar brillante cuyas capas se despliegan sorbo a sorbo.",
+        notes: {
+          eye: "Color ámbar brillante",
+          nose: "Aromas frutales con vainilla y cítricos",
+          palate: "Textura sutil y suave: mango maduro, fruta confitada, pan de especias",
+        },
+        storyFrameLabel: "Ambiente: Mangeaux en copa, con mango y lima",
+      },
+      "puranique-pineau-blanc": {
+        heritage:
+          "El Pineau des Charentes Puranique es un aperitivo francés obtenido ensamblando mosto de uva con cognac del viñedo familiar, en el corazón de la zona de producción delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
+        story:
+          "El Blanco se elabora con las variedades montils y ugni blanc. Ligero y fácil de beber, se disfruta frío, con hielo, en combinado o en coctelería.",
+        notes: {
+          eye: "Color oro intenso",
+          nose: "Intenso: fruta y notas de flores blancas",
+          palate: "Generoso, vivo, suave y ligeramente cítrico, con un final espléndido",
+        },
+        storyFrameLabel: "Ambiente: Pineau blanco servido frío a la hora del aperitivo",
+      },
+      "puranique-pineau-rouge": {
+        heritage:
+          "El Pineau des Charentes Puranique es un aperitivo francés obtenido ensamblando mosto de uva con cognac del viñedo familiar, en el corazón de la zona de producción delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
+        story:
+          "El Tinto ensambla mosto de merlot y cabernet sauvignon con eau-de-vie de Cognac. Ligero y fácil de beber, se disfruta frío, con hielo, en combinado o en coctelería.",
+        notes: {
+          eye: "Color rubí brillante",
+          nose: "Aromático, a la vez amaderado y frutal",
+          palate: "Vivo y redondo sobre frutos del bosque y de hueso, con un final rico y sostenido",
+        },
+        storyFrameLabel: "Ambiente: Pineau tinto con hielo, acompañado de embutidos",
+      },
+      "montlieu-xo": {
+        heritage:
+          "Este brandy auténtico nace de una selección muy cuidada de uva. Destilado en columna, Montlieu X.O envejece después en barrica de roble un mínimo de tres años.",
+        story:
+          "Envejecido en barrica de roble, Montlieu X.O se recomienda como digestivo, solo o con hielo. Seduce por su elegancia, su equilibrio y sus aromas.",
+        notes: {
+          eye: "Color ámbar",
+          nose: "Notas delicadas de almendra y vainilla",
+          palate: "Bien equilibrado y suave",
+        },
+        storyFrameLabel: "Ambiente: Montlieu X.O servido en una mesa de celebración",
+      },
+      "glen-mac-clay": {
+        heritage:
+          "Glen Mac Clay Blended Scotch Whisky se seleccionó con cuidado en el sur de las Highlands. Compuesto principalmente por trigo y malta destilados en columna, se ensambla después con una blended malt sin turba de la misma destilería, destilada en alambique de cobre, y madura en barrica de Bourbon un mínimo de tres años.",
+        story:
+          "Este Scotch se elaboró en la más pura tradición: destilado con pasión y envejecido varios años en barrica de roble. Para disfrutarlo largo, con agua con gas o ginger beer.",
+        notes: {
+          eye: "Brillante, con ligeros reflejos dorados",
+          nose: "Notas frutales de pera, manzana y uva",
+          palate: "Equilibrado y suave, maltoso, sobre una pera refrescante",
+        },
+        storyFrameLabel: "Ambiente: Glen Mac Clay en un paisaje de las Highlands",
+      },
     },
   },
 
   families: {
+    brandy: {
+      name: "Brandy",
+      title: "Brandy",
+      summary: "Brandy de uva destilado en columna y envejecido en roble: fuera de la denominación cognac, por diseño.",
+      intro: [
+        "Un brandy nacido de una selección cuidada de uva, destilado en columna y no en el alambique charentais que exige la denominación. Método distinto, espirituoso distinto: por eso tiene página propia en lugar de un sitio entre los cognacs.",
+        "Montlieu X.O es el de la casa: al menos tres años en barrica de roble, recomendado como digestivo, solo o con hielo.",
+      ],
+    },
+    liqueurs: {
+      name: "Licores",
+      title: "Licores",
+      summary: "Mango Alphonso trabajado en Cognac: uno sobre la fruta sola, otro sobre una base de cognac.",
+      intro: [
+        "Licores de fruta elaborados en la región de Cognac a partir de mangos Alphonso auténticos, destilados con precisión y sin aditivos artificiales. Cada lote sigue la cosecha, de modo que el carácter se mueve algo de un año a otro.",
+        "Jus d'Manguier es la expresión frutal, para servir frío, con hielo o como base de coctelería. Mangeaux infusiona ese mismo mango en un cognac premiado, para un licor ámbar brillante bastante más profundo.",
+      ],
+    },
     cognac: {
       name: "Cognac",
       title: "Cognac",
@@ -171,6 +426,7 @@ export const es = {
         "La denominación de la casa, trabajada para nuestros socios desde los crus de Brie-sous-Archiac.",
       intro: [
         "La casa se asienta entre los crus de Petite Champagne y Fins Bois, y el cognac es el espirituoso que lleva más tiempo elaborando. Para nuestros socios, eso significa eaux-de-vie seleccionadas y ensambladas según un brief, y después envejecidas en roble del Limousin hasta la calidad que pide el mercado: VS, VSOP, XO.",
+        "Los cognacs Puranique de la casa también figuran aquí: el V.S claro y accesible tras dos años de roble francés, el V.S.O.P extraído de una reserva profunda de eaux-de-vie seleccionadas a mano y envejecido al menos cuatro.",
         "Patte Blanche es su expresión ecológica: certificada por ECOCERT, destilada a mano en Arthenac, sin insumos artificiales de la viña a la copa.",
       ],
     },
@@ -181,7 +437,7 @@ export const es = {
         "Single malt de Francia: doble destilación charentesa, afinado en roble de cognac.",
       intro: [
         "Whisky elaborado a la manera charentesa: doble destilación en los mismos alambiques de cobre que la casa emplea para el cognac, y después reposo en barricas de roble del Limousin que antes lo contuvieron.",
-        "Palisson Batch 01 es la primera salida de ese programa: al menos tres años de madera, embotellado a 43 %.",
+        "Palisson Batch 01 es la primera salida de ese programa: al menos tres años de madera, embotellado a 43 %. Junto a él, la casa embotella Glen Mac Clay, un Blended Scotch seleccionado en el sur de las Highlands y madurado en barrica de Bourbon.",
       ],
     },
     rum: {
@@ -220,6 +476,7 @@ export const es = {
         "Productos de uva de baja graduación: aperitivos franceses y spirit drinks a base de cognac.",
       intro: [
         "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido largo, frío o con hielo.",
+        "El Pineau des Charentes Puranique es el de la casa, blanco y tinto: mosto de uva ensamblado con cognac del viñedo familiar, en el corazón de la zona delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
         "Brigitte et Louise es un aperitivo francés de 17,5 %, blanco y tinto; Sephina es un spirit drink de 30 %: 56 % de cognac VSOP ensamblado con 44 % de Pineau des Charentes y, por tanto, deliberadamente fuera de la denominación cognac.",
       ],
     },
@@ -228,8 +485,8 @@ export const es = {
   partnerships: {
     title: "Colaboraciones",
     intro: [
-      "Cada botella que ve aquí pertenece a otra persona. Importadores, distribuidores y propietarios de marcas llegan a Brie-sous-Archiac con un mercado en mente; la casa compone el líquido, gestiona el vestido y envía la caja terminada con su nombre.",
-      "La colección está agrupada por categorías: la prueba de un registro amplio, de la uva al cereal y a la caña, y el camino más corto hacia lo más parecido al proyecto que tiene en mente.",
+      "Algunas de estas botellas son nuestras. Las demás pertenecen a los importadores, distribuidores y propietarios de marcas que llegaron a Brie-sous-Archiac con un mercado en mente: la casa compone el líquido, gestiona el vestido y envía la caja terminada con su nombre.",
+      "Todo está agrupado por categorías, de modo que la gama de la casa y las marcas de distribución que moldea para otros quedan una al lado de la otra: la prueba de un registro amplio, de la uva al cereal y a la caña, y el camino más corto hacia lo más parecido al proyecto que tiene en mente.",
     ],
     note: "Distribuido en Francia por Mähler-Besse.",
     ctaLabel: "Iniciar un proyecto",
@@ -242,21 +499,33 @@ export const es = {
     backToAll: "Volver a todas las categorías",
     viewDetails: "Ver detalle",
     viewDetailsAria: "Ver el detalle de {name} (se abre en una pestaña nueva)",
+    readTheStory: "Leer la historia",
+    readTheStoryAria: "Leer la historia de {name}",
+    houseHeading: "De la casa",
+    partnerHeading: "Moldeadas para nuestros socios",
     metaDescription:
-      "Marcas moldeadas por Vinet-Puranik para importadores, distribuidores y propietarios de marcas: cognac, whisky, ron, ginebra, vodka y aperitivos, por categoría.",
+      "La gama Vinet-Puranik y las marcas de distribución que la casa moldea para importadores, distribuidores y propietarios de marcas: cognac, brandy, whisky, ron, ginebra, vodka, licores y aperitivos, por categoría.",
   },
 
   featurePanels: {
     bespoke: {
-      title: "A medida desde el primer brief",
-      body: "Receta, líquido, vestido y dosier compuestos en torno a su mercado: una sola casa lleva el proyecto del primer boceto a la caja precintada.",
+      title: "Marca de distribución y espirituosos a medida",
+      body: "Programas de marca de distribución y marca blanca construidos en torno a su mercado: receta, líquido, vestido y dosier, llevados del primer boceto a una caja precintada con su nombre.",
       ctaLabel: "Iniciar un proyecto",
-      frameLabel: "Imagen — mesa del maestro bodeguero, copas en pleno ensamblaje",
+      frameLabel: "Imagen: cuellos de cisne de cobre en la sala de destilación",
     },
     "know-how": {
       ctaLabel: "Iniciar un proyecto",
-      frameLabel: "Imagen — alambiques de cobre en la destilería",
+      frameLabel: "Imagen: alambiques de cobre en la destilería",
     },
+  },
+
+  production: {
+    kicker: "Qué producimos",
+    title: "Uva, cereal y caña, bajo un mismo techo",
+    intro:
+      "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
+    frameLabel: "Imagen: las botellas de cada categoría reunidas en la mesa de cata",
   },
 
   timeline: {
@@ -279,7 +548,7 @@ export const es = {
         body: "Ambas familias deciden trabajar juntas y fusionarse: nace la Distillerie Vinet-Puranik.",
       },
       {
-        year: "2014 — 2017",
+        year: "2014-2017",
         body: "Se abren una nueva planta de embotellado y un almacén, con la instalación de una cuarta línea.",
       },
       {
@@ -293,29 +562,101 @@ export const es = {
     ],
   },
 
+  leadership: {
+    label: "Dirección",
+    homeTitle: "Unas palabras de la dirección",
+    title: "Dos líderes, una casa",
+    intro:
+      "Una destilería familiar en la Charente y un grupo con oficinas en cuatro continentes: la casa la conducen ambos.",
+    leaders: {
+      bruno: {
+        name: "Bruno Delannoy",
+        role: "Director general",
+        quote: "La pasión por encima de todo.",
+        body: [
+          "Después de asumir a principios de los años noventa la empresa familiar transmitida de generación en generación, decidí volcarme en la exportación, y descubrí otro mundo.",
+          "Más de treinta años después, con un equipo vivo, motivado y multicultural, la Distillerie Vinet-Puranik está presente en más de veinte países.",
+        ],
+        portraitAlt: "Bruno Delannoy en la destilería, con una copa de cata en la mano.",
+      },
+      rahul: {
+        name: "Rahul Puranik",
+        role: "Director general del grupo",
+        quote: "Un equipo. Una visión. Un futuro.",
+        body: [
+          "La Distillerie Vinet-Puranik combina la experiencia histórica de la destilación francesa con la red internacional del grupo.",
+          "Queremos reforzar nuestra presencia en los mercados internacionales apoyándonos en la infraestructura y las competencias que ya existen.",
+        ],
+        portraitAlt: "Rahul Puranik, director general del grupo, Distillerie Vinet-Puranik.",
+      },
+    },
+  },
+
+  group: {
+    label: "Nuestro grupo",
+    title: "El Sawnee Group",
+    body: [
+      "El Sawnee Group es una organización multinacional con sede en Atlanta, Estados Unidos. El grupo aporta su experiencia internacional a varios sectores: aviación, inversión inmobiliaria, hostelería, destilación, distribución de bebidas, logística internacional y compras estratégicas.",
+      "Gracias a su cartera diversificada y a su red internacional, el Sawnee Group opera en varias regiones, con oficinas en Francia, Irlanda, Singapur, India y Estados Unidos. Esa presencia le permite unir la experiencia operativa con un acceso estratégico a los mercados.",
+    ],
+    industriesLabel: "Sectores",
+    industries: [
+      "Aviación",
+      "Inversión inmobiliaria",
+      "Hostelería",
+      "Destilación",
+      "Distribución de bebidas",
+      "Logística internacional",
+      "Compras estratégicas",
+    ],
+    officesLabel: "Oficinas",
+    offices: ["Francia", "Irlanda", "Singapur", "India", "Estados Unidos"],
+    mapAlt: "Mapa del mundo con las oficinas y los mercados del Sawnee Group.",
+    figureLabels: {
+      countries: "países atendidos",
+      offices: "oficinas internacionales",
+      industries: "sectores",
+    },
+  },
+
   presidentWord: {
-    title: "Unas palabras del presidente",
+    title: "Unas palabras del director general",
     quote: "La pasión ante todo",
     body: [
       "Tras hacerme cargo de la empresa familiar en 1994, decidí abrirme a la exportación, y descubrí otro mundo. Asia en particular me cautivó, y desde entonces ocupa buena parte de mi vida.",
       "Entendí enseguida que los importadores con los que me reunía querían productos a medida, hechos según sus propios deseos. Daba igual el país: se sentían más implicados en productos que ellos mismos habían ayudado a diseñar.",
-      "Así me convertí en promotor de espirituosos a medida y en especialista en marcas de distribución. Veinticinco años después, con un equipo vivo, motivado y multicultural, Vinet-Puranik está presente en más de veinte países.",
+      "Así me convertí en promotor de espirituosos a medida y en especialista en marcas de distribución. Más de treinta años después, con un equipo vivo, motivado y multicultural, Vinet-Puranik está presente en más de veinte países.",
     ],
     portraitAlt:
-      "Bruno Delannoy, presidente de la Distillerie Vinet-Puranik, fotografiado en la destilería.",
-    signatureRole: "Presidente",
+      "Bruno Delannoy, director general de la Distillerie Vinet-Puranik, fotografiado en la destilería.",
+    signatureRole: "Director general",
   },
 
   team: {
     alt: "El equipo de Vinet-Puranik, fotografiado entre los alambiques de cobre de la destilería.",
     label: "La casa",
-    caption: "El equipo de Vinet-Puranik — Brie-sous-Archiac, Charente",
+    caption: "El equipo de Vinet-Puranik: Brie-sous-Archiac, Charente",
   },
 
   contact: {
     kicker: "Iniciar un proyecto",
     title: "Construya su próximo espirituoso con Vinet-Puranik",
     body: "Cuéntenos su brief: ambición de producto, mercado y calendario. La casa responde con un recorrido meditado, de la primera idea a la botella terminada.",
+    metaDescription:
+      "Hable con Distillerie Vinet-Puranik sobre espirituosos a medida, marca de distribución, granel, embotellado o una visita. Contacto comercial con nombre, líneas directas y formulario.",
+    intro: [
+      "Cuéntenos qué quiere construir: el producto, el mercado, el calendario. Cada consulta llega a una persona, no a una cola.",
+    ],
+    formHeading: "Enviar una consulta",
+    formIntro: "Los campos marcados con asterisco son obligatorios.",
+    detailsLabel: "Contactar directamente con la casa",
+    switchboardHeading: "Centralita",
+    followHeading: "Siga a la casa",
+    homeTitle: "¿Tiene un proyecto en mente?",
+    homeBody:
+      "Del primer boceto a la caja precintada, la casa trabaja según su brief. Díganos a qué mercado apunta.",
+    commercialHeading: "Contacto comercial",
+    commercialRole: "Exportación y comercial",
     distilleryHeading: "La destilería",
     enquiryTypes: [
       "Desarrollo de producto a medida",
@@ -392,7 +733,7 @@ export const es = {
   visit: {
     kicker: "Visítenos",
     title: "La finca de Brie-sous-Archiac",
-    heroLabel: "Apertura — patio de la finca y bodegas, luz dorada",
+    heroLabel: "Apertura: patio de la finca y bodegas, luz dorada",
     intro: [
       "Entre los crus de Petite Champagne y Fins Bois, la destilería abre su patio, sus bodegas y sus alambiques tanto a socios profesionales como a visitantes curiosos.",
       "Recorra las bodegas de barricas, sitúese junto a los alambiques de cobre y pruebe el trabajo de la casa allí donde se hace.",
@@ -415,30 +756,30 @@ export const es = {
       {
         title: "Visitas",
         body: "Recorridos guiados por las bodegas, la destilería y las naves de embotellado.",
-        frameLabel: "Tarjeta — pasillo de la bodega de barricas",
+        frameLabel: "Tarjeta: pasillo de la bodega de barricas",
       },
       {
         title: "Catas",
         body: "Catas sentadas y clases magistrales en la sala de catas de la finca.",
-        frameLabel: "Tarjeta — copas de cata sobre roble",
+        frameLabel: "Tarjeta: copas de cata sobre roble",
       },
     ],
     discover: "Descubrir",
     expectLabel: "Lo que le espera",
-    mapLabel: "Mapa / vista aérea — la finca en Brie-sous-Archiac",
+    mapLabel: "Mapa / vista aérea: la finca en Brie-sous-Archiac",
     bookCta: "Reservar una visita",
     practicalCta: "Información práctica",
     book: {
       heading: "Reservar una visita",
       body: "Todas las visitas son con cita previa. Envíenos las fechas que tiene en mente, el número de personas y la experiencia que desea: la casa se lo confirmará a vuelta de correo.",
       ctaLabel: "Reservar mediante el formulario",
-      mailSubject: "Reserva de visita — finca Vinet-Puranik",
+      mailSubject: "Reserva de visita: finca Vinet-Puranik",
     },
     practical: {
       heading: "Información práctica",
       items: [
         { label: "Dirección", value: "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, Francia" },
-        { label: "Horario", value: "Con cita previa — de lunes a viernes" },
+        { label: "Horario", value: "Con cita previa. De lunes a viernes" },
         {
           label: "Acceso",
           value: "A 20 minutos de Jonzac y 35 de Cognac; aparcamiento en el recinto",
@@ -454,7 +795,7 @@ export const es = {
     included: "Incluye",
     book: "Reservar esta experiencia",
     orEmail: "O escribir a la casa",
-    bookingSubject: "Reserva de visita — {name}",
+    bookingSubject: "Reserva de visita: {name}",
     duration: "Duración",
     groupSize: "Grupo",
     languages: "Idiomas",
@@ -485,7 +826,7 @@ export const es = {
           "Cata de iniciación de dos espirituosos de la casa",
         ],
         body: "Un primer encuentro con la casa: la historia desde 1777, las bodegas y una breve cata guiada de lo que elabora Vinet-Puranik.",
-        frameLabel: "Visita — puertas de la bodega abiertas al patio",
+        frameLabel: "Visita: puertas de la bodega abiertas al patio",
       },
       "cellar-and-distillery-tour": {
         name: "Visita Bodegas y Destilería",
@@ -497,11 +838,11 @@ export const es = {
           "Bodegas de crianza y sala de ensamblaje",
           "Cata guiada de cuatro espirituosos, de barrica y de botella",
         ],
-        body: "El recorrido completo de producción —de la uva y el cereal al cobre, la barrica y la línea de embotellado— guiado por quienes lo hacen funcionar.",
-        frameLabel: "Visita — alambiques de cobre en la destilería",
+        body: "El recorrido completo de producción, de la uva y el cereal al cobre, la barrica y la línea de embotellado, guiado por quienes lo hacen funcionar.",
+        frameLabel: "Visita: alambiques de cobre en la destilería",
       },
       "heritage-tour": {
-        name: "Visita Herencia — Desde 1777",
+        name: "Visita Herencia, Desde 1777",
         duration: "Media jornada",
         groupSize: "De 2 a 8 personas",
         languages: "Francés · Inglés",
@@ -511,7 +852,7 @@ export const es = {
           "Cata ampliada en la bodega familiar",
         ],
         body: "Para socios y coleccionistas: la larga historia de la casa de los Delannoy, contada a través de los viñedos, los archivos y las barricas más antiguas.",
-        frameLabel: "Visita — hileras de viñedo sobre la finca",
+        frameLabel: "Visita: hileras de viñedo sobre la finca",
       },
     },
   },
@@ -539,7 +880,7 @@ export const es = {
           "Notas de cata para llevar",
         ],
         body: "La casa en cinco copas: ginebra, whisky, ron, Pineau des Charentes y cognac, catados uno junto a otro.",
-        frameLabel: "Cata — cinco copas sobre la mesa de catas",
+        frameLabel: "Cata: cinco copas sobre la mesa de catas",
       },
       "cognac-and-pineau-flight": {
         name: "Cata de Cognac y Pineau",
@@ -552,7 +893,7 @@ export const es = {
           "Bocados de maridaje regional",
         ],
         body: "Los clásicos charenteses: la marca de cognac de la casa y su Pineau, catados como los bebe la región.",
-        frameLabel: "Cata — copas de cognac y copas de Pineau",
+        frameLabel: "Cata: copas de cognac y copas de Pineau",
       },
       "bespoke-spirits-masterclass": {
         name: "Clase Magistral de Espirituosos a Medida",
@@ -565,7 +906,7 @@ export const es = {
           "Su propio ensamblaje para llevar",
         ],
         body: "Para socios profesionales: cómo se compone un espirituoso a medida, del brief al ensamblaje, con las pipetas en la mano.",
-        frameLabel: "Cata — mesa del maestro bodeguero con muestras de barrica",
+        frameLabel: "Cata: mesa del maestro bodeguero con muestras de barrica",
       },
     },
   },
@@ -574,16 +915,16 @@ export const es = {
     about: {
       label: "La casa",
       links: [
-        "A medida desde el primer brief",
+        "Marca de distribución y a medida",
         "Saber hacer e innovación",
         "Nuestra historia",
-        "Unas palabras del presidente",
-        "Compromisos",
+        "Unas palabras de la dirección",
+        "Nuestra cronología",
       ],
       featuredHeading: "En la casa",
       featured: [
-        { label: "Nuestra producción", frameLabel: "Destacado — alambiques de cobre" },
-        { label: "Desde 1777", frameLabel: "Destacado — retrato familiar en la bodega" },
+        { label: "Nuestra producción", frameLabel: "Destacado: alambiques de cobre" },
+        { label: "Desde 1777", frameLabel: "Destacado: retrato familiar en la bodega" },
       ],
       viewAll: "Nuestro saber hacer",
     },
@@ -592,9 +933,9 @@ export const es = {
       overview: "Visión general",
       featuredHeading: "Por categoría",
       featuredFrameLabels: [
-        "Destacado — packshot Patte Blanche",
-        "Destacado — packshot Hold Up",
-        "Destacado — packshot ron MACA",
+        "Destacado: packshot Patte Blanche",
+        "Destacado: packshot Hold Up",
+        "Destacado: packshot ron MACA",
       ],
       viewAll: "Ver todas las categorías",
     },
@@ -605,30 +946,21 @@ export const es = {
         "Visitas",
         "Catas",
         "Reservar una visita",
-        "Información práctica",
       ],
       featuredHeading: "Experiencias favoritas",
       featured: [
         {
           label: "Visita Bodegas y Destilería",
-          frameLabel: "Destacado — pasillo de la bodega de barricas",
+          frameLabel: "Destacado: pasillo de la bodega de barricas",
         },
-        { label: "Cata Signature", frameLabel: "Destacado — copas de cata sobre roble" },
+        { label: "Cata Signature", frameLabel: "Destacado: racimos de uva en la vid" },
       ],
       viewAll: "Prepare su visita",
     },
+    // Contact has no megamenu: the top-level item links straight to
+    // the enquiry form, so it needs a label and nothing else.
     contact: {
       label: "Contacto",
-      links: [
-        "Iniciar un proyecto",
-        "Enviar una consulta",
-        "La destilería",
-        "Reservar una visita",
-      ],
-      featuredHeading: "Escríbanos",
-      featured: [
-        { label: "Iniciar un proyecto", frameLabel: "Destacado — mesa del maestro bodeguero" },
-      ],
     },
   },
 
@@ -658,8 +990,10 @@ export const es = {
     homeTitle: "Creadores de espirituosos a medida desde 1777",
     titleTemplate: "%s · Vinet-Puranik",
     description:
-      "Destilería familiar de la región de Cognac que diseña espirituosos a medida, marcas de distribución, soluciones de embotellado y programas de desarrollo de producto para socios comerciales en más de veinte países.",
+      "Destilería familiar de la región de Cognac que diseña espirituosos a medida, marcas de distribución y marca blanca, soluciones de embotellado y programas de desarrollo de producto para socios comerciales en más de veinte países.",
+    aboutTitle: "Nuestra historia",
     partnershipsTitle: "Colaboraciones",
+    contactTitle: "Contacto",
     visitTitle: "Visítenos",
     toursTitle: "Visitas",
     tastingsTitle: "Catas",

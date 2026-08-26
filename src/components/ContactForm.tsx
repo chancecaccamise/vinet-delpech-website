@@ -4,9 +4,31 @@ import { useActionState } from "react";
 import { submitEnquiry, type EnquiryState } from "@/app/actions/contact";
 import type { Content } from "@/lib/content/en";
 import type { Locale } from "@/lib/i18n";
+import { Logo } from "@/components/Logo";
 
 const initialState: EnquiryState = { status: "idle" };
 
+/** Field-level validation message, with a mark that does not rely on colour. */
+function FieldError({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <p id={id} className="field-error">
+      <span aria-hidden="true">&#9679;</span>
+      <span>{children}</span>
+    </p>
+  );
+}
+
+/**
+ * B2B enquiry form.
+ *
+ * Laid out as a single column: a trade buyer reads and completes a form faster
+ * down one axis than across two, and the earlier side-by-side pairing put
+ * "Company" beside a required "Name" so the asterisks fell out of rhythm.
+ *
+ * Validation speaks in `--error`, never the house blue, and every invalid field
+ * carries both a coloured edge and a marked message so the state does not rest
+ * on colour alone.
+ */
 export function ContactForm({
   locale,
   content,
@@ -18,20 +40,23 @@ export function ContactForm({
 }) {
   const [state, formAction, pending] = useActionState(submitEnquiry, initialState);
   const f = content;
+  const invalid = (key: keyof NonNullable<EnquiryState["errors"]>) =>
+    Boolean(state.errors?.[key]);
 
   if (state.status === "success") {
     return (
-      <div aria-live="polite" className="border border-gold/40 px-8 py-12 text-center">
-        <p className="font-serif text-2xl tracking-[0.06em] text-gold-ink" aria-hidden="true">
-          VD
-        </p>
-        <p className="mt-5 text-sm leading-7 text-ink/80">{state.message}</p>
+      <div
+        aria-live="polite"
+        className="border border-blue/25 bg-white px-8 py-16 text-center sm:px-12"
+      >
+        <Logo variant="mark" className="mx-auto h-12" />
+        <p className="mx-auto mt-8 max-w-sm text-sm leading-8 text-ink/75">{state.message}</p>
       </div>
     );
   }
 
   return (
-    <form action={formAction} noValidate className="space-y-7">
+    <form action={formAction} noValidate className="max-w-xl">
       {/* The edition this was sent from, so the server answers in the same
           language the visitor filled the form in. */}
       <input type="hidden" name="locale" value={locale} />
@@ -42,10 +67,13 @@ export function ContactForm({
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-7 sm:grid-cols-2">
+      <div className="space-y-8">
         <div>
           <label htmlFor="name" className="field-label">
-            {f.name}<span className="text-gold-ink"> *</span>
+            {f.name}
+            <span className="field-required" aria-hidden="true">
+              *
+            </span>
           </label>
           <input
             id="name"
@@ -54,28 +82,31 @@ export function ContactForm({
             required
             autoComplete="name"
             className="field"
-            aria-invalid={Boolean(state.errors?.name)}
-            aria-describedby={state.errors?.name ? "name-error" : undefined}
+            aria-invalid={invalid("name")}
+            aria-describedby={invalid("name") ? "name-error" : undefined}
           />
-          {state.errors?.name && (
-            <p id="name-error" className="mt-2 text-xs text-gold-ink">
-              {state.errors.name}
-            </p>
-          )}
+          {state.errors?.name && <FieldError id="name-error">{state.errors.name}</FieldError>}
         </div>
 
         <div>
           <label htmlFor="company" className="field-label">
             {f.company}
           </label>
-          <input id="company" name="company" type="text" autoComplete="organization" className="field" />
+          <input
+            id="company"
+            name="company"
+            type="text"
+            autoComplete="organization"
+            className="field"
+          />
         </div>
-      </div>
 
-      <div className="grid gap-7 sm:grid-cols-2">
         <div>
           <label htmlFor="email" className="field-label">
-            {f.email}<span className="text-gold-ink"> *</span>
+            {f.email}
+            <span className="field-required" aria-hidden="true">
+              *
+            </span>
           </label>
           <input
             id="email"
@@ -84,19 +115,18 @@ export function ContactForm({
             required
             autoComplete="email"
             className="field"
-            aria-invalid={Boolean(state.errors?.email)}
-            aria-describedby={state.errors?.email ? "email-error" : undefined}
+            aria-invalid={invalid("email")}
+            aria-describedby={invalid("email") ? "email-error" : undefined}
           />
-          {state.errors?.email && (
-            <p id="email-error" className="mt-2 text-xs text-gold-ink">
-              {state.errors.email}
-            </p>
-          )}
+          {state.errors?.email && <FieldError id="email-error">{state.errors.email}</FieldError>}
         </div>
 
         <div>
           <label htmlFor="enquiryType" className="field-label">
-            {f.enquiryType}<span className="text-gold-ink"> *</span>
+            {f.enquiryType}
+            <span className="field-required" aria-hidden="true">
+              *
+            </span>
           </label>
           <select
             id="enquiryType"
@@ -104,8 +134,8 @@ export function ContactForm({
             required
             defaultValue=""
             className="field"
-            aria-invalid={Boolean(state.errors?.enquiryType)}
-            aria-describedby={state.errors?.enquiryType ? "enquiry-error" : undefined}
+            aria-invalid={invalid("enquiryType")}
+            aria-describedby={invalid("enquiryType") ? "enquiry-error" : undefined}
           >
             <option value="" disabled>
               {f.selectPlaceholder}
@@ -117,44 +147,47 @@ export function ContactForm({
             ))}
           </select>
           {state.errors?.enquiryType && (
-            <p id="enquiry-error" className="mt-2 text-xs text-gold-ink">
-              {state.errors.enquiryType}
-            </p>
+            <FieldError id="enquiry-error">{state.errors.enquiryType}</FieldError>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="message" className="field-label">
+            {f.message}
+            <span className="field-required" aria-hidden="true">
+              *
+            </span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={7}
+            required
+            placeholder={f.messagePlaceholder}
+            className="field resize-y"
+            aria-invalid={invalid("message")}
+            aria-describedby={invalid("message") ? "message-error" : undefined}
+          />
+          {state.errors?.message && (
+            <FieldError id="message-error">{state.errors.message}</FieldError>
           )}
         </div>
       </div>
 
-      <div>
-        <label htmlFor="message" className="field-label">
-          {f.message}<span className="text-gold-ink"> *</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={6}
-          required
-          placeholder={f.messagePlaceholder}
-          className="field resize-y"
-          aria-invalid={Boolean(state.errors?.message)}
-          aria-describedby={state.errors?.message ? "message-error" : undefined}
-        />
-        {state.errors?.message && (
-          <p id="message-error" className="mt-2 text-xs text-gold-ink">
-            {state.errors.message}
-          </p>
-        )}
-      </div>
-
-      <div className="flex flex-wrap items-center gap-6">
-        <button type="submit" disabled={pending} className="btn btn-accent disabled:opacity-60">
+      <div className="mt-10 border-t border-ink/12 pt-8">
+        <button type="submit" disabled={pending} className="btn btn-blue disabled:opacity-60">
           {pending ? f.submitting : f.submit}
         </button>
+
+        {/* Form-level status sits under the button rather than beside it, so a
+            long message cannot push the button out of the row. */}
         <div aria-live="polite" role="status">
-          {state.status === "error" && !state.errors && (
-            <p className="text-xs leading-6 text-gold-ink">{state.message}</p>
-          )}
-          {state.status === "error" && state.errors && (
-            <p className="text-xs leading-6 text-ink/60">{state.message}</p>
+          {state.status === "error" && (
+            <p
+              className={`mt-5 text-sm leading-6 ${state.errors ? "text-ink/70" : "text-error"}`}
+            >
+              {state.message}
+            </p>
           )}
         </div>
       </div>

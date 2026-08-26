@@ -1,28 +1,37 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens.
+   Design tokens — house palette: cream, blue, white.
 
-   Sections below the hero alternate pure white and a neutral off-white; the
-   dark tones remain for the video hero, interior page heroes and the footer.
-   `--off-white` doubles as the light text colour on those dark surfaces.
+   Taken from the social branding: a warm cream ground, a strong royal blue,
+   white for the alternating sections. Light sections alternate white and
+   cream; the deep navy (the same blue taken down in value) carries the video
+   hero, the interior page heroes, the team band, the age gate and the footer.
+   `--cream` doubles as the light text colour on those navy surfaces — cream
+   on blue is the exact pairing the posts use, inverted.
 
    Contrast notes (WCAG):
-   - gold     #c5a05a on night     #0f0b08 ≈ 7.5:1 (AA small text ✓)
-   - gold-ink #6b3f1d on white     #ffffff ≈ 8.9:1 (AAA small text ✓)
-   - gold-ink #6b3f1d on off-white #f5f5f3 ≈ 8.3:1 (AAA small text ✓)
-   `--gold` stays the light accent for dark surfaces; `--gold-ink` is the
-   dark accent for the white / off-white sections.
-   - ink      #1c1510 on off-white #f5f5f3 ≈ 15.4:1
+   - cream #f7f1de on navy  #0b2a5b ≈ 13.8:1 (AAA small text ✓)
+   - sand  #e3d3a6 on navy  #0b2a5b ≈  9.4:1 (AAA small text ✓)
+   - blue  #1b4fa5 on white #ffffff ≈  7.8:1 (AAA small text ✓)
+   - blue  #1b4fa5 on cream #f7f1de ≈  6.9:1 (AA small text ✓)
+   - ink   #10203a on cream #f7f1de ≈ 14.4:1
+   `--sand` is the warm accent for the navy surfaces, where cream is already
+   the body colour; `--blue` is the accent for the white / cream sections.
 --------------------------------------------------------------------------- */
 :root {
-  --night: #0f0b08;
-  --espresso: #191210;
-  --umber: #221912;
-  --off-white: #f5f5f3;
-  --ink: #1c1510;
-  --gold: #c5a05a;
-  --gold-ink: #6b3f1d;
+  --navy-deep: #06183a;
+  --navy: #0b2a5b;
+  --navy-soft: #133468;
+  --blue: #1b4fa5;
+  --cream: #f7f1de;
+  --sand: #e3d3a6;
+  --ink: #10203a;
+  /* Validation only. Deliberately not `--blue`: an error that speaks in the
+     house accent reads as decoration rather than as something to fix. Muted
+     towards the palette's warmth so it sits with the cream and never shouts.
+     #a3322b on white ≈ 6.4:1, on cream ≈ 5.7:1 — AA at these text sizes. */
+  --error: #a3322b;
 
   --background: #ffffff;
   --foreground: var(--ink);
@@ -33,13 +42,14 @@
 }
 
 @theme inline {
-  --color-night: var(--night);
-  --color-espresso: var(--espresso);
-  --color-umber: var(--umber);
-  --color-off-white: var(--off-white);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-blue: var(--blue);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
   --color-ink: var(--ink);
-  --color-gold: var(--gold);
-  --color-gold-ink: var(--gold-ink);
+  --color-error: var(--error);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -67,8 +77,8 @@ body {
 }
 
 ::selection {
-  background: var(--gold-ink);
-  color: var(--off-white);
+  background: var(--blue);
+  color: #ffffff;
 }
 
 :focus-visible {
@@ -138,26 +148,27 @@ body {
     color 300ms var(--ease-lux);
 }
 
-.btn-gold {
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--night);
+/* Filled button for the navy surfaces — cream on blue, the posts' pairing. */
+.btn-cream {
+  border: 1px solid var(--cream);
+  background: var(--cream);
+  color: var(--navy);
 }
 
-.btn-gold:hover {
+.btn-cream:hover {
   background: transparent;
-  color: var(--gold);
+  color: var(--cream);
 }
 
 .btn-outline-light {
-  border: 1px solid color-mix(in srgb, var(--off-white) 55%, transparent);
-  color: var(--off-white);
+  border: 1px solid color-mix(in srgb, var(--cream) 55%, transparent);
+  color: var(--cream);
 }
 
 .btn-outline-light:hover {
-  border-color: var(--off-white);
-  background: var(--off-white);
-  color: var(--night);
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--navy);
 }
 
 .btn-outline-dark {
@@ -167,31 +178,31 @@ body {
 
 .btn-outline-dark:hover {
   background: var(--ink);
-  color: var(--off-white);
+  color: var(--cream);
 }
 
-/* Primary filled button on the white / off-white sections. `.btn-gold` keeps
-   the pale gold for dark surfaces, where a dark fill would disappear. */
-.btn-accent {
-  border: 1px solid var(--gold-ink);
-  background: var(--gold-ink);
-  color: var(--off-white);
+/* Primary filled button on the white / cream sections. `.btn-cream` keeps the
+   pale fill for navy surfaces, where a blue fill would disappear. */
+.btn-blue {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: #ffffff;
 }
 
-.btn-accent:hover {
+.btn-blue:hover {
   background: transparent;
-  color: var(--gold-ink);
+  color: var(--blue);
 }
 
-.btn-outline-gold {
-  border: 1px solid color-mix(in srgb, var(--gold-ink) 45%, transparent);
-  color: var(--gold-ink);
+.btn-outline-blue {
+  border: 1px solid color-mix(in srgb, var(--blue) 45%, transparent);
+  color: var(--blue);
 }
 
-.btn-outline-gold:hover {
-  border-color: var(--gold-ink);
-  background: var(--gold-ink);
-  color: var(--off-white);
+.btn-outline-blue:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #ffffff;
 }
 
 .btn-sm {
@@ -226,7 +237,7 @@ body {
   width: 0;
   height: 1px;
   content: "";
-  background: var(--gold);
+  background: var(--sand);
   transform: translateX(-50%);
   transition: width 400ms var(--ease-lux);
 }
@@ -237,12 +248,12 @@ body {
   width: 100%;
 }
 
-/* Underline swaps to the darker gold once the header sits on a light bar. */
+/* Underline swaps to the house blue once the header sits on a light bar. */
 .nav-link-ink::after {
-  background: var(--gold-ink);
+  background: var(--blue);
 }
 
-/* Understated text link with a sliding gold rule. */
+/* Understated text link with a sliding rule. */
 .link-quiet {
   position: relative;
   display: inline-block;
@@ -274,27 +285,15 @@ body {
 /* ---------------------------------------------------------------------------
    Hairlines & frames
 --------------------------------------------------------------------------- */
-.hairline-gold {
+.hairline-sand {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--gold) 65%, transparent) 18%,
-    color-mix(in srgb, var(--gold) 65%, transparent) 82%,
-    transparent
-  );
+  background: color-mix(in srgb, var(--sand) 45%, transparent);
 }
 
-/* Same rule in the dark accent, for the light sections. */
+/* Same rule in the house blue, for the light sections. */
 .hairline-accent {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--gold-ink) 55%, transparent) 18%,
-    color-mix(in srgb, var(--gold-ink) 55%, transparent) 82%,
-    transparent
-  );
+  background: color-mix(in srgb, var(--blue) 35%, transparent);
 }
 
 /* ---------------------------------------------------------------------------
@@ -309,7 +308,7 @@ body {
   aspect-ratio: var(--frame-aspect, 16 / 9);
   width: 100%;
   padding: 1.25rem;
-  color: color-mix(in srgb, var(--off-white) 72%, transparent);
+  color: color-mix(in srgb, var(--cream) 72%, transparent);
 }
 
 .frame-fill {
@@ -318,16 +317,15 @@ body {
   min-height: 24rem;
 }
 
+/* Flat house colours — no gradients anywhere in the palette. The dark frame
+   sits on the light sections and the light frame on white, so each stays a
+   distinct block against its ground. */
 .frame--dark {
-  background:
-    radial-gradient(circle at 30% 22%, color-mix(in srgb, var(--gold) 38%, transparent), transparent 42%),
-    linear-gradient(135deg, #14100b, #3d2b1a 48%, #0d0a07);
+  background: var(--navy);
 }
 
 .frame--light {
-  background:
-    radial-gradient(circle at 68% 18%, rgba(255, 255, 255, 0.75), transparent 32%),
-    linear-gradient(135deg, #eeedea, #dcdbd7 55%, #c2c1bc);
+  background: #ece2c6;
 }
 
 /* Caption and hairline invert on the light frame. */
@@ -344,7 +342,7 @@ body {
   position: absolute;
   inset: 0.875rem;
   content: "";
-  border: 1px solid color-mix(in srgb, var(--off-white) 26%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cream) 26%, transparent);
   pointer-events: none;
 }
 
@@ -397,14 +395,14 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Hero scroll cue — a slow falling thread of gold.
+   Hero scroll cue — a slow falling thread of cream.
 --------------------------------------------------------------------------- */
 .scroll-cue {
   position: relative;
   width: 1px;
   height: 4.5rem;
   overflow: hidden;
-  background: color-mix(in srgb, var(--off-white) 18%, transparent);
+  background: color-mix(in srgb, var(--cream) 18%, transparent);
 }
 
 .scroll-cue::after {
@@ -413,7 +411,7 @@ body {
   top: 0;
   height: 40%;
   content: "";
-  background: var(--gold);
+  background: var(--sand);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -433,7 +431,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Savoir-faire grid — hairline dividers with a growing gold rule on hover.
+   Savoir-faire grid — hairline dividers with a growing blue rule on hover.
 --------------------------------------------------------------------------- */
 .metier {
   position: relative;
@@ -447,7 +445,7 @@ body {
   height: 1px;
   width: 0;
   content: "";
-  background: var(--gold-ink);
+  background: var(--blue);
   transition: width 700ms var(--ease-lux);
 }
 
@@ -488,38 +486,70 @@ body {
 --------------------------------------------------------------------------- */
 .field {
   width: 100%;
-  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
   background: #ffffff;
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1.1rem;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: var(--ink);
   border-radius: 0;
-  transition: border-color 300ms var(--ease-lux);
+  transition:
+    border-color 300ms var(--ease-lux),
+    box-shadow 300ms var(--ease-lux);
 }
 
 .field::placeholder {
   color: color-mix(in srgb, var(--ink) 42%, transparent);
 }
 
+/* Focus reads as a weighted edge rather than a colour swap alone, so it is
+   still obvious to anyone who cannot separate the two border colours. */
 .field:focus {
   outline: none;
-  border-color: var(--gold-ink);
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
 }
 
+/* Set only from `aria-invalid`, so the styling can never disagree with what
+   assistive technology is told. */
+.field[aria-invalid="true"] {
+  border-color: var(--error);
+}
+.field[aria-invalid="true"]:focus {
+  border-color: var(--error);
+  box-shadow: inset 0 0 0 1px var(--error);
+}
+
+.field-error {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--error);
+}
+
+/* Larger and less tightly tracked than the site's other small caps: a label a
+   visitor has to read and act on is not the same job as a decorative eyebrow. */
 .field-label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  margin-bottom: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--ink) 62%, transparent);
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+.field-required {
+  color: var(--error);
+  margin-left: 0.15rem;
 }
 
 select.field {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a5628' stroke-width='1.25'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231b4fa5' stroke-width='1.25'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
 }
@@ -529,21 +559,21 @@ select.field option {
   color: var(--ink);
 }
 
-/* Dark-surface variant of .field, the way .btn-accent pairs with .btn-gold.
+/* Navy-surface variant of .field, the way .btn-blue pairs with .btn-cream.
    Must stay after .field — it wins the tie on source order, not specificity. */
 .field-dark {
-  border-color: color-mix(in srgb, var(--off-white) 24%, transparent);
-  background: color-mix(in srgb, var(--off-white) 6%, transparent);
-  color: var(--off-white);
+  border-color: color-mix(in srgb, var(--cream) 24%, transparent);
+  background: color-mix(in srgb, var(--cream) 6%, transparent);
+  color: var(--cream);
 }
 
 .field-dark::placeholder {
-  color: color-mix(in srgb, var(--off-white) 34%, transparent);
+  color: color-mix(in srgb, var(--cream) 34%, transparent);
 }
 
 .field-dark:focus,
 .field-dark[aria-invalid="true"] {
-  border-color: var(--gold);
+  border-color: var(--sand);
 }
 
 /* ---------------------------------------------------------------------------
@@ -582,7 +612,7 @@ html[data-age-gate="open"] body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Functional labels, so they sit well clear of 4.5:1 on --espresso. Don't
+/* Functional labels, so they sit well clear of 4.5:1 on --navy-soft. Don't
    take this below ~55% — the decorative fine print can, these can't. */
 .dob-label {
   display: block;
@@ -591,7 +621,7 @@ html[data-age-gate="open"] body {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--off-white) 62%, transparent);
+  color: color-mix(in srgb, var(--cream) 62%, transparent);
 }
 
 /* Only the panel animates. Fading the backdrop in would briefly reveal the

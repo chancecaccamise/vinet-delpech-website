@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Experience } from "@/lib/site";
 import { siteConfig } from "@/lib/site";
@@ -34,12 +35,24 @@ export function ExperienceSection({
       className="grid gap-10 border-t border-ink/12 py-16 lg:grid-cols-12 lg:items-center lg:py-20"
     >
       <Reveal className={clsx("lg:col-span-5", flip && "lg:order-2 lg:col-start-8")}>
-        <PlaceholderFrame label={experience.frameLabel} aspect="4 / 3" tone="light" />
+        {experience.image ? (
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <Image
+              src={experience.image}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <PlaceholderFrame label={experience.frameLabel} aspect="4 / 3" tone="light" />
+        )}
       </Reveal>
 
       <Reveal delay={150} className={clsx("lg:col-span-6", flip ? "lg:order-1 lg:col-start-1" : "lg:col-start-7")}>
         <div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold-ink">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-blue">
             <span>{experience.duration}</span>
             <span aria-hidden="true">·</span>
             <span>{experience.groupSize}</span>
@@ -53,21 +66,21 @@ export function ExperienceSection({
           <ul className="mt-4 max-w-lg list-none space-y-2 p-0">
             {experience.includes.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-7 text-ink/70">
-                <span aria-hidden="true" className="mt-3 h-px w-5 shrink-0 bg-gold-ink" />
+                <span aria-hidden="true" className="mt-3 h-px w-5 shrink-0 bg-blue" />
                 {item}
               </li>
             ))}
           </ul>
 
-          <p className="mt-8 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-gold-ink">
+          <p className="mt-8 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-blue">
             {experience.price}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-6">
-            <Link href={localizePath(locale, "/#contact")} className="btn btn-accent">
+            <Link href={localizePath(locale, "/contact")} className="btn btn-blue">
               {labels.book}
             </Link>
-            <a href={mailHref} className="link-quiet text-gold-ink">
+            <a href={mailHref} className="link-quiet text-blue">
               {labels.orEmail}
             </a>
           </div>

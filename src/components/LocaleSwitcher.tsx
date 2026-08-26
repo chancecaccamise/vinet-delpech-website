@@ -66,13 +66,13 @@ export function LocaleSwitcher({ locale, label, solid, className }: LocaleSwitch
         aria-expanded={open}
         aria-controls="locale-menu"
         aria-haspopup="true"
-        aria-label={`${label} — ${current.name}`}
+        aria-label={`${label}: ${current.name}`}
         onClick={() => setOpen((value) => !value)}
         className={clsx(
           "flex items-center gap-2 border px-2.5 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300",
           solid
-            ? "border-ink/15 text-ink/75 hover:border-gold-ink hover:text-ink"
-            : "border-off-white/25 text-off-white/85 hover:border-gold hover:text-off-white",
+            ? "border-ink/15 text-ink/75 hover:border-blue hover:text-ink"
+            : "border-cream/25 text-cream/85 hover:border-sand hover:text-cream",
         )}
       >
         <Flag code={locale} />
@@ -91,7 +91,7 @@ export function LocaleSwitcher({ locale, label, solid, className }: LocaleSwitch
       <ul
         id="locale-menu"
         hidden={!open}
-        className="absolute right-0 top-[calc(100%+0.6rem)] z-10 m-0 w-52 list-none border border-ink/10 bg-off-white/97 p-0 py-1 text-ink shadow-2xl backdrop-blur-xl"
+        className="absolute right-0 top-[calc(100%+0.6rem)] z-10 m-0 w-52 list-none border border-ink/10 bg-white/97 p-0 py-1 text-ink shadow-2xl backdrop-blur-xl"
       >
         {locales.map((code) => {
           const meta = localeMeta[code];

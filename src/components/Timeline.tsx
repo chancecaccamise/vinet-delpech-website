@@ -16,7 +16,7 @@ import { clsx } from "@/lib/clsx";
  * no pinning and no scroll hijacking.
  *
  * Whichever mode is active, the entry nearest the centre is emphasised and the
- * gold axis fills to show progress through the chronology.
+ * sand axis fills to show progress through the chronology.
  */
 type TimelineProps = {
   entries: readonly TimelineEntry[];
@@ -148,10 +148,10 @@ export function Timeline({ entries, title, intro }: TimelineProps) {
         </div>
 
         <div className="relative">
-          {/* Axis with a gold fill tracking progress. */}
+          {/* Axis with a sand fill tracking progress. */}
           <div aria-hidden="true" className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-ink/15">
             <div
-              className="h-full bg-gold-ink transition-[width] duration-200 ease-out"
+              className="h-full bg-blue transition-[width] duration-200 ease-out"
               style={{ width: `${Math.round(progress * 100)}%` }}
             />
           </div>
@@ -194,7 +194,7 @@ export function Timeline({ entries, title, intro }: TimelineProps) {
                       aria-hidden="true"
                       className={clsx(
                         "block rounded-full transition-all duration-500",
-                        isActive ? "h-3 w-3 bg-gold-ink" : "h-1.5 w-1.5 bg-ink/30",
+                        isActive ? "h-3 w-3 bg-blue" : "h-1.5 w-1.5 bg-ink/30",
                       )}
                     />
                   </div>
@@ -223,7 +223,7 @@ function Entry({ entry, isActive }: { entry: TimelineEntry; isActive: boolean })
       <p
         className={clsx(
           "display transition-all duration-500",
-          isActive ? "display-lg text-gold-ink" : "display-md text-ink/45",
+          isActive ? "display-lg text-blue" : "display-md text-ink/45",
         )}
       >
         {entry.year}

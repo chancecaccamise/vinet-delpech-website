@@ -212,9 +212,9 @@ export function AgeGate({
       aria-labelledby="age-gate-title"
       aria-describedby="age-gate-subhead"
       // No `flex` here — .age-gate owns `display`, which is what toggles it.
-      className="age-gate fixed inset-0 z-[100] items-center justify-center overflow-y-auto bg-night/95 px-6 py-10 backdrop-blur-sm"
+      className="age-gate fixed inset-0 z-[100] items-center justify-center overflow-y-auto bg-navy/95 px-6 py-10 backdrop-blur-sm"
     >
-      <div className="age-gate-panel w-full max-w-md border border-off-white/15 bg-espresso px-8 py-12 text-center sm:px-10 sm:py-14">
+      <div className="age-gate-panel w-full max-w-md border border-cream/15 bg-navy-soft px-8 py-12 text-center sm:px-10 sm:py-14">
         {/* For an unverified visitor this is the LCP element. It resolves to
             the same URL the Header already preloads with `priority`, so the
             preload is deduplicated and eager loading here costs nothing. */}
@@ -222,23 +222,23 @@ export function AgeGate({
 
         <h2
           id="age-gate-title"
-          className="display display-md mt-8 uppercase tracking-[0.08em] text-off-white"
+          className="display display-md mt-8 uppercase tracking-[0.08em] text-cream"
         >
           {content.title}
         </h2>
-        <p id="age-gate-subhead" className="mt-4 text-sm leading-7 text-off-white/70">
+        <p id="age-gate-subhead" className="mt-4 text-sm leading-7 text-cream/70">
           {content.subhead}
         </p>
-        <div className="hairline-gold mx-auto mt-8" />
+        <div className="hairline-sand mx-auto mt-8" />
 
         {denied ? (
           <div ref={deniedRef} tabIndex={-1} data-focus-target role="alert" className="mt-8">
-            <p className="display display-sm text-off-white">{content.deniedTitle}</p>
-            <p className="mt-4 text-sm leading-7 text-off-white/70">{deniedMessage}</p>
+            <p className="display display-sm text-cream">{content.deniedTitle}</p>
+            <p className="mt-4 text-sm leading-7 text-cream/70">{deniedMessage}</p>
           </div>
         ) : (
           <form noValidate onSubmit={handleSubmit} className="mt-8">
-            <p id="age-gate-dob" className="eyebrow text-off-white/60">
+            <p id="age-gate-dob" className="eyebrow text-cream/60">
               {content.dobPrompt}
             </p>
 
@@ -277,7 +277,7 @@ export function AgeGate({
             </div>
 
             {error && (
-              <p id="age-gate-error" role="alert" className="mt-4 text-xs leading-6 text-gold">
+              <p id="age-gate-error" role="alert" className="mt-4 text-xs leading-6 text-sand">
                 {error}
               </p>
             )}
@@ -285,7 +285,7 @@ export function AgeGate({
             <button
               type="submit"
               disabled={!complete}
-              className="btn btn-gold mt-8 w-full disabled:cursor-not-allowed disabled:opacity-40"
+              className="btn btn-cream mt-8 w-full disabled:cursor-not-allowed disabled:opacity-40"
             >
               {content.submit}
             </button>
@@ -295,9 +295,9 @@ export function AgeGate({
         {/* Only meaningful alongside the form — it describes the act of
             entering, which someone turned away has not done. */}
         {!denied && (
-          <p className="mt-8 text-[0.62rem] leading-5 text-off-white/45">{legal}</p>
+          <p className="mt-8 text-[0.62rem] leading-5 text-cream/45">{legal}</p>
         )}
-        <p className="mt-4 text-[0.62rem] uppercase leading-6 tracking-[0.18em] text-off-white/40">
+        <p className="mt-4 text-[0.62rem] uppercase leading-6 tracking-[0.18em] text-cream/40">
           {responsibleDrinking}
         </p>
       </div>
