@@ -99,7 +99,14 @@ export function BrandRail({
         </svg>
       </button>
 
-      <ul ref={railRef} className="rail m-0 list-none gap-8 p-0" aria-label={ui.brandCollection}>
+      <ul
+        ref={railRef}
+        // Phones: full-bleed with 15vw inline gutters — half the leftover
+        // beside a 70vw card — so every card, first and last included, can
+        // sit dead centre while its neighbours peek equally on both sides.
+        className="rail rail--center -ml-6 m-0 list-none gap-5 px-[15vw] py-0 sm:mx-0 sm:gap-8 sm:px-0"
+        aria-label={ui.brandCollection}
+      >
         {brands.map((brand) => (
           <li
             key={brand.name}

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { footerLegalHrefs, siteConfig, type NavLink } from "@/lib/site";
+import { footerCapabilityHrefs, footerLegalHrefs, siteConfig, type NavLink } from "@/lib/site";
 import { locales, localeMeta, localizePath, switchLocaleInPath, type Locale } from "@/lib/i18n";
 import type { Content } from "@/lib/content/en";
 import { Logo } from "@/components/Logo";
+import { SocialIcon } from "@/components/SocialIcon";
 
 export function Footer({
   locale,
@@ -63,9 +64,18 @@ export function Footer({
 
           <div>
             <h3 className="eyebrow text-sand">{content.capabilitiesHeading}</h3>
-            <ul className="mt-5 list-none space-y-3 p-0 text-sm text-cream/60">
-              {content.capabilities.map((item) => (
-                <li key={item}>{item}</li>
+            <ul className="mt-5 list-none space-y-3 p-0">
+              {/* One capability, one destination — positional against
+                  `footerCapabilityHrefs` in site.ts. */}
+              {content.capabilities.map((item, index) => (
+                <li key={item}>
+                  <Link
+                    href={localizePath(locale, footerCapabilityHrefs[index])}
+                    className="text-sm text-cream/60 transition-colors duration-300 hover:text-cream"
+                  >
+                    {item}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -110,26 +120,25 @@ export function Footer({
             >
               {siteConfig.phone}
             </a>
-            <div className="mt-6 flex gap-5">
-              {/* LinkedIn returns when siteConfig.social.linkedin stops being
-                  the bare domain: see its TODO(launch). A dead social link is
-                  worse than an absent one. */}
-              <a
-                href={siteConfig.social.instagram}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-xs font-semibold uppercase tracking-[0.2em] text-cream/50 transition-colors duration-300 hover:text-sand"
-              >
-                Instagram
-              </a>
-              <a
-                href={siteConfig.social.facebook}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-xs font-semibold uppercase tracking-[0.2em] text-cream/50 transition-colors duration-300 hover:text-sand"
-              >
-                Facebook
-              </a>
+            <div className="mt-6 flex gap-4">
+              {(
+                [
+                  ["instagram", "Instagram", siteConfig.social.instagram],
+                  ["facebook", "Facebook", siteConfig.social.facebook],
+                  ["linkedin", "LinkedIn", siteConfig.social.linkedin],
+                ] as const
+              ).map(([network, label, href]) => (
+                <a
+                  key={network}
+                  href={href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center border border-cream/20 text-cream/60 transition-colors duration-300 hover:border-sand hover:text-sand"
+                >
+                  <SocialIcon network={network} className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

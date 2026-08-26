@@ -22,7 +22,7 @@ export function GroupBand({
   figures: readonly FeatureFigure[];
 }) {
   return (
-    <section id="group" className="bg-white py-24 text-ink sm:py-32">
+    <section id="group" className="bg-cream py-24 text-ink sm:py-32">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
         <div className="grid gap-x-16 gap-y-12 lg:grid-cols-12 lg:items-center">
           <Reveal className="lg:col-span-6">

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { aboutSkillImages } from "@/lib/site";
 import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
 import { getContent, getGroupFigures, getLeaders } from "@/lib/content";
@@ -54,27 +56,14 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
             {about.visitCta}
           </Link>
         </div>
+        {/* The made-in-France mark, kept from the removed statement section. */}
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
+          {c.maisonStatement.origin}
+        </p>
       </PageHero>
 
-      {/* The statement — the same words that open the homepage, given room. */}
-      <section aria-label={c.maisonStatement.kicker} className="bg-white py-24 text-ink sm:py-32">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-          <Reveal>
-            <p className="display display-lg max-w-4xl uppercase tracking-[0.04em]">
-              {c.maisonStatement.line}
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="mt-10 max-w-2xl">
-              <div className="hairline-accent" />
-              <p className="eyebrow mt-5 text-blue">{c.maisonStatement.origin}</p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* What the house stands for — the hairline rows fill with blue on hover. */}
-      <section aria-label={about.marksLabel} className="bg-cream py-24 text-ink sm:py-28">
+      <section aria-label={about.marksLabel} className="bg-white py-24 text-ink sm:py-28">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
             <h2 className="eyebrow text-ink/50">{about.marksLabel}</h2>
@@ -93,17 +82,28 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
       </section>
 
       {/* Skills — same three-up as the "what to expect" band on /visit. */}
-      <section aria-label={about.skillsLabel} className="bg-white py-24 text-ink sm:py-32">
+      <section aria-label={about.skillsLabel} className="bg-cream py-24 text-ink sm:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
             <h2 className="eyebrow text-ink/50">{about.skillsLabel}</h2>
           </Reveal>
           <div className="mt-12 grid gap-12 sm:grid-cols-3">
             {about.skills.map((skill, index) => (
-              <Reveal key={skill.title} delay={index * 150}>
-                <div className="border-t border-ink/15 pt-8">
+              <Reveal key={skill.title} delay={index * 150} className="h-full">
+                <div className="flex h-full flex-col border-t border-ink/15 pt-8">
                   <h3 className="display display-sm uppercase tracking-[0.06em]">{skill.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-ink/65">{skill.body}</p>
+                  {/* flex-1 pushes the photos onto one baseline across the
+                      row, however long a body runs. */}
+                  <p className="mt-4 flex-1 text-sm leading-7 text-ink/65">{skill.body}</p>
+                  <div className="relative mt-6 aspect-[3/2] w-full overflow-hidden">
+                    <Image
+                      src={aboutSkillImages[index]}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 90vw"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -116,7 +116,7 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
       <GroupBand content={c.group} figures={getGroupFigures(locale)} />
 
       {/* Cross-links back into the house. */}
-      <section className="bg-cream py-20 text-ink sm:py-24">
+      <section className="bg-white py-20 text-ink sm:py-24">
         <div className="mx-auto max-w-[1320px] px-6 text-center lg:px-10">
           <Reveal>
             <h2 className="display display-md uppercase tracking-[0.06em]">

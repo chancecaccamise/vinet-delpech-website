@@ -89,7 +89,7 @@ export const es = {
       "Una destilería independiente en la región de Cognac: saber hacer secular, el arte de la destilación y espirituosos premium elaborados en Francia, de la viña a la botella.",
     intro: [
       "Vinet-Puranik es una destilería de rica herencia y raíces profundas: dos familias, una casa y un patio en Brie-sous-Archiac donde cada etapa de un espirituoso ocurre bajo el mismo techo.",
-      "Una casa no es un catálogo. Lo que ofrecemos es una experiencia y un modo de vida: su proyecto acompañado desde la primera conversación hasta la caja sellada.",
+      "De la tierra a la copa. De la viña a la botella. Su sueño hecho botella.",
     ],
     projectCta: "Iniciar un proyecto",
     visitCta: "Visitar la finca",
@@ -512,7 +512,7 @@ export const es = {
       title: "Marca de distribución y espirituosos a medida",
       body: "Programas de marca de distribución y marca blanca construidos en torno a su mercado: receta, líquido, vestido y dosier, llevados del primer boceto a una caja precintada con su nombre.",
       ctaLabel: "Iniciar un proyecto",
-      frameLabel: "Imagen: cuellos de cisne de cobre en la sala de destilación",
+      frameLabel: "Imagen: barricas envejeciendo en la bodega",
     },
     "know-how": {
       ctaLabel: "Iniciar un proyecto",
@@ -522,10 +522,10 @@ export const es = {
 
   production: {
     kicker: "Qué producimos",
-    title: "Uva, cereal y caña, bajo un mismo techo",
+    title: "Todos los espirituosos, una sola casa",
     intro:
       "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
-    frameLabel: "Imagen: las botellas de cada categoría reunidas en la mesa de cata",
+    frameLabel: "El aguardiente nuevo cayendo del alambique a un recipiente de cobre",
   },
 
   timeline: {
@@ -638,6 +638,25 @@ export const es = {
     caption: "El equipo de Vinet-Puranik: Brie-sous-Archiac, Charente",
   },
 
+  testimonials: {
+    label: "Lo que dicen nuestros socios",
+    showAria: "Mostrar el testimonio {index}",
+    items: {
+      "private-label": {
+        quote:
+          "De la primera muestra a la caja precintada, la casa siguió nuestro pliego al pie de la letra — y el coñac entregado superó al que habíamos pedido.",
+      },
+      creation: {
+        quote:
+          "Llegamos con una receta y una etiqueta. Vinet-Puranik las convirtió en una ginebra que de verdad podíamos presentar a los compradores, a tiempo y en el volumen prometido.",
+      },
+      export: {
+        quote:
+          "Tres mercados, tres normativas, un solo embotellado — su equipo cargó con la conformidad para que el nuestro cargara con la marca.",
+      },
+    },
+  },
+
   contact: {
     kicker: "Iniciar un proyecto",
     title: "Construya su próximo espirituoso con Vinet-Puranik",
@@ -698,10 +717,9 @@ export const es = {
     legalHeading: "Legal",
     contactHeading: "Contacto",
     capabilities: [
-      "Marcas de distribución",
-      "Desarrollo de producto",
-      "Abastecimiento de materiales secos",
-      "Embotellado personalizado",
+      "Marca de distribución y a medida",
+      "Saber hacer e innovación",
+      "Qué producimos",
     ],
     legalLinks: [
       "Términos y condiciones",
@@ -913,11 +931,11 @@ export const es = {
 
   nav: {
     about: {
-      label: "La casa",
+      label: "Sobre nosotros",
       links: [
+        "Nuestra historia",
         "Marca de distribución y a medida",
         "Saber hacer e innovación",
-        "Nuestra historia",
         "Unas palabras de la dirección",
         "Nuestra cronología",
       ],

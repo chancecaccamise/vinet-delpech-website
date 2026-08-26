@@ -86,7 +86,7 @@ export const en = {
       "An independent Cognac-region distillery: time-honoured expertise, the art of distillation and premium spirits made from the vineyard to the bottle in France.",
     intro: [
       "Vinet-Puranik is a distillery with a rich heritage and deep roots: two families, one house, and a courtyard at Brie-sous-Archiac where every stage of a spirit happens under the same roof.",
-      "A house is not a catalogue. What we offer is an experience and a way of life: your brief carried from the first conversation to the sealed, finished case.",
+      "From the soil to the glass. From the vineyard to the bottle. Your dream in a bottle.",
     ],
     projectCta: "Start a project",
     visitCta: "Visit the estate",
@@ -518,7 +518,7 @@ export const en = {
       title: "Private label & bespoke spirits",
       body: "Private-label and white-label programmes built around your market: recipe, liquid, dress and dossier, carried from first sketch to a sealed case under your name.",
       ctaLabel: "Start a project",
-      frameLabel: "Feature: copper swan necks in the still house",
+      frameLabel: "Feature: barrels ageing in the cellar",
     },
     "know-how": {
       ctaLabel: "Start a project",
@@ -531,10 +531,10 @@ export const en = {
   // only the frame copy lives here.
   production: {
     kicker: "What we produce",
-    title: "Grape, grain and cane, under one roof",
+    title: "Every spirit, one house",
     intro:
       "Cognac and brandy, whisky, rum, gin, vodka, liqueurs and apéritifs. The house distils, ages, blends and bottles across eight categories, for its own range and for the private-label brands it builds with partners.",
-    frameLabel: "Feature: bottles of every category gathered on the tasting bench",
+    frameLabel: "New-make spirit running from the still into a copper receiver",
   },
 
   timeline: {
@@ -655,6 +655,27 @@ export const en = {
     caption: "The Vinet-Puranik team: Brie-sous-Archiac, Charente",
   },
 
+  // TODO(launch): placeholder quotes — see the note on `testimonialSlugs` in
+  // site.ts. Names live there too; only the words are translated here.
+  testimonials: {
+    label: "What our partners say",
+    showAria: "Show testimonial {index}",
+    items: {
+      "private-label": {
+        quote:
+          "From the first sample to the sealed case, the house held our brief exactly — and the cognac that came back was better than the one we asked for.",
+      },
+      creation: {
+        quote:
+          "We arrived with a recipe and a label. Vinet-Puranik turned them into a gin we could actually put in front of buyers, on time, at the volume we promised.",
+      },
+      export: {
+        quote:
+          "Three markets, three sets of paperwork, one bottling run — their team carried the compliance so ours could carry the brand.",
+      },
+    },
+  },
+
   contact: {
     kicker: "Start a project",
     title: "Build your next spirit with Vinet-Puranik",
@@ -714,10 +735,9 @@ export const en = {
     legalHeading: "Legal",
     contactHeading: "Contact",
     capabilities: [
-      "Private labels",
-      "Product development",
-      "Dry-goods sourcing",
-      "Custom bottling",
+      "Private label & bespoke spirits",
+      "Know-how & innovation",
+      "What we produce",
     ],
     legalLinks: ["Terms & Conditions", "Privacy Policy", "Cookie Policy", "Accessibility"],
     rights: "All rights reserved.",
@@ -926,9 +946,9 @@ export const en = {
     about: {
       label: "About us",
       links: [
+        "Our story",
         "Private label & bespoke spirits",
         "Know-how & innovation",
-        "Our story",
         "A word from our leadership",
         "Our timeline",
       ],

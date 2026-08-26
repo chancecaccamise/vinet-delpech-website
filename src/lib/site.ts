@@ -45,10 +45,9 @@ export const siteConfig = {
   },
 
   social: {
-    // TODO(launch): replace with the house's real LinkedIn page. The brochure
-    // does not list one.
-    linkedin: "https://www.linkedin.com/",
-    facebook: "https://www.facebook.com/vinetpuranik",
+    linkedin: "https://www.linkedin.com/company/vinet-puranik-distillerie/",
+    // The house's live page still carries the pre-rebrand Vinet-Delpech name.
+    facebook: "https://www.facebook.com/VinetDelpech/",
     instagram: "https://www.instagram.com/vinetpuranik/",
     /** Product-brand accounts — shown against the range, not in the footer. */
     productInstagram: [
@@ -69,8 +68,15 @@ export type NavFeaturedItem = {
   href: string;
   /** Caption for the placeholder image frame until real photography exists. */
   frameLabel: string;
-  /** Packshot path under /public; falls back to the placeholder frame. */
+  /** Image path under /public; falls back to the placeholder frame. */
   image?: string;
+  /**
+   * True for bottle packshots, which keep the products' tall 4:5 canvas.
+   * Estate photography renders on the 3:2 landscape frame instead — the
+   * nav-* files are shot 672 × 448, and a portrait crop of them read as a
+   * zoomed-in sliver.
+   */
+  packshot?: boolean;
 };
 
 export type NavGroup = {
@@ -420,7 +426,11 @@ export const houseBrandAssets = [
     name: "Glen Mac Clay",
     family: "whisky",
     origin: "house",
-    image: "/spirits/glen-mac-clay.webp",
+    // "-card" is a fresh filename, not a different image: the packshot was
+    // once swapped in under the old name, and a same-name swap sits behind
+    // the four-hour image cache (see the nav-tasting-vines note in
+    // content/index.ts). The new URL is what guarantees everyone sees it.
+    image: "/spirits/glen-mac-clay-card.webp",
     figures: [{ key: "ageing", value: 3, suffix: "" }],
   },
 ] as const satisfies readonly {
@@ -439,6 +449,13 @@ export const houseBrandAssets = [
  * category membership, packshot and the producer's own product page. Names are
  * trade marks and stay as they are in every language; `category`, `descriptor`
  * and `frameLabel` are translated.
+ *
+ * Patte Blanche, Gigi and TIJUCA are studio packshots on white, refitted to
+ * the 4:5 card the same way the house's own bottles were (bottle at ~87% of
+ * the frame, centred on the base). Gigi is the one deliberate full-bleed: its
+ * scarf runs off the frame's right edge, so any padded fit would leave the
+ * cut floating mid-card. The remaining .jpg files are the producers'
+ * lifestyle shots, kept on disk as archive.
  */
 export const partnerBrandAssets = [
   {
@@ -486,7 +503,7 @@ export const partnerBrandAssets = [
     name: "TIJUCA Brazilian Rum",
     family: "rum",
     origin: "partner",
-    image: "/products/tijuca.jpg",
+    image: "/products/tijuca.webp",
     url: "https://tijuca.fr/en/product/brazilian-blended-rum/",
   },
   {
@@ -494,7 +511,7 @@ export const partnerBrandAssets = [
     name: "Gigi en Provence",
     family: "gin",
     origin: "partner",
-    image: "/products/gigi-en-provence.jpg",
+    image: "/products/gigi-en-provence.webp",
     url: "https://gigienprovence.fr/",
   },
   {
@@ -502,8 +519,12 @@ export const partnerBrandAssets = [
     name: "Patte Blanche",
     family: "cognac",
     origin: "partner",
-    image: "/products/patte-blanche.jpg",
-    url: "https://cognacpatteblanche.com/",
+    image: "/products/patte-blanche.webp",
+    // The one retailer link in this array: the producer's own site is stale,
+    // so the card points at the Rendez-Vous XO listing on Cognac Expert. The
+    // Google Shopping click id (`?srsltid=`) is deliberately stripped — it is
+    // per-session tracking, not part of the address.
+    url: "https://www.cognac-expert.com/xo-cognac/patte-blanche-rendez-vous-xo-cognac",
   },
   {
     slug: "sephina",
@@ -610,7 +631,13 @@ export type FeaturePanel = {
 };
 
 export const featurePanelAssets = [
-  { slug: "bespoke", image: "/media/estate/panel-bespoke.webp", mediaSide: "left" },
+  // The ageing cellar, not the still house: this panel sits directly above
+  // the know-how panel, which is already a copper-still photograph, and the
+  // two read as the same picture twice. The receding barrel aisle also suits
+  // the panel's tall half-page frame, where the old tight crop of two still
+  // bulbs lost all sense of place. Fresh filename to clear the image cache;
+  // panel-bespoke.webp stays on disk as an archive.
+  { slug: "bespoke", image: "/media/estate/panel-bespoke-cellar.webp", mediaSide: "left" },
   // `slug` is the anchor id: the nav and megamenus link to /#know-how.
   { slug: "know-how", image: "/media/distilleryImage.jpg", mediaSide: "right" },
 ] as const satisfies readonly {
@@ -628,6 +655,30 @@ export type TimelineEntry = { year: string; body: string };
 // The tall black-and-white Bruno portrait (/media/vinetDelpechPresidentPortrait.jpg)
 // is no longer referenced: the home page leadership section uses the circular
 // pair in `leaderPortraits` below. The file stays on disk as an archive.
+
+/**
+ * Photography for the three "our skills" tiles on /about, in the same order
+ * as `about.skills` in the dictionaries (quality, reliability, worldwide
+ * export). All three come from the house's own galleries: the copper stills
+ * for the craft, the barrel stock for held volumes, the sunrise over the
+ * estate's vines for reach.
+ */
+/**
+ * The "what we produce" section's photograph: new-make spirit running off the
+ * still into a copper receiver — the closest image the galleries hold to the
+ * bottling idea the slot wants.
+ *
+ * TODO(assets): the house runs four bottling lines and has no photograph of
+ * any of them. A real bottles-being-filled shot belongs here; this pour is
+ * the interim.
+ */
+export const productionImage = "/media/estate/production-bottling.webp";
+
+export const aboutSkillImages = [
+  "/media/estate/skill-quality.webp",
+  "/media/estate/skill-reliability.webp",
+  "/media/estate/skill-export.webp",
+] as const;
 
 /**
  * Circular portraits of the two people who speak for the house, harvested from
@@ -693,6 +744,29 @@ export const teamImage = {
 } as const;
 
 // ---------------------------------------------------------------------------
+// Testimonials — the slider under the team photograph on the home page.
+// ---------------------------------------------------------------------------
+
+/**
+ * One slug per voice, in slider order. Quotes live in the dictionaries
+ * (`c.testimonials.items`); the names below are proper nouns and stay as they
+ * are in every language, the same split `siteConfig.commercial` uses.
+ *
+ * TODO(launch): all three are structured placeholders written for the slot —
+ * no client has signed off on a quote. Replace with real quotes, real names
+ * and written permission before go-live; if none arrive, drop the section
+ * rather than shipping invented praise.
+ */
+export const testimonialSlugs = ["private-label", "creation", "export"] as const;
+export type TestimonialSlug = (typeof testimonialSlugs)[number];
+
+export const testimonialNames: Record<TestimonialSlug, string> = {
+  "private-label": "Camille Roussel",
+  creation: "James Ashworth",
+  export: "Sofía Herrero",
+};
+
+// ---------------------------------------------------------------------------
 // Visit us — tours & tastings.
 // TODO(launch): every offering (names, durations, group sizes, languages,
 // inclusions, prices, opening arrangements) is a structured placeholder.
@@ -715,16 +789,17 @@ export const tastingSlugs = [
  * Photography for each experience, from the house's cellar, distillery and
  * vineyard galleries. Cropped to the 4:3 box `ExperienceSection` draws.
  *
- * TODO(assets): the galleries contain no tasting-room photography — no glasses,
- * no tasting table — so the three tastings borrow the nearest production and
- * cellar imagery. Replace once someone shoots the tasting room.
+ * TODO(assets): real tasting-room photography now exists but only one frame
+ * of it — the ageing-line bench on the flight card. The other two tastings
+ * still borrow the nearest production and cellar imagery; replace once more
+ * of the tasting room is shot.
  */
 export const experienceImages: Record<TourSlug | TastingSlug, string> = {
   "discovery-tour": "/media/estate/tour-cellar.webp",
   "cellar-and-distillery-tour": "/media/estate/tour-distillery.webp",
   "heritage-tour": "/media/estate/tour-vineyard.webp",
   "signature-tasting": "/media/estate/tasting-signature.webp",
-  "cognac-and-pineau-flight": "/media/estate/tasting-cellar.webp",
+  "cognac-and-pineau-flight": "/media/estate/tasting-room.webp",
   "bespoke-spirits-masterclass": "/media/estate/tasting-blender.webp",
 };
 
@@ -763,6 +838,15 @@ export const visitEntryImages = [
  * map. Check whether the house wants one here instead.
  */
 export const visitEstateImage = "/media/estate/visit-estate-aerial.webp";
+
+/**
+ * Destinations for the footer's Capabilities column, positional against
+ * `footer.capabilities` in the dictionaries. Three entries, three distinct
+ * sections — the earlier list had four labels all pointing at one anchor,
+ * which read as broken. Dry-goods sourcing and custom bottling are rows of
+ * the six-métiers list the first link lands on.
+ */
+export const footerCapabilityHrefs = ["/#bespoke", "/#know-how", "/#production"] as const;
 
 // TODO(launch): create these pages (or link to hosted policies) before go-live.
 export const footerLegalHrefs = ["#", "#", "#", "#"] as const;

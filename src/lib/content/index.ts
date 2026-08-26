@@ -15,6 +15,8 @@ import {
   serviceSlugs,
   tastingSlugs,
   tastingSenses,
+  testimonialNames,
+  testimonialSlugs,
   tourSlugs,
   type Brand,
   type BrandAward,
@@ -171,6 +173,32 @@ export function getBrandCta(
   return undefined;
 }
 
+export type Testimonial = { slug: string; name: string; quote: string };
+
+/**
+ * The testimonial slider's voices, in `testimonialSlugs` order — quotes from
+ * the dictionary, names from site.ts, per-slide dot labels pre-filled here so
+ * the client component ships no interpolation of its own.
+ */
+export function getTestimonials(locale: Locale): {
+  label: string;
+  items: Testimonial[];
+  dotLabels: string[];
+} {
+  const c = getContent(locale);
+  return {
+    label: c.testimonials.label,
+    items: testimonialSlugs.map((slug) => ({
+      slug,
+      name: testimonialNames[slug],
+      quote: c.testimonials.items[slug].quote,
+    })),
+    dotLabels: testimonialSlugs.map((_, index) =>
+      fill(c.testimonials.showAria, { index: index + 1 }),
+    ),
+  };
+}
+
 /** The two people who speak for the house, for the leadership pair on /about. */
 export function getLeaders(locale: Locale) {
   const c = getContent(locale);
@@ -278,7 +306,9 @@ export function getNav(locale: Locale): NavGroup[] {
   const path = (p: string) => localizePath(locale, p);
   const families = getSpiritFamilies(locale);
 
-  const aboutHrefs = ["/#bespoke", "/#know-how", "/about", "/#leadership", "/#timeline"];
+  // "Our story" leads: the page about the house outranks its home-page
+  // anchors. Order is positional against c.nav.about.links in each dictionary.
+  const aboutHrefs = ["/about", "/#bespoke", "/#know-how", "/#leadership", "/#timeline"];
   // "#practical" stays on the page itself; the dropdown stops listing it.
   const visitHrefs = ["/visit", "/visit/tours", "/visit/tastings", "/visit#book"];
 
@@ -327,6 +357,9 @@ export function getNav(locale: Locale): NavGroup[] {
             href: path(`/partnerships/${slug}`),
             frameLabel: c.nav.partnerships.featuredFrameLabels[index],
             image: family.image,
+            // Bottles keep the tall product canvas; every other featured
+            // card is estate photography on the landscape frame.
+            packshot: true,
           };
         }),
       },
@@ -347,10 +380,10 @@ export function getNav(locale: Locale): NavGroup[] {
           {
             ...c.nav.visit.featured[1],
             href: path("/visit/tastings#signature-tasting"),
-            // A vineyard shot rather than the still house: the tasting card should
-            // read as fruit and place, and a fresh filename dodges the four-hour
-            // image cache that a same-name swap would sit behind.
-            image: "/media/estate/nav-tasting-vines.webp",
+            // The tasting room itself — the ageing line on the white bench —
+            // which finally exists in the galleries. Fresh filename, as ever,
+            // to dodge the four-hour image cache a same-name swap sits behind.
+            image: "/media/estate/nav-tasting-room.webp",
           },
         ],
       },

@@ -1,17 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { heroMedia, leaderPortraits, siteConfig } from "@/lib/site";
+import { heroMedia, leaderPortraits, productionImage, siteConfig } from "@/lib/site";
 import { isLocale, localizePath } from "@/lib/i18n";
-import { getBrands, getContent, getFeaturePanels, getSpiritFamilies } from "@/lib/content";
+import {
+  getBrands,
+  getContent,
+  getFeaturePanels,
+  getSpiritFamilies,
+  getTestimonials,
+} from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { HeroMedia } from "@/components/HeroMedia";
 import { BrandRail } from "@/components/BrandRail";
 import { FeaturePanels } from "@/components/FeaturePanels";
-import { PlaceholderFrame } from "@/components/PlaceholderFrame";
 import { Timeline } from "@/components/Timeline";
 import { LeadershipWord } from "@/components/LeadershipWord";
 import { TeamBand } from "@/components/TeamBand";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -28,8 +35,8 @@ const organizationJsonLd = {
     postalCode: "17520",
     addressCountry: "FR",
   },
-  // No LinkedIn until the real page URL lands: see its TODO(launch).
   sameAs: [
+    siteConfig.social.linkedin,
     siteConfig.social.instagram,
     siteConfig.social.facebook,
     ...siteConfig.social.productInstagram,
@@ -192,14 +199,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </Reveal>
           </div>
 
-          {/* Placeholder until the house shoots the range side by side. */}
           <Reveal delay={200} className="lg:col-span-5 lg:col-start-8">
-            <PlaceholderFrame
-              label={c.production.frameLabel}
-              fill
-              tone="dark"
-              className="h-full"
-            />
+            <div className="relative h-full min-h-[24rem] w-full overflow-hidden">
+              <Image
+                src={productionImage}
+                alt={c.production.frameLabel}
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -248,6 +257,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           cream chapter above before the white contact section below.
       ------------------------------------------------------------------ */}
       <TeamBand content={c.team} />
+
+      {/* ------------------------------------------------------------------
+          Client voices, three abreast on their own cream chapter between the
+          navy team band and the white closing invitation — the photograph
+          shows the people, the slider quotes the people they work for.
+          TODO(launch): placeholder quotes; see site.ts.
+      ------------------------------------------------------------------ */}
+      <TestimonialSlider {...getTestimonials(locale)} />
 
       {/* ------------------------------------------------------------------
           Closing call to action. The enquiry form itself now lives on its own

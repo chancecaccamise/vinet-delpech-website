@@ -475,6 +475,17 @@ body {
   flex: 0 0 auto;
 }
 
+/* Opt-in variant for the product rail: phones centre the active card, with
+   symmetric slivers of its neighbours saying "this scrolls" more clearly
+   than a right-edge cut-off. The timeline keeps plain start alignment, so
+   this is a modifier rather than the rail default. From `sm` up the product
+   rail also returns to start alignment and its editorial left-bleed. */
+@media (max-width: 639px) {
+  .rail--center > * {
+    scroll-snap-align: center;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .rail {
     scroll-behavior: smooth;

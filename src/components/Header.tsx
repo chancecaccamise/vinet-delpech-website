@@ -350,9 +350,15 @@ export function Header({
                       >
                         <div className="overflow-hidden">
                           {item.image ? (
-                            // Packshots share the products' 4:5 canvas, so they
-                            // fill the frame without letterboxing.
-                            <div className="relative aspect-[4/5] w-full bg-white">
+                            // Packshots keep the products' tall 4:5 canvas;
+                            // estate photography sits on the 3:2 landscape
+                            // frame it was shot for, matching the placeholder.
+                            <div
+                              className={clsx(
+                                "relative w-full",
+                                item.packshot ? "aspect-[4/5] bg-white" : "aspect-[3/2]",
+                              )}
+                            >
                               <Image
                                 src={item.image}
                                 alt=""

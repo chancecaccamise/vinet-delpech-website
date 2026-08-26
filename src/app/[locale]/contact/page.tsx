@@ -64,9 +64,8 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
   const contact = c.contact;
 
   // Labels are proper nouns, so they live here rather than in the dictionaries.
-  // LinkedIn returns once siteConfig.social.linkedin stops being the bare
-  // domain: see its TODO(launch).
   const social: readonly (readonly [string, string])[] = [
+    ["LinkedIn", siteConfig.social.linkedin],
     ["Instagram", siteConfig.social.instagram],
     ["Facebook", siteConfig.social.facebook],
     ["puraniques.com", siteConfig.brandSite],

@@ -33,7 +33,7 @@ export function LeadershipBand({
   leaders: readonly Leader[];
 }) {
   return (
-    <section id="leadership" className="bg-cream py-24 text-ink sm:py-32">
+    <section id="leadership" className="bg-white py-24 text-ink sm:py-32">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
         <Reveal>
           <p className="eyebrow text-blue">{content.label}</p>
