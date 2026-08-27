@@ -21,12 +21,20 @@ import type { NextConfig } from "next";
  * `base-uri` stops a base-tag injection repointing every relative URL, and
  * `form-action` stops the enquiry form being aimed at another origin.
  */
+// React Fast Refresh compiles modules with eval, so a policy without
+// 'unsafe-eval' silently kills hot reload and fills the console on every page.
+// Development gets the relaxed form; production never does.
+const scriptSrc =
+  process.env.NODE_ENV === "development"
+    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+    : "script-src 'self' 'unsafe-inline'";
+
 const securityHeaders = [
   {
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
+      scriptSrc,
       // Packshots and estate photography are all first-party; `data:` covers
       // the inline SVGs and blur placeholders Next generates.
       "img-src 'self' data: blob:",
