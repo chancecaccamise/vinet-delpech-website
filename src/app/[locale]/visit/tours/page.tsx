@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
 import { getContent, getTours } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { Reveal } from "@/components/Reveal";
@@ -19,14 +21,12 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const c = getContent(locale);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/visit/tours",
     title: c.metadata.toursTitle,
     description: c.tours.metaDescription,
-    alternates: {
-      canonical: `/${locale}/visit/tours`,
-      languages: languageAlternates("/visit/tours"),
-    },
-  };
+  });
 }
 
 export default async function ToursPage({ params }: { params: Promise<Params> }) {
@@ -40,8 +40,18 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: c.metadata.visitTitle, path: "/visit" },
+            { name: c.metadata.toursTitle, path: "/visit/tours" },
+          ]),
+        ]}
+      />
+
       <PageHero title={page.title} intro={[page.intro]}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
           {page.note}
         </p>
       </PageHero>

@@ -17,7 +17,8 @@ export function Footer({
   responsibleDrinking: string;
 }) {
   const year = new Date().getFullYear();
-  // All four hrefs are "#" until the legal pages are written.
+  // True now that the legal pages exist; kept as a guard so blanking the hrefs
+  // hides the column rather than shipping a list of dead anchors.
   const hasLegalPages = footerLegalHrefs.some((href) => href !== "#");
 
   return (
@@ -80,21 +81,22 @@ export function Footer({
             </ul>
           </div>
 
-          {/* Hidden until the legal pages exist: four anchors to "#" read as
-              template scaffolding, not as a footer. Point `footerLegalHrefs`
-              at real routes in site.ts and the column returns on its own. */}
+          {/* The guard stays: it kept the column hidden while these were four
+              anchors to "#", and it still degrades gracefully if the hrefs are
+              ever emptied again. `footerLegalHrefs` now points at real routes,
+              so the column renders. */}
           {hasLegalPages && (
             <div>
             <h3 className="eyebrow text-sand">{content.legalHeading}</h3>
             <ul className="mt-5 list-none space-y-3 p-0">
               {content.legalLinks.map((item, index) => (
                 <li key={item}>
-                  <a
-                    href={footerLegalHrefs[index]}
+                  <Link
+                    href={localizePath(locale, footerLegalHrefs[index])}
                     className="text-sm text-cream/60 transition-colors duration-300 hover:text-cream"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -143,23 +145,17 @@ export function Footer({
           </div>
         </div>
 
+        {/* One warning, in the reader's own language. The French edition
+            carries the Loi Évin wording through `responsibleDrinking`; the
+            English and Spanish editions no longer restate it in French
+            underneath, which read as a duplicate rather than as a notice. */}
         <div className="flex flex-col gap-4 border-b border-cream/10 py-8 text-center">
-          <p className="text-[0.68rem] uppercase leading-6 tracking-[0.2em] text-cream/55">
+          <p className="text-[0.68rem] uppercase leading-6 tracking-[0.2em] text-cream/75">
             {responsibleDrinking}
           </p>
-          {/* The French warning is a labelling requirement in France and is
-              shown on every edition, alongside the reader's own language. */}
-          {locale !== "fr" && (
-            <p
-              lang="fr"
-              className="text-[0.62rem] uppercase leading-6 tracking-[0.2em] text-cream/35"
-            >
-              L’abus d’alcool est dangereux pour la santé. À consommer avec modération.
-            </p>
-          )}
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-[0.62rem] uppercase tracking-[0.18em] text-cream/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 pt-8 text-[0.62rem] uppercase tracking-[0.18em] text-cream/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {siteConfig.legalName}. {content.rights}
           </p>
@@ -180,7 +176,7 @@ export function Footer({
                     href={switchLocaleInPath(`/${locale}`, code)}
                     lang={localeMeta[code].htmlLang}
                     hrefLang={localeMeta[code].htmlLang}
-                    className="text-cream/40 underline underline-offset-4 transition-colors duration-300 hover:text-cream"
+                    className="text-cream/60 underline underline-offset-4 transition-colors duration-300 hover:text-cream"
                   >
                     {localeMeta[code].short}
                   </Link>

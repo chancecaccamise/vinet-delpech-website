@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import "../globals.css";
@@ -10,6 +10,7 @@ import { ageGateInlineScript } from "@/lib/age-gate";
 import { MINIMUM_AGE, siteConfig } from "@/lib/site";
 import { isLocale, locales, localeMeta, type Locale } from "@/lib/i18n";
 import { getContent, getNav, getTopLevelNav } from "@/lib/content";
+import { languageAlternates } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,12 +42,16 @@ export function generateStaticParams(): Params[] {
   return locales.map((locale) => ({ locale }));
 }
 
-/** hreflang map for a path, plus x-default pointing at the English edition. */
-export function languageAlternates(path = "/"): Record<string, string> {
-  const suffix = path === "/" ? "" : path;
-  const entries = locales.map((locale) => [localeMeta[locale].htmlLang, `/${locale}${suffix}`]);
-  return Object.fromEntries([...entries, ["x-default", `/en${suffix}`]]);
-}
+/**
+ * Cream in light, navy in dark — the browser chrome on mobile then matches the
+ * page it is framing instead of defaulting to white above a cream ground.
+ */
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f1de" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b2a5b" },
+  ],
+};
 
 export async function generateMetadata({
   params,
@@ -80,7 +85,10 @@ export async function generateMetadata({
       description: c.metadata.description,
       url: `${siteConfig.url}/${locale}`,
       siteName: siteConfig.name,
-      locale: localeMeta[locale].htmlLang,
+      locale: localeMeta[locale].ogLocale,
+      alternateLocale: locales
+        .filter((other) => other !== locale)
+        .map((other) => localeMeta[other].ogLocale),
       type: "website",
     },
     twitter: {
@@ -88,7 +96,21 @@ export async function generateMetadata({
       title,
       description: c.metadata.description,
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      // Without max-image-preview:large Google shows a thumbnail at most, and
+      // this is a site whose case rests on photography. max-snippet:-1 lifts
+      // the snippet length cap; max-video-preview:-1 does the same for the
+      // hero footage.
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
   };
 }
 

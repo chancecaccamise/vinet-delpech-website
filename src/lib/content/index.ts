@@ -12,6 +12,7 @@ import {
   houseBrandAssets,
   knowHowFigures,
   leaderPortraits,
+  legalSlugs,
   serviceSlugs,
   tastingSlugs,
   tastingSenses,
@@ -26,6 +27,7 @@ import {
   type HouseBrand,
   type LabelledAward,
   type LeaderKey,
+  type LegalPage,
   type NavGroup,
   type Service,
   type SpiritFamily,
@@ -171,6 +173,25 @@ export function getBrandCta(
     };
   }
   return undefined;
+}
+
+/**
+ * The legal and policy pages. Same split as everywhere else: the slugs (which
+ * are URLs) live in site.ts, the prose lives in the dictionaries.
+ */
+export function getLegalPages(locale: Locale): LegalPage[] {
+  const c = getContent(locale);
+  return legalSlugs.map((slug) => ({ slug, ...c.legal.pages[slug] }));
+}
+
+export function findLegalPage(locale: Locale, slug: string): LegalPage | undefined {
+  return getLegalPages(locale).find((page) => page.slug === slug);
+}
+
+/** The chrome shared by every legal page — draft notice, date, back link. */
+export function getLegalChrome(locale: Locale) {
+  const { draftNotice, updatedLabel, updated, backLabel } = getContent(locale).legal;
+  return { draftNotice, updatedLabel, updated, backLabel };
 }
 
 export type Testimonial = { slug: string; name: string; quote: string };

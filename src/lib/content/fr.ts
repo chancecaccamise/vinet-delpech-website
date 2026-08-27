@@ -22,7 +22,7 @@ export const fr = {
   maisonStatement: {
     kicker: "La maison",
     line: "De la terre au verre. De la vigne à la bouteille. Votre rêve en bouteille.",
-    body: "Vinet-Puranik est une distillerie à l'héritage riche et aux racines profondes. Nous ne vendons pas seulement des produits : nous proposons une expérience, un art de vivre. Chaque produit est élaboré à la distillerie : de la vigne aux chais, de la distillation à la mise en bouteille.",
+    body: "Vinet-Puranik est une distillerie à l'héritage riche et aux racines profondes. Nous ne vendons pas seulement des produits : nous proposons une expérience, un art de vivre. Chaque produit est élaboré à la distillerie : de la vigne aux chais, de la distillation à la mise en bouteille.",
     origin: "100 % fabriqué en France",
   },
 
@@ -30,7 +30,7 @@ export const fr = {
     kicker: "Savoir-faire",
     title: "Six métiers, une maison",
     intro:
-      "Tout ce qu'exige un spiritueux sur mesure, réuni sous un même toit à Brie-sous-Archiac, pour qu'un seul interlocuteur porte un projet de la première idée au carton scellé.",
+      "Tout ce qu'exige un spiritueux sur mesure, réuni sous un même toit à Brie-sous-Archiac, pour qu'un seul échange porte un projet de la première idée au carton scellé.",
     services: {
       creation: {
         title: "Création sur mesure",
@@ -84,7 +84,7 @@ export const fr = {
   about: {
     title: "Notre histoire",
     metaDescription:
-      "Une distillerie indépendante en région de Cognac : savoir-faire séculaire, art de la distillation et spiritueux premium élaborés en France, de la vigne à la bouteille.",
+      "Une distillerie indépendante en région de Cognac : savoir-faire séculaire, art de la distillation et spiritueux premium élaborés en France, de la vigne à la bouteille.",
     intro: [
       "Vinet-Puranik est une distillerie à l'héritage riche et aux racines profondes : deux familles, une maison, et une cour à Brie-sous-Archiac où chaque étape d'un spiritueux se joue sous le même toit.",
       "De la terre au verre. De la vigne à la bouteille. Votre rêve en bouteille.",
@@ -129,7 +129,7 @@ export const fr = {
         body: "Statut OEA, douane et étiquetage pris en charge pour des partenaires dans plus de vingt pays.",
       },
     ],
-    crossLinkTitle: "Poursuivre la visite",
+    crossLinkTitle: "Découvrir la maison",
     crossLinkHistory: "Notre chronologie",
     crossLinkPresident: "Le mot de la direction",
     crossLinkPartnerships: "Les marques que nous façonnons",
@@ -220,7 +220,7 @@ export const fr = {
     "brigitte-et-louise-rouge": {
       category: "Apéritif · 17,5 %",
       descriptor:
-        "Moût de merlot et de cabernet-sauvignon à l'eau-de-vie de cognac : vif et rond, sur le sous-bois et les fruits à noyau.",
+        "Moût de merlot et de cabernet-sauvignon assemblé à l'eau-de-vie de cognac : vif et rond, sur les fruits des bois et les fruits à noyau.",
       frameLabel: "Packshot : Brigitte et Louise Rouge",
     },
     "maca-rum": {
@@ -232,7 +232,7 @@ export const fr = {
     tijuca: {
       category: "Rhum blended · Brésil",
       descriptor:
-        "Cuivré aux reflets dorés ; le bois et les épices laissent place à la vanille, au poivre et au miel, sur une finale de coco.",
+        "Cuivré aux reflets dorés ; le bois et les épices laissent place à la vanille, au poivre et au miel, sur une finale de coco.",
       frameLabel: "Packshot : rhum brésilien TIJUCA",
     },
     "gigi-en-provence": {
@@ -248,10 +248,10 @@ export const fr = {
       frameLabel: "Packshot : cognac bio Patte Blanche",
     },
     sephina: {
-      category: "Spirit drink · 30 %",
+      category: "Boisson spiritueuse · 30 %",
       descriptor:
-        "Assemblé dans la maison : 56 % de cognac VSOP et 44 % de Pineau des Charentes. Pruneau, fruits secs, noix et chêne toasté.",
-      frameLabel: "Packshot : spirit drink Sephina",
+        "Assemblage maison : 56 % de cognac VSOP et 44 % de Pineau des Charentes. Pruneau, fruits secs, noix et chêne toasté.",
+      frameLabel: "Packshot : boisson spiritueuse Sephina",
     },
     gin40: {
       category: "Gin · 50 cl",
@@ -282,16 +282,16 @@ export const fr = {
       awards: "Distinctions",
       senses: { eye: "Œil", nose: "Nez", palate: "Bouche" },
       ranks: { gold: "Or", silver: "Argent", bronze: "Bronze", score: "{score} points" },
-      figures: { distillations: "distillations", ageing: "ans de chêne, minimum" },
+      figures: { distillations: "distillations", ageing: "ans en fût de chêne, minimum" },
       ctaLabel: "Démarrer un projet",
       brandSiteLabel: "puraniques.com",
     },
     items: {
       "puranique-vodka": {
         heritage:
-          "Ancrée dans les traditions de distillation du sud-ouest de la France, Puranique Vodka reflète des générations de savoir-faire et d'attention. Élaborée à partir d'un blé français fin et distillée neuf fois, chaque bouteille porte la main du maître de chai.",
+          "Ancrée dans les traditions de distillation du sud-ouest de la France, Puranique Vodka reflète des générations de savoir-faire et d'attention. Élaborée à partir d'un blé français de qualité et distillée neuf fois, chaque bouteille porte le savoir-faire d'un maître distillateur.",
         story:
-          "Chaque bouteille commence par le meilleur blé français, choisi pour sa pureté. Sous la conduite de notre maître de chai, il connaît une distillation exigeante répétée neuf fois, puis une filtration soignée. Il en résulte un profil franc et subtil : rond en bouche, net en finale. À servir sèche ou au cœur d'un cocktail.",
+          "Chaque bouteille commence par le meilleur blé français, choisi pour sa pureté. Sous la conduite de notre maître de chai, il connaît une distillation exigeante répétée neuf fois, puis une filtration soignée. Il en résulte un profil franc et subtil : rond en bouche, net en finale. À servir pure ou au cœur d'un cocktail.",
         notes: {
           eye: "Limpide et cristalline",
           nose: "Fraîche et agréable",
@@ -301,7 +301,7 @@ export const fr = {
       },
       "puranique-cognac-vs": {
         heritage:
-          "Ancré dans les traditions de Cognac, Puranique V.S reflète l'esprit essentiel de son origine. Vieilli en chêne français pendant au moins deux ans, chaque lot est conduit par des maîtres de chai fidèles aux techniques éprouvées, pour un cognac clair et expressif.",
+          "Ancré dans les traditions de Cognac, Puranique V.S reflète l'esprit essentiel de son origine. Vieilli en chêne français pendant au moins deux ans, chaque lot est conduit par des maîtres de chai fidèles aux techniques éprouvées, pour un cognac vif et expressif.",
         story:
           "Un cognac jeune et vibrant, élaboré en région de Cognac et vieilli au moins deux ans en fût de chêne français. L'assemblage porte sur le fruit croquant et un caractère souple et accessible, aussi à l'aise en cocktail que servi sec. Sa fraîcheur et sa clarté sont le versant audacieux du cognac contemporain.",
         notes: {
@@ -315,7 +315,7 @@ export const fr = {
         heritage:
           "Élaboré en région de Cognac, Puranique V.S.O.P puise dans une réserve profonde d'eaux-de-vie sélectionnées à la main. Vieilli au moins quatre ans, enrichi d'assemblages plus anciens, il s'affine par un vieillissement et un assemblage méticuleux.",
         story:
-          "Une expression raffinée, vieillie au moins quatre ans, dont certaines eaux-de-vie ont mûri bien plus longtemps en fût. Distillé à Cognac, il révèle des couches de fruits secs, de vanille et d'épices sur une finale longue et souple : l'héritage, la patience et la profondeur à chaque gorgée.",
+          "Une expression raffinée, vieillie au moins quatre ans, dont certaines eaux-de-vie ont mûri bien plus longtemps en fût. Distillée à Cognac, elle révèle des couches de fruits secs, de vanille et d'épices sur une finale longue et souple : l'héritage, la patience et la profondeur à chaque gorgée.",
         notes: {
           eye: "Fruits secs et miel",
           nose: "Vanille, chêne toasté, pointe d'épices",
@@ -333,11 +333,11 @@ export const fr = {
           nose: "Douceur équilibrée, éclat d'agrumes",
           palate: "Finale nette et rafraîchissante",
         },
-        storyFrameLabel: "Ambiance : Jus d'Manguier servi long sur glace",
+        storyFrameLabel: "Ambiance : Jus d'Manguier servi en long drink sur glace",
       },
       mangeaux: {
         heritage:
-          "Mangeaux commence en cognac. Chaque lot part de la base de cognac de la maison, puis reçoit une lente infusion de mangues Alphonso : le savoir-faire du cognac portant un fruit tropical.",
+          "Mangeaux naît d'un cognac. Chaque lot part de la base de cognac de la maison, puis reçoit une lente infusion de mangues Alphonso : le savoir-faire du cognac portant un fruit tropical.",
         story:
           "Née de l'idée d'unir la maîtrise de la distillation française aux saveurs tropicales, Mangeaux repose sur un cognac primé, distingué par une médaille d'argent au concours New York Spirits & Wine. Dans cette base, nous infusons les mangues Alphonso les plus recherchées, pour une liqueur ambre brillant dont les couches se déploient à chaque gorgée.",
         notes: {
@@ -402,10 +402,11 @@ export const fr = {
     brandy: {
       name: "Brandy",
       title: "Brandy",
-      summary: "Brandy de raisin distillé en colonne et vieilli en fût : hors appellation cognac, par construction.",
+      summary:
+        "Brandy de raisin distillé en colonne et vieilli en fût de chêne : volontairement hors appellation cognac.",
       intro: [
-        "Un brandy issu d'une sélection rigoureuse de raisins, distillé en colonne et non dans l'alambic charentais que l'appellation impose. Méthode différente, spiritueux différent : il a donc sa propre page plutôt qu'une place parmi les cognacs.",
-        "Montlieu X.O est celui de la maison : au moins trois ans en fût de chêne, à servir en digestif, sec ou sur glace.",
+        "Un brandy issu d'une sélection rigoureuse de raisins, distillé en colonne et non dans l'alambic charentais que l'appellation impose. Méthode différente, spiritueux différent : il a donc sa propre page plutôt qu'une place parmi les cognacs.",
+        "Montlieu X.O est celui de la maison : au moins trois ans en fût de chêne, à servir en digestif, sec ou sur glace.",
       ],
     },
     liqueurs: {
@@ -413,7 +414,7 @@ export const fr = {
       title: "Liqueurs",
       summary: "La mangue Alphonso travaillée en Cognac : l'une sur le fruit seul, l'autre sur une base de cognac.",
       intro: [
-        "Des liqueurs de fruits élaborées en région de Cognac à partir de véritables mangues Alphonso, distillées avec précision et sans additif artificiel. Chaque lot suit la récolte : le caractère bouge un peu d'une année à l'autre.",
+        "Des liqueurs de fruits élaborées en région de Cognac à partir de véritables mangues Alphonso, distillées avec précision et sans additif artificiel. Chaque lot suit la récolte : le caractère bouge un peu d'une année à l'autre.",
         "Jus d'Manguier est l'expression fruit, à servir frais, sur glace ou en base de cocktail. Mangeaux infuse la même mangue dans un cognac primé, pour une liqueur ambre brillant nettement plus profonde.",
       ],
     },
@@ -424,8 +425,8 @@ export const fr = {
         "L'appellation de la maison, travaillée pour nos partenaires depuis les crus de Brie-sous-Archiac.",
       intro: [
         "La maison se tient au cœur des crus de Petite Champagne et de Fins Bois, et le cognac est le spiritueux qu'elle élabore depuis le plus longtemps. Pour nos partenaires, cela signifie des eaux-de-vie sélectionnées et assemblées selon un cahier des charges, puis vieillies en chêne du Limousin jusqu'à la qualité recherchée : VS, VSOP, XO.",
-        "Les cognacs Puranique de la maison y figurent également : le V.S clair et accessible après deux ans de chêne français, le V.S.O.P puisé dans une réserve profonde d'eaux-de-vie sélectionnées à la main et vieilli au moins quatre ans.",
-        "Patte Blanche en est l'expression bio : certifié ECOCERT, distillé à la main à Arthenac, sans intrant artificiel de la vigne au verre.",
+        "Les cognacs Puranique de la maison y figurent également : le V.S vif et accessible après deux ans de chêne français, le V.S.O.P puisé dans une réserve profonde d'eaux-de-vie sélectionnées à la main et vieilli au moins quatre ans.",
+        "Patte Blanche en est l'expression bio : certifié ECOCERT, distillé à la main à Arthenac, sans intrant artificiel de la vigne au verre.",
       ],
     },
     whisky: {
@@ -434,7 +435,7 @@ export const fr = {
       summary:
         "Single malt de France : double distillation charentaise, affiné en fût de cognac.",
       intro: [
-        "Un whisky élaboré à la charentaise : deux chauffes dans les mêmes alambics de cuivre que le cognac, puis un repos en fûts de chêne du Limousin qui l'ont précédemment contenu.",
+        "Un whisky élaboré à la charentaise : deux chauffes dans les mêmes alambics de cuivre que le cognac, puis un repos en fûts de chêne du Limousin qui l'ont précédemment contenu.",
         "Palisson Batch 01 est la première sortie de ce programme : au moins trois ans de bois, embouteillé à 43 %. À ses côtés, la maison embouteille Glen Mac Clay, un Blended Scotch sélectionné dans le sud des Highlands et vieilli en fût de Bourbon.",
       ],
     },
@@ -444,8 +445,8 @@ export const fr = {
       summary:
         "Des distillats de canne sourcés à l'étranger, puis vieillis, affinés, assemblés et habillés en France.",
       intro: [
-        "Le rhum arrive comme distillat et repart comme marque. La maison source auprès des origines cannières, puis mène ici, en Charente, le travail qui donne à un rhum son caractère : vieillissement, finition en bois de cognac, assemblage et habillage.",
-        "MACA est distillé à l'île Maurice et affiné en France sur la cannelle et la fève tonka ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
+        "Le rhum arrive comme distillat et repart comme marque. La maison s'approvisionne auprès des pays producteurs de canne, puis mène ici, en Charente, le travail qui donne à un rhum son caractère : vieillissement, finition en bois de cognac, assemblage et habillage.",
+        "MACA est distillé à l'île Maurice et affiné en France sur la cannelle et la fève tonka ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
       ],
     },
     gin: {
@@ -454,18 +455,18 @@ export const fr = {
       summary:
         "Trois lectures du genièvre, chacune distillée en cuivre selon le cahier des charges d'un partenaire.",
       intro: [
-        "C'est dans le gin qu'un cahier des charges se lit le mieux : la liste des botaniques fait la marque. La maison macère et distille en cuivre, et peut mener une recette du premier croquis au carton scellé sans quitter la cour.",
-        "Hold Up marie le genièvre à la tonka et à l'anis ; Gigi en Provence est bio, sur la violette, le romarin et une note discrète d'olive ; GIN40 porte les Landes : pin et mûre sauvage.",
+        "C'est dans le gin qu'un cahier des charges se lit le mieux : la liste des botaniques fait la marque. La maison macère et distille en cuivre, et peut mener une recette du premier croquis au carton scellé sans quitter la cour.",
+        "Hold Up marie le genièvre à la tonka et à l'anis ; Gigi en Provence est bio, sur la violette, le romarin et une note discrète d'olive ; GIN40 porte les Landes : pin et mûre sauvage.",
       ],
     },
     vodka: {
       name: "Vodka",
       title: "Vodka",
-      summary: "Une vodka de raisin élaborée par millésime, à partir de fruits bordelais.",
+      summary: "La vodka de blé français de la maison, et une vodka de raisin élaborée par millésime.",
       intro: [
-        "Puranique Vodka est celle de la maison : un blé français fin, distillé neuf fois puis soigneusement filtré, pour un profil franc et subtil, rond en bouche et net en finale.",
+        "Puranique Vodka est celle de la maison : un blé français fin, distillé neuf fois puis soigneusement filtré, pour un profil franc et subtil, rond en bouche et net en finale.",
         "Une vodka n'est pas tenue d'être neutre d'origine pour autant. Nade est distillée à partir de raisins bordelais et sortie par millésime : la puissance du cabernet-sauvignon, la rondeur du merlot, la finesse du sémillon.",
-        "Le millésime 2019 a reposé quatre mois en fûts de vin rouge de Fronsac et a été embouteillé en moins de 250 bouteilles numérotées ; le 2022 est le millésime courant.",
+        "Le millésime 2019 a reposé quatre mois en fûts de vin rouge de Fronsac et a été embouteillé en moins de 250 bouteilles numérotées ; le 2022 est le millésime courant.",
       ],
     },
     aperitifs: {
@@ -474,9 +475,9 @@ export const fr = {
       summary:
         "Des produits de raisin à faible degré : apéritifs français et spirit drinks à base de cognac.",
       intro: [
-        "Moût de raisin, eaux-de-vie et Pineau des Charentes, composés au degré de l'apéritif. C'est la réponse de la maison aux marchés qui veulent un caractère de cognac servi long, frais ou sur glace.",
-        "Le Pineau des Charentes Puranique est celui de la maison, blanc et rouge : un moût de raisin assemblé au cognac du vignoble familial, au cœur de l'aire délimitée. Certifié Haute Valeur Environnementale, niveau 3.",
-        "Brigitte et Louise est un apéritif français à 17,5 %, blanc et rouge ; Sephina est un spirit drink à 30 % : 56 % de cognac VSOP assemblé à 44 % de Pineau des Charentes, et donc volontairement hors appellation cognac.",
+        "Moût de raisin, eaux-de-vie et Pineau des Charentes, composés au degré de l'apéritif. C'est la réponse de la maison aux marchés qui veulent un caractère de cognac servi en long drink, frais ou sur glace.",
+        "Le Pineau des Charentes Puranique est celui de la maison, blanc et rouge : un moût de raisin assemblé au cognac du vignoble familial, au cœur de l'aire délimitée. Certifié Haute Valeur Environnementale, niveau 3.",
+        "Brigitte et Louise est un apéritif français à 17,5 %, blanc et rouge ; Sephina est un spirit drink à 30 % : 56 % de cognac VSOP assemblé à 44 % de Pineau des Charentes, et donc volontairement hors appellation cognac.",
       ],
     },
   },
@@ -493,11 +494,11 @@ export const fr = {
     brandCountOther: "{count} marques",
     inCollectionOne: "1 marque dans la collection",
     inCollectionOther: "{count} marques dans la collection",
-    explore: "Découvrir : {name}",
+    explore: "Découvrir : {name}",
     otherCategories: "Autres catégories",
     backToAll: "Retour à toutes les catégories",
     viewDetails: "Voir le détail",
-    viewDetailsAria: "Voir le détail de {name} (ouvre dans un nouvel onglet)",
+    viewDetailsAria: "Voir le détail de {name} (s'ouvre dans un nouvel onglet)",
     readTheStory: "Lire l'histoire",
     readTheStoryAria: "Lire l'histoire de {name}",
     houseHeading: "De la maison",
@@ -531,7 +532,7 @@ export const fr = {
     kicker: "Héritage",
     title: "Deux familles, une maison",
     intro:
-      "D'un domaine charentais du XVIIIᵉ siècle à une maison réunie qui expédie dans plus de vingt pays.",
+      "D'un domaine charentais du XVIIIᵉ siècle à une maison née d'une fusion qui expédie dans plus de vingt pays.",
     entries: [
       {
         year: "1777",
@@ -566,7 +567,7 @@ export const fr = {
     homeTitle: "Le mot de la direction",
     title: "Deux dirigeants, une maison",
     intro:
-      "Une distillerie familiale en Charente, et un groupe présent sur quatre continents. La maison est conduite par les deux.",
+      "Une distillerie familiale en Charente, et un groupe présent sur quatre continents. La maison est dirigée par les deux.",
     leaders: {
       bruno: {
         name: "Bruno Delannoy",
@@ -580,7 +581,7 @@ export const fr = {
       },
       rahul: {
         name: "Rahul Puranik",
-        role: "Directeur général du groupe",
+        role: "Président-directeur général du groupe",
         quote: "Une équipe. Une vision. Un avenir.",
         body: [
           "La Distillerie Vinet-Puranik associe l'expertise historique de la distillation française au réseau international du groupe.",
@@ -595,12 +596,12 @@ export const fr = {
     label: "Notre groupe",
     title: "Le Sawnee Group",
     body: [
-      "Le Sawnee Group est une organisation multinationale dont le siège est à Atlanta, aux États-Unis. Le groupe met son expérience internationale au service de plusieurs secteurs : aéronautique, investissement immobilier, hôtellerie, distillation, distribution de boissons, logistique internationale et achats stratégiques.",
+      "Le Sawnee Group est une organisation multinationale dont le siège est à Atlanta, aux États-Unis. Le groupe met son expérience multinationale et sa vision globale des affaires au service de plusieurs secteurs : aviation, investissement immobilier, hôtellerie, distillation, distribution de boissons, logistique internationale et achats stratégiques.",
       "Par son portefeuille diversifié et son réseau international, le Sawnee Group opère dans plusieurs régions, avec des bureaux en France, en Irlande, à Singapour, en Inde et aux États-Unis. Cette présence lui permet d'allier expertise opérationnelle et accès stratégique aux marchés.",
     ],
     industriesLabel: "Secteurs",
     industries: [
-      "Aéronautique",
+      "Aviation",
       "Investissement immobilier",
       "Hôtellerie",
       "Distillation",
@@ -612,7 +613,7 @@ export const fr = {
     offices: ["France", "Irlande", "Singapour", "Inde", "États-Unis"],
     mapAlt: "Carte du monde situant les bureaux et les marchés du Sawnee Group.",
     figureLabels: {
-      countries: "pays servis",
+      countries: "pays desservis",
       offices: "bureaux internationaux",
       industries: "secteurs",
     },
@@ -623,7 +624,7 @@ export const fr = {
     quote: "La passion avant tout",
     body: [
       "Après avoir repris l'entreprise familiale en 1994, j'ai décidé de me tourner vers l'export, et j'ai découvert un autre monde. L'Asie en particulier m'a captivé, et elle occupe depuis une grande place dans ma vie.",
-      "J'ai compris immédiatement que les importateurs que je rencontrais voulaient des produits sur mesure, faits selon leurs propres souhaits. Peu importait le pays : ils se sentaient davantage engagés dans des produits qu'ils avaient contribué à concevoir.",
+      "J'ai compris immédiatement que les importateurs que je rencontrais voulaient des produits sur mesure, faits selon leurs propres souhaits. Peu importait le pays : ils se sentaient davantage engagés dans des produits qu'ils avaient contribué à concevoir.",
       "Je suis donc devenu un promoteur des spiritueux sur mesure et un spécialiste des marques de distributeur. Plus de trente ans plus tard, avec une équipe vivante, motivée et multiculturelle, Vinet-Puranik est présente dans plus de vingt pays.",
     ],
     portraitAlt:
@@ -658,21 +659,21 @@ export const fr = {
 
   contact: {
     kicker: "Démarrer un projet",
-    title: "Construisez votre prochain spiritueux avec Vinet-Puranik",
-    body: "Partagez votre brief : ambition produit, marché et calendrier. La maison répond par un chemin réfléchi, de la première idée à la bouteille finie.",
+    title: "Créez votre prochain spiritueux avec Vinet-Puranik",
+    body: "Partagez votre brief : ambition produit, marché et calendrier. La maison vous répond en proposant une trajectoire réfléchie, de la première idée à la bouteille finie.",
     metaDescription:
-      "Parlez à la Distillerie Vinet-Puranik de spiritueux sur mesure, de marques de distributeur, de vrac, d’embouteillage ou d’une visite. Contact commercial nommé, lignes directes et formulaire.",
+      "Parlez à la Distillerie Vinet-Puranik de spiritueux sur mesure, de marques de distributeur, de vrac, d'embouteillage ou d'une visite. Contact commercial nommé, lignes directes et formulaire.",
     intro: [
-      "Dites-nous ce que vous cherchez à construire : le produit, le marché, le calendrier. Chaque demande arrive chez une personne, pas dans une file d’attente.",
+      "Dites-nous ce que vous cherchez à construire : le produit, le marché, le calendrier. Chaque demande arrive chez une personne, pas dans une file d'attente.",
     ],
     formHeading: "Envoyer une demande",
-    formIntro: "Les champs marqués d’un astérisque sont obligatoires.",
+    formIntro: "Les champs marqués d'un astérisque sont obligatoires.",
     detailsLabel: "Joindre la maison directement",
     switchboardHeading: "Standard",
     followHeading: "Suivre la maison",
-    homeTitle: "Un projet en tête ?",
+    homeTitle: "Un projet en tête ?",
     homeBody:
-      "De la première esquisse au carton scellé, la maison travaille selon votre brief. Dites-nous le marché que vous visez.",
+      "De la première esquisse au carton scellé, la maison travaille selon votre brief. Dites-nous quel marché vous visez.",
     commercialHeading: "Contact commercial",
     commercialRole: "Export et commercial",
     distilleryHeading: "La distillerie",
@@ -712,18 +713,19 @@ export const fr = {
   footer: {
     navigateCta: "Démarrer un projet",
     navigateHeading: "Navigation",
-    capabilitiesHeading: "Savoir-faire",
-    legalHeading: "Mentions",
+    capabilitiesHeading: "Nos expertises",
+    legalHeading: "Mentions légales",
     contactHeading: "Contact",
     capabilities: [
-      "Marque de distributeur & sur mesure",
+      "Marque de distributeur & spiritueux sur mesure",
       "Savoir-faire et innovation",
       "Ce que nous produisons",
     ],
     legalLinks: [
-      "Conditions générales",
+      "Mentions légales",
       "Politique de confidentialité",
       "Politique de cookies",
+      "Conditions générales",
       "Accessibilité",
     ],
     rights: "Tous droits réservés.",
@@ -743,8 +745,9 @@ export const fr = {
     },
     deniedTitle: "Nous sommes désolés",
     deniedMessage: "Vous devez avoir au moins {age} ans pour visiter Vinet-Puranik.",
+    deniedBack: "Revenir en arrière",
     legal:
-      "En entrant, vous confirmez avoir au moins {age} ans et qu'il est légal de consulter un contenu lié à l'alcool dans votre pays de résidence. Votre date de naissance est vérifiée dans votre navigateur : elle ne nous est jamais transmise ni conservée.",
+      "En entrant, vous confirmez que vous avez au moins {age} ans et qu'il est légal de consulter un contenu lié à l'alcool dans votre pays de résidence. Votre date de naissance est vérifiée dans votre navigateur : elle ne nous est jamais transmise ni conservée.",
   },
 
   visit: {
@@ -761,7 +764,7 @@ export const fr = {
         body: "Les halls de vieillissement où reposent cognacs, brandies et whiskies finis en fût.",
       },
       {
-        title: "La distillerie",
+        title: "La salle des alambics",
         body: "Les alambics de cuivre au travail : le cœur de la maison depuis 1777.",
       },
       {
@@ -777,18 +780,18 @@ export const fr = {
       },
       {
         title: "Dégustations",
-        body: "Dégustations assises et masterclasses dans la salle de dégustation du domaine.",
+        body: "Dégustations assises dans la salle de dégustation du domaine.",
         frameLabel: "Carte : verres de dégustation sur le chêne",
       },
     ],
     discover: "Découvrir",
     expectLabel: "Ce qui vous attend",
-    mapLabel: "Carte / vue aérienne : le domaine à Brie-sous-Archiac",
+    mapLabel: "Vue aérienne du domaine à Brie-sous-Archiac",
     bookCta: "Réserver une visite",
     practicalCta: "Informations pratiques",
     book: {
       heading: "Réserver une visite",
-      body: "Toutes les visites se font sur rendez-vous. Indiquez les dates envisagées, le nombre de participants et l'expérience souhaitée. La maison vous confirmera en retour.",
+      body: "Toutes les visites se font sur rendez-vous. Indiquez les dates envisagées, le nombre de participants et l'expérience souhaitée. La maison vous confirmera par retour.",
       ctaLabel: "Réserver via le formulaire de contact",
       mailSubject: "Réservation de visite : domaine Vinet-Puranik",
     },
@@ -799,7 +802,7 @@ export const fr = {
         { label: "Horaires", value: "Sur rendez-vous. Du lundi au vendredi" },
         {
           label: "Accès",
-          value: "À 20 minutes de Jonzac, 35 minutes de Cognac ; parking sur place",
+          value: "À 20 minutes de Jonzac, 35 minutes de Cognac ; parking sur place",
         },
         { label: "Langues", value: "Visites en français et en anglais" },
       ],
@@ -826,7 +829,7 @@ export const fr = {
     intro:
       "Trois façons de parcourir le domaine : du premier regard sur les chais à une journée entière au cœur des métiers du spiritueux sur mesure.",
     note: "Programme, durées et tarifs à confirmer par la maison : toutes les visites sur rendez-vous.",
-    crossLinkTitle: "Vous préférez rester à table ?",
+    crossLinkTitle: "Vous préférez rester à table ?",
     crossLinkCta: "Découvrir nos dégustations",
     crossLinkBack: "Retour au domaine",
     metaDescription:
@@ -859,7 +862,7 @@ export const fr = {
         frameLabel: "Visite : alambics de cuivre dans la distillerie",
       },
       "heritage-tour": {
-        name: "Visite Héritage, Depuis 1777",
+        name: "Visite Patrimoine : Depuis 1777",
         duration: "Demi-journée",
         groupSize: "2 à 8 personnes",
         languages: "Français · Anglais",
@@ -878,13 +881,13 @@ export const fr = {
     kicker: "Nous rendre visite · Dégustations",
     title: "Les dégustations au domaine",
     intro:
-      "Des dégustations assises dans la salle du domaine : du tour d'horizon des marques de la maison à une masterclass à l'établi du maître de chai.",
+      "Des dégustations assises dans la salle de dégustation du domaine : du tour d'horizon des marques de la maison aux classiques charentais réunis.",
     note: "Sélections, durées et tarifs à confirmer par la maison : toutes les dégustations sur rendez-vous.",
-    crossLinkTitle: "Vous préférez d'abord parcourir les chais ?",
+    crossLinkTitle: "Vous préférez d'abord parcourir les chais ?",
     crossLinkCta: "Découvrir nos visites",
     crossLinkBack: "Retour au domaine",
     metaDescription:
-      "Dégustations assises au domaine Vinet-Puranik : sélection signature, cognac et Pineau, masterclass spiritueux sur mesure. Sur rendez-vous à Brie-sous-Archiac.",
+      "Dégustations assises au domaine Vinet-Puranik : sélection signature de la gamme, cognac et Pineau réunis. Sur rendez-vous à Brie-sous-Archiac.",
     items: {
       "signature-tasting": {
         name: "Dégustation Signature",
@@ -892,7 +895,7 @@ export const fr = {
         groupSize: "2 à 12 personnes",
         languages: "Français · Anglais",
         includes: [
-          "Cinq spiritueux à travers la collection de la maison",
+          "Cinq spiritueux issus de toute la collection de la maison",
           "Guidée par un membre du comité de dégustation",
           "Des notes de dégustation à emporter",
         ],
@@ -905,25 +908,12 @@ export const fr = {
         groupSize: "2 à 12 personnes",
         languages: "Français · Anglais",
         includes: [
-          "Les cognacs Delpech-Fougerat par âge",
+          "Les cognacs Puranique par âge",
           "Brigitte et Louise, rouge et blanc",
-          "Bouchées d'accord régionales",
+          "Bouchées régionales en accord",
         ],
         body: "Les classiques charentais : la marque de cognac de la maison et son Pineau, dégustés comme la région les boit.",
         frameLabel: "Dégustation : verres à cognac et verres à Pineau",
-      },
-      "bespoke-spirits-masterclass": {
-        name: "Masterclass Spiritueux sur Mesure",
-        duration: "2 heures",
-        groupSize: "2 à 8 personnes",
-        languages: "Français · Anglais",
-        includes: [
-          "Séance d'assemblage à l'établi avec le maître de chai",
-          "Échantillons de fûts et travaux en cours",
-          "Votre propre assemblage à emporter",
-        ],
-        body: "Pour les partenaires professionnels : comment se compose un spiritueux sur mesure, du brief à l'assemblage, les pipettes en main.",
-        frameLabel: "Dégustation : établi du maître de chai et échantillons de fûts",
       },
     },
   },
@@ -933,14 +923,14 @@ export const fr = {
       label: "À propos",
       links: [
         "Notre histoire",
-        "Marque de distributeur & sur mesure",
+        "Marque de distributeur & spiritueux sur mesure",
         "Savoir-faire et innovation",
         "Le mot de la direction",
         "Notre chronologie",
       ],
       featuredHeading: "Dans la maison",
       featured: [
-        { label: "Notre production", frameLabel: "À la une : alambics de cuivre" },
+        { label: "Notre production", frameLabel: "À la une : alambics en cuivre" },
         { label: "Depuis 1777", frameLabel: "À la une : portrait de famille dans le chai" },
       ],
       viewAll: "Notre savoir-faire",
@@ -964,13 +954,13 @@ export const fr = {
         "Dégustations",
         "Réserver une visite",
       ],
-      featuredHeading: "Expériences préférées",
+      featuredHeading: "Nos expériences favorites",
       featured: [
         {
           label: "Visite Chais et Distillerie",
           frameLabel: "À la une : allée du chai de vieillissement",
         },
-        { label: "Dégustation Signature", frameLabel: "À la une : grappes sur le pied de vigne" },
+        { label: "Dégustation Signature", frameLabel: "À la une : la salle de dégustation du domaine" },
       ],
       viewAll: "Préparer votre visite",
     },
@@ -988,7 +978,6 @@ export const fr = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     language: "Langue",
-    languageUnavailable: "Bientôt disponible",
     previousBrands: "Marques précédentes",
     nextBrands: "Marques suivantes",
     brandCollection: "Collection de marques",
@@ -1000,20 +989,234 @@ export const fr = {
   notFound: {
     title: "Perdu dans les chais",
     body: "La page que vous cherchez a été déplacée, renommée, ou n'a jamais existé.",
-    cta: "Retour à la maison",
+    cta: "Retour à l'accueil",
   },
 
   metadata: {
     homeTitle: "Créateurs de spiritueux sur mesure depuis 1777",
-    titleTemplate: "%s · Vinet-Puranik",
+    titleTemplate: "Vinet-Puranik · %s",
     description:
-      "Distillerie familiale de la région de Cognac, créatrice de spiritueux sur mesure, de marques de distributeur et de marque blanche, de solutions d'embouteillage et de programmes de développement produit pour des partenaires dans plus de vingt pays.",
+      "Distillerie familiale de la région de Cognac, créatrice de spiritueux sur mesure, de marques de distributeur et de marque blanche, de solutions d'embouteillage et de programmes de développement produit pour des partenaires professionnels dans plus de vingt pays.",
     aboutTitle: "Notre histoire",
     partnershipsTitle: "Partenariats",
     contactTitle: "Contact",
     visitTitle: "Nous rendre visite",
     toursTitle: "Visites",
     tastingsTitle: "Dégustations",
+  },
+
+  legal: {
+    draftNotice:
+      "Projet soumis à relecture. Ce texte décrit le fonctionnement réel du site, mais les informations société indiquées entre crochets restent à fournir et la rédaction n'a pas encore été validée par le conseil juridique de la maison.",
+    updatedLabel: "Dernière mise à jour",
+    updated: "26 août 2026",
+    backLabel: "Retour à l'accueil",
+    pages: {
+      "mentions-legales": {
+        title: "Mentions légales",
+        metaDescription:
+          "Éditeur, hébergement et propriété intellectuelle du site Vinet-Puranik, conformément à la loi française.",
+        intro:
+          "Informations relatives à l'éditeur et à l'hébergeur de ce site, publiées en application de l'article 6 III de la loi pour la confiance dans l'économie numérique (LCEN).",
+        sections: [
+          {
+            heading: "Éditeur",
+            body: [
+              "Distillerie Vinet-Puranik SAS, société par actions simplifiée au capital de [CAPITAL SOCIAL] euros.",
+              "Siège social : 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
+              "Immatriculée au registre du commerce et des sociétés de [VILLE DU RCS] sous le numéro [NUMÉRO RCS]. SIRET [SIRET]. Numéro de TVA intracommunautaire [NUMÉRO DE TVA].",
+              "Téléphone : +33 5 46 49 10 10. Courriel : contact@vinet-puranik.com.",
+            ],
+          },
+          {
+            heading: "Directeur de la publication",
+            body: ["[NOM DU DIRECTEUR DE LA PUBLICATION], en sa qualité de [FONCTION]."],
+          },
+          {
+            heading: "Hébergement",
+            body: [
+              "Ce site est hébergé par [NOM DE L'HÉBERGEUR], [ADRESSE DU SIÈGE DE L'HÉBERGEUR], téléphone [TÉLÉPHONE DE L'HÉBERGEUR].",
+            ],
+          },
+          {
+            heading: "Propriété intellectuelle",
+            body: [
+              "La structure de ce site, ainsi que les textes, photographies, illustrations et autres œuvres qu'il contient, sont la propriété de la Distillerie Vinet-Puranik SAS ou sont utilisés avec l'autorisation de leur titulaire. Toute reproduction, représentation ou adaptation, totale ou partielle, sur quelque support que ce soit, est interdite sans accord écrit préalable.",
+              "Les noms de marques, les noms de produits et les logos figurant sur ce site — y compris ceux des marques partenaires que la maison élabore — sont les marques de leurs titulaires respectifs et ne peuvent être utilisés sans leur accord.",
+            ],
+          },
+          {
+            heading: "Droit applicable",
+            body: [
+              "Ce site et les présentes mentions sont régis par le droit français. Tout litige relatif au site relève de la compétence des juridictions françaises compétentes.",
+            ],
+          },
+        ],
+      },
+      privacy: {
+        title: "Politique de confidentialité",
+        metaDescription:
+          "Quelles données personnelles le site Vinet-Puranik collecte, pourquoi, combien de temps elles sont conservées et quels droits vous détenez au titre du RGPD.",
+        intro:
+          "Ce site collecte très peu de choses. Il n'y a ni mesure d'audience, ni publicité, ni traceur tiers d'aucune sorte. Les seules données personnelles qui parviennent à la maison sont celles que vous choisissez d'inscrire dans le formulaire de demande.",
+        sections: [
+          {
+            heading: "Responsable de traitement",
+            body: [
+              "Le responsable de traitement est la Distillerie Vinet-Puranik SAS, 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France. Pour toute question relative à la présente politique, ou pour exercer les droits exposés ci-dessous, écrivez à [COURRIEL DU CONTACT CONFIDENTIALITÉ].",
+            ],
+          },
+          {
+            heading: "Ce que nous collectons, et pourquoi",
+            body: [
+              "Le formulaire de demande vous demande votre nom, votre société (facultatif), votre adresse électronique, la nature de votre demande et votre message. Ces données servent à une seule fin : lire votre demande et y répondre.",
+              "La base légale est notre intérêt légitime à répondre aux demandes professionnelles qui nous sont adressées et, lorsque votre demande porte sur une commande éventuelle, les mesures précontractuelles prises à votre demande.",
+              "Nous ne collectons rien d'autre. Nous ne constituons aucun profil, nous n'utilisons pas vos données à des fins de prospection sauf demande expresse de votre part, et nous ne les vendons ni ne les louons jamais.",
+            ],
+          },
+          {
+            heading: "Votre date de naissance n'est pas collectée",
+            body: [
+              "La vérification de l'âge à l'entrée s'effectue entièrement dans votre navigateur. La date que vous saisissez sert à calculer si vous avez l'âge légal, puis elle est abandonnée. Elle ne nous est jamais transmise et n'est jamais conservée : seul le fait que la vérification a été passée est mémorisé, dans un cookie qui ne contient aucune date.",
+            ],
+          },
+          {
+            heading: "Qui d'autre y a accès",
+            body: [
+              "Les demandes nous sont acheminées par courriel via Resend, prestataire d'envoi agissant en qualité de sous-traitant. Votre message transite par ses systèmes pour parvenir à notre boîte de réception.",
+              "Le site est servi par notre hébergeur, désigné dans les mentions légales. Aucun autre tiers ne reçoit vos données. Les polices de caractères utilisées sur ce site sont servies depuis nos propres serveurs : consulter une page n'envoie donc rien à un fournisseur de polices.",
+            ],
+          },
+          {
+            heading: "Durée de conservation",
+            body: [
+              "Les demandes sont conservées dans la messagerie de la maison aussi longtemps que la relation commerciale concernée reste active, et jusqu'à trois ans à compter de notre dernier contact lorsqu'elle n'aboutit pas. [DURÉE À CONFIRMER AVEC LA MAISON.]",
+            ],
+          },
+          {
+            heading: "Vos droits",
+            body: [
+              "Vous pouvez demander l'accès aux données personnelles que nous détenons sur vous, leur rectification ou leur effacement, la limitation de leur traitement, vous opposer à leur utilisation et en demander une copie sous une forme portable. Écrivez à [COURRIEL DU CONTACT CONFIDENTIALITÉ] : nous répondons sous un mois.",
+              "Si vous estimez que vos données ont été traitées de façon irrégulière, vous pouvez introduire une réclamation auprès de la CNIL, sur cnil.fr.",
+            ],
+          },
+        ],
+      },
+      cookies: {
+        title: "Politique de cookies",
+        metaDescription:
+          "Ce site dépose un seul cookie, strictement nécessaire à la vérification de l'âge légal. Ni mesure d'audience, ni publicité, ni traceur tiers.",
+        intro:
+          "Ce site utilise un cookie. Il existe pour que votre âge ne vous soit pas redemandé à chaque page, et il ne contient aucune donnée personnelle.",
+        sections: [
+          {
+            heading: "Le seul cookie déposé",
+            body: [
+              "Nom : vd_age_verified. Finalité : mémoriser que la vérification de l'âge légal a été passée. Contenu : le seul caractère 1 — aucune date de naissance, aucun identifiant, rien qui vous décrive. Durée : trente jours. Il est déposé par ce site uniquement et n'est jamais transmis à un tiers.",
+            ],
+          },
+          {
+            heading: "Pourquoi votre consentement n'est pas demandé",
+            body: [
+              "Au regard de la directive ePrivacy et des recommandations de la CNIL, les cookies strictement nécessaires à la fourniture d'un service expressément demandé par l'internaute sont exemptés de consentement. La vérification de l'âge sur le site d'un producteur de spiritueux relève de ce cas : sans ce cookie, le site ne peut pas vous présenter son contenu sans vous interroger de nouveau à chaque page.",
+              "Comme nous ne déposons rien d'autre, ce site ne comporte aucune bannière de consentement. Il n'y a rien à refuser.",
+            ],
+          },
+          {
+            heading: "Ce que nous n'utilisons pas",
+            body: [
+              "Aucune mesure d'audience. Aucune publicité ni reciblage. Aucun pixel de réseau social. Aucun script tiers, quel qu'il soit. Les polices sont servies depuis les serveurs de ce site plutôt que par un prestataire extérieur.",
+            ],
+          },
+          {
+            heading: "Le supprimer",
+            body: [
+              "Vous pouvez supprimer ce cookie à tout moment depuis les réglages de votre navigateur, et refuser purement et simplement les cookies. Dans ce cas, la vérification de l'âge vous sera simplement présentée de nouveau à votre prochaine visite.",
+            ],
+          },
+        ],
+      },
+      terms: {
+        title: "Conditions générales",
+        metaDescription:
+          "Les conditions dans lesquelles le site Vinet-Puranik est mis à disposition : un site d'information professionnel, sans vente en ligne.",
+        intro:
+          "Les présentes conditions régissent votre utilisation de ce site. En le consultant, vous les acceptez.",
+        sections: [
+          {
+            heading: "Ce qu'est ce site",
+            body: [
+              "Il s'agit d'un site d'information destiné aux partenaires professionnels : importateurs, distributeurs, détaillants et propriétaires de marques. Rien n'y est vendu en ligne, aucun prix n'y est publié et aucune commande ne peut y être passée.",
+              "Une demande envoyée via le formulaire est une demande d'information. Elle ne constitue pas une commande, et ni notre réponse ni les éléments indicatifs que nous pourrions vous communiquer ne forment un contrat. Toute fourniture est régie par un accord écrit distinct.",
+            ],
+          },
+          {
+            heading: "Âge légal",
+            body: [
+              "Ce site présente des boissons alcoolisées. Il s'adresse uniquement aux visiteurs ayant atteint l'âge légal de consommation dans leur pays de résidence et pouvant y consulter licitement ce type de contenu. Merci de ne pas utiliser ce site si tel n'est pas le cas.",
+            ],
+          },
+          {
+            heading: "Exactitude",
+            body: [
+              "Nous décrivons nos produits et notre production avec soin, mais les caractéristiques, la disponibilité et la composition de la gamme peuvent évoluer. Les descriptions, notes de dégustation, âges et chiffres figurant ici sont indicatifs et ne constituent pas des engagements contractuels.",
+            ],
+          },
+          {
+            heading: "Liens vers d'autres sites",
+            body: [
+              "Ce site renvoie vers les sites des producteurs et propriétaires de marques avec lesquels nous travaillons. Ces sites échappent à notre contrôle : nous ne répondons ni de leur contenu, ni de leurs produits, ni de leurs propres pratiques en matière de données.",
+            ],
+          },
+          {
+            heading: "Responsabilité",
+            body: [
+              "Nous nous efforçons de maintenir ce site disponible et exact, sans garantir qu'il sera exempt d'interruption ou d'erreur. Dans la limite permise par la loi, nous ne répondons pas des préjudices indirects résultant de l'utilisation du site.",
+            ],
+          },
+          {
+            heading: "Droit applicable",
+            body: [
+              "Les présentes conditions sont régies par le droit français. Tout litige relève de la compétence des juridictions françaises compétentes.",
+            ],
+          },
+        ],
+      },
+      accessibility: {
+        title: "Accessibilité",
+        metaDescription:
+          "L'engagement d'accessibilité de Vinet-Puranik pour ce site, le référentiel visé et ses limites connues.",
+        intro:
+          "Nous souhaitons que ce site soit utilisable par tous, y compris par les visiteurs qui naviguent au clavier, avec un lecteur d'écran, ou avec des préférences de mouvement ou de contraste activées.",
+        sections: [
+          {
+            heading: "Le niveau visé",
+            body: [
+              "Nous visons le niveau AA des règles pour l'accessibilité des contenus web (WCAG 2.1), référentiel sur lequel reposent le RGAA français et la directive européenne sur l'accessibilité.",
+            ],
+          },
+          {
+            heading: "Ce qui est en place",
+            body: [
+              "Chaque page comporte un titre principal unique et un lien d'évitement vers le contenu. La navigation, le sélecteur de langue et le formulaire de demande s'utilisent au clavier, et le focus reste visible partout. Les erreurs de formulaire sont annoncées, signalées autrement que par la seule couleur, et le focus se porte sur le champ concerné.",
+              "Toutes les animations — apparitions au défilement, parallaxe, chiffres animés et carrousel de témoignages — sont désactivées automatiquement lorsque votre système demande une réduction des animations. Les photographies porteuses d'information disposent d'une description textuelle ; les images purement décoratives sont masquées aux lecteurs d'écran plutôt que décrites deux fois.",
+            ],
+          },
+          {
+            heading: "Limites connues",
+            body: [
+              "La conformité est partielle. Certains textes de petite taille sur fonds teintés restent proches du rapport de contraste minimal, et les photographies du domaine n'ont pas été décrites individuellement au-delà de leur contexte. [SECTION À REVOIR ET À METTRE À JOUR APRÈS UN AUDIT RGAA COMPLET.]",
+            ],
+          },
+          {
+            heading: "Nous signaler une difficulté",
+            body: [
+              "Si une partie de ce site vous empêche d'accéder à une information dont vous avez besoin, écrivez à [COURRIEL DU CONTACT ACCESSIBILITÉ] en décrivant ce qui s'est passé. Nous vous répondrons et, lorsque cela est possible, vous transmettrons l'information par un autre moyen.",
+            ],
+          },
+        ],
+      },
+    },
   },
 
   responsibleDrinking:

@@ -100,7 +100,7 @@ export function LocaleSwitcher({ locale, label, solid, className }: LocaleSwitch
             <>
               <Flag code={code} />
               <span className="flex-1">{meta.name}</span>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/40">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/65">
                 {meta.short}
               </span>
             </>

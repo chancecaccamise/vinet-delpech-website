@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { spiritFamilySlugs } from "@/lib/site";
+import { siteConfig, spiritFamilySlugs } from "@/lib/site";
 import { isLocale, locales, localizePath } from "@/lib/i18n";
 import {
   findSpiritFamily,
@@ -12,7 +12,8 @@ import {
   getSpiritFamilies,
   pluralize,
 } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { BrandGrid } from "@/components/BrandGrid";
 import { BrandStory } from "@/components/BrandStory";
@@ -43,14 +44,12 @@ export async function generateMetadata({
   const family = findSpiritFamily(locale, slug);
   if (!family) return {};
 
-  return {
+  return pageMetadata({
+    locale,
+    path: `/partnerships/${family.slug}`,
     title: family.title,
     description: family.summary,
-    alternates: {
-      canonical: `/${locale}/partnerships/${family.slug}`,
-      languages: languageAlternates(`/partnerships/${family.slug}`),
-    },
-  };
+  });
 }
 
 export default async function SpiritFamilyPage({ params }: { params: Promise<Params> }) {
@@ -84,8 +83,18 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: c.metadata.partnershipsTitle, path: "/partnerships" },
+            { name: family.name, path: `/partnerships/${family.slug}` },
+          ]),
+        ]}
+      />
+
       <PageHero title={family.title} intro={family.intro}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
           {pluralize(c.partnerships.inCollectionOne, c.partnerships.inCollectionOther, brands.length)}
         </p>
       </PageHero>
@@ -97,7 +106,7 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
         >
           <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
             <Reveal>
-              <p className="eyebrow text-ink/45">{c.partnerships.houseHeading}</p>
+              <p className="eyebrow text-ink/65">{c.partnerships.houseHeading}</p>
             </Reveal>
             {houseBrands.map((brand, index) => (
               <BrandStory
@@ -132,7 +141,7 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
             <BrandGrid locale={locale} brands={partnerBrands} labels={c.partnerships} />
 
             <Reveal delay={200}>
-              <p className="eyebrow mt-16 text-ink/45">{c.partnerships.note}</p>
+              <p className="eyebrow mt-16 text-ink/65">{c.partnerships.note}</p>
             </Reveal>
           </div>
         </section>

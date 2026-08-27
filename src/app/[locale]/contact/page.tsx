@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { siteConfig } from "@/lib/site";
 import { isLocale } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
@@ -19,14 +20,12 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const c = getContent(locale);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/contact",
     title: c.metadata.contactTitle,
     description: c.contact.metaDescription,
-    alternates: {
-      canonical: `/${locale}/contact`,
-      languages: languageAlternates("/contact"),
-    },
-  };
+  });
 }
 
 /** A labelled line of contact details — heading, then rows of links. */
@@ -39,7 +38,7 @@ function DetailBlock({
 }) {
   return (
     <div className="border-t border-ink/15 pt-6">
-      <h3 className="eyebrow text-ink/45">{heading}</h3>
+      <h3 className="eyebrow text-ink/65">{heading}</h3>
       <div className="mt-4 space-y-2 text-sm leading-7 text-ink/70">{children}</div>
     </div>
   );
@@ -73,6 +72,15 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: c.metadata.contactTitle, path: "/contact" },
+          ]),
+        ]}
+      />
+
       <PageHero title={contact.title} intro={contact.intro} />
 
       {/* The form leads. Everything a visitor needs to send an enquiry sits in
@@ -87,7 +95,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                   {contact.formHeading}
                 </h2>
                 <p className="mt-6 text-sm leading-8 text-ink/65">{contact.body}</p>
-                <p className="mt-6 text-xs leading-6 text-ink/45">{contact.formIntro}</p>
+                <p className="mt-6 text-xs leading-6 text-ink/65">{contact.formIntro}</p>
               </div>
             </Reveal>
           </div>
@@ -137,7 +145,7 @@ export default async function ContactPage({ params }: { params: Promise<Params> 
                 <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ink">
                   {siteConfig.commercial.name}
                 </p>
-                <p className="eyebrow text-ink/45">{contact.commercialRole}</p>
+                <p className="eyebrow text-ink/65">{contact.commercialRole}</p>
                 <DetailLink href={`mailto:${siteConfig.commercial.email}`}>
                   {siteConfig.commercial.email}
                 </DetailLink>

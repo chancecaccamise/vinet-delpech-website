@@ -223,7 +223,7 @@ function Entry({ entry, isActive }: { entry: TimelineEntry; isActive: boolean })
       <p
         className={clsx(
           "display transition-all duration-500",
-          isActive ? "display-lg text-blue" : "display-md text-ink/45",
+          isActive ? "display-lg text-blue" : "display-md text-ink/65",
         )}
       >
         {entry.year}

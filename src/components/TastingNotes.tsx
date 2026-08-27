@@ -31,7 +31,7 @@ export function TastingNotes({
             className="metier grid grid-cols-[1.5rem_4.5rem_minmax(0,1fr)] items-baseline gap-x-4 py-4"
           >
             <SenseIcon sense={note.sense} className="h-5 w-5 self-center text-blue" />
-            <dt className="eyebrow text-[0.6rem] text-ink/45">{senses[note.sense]}</dt>
+            <dt className="eyebrow text-[0.6rem] text-ink/65">{senses[note.sense]}</dt>
             <dd className="m-0 text-sm leading-7 text-ink/70">{note.note}</dd>
           </div>
         ))}

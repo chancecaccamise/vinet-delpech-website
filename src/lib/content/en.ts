@@ -739,7 +739,13 @@ export const en = {
       "Know-how & innovation",
       "What we produce",
     ],
-    legalLinks: ["Terms & Conditions", "Privacy Policy", "Cookie Policy", "Accessibility"],
+    legalLinks: [
+      "Legal notice",
+      "Privacy policy",
+      "Cookie policy",
+      "Terms & conditions",
+      "Accessibility",
+    ],
     rights: "All rights reserved.",
   },
 
@@ -752,11 +758,12 @@ export const en = {
     submit: "Verify Age",
     errors: {
       incomplete: "Please enter your full date of birth.",
-      invalid: "That date doesn’t exist. Please check and try again.",
+      invalid: "That date doesn't exist. Please check and try again.",
       future: "Please enter a date in the past.",
     },
-    deniedTitle: "We’re sorry",
+    deniedTitle: "We're sorry",
     deniedMessage: "You must be at least {age} years old to visit Vinet-Puranik.",
+    deniedBack: "Go back",
     legal:
       "By entering, you confirm you are at least {age} years old and that it is lawful to view alcohol-related content in your country of residence. Your date of birth is checked in your browser and is never sent to us or stored.",
   },
@@ -791,13 +798,13 @@ export const en = {
       },
       {
         title: "Tastings",
-        body: "Seated flights and masterclasses in the estate tasting room.",
+        body: "Seated flights in the estate tasting room.",
         frameLabel: "Card: tasting glasses on oak",
       },
     ],
     discover: "Discover",
     expectLabel: "What to expect",
-    mapLabel: "Map / drone view: the estate at Brie-sous-Archiac",
+    mapLabel: "Aerial view of the estate at Brie-sous-Archiac",
     bookCta: "Book a visit",
     practicalCta: "Practical information",
     book: {
@@ -892,13 +899,13 @@ export const en = {
     kicker: "Visit us · Tastings",
     title: "Tastings at the estate",
     intro:
-      "Seated flights in the estate tasting room, from a signature tour of the house's brands to a working masterclass at the blender's bench.",
+      "Seated flights in the estate tasting room, from a signature tour of the house's brands to the Charente classics side by side.",
     note: "Flights, durations and prices to be confirmed by the house: all tastings by appointment.",
     crossLinkTitle: "Rather walk the cellars first?",
     crossLinkCta: "Discover our tours",
     crossLinkBack: "Back to the estate",
     metaDescription:
-      "Seated tastings at the Vinet-Puranik estate: signature flights, cognac and Pineau, and a bespoke spirits masterclass. By appointment at Brie-sous-Archiac.",
+      "Seated tastings at the Vinet-Puranik estate: signature flights of the house range, and cognac and Pineau side by side. By appointment at Brie-sous-Archiac.",
     items: {
       "signature-tasting": {
         name: "Signature Tasting",
@@ -919,25 +926,12 @@ export const en = {
         groupSize: "2–12 guests",
         languages: "French · English",
         includes: [
-          "Delpech-Fougerat cognacs by age",
+          "Puranique cognacs by age",
           "Brigitte et Louise red and white",
           "Regional pairing bites",
         ],
         body: "The Charente classics. The house cognac marque and its Pineau, tasted the way the region drinks them.",
         frameLabel: "Tasting: cognac snifters and Pineau glasses",
-      },
-      "bespoke-spirits-masterclass": {
-        name: "Bespoke Spirits Masterclass",
-        duration: "2 hours",
-        groupSize: "2–8 guests",
-        languages: "French · English",
-        includes: [
-          "Blending session at the bench with the cellar master",
-          "Cask samples and works-in-progress",
-          "Your own blended sample to keep",
-        ],
-        body: "For trade partners: how a tailor-made spirit is composed, from brief to blend, with your hands on the pipettes.",
-        frameLabel: "Tasting: blender's bench with cask samples",
       },
     },
   },
@@ -976,7 +970,7 @@ export const en = {
       featuredHeading: "Favorite experiences",
       featured: [
         { label: "Cellar & Distillery Tour", frameLabel: "Featured: barrel cellar walkway" },
-        { label: "Signature Tasting", frameLabel: "Featured: grape clusters on the vine" },
+        { label: "Signature Tasting", frameLabel: "Featured: the estate tasting room" },
       ],
       viewAll: "Plan your visit",
     },
@@ -994,7 +988,6 @@ export const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Language",
-    languageUnavailable: "Coming soon",
     previousBrands: "Previous brands",
     nextBrands: "Next brands",
     brandCollection: "Brand collection",
@@ -1011,7 +1004,7 @@ export const en = {
 
   metadata: {
     homeTitle: "Creators of tailor-made spirits since 1777",
-    titleTemplate: "%s · Vinet-Puranik",
+    titleTemplate: "Vinet-Puranik · %s",
     description:
       "Family-owned Cognac-region distillery designing bespoke spirits, private-label and white-label programmes, bottling solutions and product development for trade partners in more than twenty countries.",
     aboutTitle: "Our story",
@@ -1020,6 +1013,225 @@ export const en = {
     visitTitle: "Visit us",
     toursTitle: "Tours",
     tastingsTitle: "Tastings",
+  },
+
+  // ---------------------------------------------------------------------------
+  // Legal pages. Drafts: they describe what the site genuinely does, but the
+  // company identifiers are placeholders and nothing here has been reviewed by
+  // the house's counsel. `[...]` marks every value the house must supply.
+  // ---------------------------------------------------------------------------
+  legal: {
+    draftNotice:
+      "Draft for review. This text describes how the site actually works, but the company details marked in brackets are still to be supplied and the wording has not yet been approved by the house's legal counsel.",
+    updatedLabel: "Last updated",
+    updated: "26 August 2026",
+    backLabel: "Back to home",
+    pages: {
+      "mentions-legales": {
+        title: "Legal notice",
+        metaDescription:
+          "Publisher, hosting and intellectual property information for the Vinet-Puranik website, as required by French law.",
+        intro:
+          "Information about who publishes this site and who hosts it, published under Article 6 III of the French Law for Confidence in the Digital Economy (LCEN).",
+        sections: [
+          {
+            heading: "Publisher",
+            body: [
+              "Distillerie Vinet-Puranik SAS, a société par actions simplifiée with share capital of [SHARE CAPITAL] euros.",
+              "Registered office: 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
+              "Registered in the Trade and Companies Register of [RCS CITY] under number [RCS NUMBER]. SIRET [SIRET]. Intra-community VAT number [VAT NUMBER].",
+              "Telephone: +33 5 46 49 10 10. Email: contact@vinet-puranik.com.",
+            ],
+          },
+          {
+            heading: "Director of publication",
+            body: ["[NAME OF THE DIRECTOR OF PUBLICATION], in their capacity as [ROLE]."],
+          },
+          {
+            heading: "Hosting",
+            body: [
+              "This site is hosted by [HOST NAME], [HOST REGISTERED ADDRESS], telephone [HOST TELEPHONE].",
+            ],
+          },
+          {
+            heading: "Intellectual property",
+            body: [
+              "The structure of this site, together with the text, photographs, illustrations and other works it contains, is the property of Distillerie Vinet-Puranik SAS or is used with the permission of the rights holder. Reproduction, representation or adaptation, in whole or in part, on any medium, is prohibited without prior written consent.",
+              "Brand names, product names and logos appearing on this site — including those of the partner brands the house produces for — are the trade marks of their respective owners and may not be used without their consent.",
+            ],
+          },
+          {
+            heading: "Applicable law",
+            body: [
+              "This site and this notice are governed by French law. Any dispute relating to the site falls within the jurisdiction of the competent French courts.",
+            ],
+          },
+        ],
+      },
+      privacy: {
+        title: "Privacy policy",
+        metaDescription:
+          "What personal data the Vinet-Puranik site collects, why, how long it is kept, and the rights you hold over it under the GDPR.",
+        intro:
+          "This site collects very little. There is no analytics, no advertising and no third-party tracking of any kind. The only personal data reaching the house is what you choose to type into the enquiry form.",
+        sections: [
+          {
+            heading: "Who is responsible",
+            body: [
+              "The data controller is Distillerie Vinet-Puranik SAS, 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France. For any question about this policy, or to exercise the rights set out below, write to [PRIVACY CONTACT EMAIL].",
+            ],
+          },
+          {
+            heading: "What we collect, and why",
+            body: [
+              "The enquiry form asks for your name, your company (optional), your email address, the nature of your enquiry and your message. That data is used for one purpose only: to read your enquiry and reply to it.",
+              "The legal basis is our legitimate interest in responding to trade enquiries addressed to us, and, where your enquiry concerns a possible order, the steps taken at your request before entering into a contract.",
+              "We do not collect anything else. We do not build a profile, we do not use your data for marketing unless you separately ask us to, and we never sell or rent it.",
+            ],
+          },
+          {
+            heading: "Your date of birth is not collected",
+            body: [
+              "The age check on entry is performed entirely inside your browser. The date you enter is used to calculate whether you meet the legal age and is then discarded. It is never transmitted to us, and it is never stored — only the fact that a check was passed is remembered, in a cookie, with no date in it.",
+            ],
+          },
+          {
+            heading: "Who else sees it",
+            body: [
+              "Enquiries are delivered to us by email through Resend, an email delivery provider acting as our processor. Your message passes through their systems in order to reach our inbox.",
+              "The site is served by our hosting provider, named in the legal notice. No other third party receives your data. The typefaces used on this site are served from our own servers, so viewing a page sends nothing to any font provider.",
+            ],
+          },
+          {
+            heading: "How long it is kept",
+            body: [
+              "Enquiries are kept in the house's mailbox for as long as the commercial relationship they concern remains active, and for up to three years from our last contact with you where it does not proceed. [CONFIRM RETENTION PERIOD WITH THE HOUSE.]",
+            ],
+          },
+          {
+            heading: "Your rights",
+            body: [
+              "You may request access to the personal data we hold about you, ask for it to be corrected or erased, ask us to restrict how we use it, object to our using it, and ask for a copy in a portable form. Write to [PRIVACY CONTACT EMAIL] and we will respond within one month.",
+              "If you believe your data has been mishandled you may lodge a complaint with the CNIL, the French data protection authority, at cnil.fr.",
+            ],
+          },
+        ],
+      },
+      cookies: {
+        title: "Cookie policy",
+        metaDescription:
+          "This site sets one strictly necessary cookie, for the legal age check. There is no analytics, advertising or third-party tracking.",
+        intro:
+          "This site uses one cookie. It exists so that you are not asked to confirm your age on every page, and it carries no personal data.",
+        sections: [
+          {
+            heading: "The only cookie we set",
+            body: [
+              "Name: vd_age_verified. Purpose: to record that the legal age check has been passed. Content: the single character 1 — no date of birth, no identifier, nothing that describes you. Lifetime: thirty days. It is set by this site only, and it is never sent to any third party.",
+            ],
+          },
+          {
+            heading: "Why you are not asked to consent",
+            body: [
+              "Under the ePrivacy rules and CNIL guidance, cookies that are strictly necessary to provide a service the visitor has asked for do not require consent. An age check on a spirits producer's site is such a cookie: without it the site cannot lawfully show you its contents without asking again on every page.",
+              "Because we set nothing else, there is no consent banner on this site. There is nothing for you to opt out of.",
+            ],
+          },
+          {
+            heading: "What we do not use",
+            body: [
+              "No analytics or audience measurement. No advertising or retargeting. No social media tracking pixels. No third-party scripts of any kind. Fonts are served from this site's own servers rather than from an external provider.",
+            ],
+          },
+          {
+            heading: "Removing it",
+            body: [
+              "You can delete the cookie at any time through your browser's settings, and you can refuse cookies altogether. If you do, the age check will simply be presented again the next time you open the site.",
+            ],
+          },
+        ],
+      },
+      terms: {
+        title: "Terms & conditions",
+        metaDescription:
+          "The terms on which the Vinet-Puranik website is made available: an informational trade site, with no online sales.",
+        intro:
+          "These terms govern your use of this website. By browsing it, you accept them.",
+        sections: [
+          {
+            heading: "What this site is",
+            body: [
+              "This is an informational site addressed to trade partners: importers, distributors, retailers and brand owners. Nothing on it is sold online, no prices are published, and no order can be placed here.",
+              "An enquiry sent through the contact form is a request for information. It does not constitute an order, and neither our reply nor any indicative information we give you forms a contract. Any supply is governed by a separate written agreement.",
+            ],
+          },
+          {
+            heading: "Legal drinking age",
+            body: [
+              "This site presents alcoholic beverages. It is intended only for visitors who have reached the legal drinking age in their country of residence, and who may lawfully view content of this kind there. Please do not use this site if that is not the case.",
+            ],
+          },
+          {
+            heading: "Accuracy",
+            body: [
+              "We take care to describe our products and our production accurately, but specifications, availability and the composition of the range may change. Descriptions, tasting notes, ages and figures given here are indicative and are not contractual commitments.",
+            ],
+          },
+          {
+            heading: "Links to other sites",
+            body: [
+              "This site links to the sites of the producers and brand owners we work with. Those sites are outside our control; we are not responsible for their content, their products or their own privacy practices.",
+            ],
+          },
+          {
+            heading: "Liability",
+            body: [
+              "We aim to keep this site available and accurate, but we do not guarantee that it will be uninterrupted or free of error. To the extent permitted by law, we are not liable for indirect loss arising from use of the site.",
+            ],
+          },
+          {
+            heading: "Governing law",
+            body: [
+              "These terms are governed by French law. Any dispute falls within the jurisdiction of the competent French courts.",
+            ],
+          },
+        ],
+      },
+      accessibility: {
+        title: "Accessibility",
+        metaDescription:
+          "Vinet-Puranik's accessibility commitment for this website, the standard it aims at, and its known limitations.",
+        intro:
+          "We want this site to be usable by everyone, including visitors who browse by keyboard, with a screen reader, or with motion or contrast preferences set.",
+        sections: [
+          {
+            heading: "What we aim at",
+            body: [
+              "We target level AA of the Web Content Accessibility Guidelines (WCAG 2.1), the standard underlying the French RGAA and the European Accessibility Act.",
+            ],
+          },
+          {
+            heading: "What is in place",
+            body: [
+              "Every page has one main heading and a skip link to the content. Navigation, the language switcher and the enquiry form can be operated by keyboard, and focus is visible throughout. Form errors are announced, marked with more than colour alone, and focus moves to the field that needs attention.",
+              "All animation — the scroll reveals, the parallax, the counting figures and the testimonial slider — is disabled automatically when your system asks for reduced motion. Photographs that carry information have text descriptions; purely decorative images are hidden from screen readers rather than described twice.",
+            ],
+          },
+          {
+            heading: "Known limitations",
+            body: [
+              "Conformity is partial. Some small-format text on tinted grounds sits close to the minimum contrast ratio, and the estate photography has not been individually described beyond its context. [REVIEW AND UPDATE THIS SECTION AFTER A FULL RGAA AUDIT.]",
+            ],
+          },
+          {
+            heading: "Telling us about a problem",
+            body: [
+              "If any part of this site prevents you from getting to information you need, write to [ACCESSIBILITY CONTACT EMAIL] and describe what happened. We will reply and, where we can, offer the information another way.",
+            ],
+          },
+        ],
+      },
+    },
   },
 
   responsibleDrinking: "Alcohol abuse is dangerous for your health. Please drink responsibly.",

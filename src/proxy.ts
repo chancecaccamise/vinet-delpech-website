@@ -39,6 +39,6 @@ export const config = {
   // images 307 to /en/... instead of being served, which shows up as silently
   // broken packshots rather than as an error.
   matcher: [
-    "/((?!_next|api|favicon.ico|icon.svg|robots.txt|sitemap.xml|opengraph-image|media|products|spirits|awards).*)",
+    "/((?!_next|api|favicon.ico|icon.svg|apple-icon.png|manifest.webmanifest|robots.txt|sitemap.xml|opengraph-image|media|products|spirits|awards).*)",
   ],
 };

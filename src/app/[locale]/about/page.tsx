@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { aboutSkillImages } from "@/lib/site";
+import { aboutSkillImages, siteConfig } from "@/lib/site";
 import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
 import { getContent, getGroupFigures, getLeaders } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { LeadershipBand } from "@/components/LeadershipBand";
@@ -22,14 +23,12 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const c = getContent(locale);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/about",
     title: c.metadata.aboutTitle,
     description: c.about.metaDescription,
-    alternates: {
-      canonical: `/${locale}/about`,
-      languages: languageAlternates("/about"),
-    },
-  };
+  });
 }
 
 /**
@@ -47,6 +46,15 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: c.metadata.aboutTitle, path: "/about" },
+          ]),
+        ]}
+      />
+
       <PageHero title={about.title} intro={about.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href={localizePath(locale, "/contact")} className="btn btn-cream">
@@ -57,7 +65,7 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
           </Link>
         </div>
         {/* The made-in-France mark, kept from the removed statement section. */}
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/45">
+        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
           {c.maisonStatement.origin}
         </p>
       </PageHero>

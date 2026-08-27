@@ -54,7 +54,7 @@ export const es = {
         body: "Líneas flexibles tanto para series cortas como para grandes volúmenes, acabadas exactamente según especificación.",
       },
       quality: {
-        title: "Control de calidad",
+        title: "Aseguramiento de la calidad",
         body: "Una búsqueda permanente de mejora, del destilado y el ensamblaje hasta la caja precintada.",
       },
     },
@@ -76,7 +76,7 @@ export const es = {
         label: "Idiomas",
         body: "Francés, inglés, español, chino (mandarín, cantonés).",
       },
-      rd: { label: "I+D", body: "Acabados, maceraciones, destilación, productos híbridos." },
+      rd: { label: "I+D", body: "Afinados, maceraciones, destilación, productos híbridos." },
     },
   },
 
@@ -105,11 +105,11 @@ export const es = {
       },
       {
         label: "El arte de la destilación",
-        body: "Uva y cereal, barrica y tiempo: compuestos hasta que el líquido responde al brief.",
+        body: "Uva y cereal, barrica y tiempo: compuestos hasta que el líquido responda al encargo.",
       },
       {
         label: "Herencia francesa",
-        body: "Viñedos de Fins Bois y Petite Champagne, una finca charentesa y las appellations que la acompañan.",
+        body: "Viñedos de Fins Bois y Petite Champagne, una finca charentesa y las appellations que los acompañan.",
       },
       {
         label: "Productos premium y de lujo",
@@ -131,7 +131,7 @@ export const es = {
         body: "Estatus OEA, aduanas y etiquetado gestionados para socios en más de veinte países.",
       },
     ],
-    crossLinkTitle: "Seguir por la casa",
+    crossLinkTitle: "Más sobre la casa",
     crossLinkHistory: "Nuestra cronología",
     crossLinkPresident: "Unas palabras de la dirección",
     crossLinkPartnerships: "Las marcas que moldeamos",
@@ -141,7 +141,7 @@ export const es = {
     kicker: "La colección",
     title: "Marcas moldeadas por la casa",
     intro:
-      "La gama propia de la casa, y las marcas de distribución que moldea para sus socios: la prueba de un registro amplio, entre categorías, barricas y mercados.",
+      "La gama propia de la casa, y las marcas de distribución que moldea para sus socios: la prueba de un alcance amplio, entre categorías, barricas y mercados.",
     distributionNote: "Distribuido en Francia por Mähler-Besse.",
     allProducts: "Todos nuestros productos",
   },
@@ -156,7 +156,7 @@ export const es = {
     "puranique-cognac-vs": {
       category: "Cognac V.S · dos años mínimo",
       descriptor:
-        "Joven y expresivo, envejecido al menos dos años en roble francés: fruta de huerta sobre un carácter suave y accesible.",
+        "Joven y expresivo, envejecido al menos dos años en roble francés: fruta de huerto sobre un carácter suave y accesible.",
       frameLabel: "Packshot: Puranique Cognac V.S",
     },
     "puranique-cognac-vsop": {
@@ -172,15 +172,15 @@ export const es = {
       frameLabel: "Packshot: licor de mango Jus d'Manguier",
     },
     mangeaux: {
-      category: "Licor de mango sobre cognac",
+      category: "Licor de mango al cognac",
       descriptor:
-        "Una base de cognac premiada infusionada con mango Alphonso: ámbar brillante, sobre fruta madura, corteza confitada y pan de especias.",
+        "Licor de mango al cognac, de ámbar brillante, sobre fruta madura, cáscara confitada y pan de especias.",
       frameLabel: "Packshot: licor de cognac y mango Mangeaux",
     },
     "puranique-pineau-blanc": {
       category: "Pineau des Charentes · Blanco",
       descriptor:
-        "Mosto de montils y ugni blanc ensamblado con cognac del viñedo familiar: generoso, vivo y ligeramente cítrico.",
+        "Pineau des Charentes del viñedo familiar: generoso, vivo y ligeramente acidulado.",
       frameLabel: "Packshot: Puranique Pineau des Charentes Blanco",
     },
     "puranique-pineau-rouge": {
@@ -198,13 +198,13 @@ export const es = {
     "glen-mac-clay": {
       category: "Blended Scotch Whisky · tres años mínimo",
       descriptor:
-        "Seleccionado en el sur de las Highlands, ensamblado con una malta sin turba y madurado en barrica de Bourbon: pera, manzana y uva.",
+        "Blended Scotch seleccionado en el sur de las Highlands, ensamblada con una malta no turbada y madurada en barrica de Bourbon: pera, manzana y uva.",
       frameLabel: "Packshot: Glen Mac Clay Blended Scotch Whisky",
     },
     "hold-up": {
       category: "Ginebra · 43 %",
       descriptor:
-        "Ginebra artesanal destilada en alambique de cobre: el enebro se encuentra con el haba tonka, el anís y un ligero filo cítrico.",
+        "Ginebra artesanal destilada en alambique de cobre: el enebro se encuentra con el haba tonka, el anís y un ligero toque cítrico.",
       frameLabel: "Packshot: botella de ginebra Hold Up",
     },
     "palisson-batch-01": {
@@ -222,7 +222,7 @@ export const es = {
     "brigitte-et-louise-rouge": {
       category: "Aperitivo · 17,5 %",
       descriptor:
-        "Mosto de merlot y cabernet sauvignon con eau-de-vie de cognac: vivo y redondo, sobre sotobosque y fruta de hueso.",
+        "Mosto de merlot y cabernet sauvignon con eau-de-vie de cognac: vivo y redondo, sobre frutos del bosque y fruta de hueso.",
       frameLabel: "Packshot: Brigitte et Louise Rouge",
     },
     "maca-rum": {
@@ -250,10 +250,10 @@ export const es = {
       frameLabel: "Packshot: cognac ecológico Patte Blanche",
     },
     sephina: {
-      category: "Spirit drink · 30 %",
+      category: "Bebida espirituosa · 30 %",
       descriptor:
-        "Ensamblado en la casa: 56 % de cognac VSOP con 44 % de Pineau des Charentes. Ciruela pasa, frutos secos, nuez y roble tostado.",
-      frameLabel: "Packshot: spirit drink Sephina",
+        "Ensamblaje de la casa: 56 % de cognac VSOP con 44 % de Pineau des Charentes. Ciruela pasa, fruta seca, nuez y roble tostado.",
+      frameLabel: "Packshot: bebida espirituosa Sephina",
     },
     gin40: {
       category: "Ginebra · 50 cl",
@@ -303,11 +303,11 @@ export const es = {
       },
       "puranique-cognac-vs": {
         heritage:
-          "Arraigado en las tradiciones de Cognac, Puranique V.S refleja el espíritu esencial de su origen. Envejecido en roble francés un mínimo de dos años, cada lote lo guían maestros de bodega fieles a técnicas contrastadas, para un cognac claro y expresivo.",
+          "Arraigado en las tradiciones de Cognac, Puranique V.S refleja el espíritu esencial de su origen. Envejecido en roble francés un mínimo de dos años, cada lote lo guían maestros de bodega fieles a técnicas consagradas, para un cognac vivo y expresivo.",
         story:
           "Un cognac joven y vibrante, elaborado en la región de Cognac y envejecido al menos dos años en barrica de roble francés. El ensamblaje destaca la fruta crujiente y un carácter suave y accesible, tan cómodo en coctelería como servido solo. Su frescura y su claridad son la cara audaz del cognac contemporáneo.",
         notes: {
-          eye: "Fruta de huerta fresca",
+          eye: "Fruta de huerto fresca",
           nose: "Vainilla y roble ligero",
           palate: "Final suave y accesible",
         },
@@ -317,7 +317,7 @@ export const es = {
         heritage:
           "Elaborado en la región de Cognac, Puranique V.S.O.P bebe de una reserva profunda de eaux-de-vie seleccionadas a mano. Envejecido al menos cuatro años, con ensamblajes más viejos que le suman complejidad, se afina mediante una crianza y un ensamblaje meticulosos.",
         story:
-          "Una expresión refinada envejecida al menos cuatro años, con eaux-de-vie seleccionadas que han madurado mucho más tiempo en roble. Destilado en Cognac, revela capas de fruta seca, vainilla y especia sobre un final largo y suave: herencia, paciencia y profundidad en cada sorbo.",
+          "Una expresión refinada envejecida al menos cuatro años, con eaux-de-vie seleccionadas que han madurado mucho más tiempo en roble. Destilada en Cognac, revela capas de fruta seca, vainilla y especia sobre un final largo y suave: herencia, paciencia y profundidad en cada sorbo.",
         notes: {
           eye: "Fruta seca y miel",
           nose: "Vainilla, roble tostado, un punto de especia",
@@ -357,7 +357,7 @@ export const es = {
         notes: {
           eye: "Color oro intenso",
           nose: "Intenso: fruta y notas de flores blancas",
-          palate: "Generoso, vivo, suave y ligeramente cítrico, con un final espléndido",
+          palate: "Generoso, vivo, suave y ligeramente ácido, con un final espléndido",
         },
         storyFrameLabel: "Ambiente: Pineau blanco servido frío a la hora del aperitivo",
       },
@@ -389,7 +389,7 @@ export const es = {
         heritage:
           "Glen Mac Clay Blended Scotch Whisky se seleccionó con cuidado en el sur de las Highlands. Compuesto principalmente por trigo y malta destilados en columna, se ensambla después con una blended malt sin turba de la misma destilería, destilada en alambique de cobre, y madura en barrica de Bourbon un mínimo de tres años.",
         story:
-          "Este Scotch se elaboró en la más pura tradición: destilado con pasión y envejecido varios años en barrica de roble. Para disfrutarlo largo, con agua con gas o ginger beer.",
+          "Este Scotch se elaboró en la más pura tradición: destilado con pasión y envejecido varios años en barrica de roble. Para disfrutarlo en trago largo, con agua con gas o ginger beer.",
         notes: {
           eye: "Brillante, con ligeros reflejos dorados",
           nose: "Notas frutales de pera, manzana y uva",
@@ -404,7 +404,8 @@ export const es = {
     brandy: {
       name: "Brandy",
       title: "Brandy",
-      summary: "Brandy de uva destilado en columna y envejecido en roble: fuera de la denominación cognac, por diseño.",
+      summary:
+        "Brandy de uva destilado en columna y envejecido en roble: deliberadamente fuera de la denominación cognac.",
       intro: [
         "Un brandy nacido de una selección cuidada de uva, destilado en columna y no en el alambique charentais que exige la denominación. Método distinto, espirituoso distinto: por eso tiene página propia en lugar de un sitio entre los cognacs.",
         "Montlieu X.O es el de la casa: al menos tres años en barrica de roble, recomendado como digestivo, solo o con hielo.",
@@ -426,7 +427,7 @@ export const es = {
         "La denominación de la casa, trabajada para nuestros socios desde los crus de Brie-sous-Archiac.",
       intro: [
         "La casa se asienta entre los crus de Petite Champagne y Fins Bois, y el cognac es el espirituoso que lleva más tiempo elaborando. Para nuestros socios, eso significa eaux-de-vie seleccionadas y ensambladas según un brief, y después envejecidas en roble del Limousin hasta la calidad que pide el mercado: VS, VSOP, XO.",
-        "Los cognacs Puranique de la casa también figuran aquí: el V.S claro y accesible tras dos años de roble francés, el V.S.O.P extraído de una reserva profunda de eaux-de-vie seleccionadas a mano y envejecido al menos cuatro.",
+        "Los cognacs Puranique de la casa también figuran aquí: el V.S vivo y accesible tras dos años de roble francés, el V.S.O.P extraído de una reserva profunda de eaux-de-vie seleccionadas a mano y envejecido al menos cuatro años.",
         "Patte Blanche es su expresión ecológica: certificada por ECOCERT, destilada a mano en Arthenac, sin insumos artificiales de la viña a la copa.",
       ],
     },
@@ -463,9 +464,10 @@ export const es = {
     vodka: {
       name: "Vodka",
       title: "Vodka",
-      summary: "Vodka de uva elaborado por añadas, a partir de fruta bordelesa.",
+      summary: "El vodka de trigo francés de la casa, y un vodka de uva elaborado por añadas.",
       intro: [
-        "Un vodka no tiene por qué ser neutro de origen. Nade se destila a partir de uvas bordelesas y se publica por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
+        "Puranique Vodka es el de la casa: trigo francés de calidad, destilado nueve veces y filtrado con esmero, para un perfil rotundo y a la vez sutil, redondo en boca y nítido en el final.",
+        "Un vodka no tiene por qué ser neutro de origen. Nade se destila a partir de uvas bordelesas y se lanza por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
         "La añada 2019 reposó cuatro meses en barricas de vino tinto de Fronsac y se embotelló en menos de 250 botellas numeradas; la 2022 es la añada en curso.",
       ],
     },
@@ -475,7 +477,7 @@ export const es = {
       summary:
         "Productos de uva de baja graduación: aperitivos franceses y spirit drinks a base de cognac.",
       intro: [
-        "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido largo, frío o con hielo.",
+        "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido en trago largo, frío o con hielo.",
         "El Pineau des Charentes Puranique es el de la casa, blanco y tinto: mosto de uva ensamblado con cognac del viñedo familiar, en el corazón de la zona delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
         "Brigitte et Louise es un aperitivo francés de 17,5 %, blanco y tinto; Sephina es un spirit drink de 30 %: 56 % de cognac VSOP ensamblado con 44 % de Pineau des Charentes y, por tanto, deliberadamente fuera de la denominación cognac.",
       ],
@@ -486,7 +488,7 @@ export const es = {
     title: "Colaboraciones",
     intro: [
       "Algunas de estas botellas son nuestras. Las demás pertenecen a los importadores, distribuidores y propietarios de marcas que llegaron a Brie-sous-Archiac con un mercado en mente: la casa compone el líquido, gestiona el vestido y envía la caja terminada con su nombre.",
-      "Todo está agrupado por categorías, de modo que la gama de la casa y las marcas de distribución que moldea para otros quedan una al lado de la otra: la prueba de un registro amplio, de la uva al cereal y a la caña, y el camino más corto hacia lo más parecido al proyecto que tiene en mente.",
+      "Todo está agrupado por categorías, de modo que la gama de la casa y las marcas de distribución que moldea para otros quedan una al lado de la otra: la prueba de un alcance amplio, de la uva al cereal y a la caña, y el camino más corto hacia lo más parecido al proyecto que tiene en mente.",
     ],
     note: "Distribuido en Francia por Mähler-Besse.",
     ctaLabel: "Iniciar un proyecto",
@@ -521,7 +523,7 @@ export const es = {
   },
 
   production: {
-    kicker: "Qué producimos",
+    kicker: "Lo que producimos",
     title: "Todos los espirituosos, una sola casa",
     intro:
       "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
@@ -532,7 +534,7 @@ export const es = {
     kicker: "Herencia",
     title: "Dos familias, una casa",
     intro:
-      "De una finca charentesa del siglo XVIII a una casa unida que exporta a más de veinte países.",
+      "De una finca charentesa del siglo XVIII a una casa nacida de una fusión que exporta a más de veinte países.",
     entries: [
       {
         year: "1777",
@@ -567,7 +569,7 @@ export const es = {
     homeTitle: "Unas palabras de la dirección",
     title: "Dos líderes, una casa",
     intro:
-      "Una destilería familiar en la Charente y un grupo con oficinas en cuatro continentes: la casa la conducen ambos.",
+      "Una destilería familiar en la Charente y un grupo con oficinas en cuatro continentes: la casa la dirigen ambos.",
     leaders: {
       bruno: {
         name: "Bruno Delannoy",
@@ -581,7 +583,7 @@ export const es = {
       },
       rahul: {
         name: "Rahul Puranik",
-        role: "Director general del grupo",
+        role: "Director ejecutivo del grupo",
         quote: "Un equipo. Una visión. Un futuro.",
         body: [
           "La Distillerie Vinet-Puranik combina la experiencia histórica de la destilación francesa con la red internacional del grupo.",
@@ -596,14 +598,14 @@ export const es = {
     label: "Nuestro grupo",
     title: "El Sawnee Group",
     body: [
-      "El Sawnee Group es una organización multinacional con sede en Atlanta, Estados Unidos. El grupo aporta su experiencia internacional a varios sectores: aviación, inversión inmobiliaria, hostelería, destilación, distribución de bebidas, logística internacional y compras estratégicas.",
+      "El Sawnee Group es una organización multinacional con sede en Atlanta, Estados Unidos. El grupo aporta su experiencia multinacional y su visión global de los negocios a varios sectores: aviación, inversión inmobiliaria, hotelería, destilación, distribución de bebidas, logística internacional y compras estratégicas.",
       "Gracias a su cartera diversificada y a su red internacional, el Sawnee Group opera en varias regiones, con oficinas en Francia, Irlanda, Singapur, India y Estados Unidos. Esa presencia le permite unir la experiencia operativa con un acceso estratégico a los mercados.",
     ],
     industriesLabel: "Sectores",
     industries: [
       "Aviación",
       "Inversión inmobiliaria",
-      "Hostelería",
+      "Hotelería",
       "Destilación",
       "Distribución de bebidas",
       "Logística internacional",
@@ -644,7 +646,7 @@ export const es = {
     items: {
       "private-label": {
         quote:
-          "De la primera muestra a la caja precintada, la casa siguió nuestro pliego al pie de la letra — y el coñac entregado superó al que habíamos pedido.",
+          "De la primera muestra a la caja precintada, la casa siguió nuestro pliego al pie de la letra — y el cognac entregado superó al que habíamos pedido.",
       },
       creation: {
         quote:
@@ -652,14 +654,14 @@ export const es = {
       },
       export: {
         quote:
-          "Tres mercados, tres normativas, un solo embotellado — su equipo cargó con la conformidad para que el nuestro cargara con la marca.",
+          "Tres mercados, tres normativas, un solo embotellado — su equipo se ocupó del cumplimiento normativo para que el nuestro se ocupara de la marca.",
       },
     },
   },
 
   contact: {
     kicker: "Iniciar un proyecto",
-    title: "Construya su próximo espirituoso con Vinet-Puranik",
+    title: "Cree su próximo espirituoso con Vinet-Puranik",
     body: "Cuéntenos su brief: ambición de producto, mercado y calendario. La casa responde con un recorrido meditado, de la primera idea a la botella terminada.",
     metaDescription:
       "Hable con Distillerie Vinet-Puranik sobre espirituosos a medida, marca de distribución, granel, embotellado o una visita. Contacto comercial con nombre, líneas directas y formulario.",
@@ -669,7 +671,7 @@ export const es = {
     formHeading: "Enviar una consulta",
     formIntro: "Los campos marcados con asterisco son obligatorios.",
     detailsLabel: "Contactar directamente con la casa",
-    switchboardHeading: "Centralita",
+    switchboardHeading: "Teléfono principal",
     followHeading: "Siga a la casa",
     homeTitle: "¿Tiene un proyecto en mente?",
     homeBody:
@@ -689,7 +691,7 @@ export const es = {
       name: "Nombre",
       company: "Empresa",
       email: "Correo electrónico",
-      enquiryType: "Naturaleza de la consulta",
+      enquiryType: "Tipo de consulta",
       selectPlaceholder: "Seleccionar…",
       message: "Su proyecto",
       messagePlaceholder: "Ambición de producto, mercado, volúmenes, calendario…",
@@ -697,7 +699,7 @@ export const es = {
       submitting: "Enviando…",
       honeypot: "Deje este campo vacío",
       successMessage:
-        "Gracias: hemos recibido su consulta. La casa le responderá en breve.",
+        "Gracias. Hemos recibido su consulta. La casa le responderá en breve.",
       errorMessage:
         "Se ha producido un error y su consulta no se ha enviado. Escríbanos directamente, por favor.",
       errorReview: "Revise los campos señalados, por favor.",
@@ -717,14 +719,15 @@ export const es = {
     legalHeading: "Legal",
     contactHeading: "Contacto",
     capabilities: [
-      "Marca de distribución y a medida",
+      "Marca de distribuidor y espirituosos a medida",
       "Saber hacer e innovación",
-      "Qué producimos",
+      "Lo que producimos",
     ],
     legalLinks: [
-      "Términos y condiciones",
+      "Aviso legal",
       "Política de privacidad",
       "Política de cookies",
+      "Términos y condiciones",
       "Accesibilidad",
     ],
     rights: "Todos los derechos reservados.",
@@ -744,6 +747,7 @@ export const es = {
     },
     deniedTitle: "Lo sentimos",
     deniedMessage: "Debe tener al menos {age} años para visitar Vinet-Puranik.",
+    deniedBack: "Volver atrás",
     legal:
       "Al entrar, confirma que tiene al menos {age} años y que es legal consultar contenido relacionado con el alcohol en su país de residencia. Su fecha de nacimiento se comprueba en su navegador: nunca se nos envía ni se almacena.",
   },
@@ -762,7 +766,7 @@ export const es = {
         body: "Las naves de crianza donde reposan cognacs, brandies y whiskies afinados en barrica.",
       },
       {
-        title: "La destilería",
+        title: "La sala de alambiques",
         body: "Los alambiques de cobre en marcha: el corazón de la casa desde 1777.",
       },
       {
@@ -778,13 +782,13 @@ export const es = {
       },
       {
         title: "Catas",
-        body: "Catas sentadas y clases magistrales en la sala de catas de la finca.",
+        body: "Catas sentadas en la sala de catas de la finca.",
         frameLabel: "Tarjeta: copas de cata sobre roble",
       },
     ],
     discover: "Descubrir",
     expectLabel: "Lo que le espera",
-    mapLabel: "Mapa / vista aérea: la finca en Brie-sous-Archiac",
+    mapLabel: "Vista aérea de la finca en Brie-sous-Archiac",
     bookCta: "Reservar una visita",
     practicalCta: "Información práctica",
     book: {
@@ -860,7 +864,7 @@ export const es = {
         frameLabel: "Visita: alambiques de cobre en la destilería",
       },
       "heritage-tour": {
-        name: "Visita Herencia, Desde 1777",
+        name: "Visita Patrimonio: Desde 1777",
         duration: "Media jornada",
         groupSize: "De 2 a 8 personas",
         languages: "Francés · Inglés",
@@ -879,13 +883,13 @@ export const es = {
     kicker: "Visítenos · Catas",
     title: "Las catas en la finca",
     intro:
-      "Catas sentadas en la sala de la finca: del recorrido por las marcas de la casa a una clase magistral en la mesa del maestro bodeguero.",
+      "Catas sentadas en la sala de catas de la finca: del recorrido por las marcas de la casa a los clásicos charenteses reunidos.",
     note: "Selecciones, duraciones y tarifas pendientes de confirmación por la casa; todas las catas con cita previa.",
     crossLinkTitle: "¿Prefiere recorrer antes las bodegas?",
     crossLinkCta: "Descubrir nuestras visitas",
     crossLinkBack: "Volver a la finca",
     metaDescription:
-      "Catas sentadas en la finca Vinet-Puranik: selección signature, cognac y Pineau, y clase magistral de espirituosos a medida. Con cita previa en Brie-sous-Archiac.",
+      "Catas sentadas en la finca Vinet-Puranik: selección signature de la gama, cognac y Pineau reunidos. Con cita previa en Brie-sous-Archiac.",
     items: {
       "signature-tasting": {
         name: "Cata Signature",
@@ -906,25 +910,12 @@ export const es = {
         groupSize: "De 2 a 12 personas",
         languages: "Francés · Inglés",
         includes: [
-          "Los cognacs Delpech-Fougerat por edad",
+          "Los cognacs Puranique por edad",
           "Brigitte et Louise, tinto y blanco",
           "Bocados de maridaje regional",
         ],
         body: "Los clásicos charenteses: la marca de cognac de la casa y su Pineau, catados como los bebe la región.",
         frameLabel: "Cata: copas de cognac y copas de Pineau",
-      },
-      "bespoke-spirits-masterclass": {
-        name: "Clase Magistral de Espirituosos a Medida",
-        duration: "2 horas",
-        groupSize: "De 2 a 8 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Sesión de ensamblaje en la mesa con el maestro bodeguero",
-          "Muestras de barrica y trabajos en curso",
-          "Su propio ensamblaje para llevar",
-        ],
-        body: "Para socios profesionales: cómo se compone un espirituoso a medida, del brief al ensamblaje, con las pipetas en la mano.",
-        frameLabel: "Cata: mesa del maestro bodeguero con muestras de barrica",
       },
     },
   },
@@ -934,12 +925,12 @@ export const es = {
       label: "Sobre nosotros",
       links: [
         "Nuestra historia",
-        "Marca de distribución y a medida",
+        "Marca de distribuidor y espirituosos a medida",
         "Saber hacer e innovación",
         "Unas palabras de la dirección",
         "Nuestra cronología",
       ],
-      featuredHeading: "En la casa",
+      featuredHeading: "Puertas adentro",
       featured: [
         { label: "Nuestra producción", frameLabel: "Destacado: alambiques de cobre" },
         { label: "Desde 1777", frameLabel: "Destacado: retrato familiar en la bodega" },
@@ -971,7 +962,7 @@ export const es = {
           label: "Visita Bodegas y Destilería",
           frameLabel: "Destacado: pasillo de la bodega de barricas",
         },
-        { label: "Cata Signature", frameLabel: "Destacado: racimos de uva en la vid" },
+        { label: "Cata Signature", frameLabel: "Destacado: la sala de catas de la finca" },
       ],
       viewAll: "Prepare su visita",
     },
@@ -989,7 +980,6 @@ export const es = {
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
     language: "Idioma",
-    languageUnavailable: "Próximamente",
     previousBrands: "Marcas anteriores",
     nextBrands: "Marcas siguientes",
     brandCollection: "Colección de marcas",
@@ -1001,12 +991,12 @@ export const es = {
   notFound: {
     title: "Perdido en las bodegas",
     body: "La página que busca se ha movido, ha cambiado de nombre o nunca existió.",
-    cta: "Volver a la casa",
+    cta: "Volver al inicio",
   },
 
   metadata: {
     homeTitle: "Creadores de espirituosos a medida desde 1777",
-    titleTemplate: "%s · Vinet-Puranik",
+    titleTemplate: "Vinet-Puranik · %s",
     description:
       "Destilería familiar de la región de Cognac que diseña espirituosos a medida, marcas de distribución y marca blanca, soluciones de embotellado y programas de desarrollo de producto para socios comerciales en más de veinte países.",
     aboutTitle: "Nuestra historia",
@@ -1015,6 +1005,220 @@ export const es = {
     visitTitle: "Visítenos",
     toursTitle: "Visitas",
     tastingsTitle: "Catas",
+  },
+
+  legal: {
+    draftNotice:
+      "Borrador para revisión. Este texto describe cómo funciona realmente el sitio, pero los datos societarios indicados entre corchetes están pendientes de aportar y la redacción aún no ha sido aprobada por la asesoría jurídica de la casa.",
+    updatedLabel: "Última actualización",
+    updated: "26 de agosto de 2026",
+    backLabel: "Volver al inicio",
+    pages: {
+      "mentions-legales": {
+        title: "Aviso legal",
+        metaDescription:
+          "Editor, alojamiento y propiedad intelectual del sitio de Vinet-Puranik, conforme a la legislación francesa.",
+        intro:
+          "Información sobre quién edita y quién aloja este sitio, publicada en aplicación del artículo 6 III de la ley francesa para la confianza en la economía digital (LCEN).",
+        sections: [
+          {
+            heading: "Editor",
+            body: [
+              "Distillerie Vinet-Puranik SAS, sociedad por acciones simplificada con un capital social de [CAPITAL SOCIAL] euros.",
+              "Domicilio social: 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, Francia.",
+              "Inscrita en el Registro Mercantil de [CIUDAD DEL RCS] con el número [NÚMERO RCS]. SIRET [SIRET]. Número de IVA intracomunitario [NÚMERO DE IVA].",
+              "Teléfono: +33 5 46 49 10 10. Correo electrónico: contact@vinet-puranik.com.",
+            ],
+          },
+          {
+            heading: "Director de la publicación",
+            body: ["[NOMBRE DEL DIRECTOR DE LA PUBLICACIÓN], en su calidad de [CARGO]."],
+          },
+          {
+            heading: "Alojamiento",
+            body: [
+              "Este sitio está alojado por [NOMBRE DEL PROVEEDOR], [DIRECCIÓN DEL PROVEEDOR], teléfono [TELÉFONO DEL PROVEEDOR].",
+            ],
+          },
+          {
+            heading: "Propiedad intelectual",
+            body: [
+              "La estructura de este sitio, así como los textos, fotografías, ilustraciones y demás obras que contiene, son propiedad de Distillerie Vinet-Puranik SAS o se utilizan con la autorización de su titular. Queda prohibida toda reproducción, representación o adaptación, total o parcial, en cualquier soporte, sin consentimiento previo por escrito.",
+              "Los nombres de marca, nombres de producto y logotipos que figuran en este sitio — incluidos los de las marcas de socios que la casa elabora — son marcas de sus respectivos titulares y no pueden utilizarse sin su consentimiento.",
+            ],
+          },
+          {
+            heading: "Legislación aplicable",
+            body: [
+              "Este sitio y el presente aviso se rigen por la legislación francesa. Cualquier litigio relativo al sitio será competencia de los tribunales franceses competentes.",
+            ],
+          },
+        ],
+      },
+      privacy: {
+        title: "Política de privacidad",
+        metaDescription:
+          "Qué datos personales recoge el sitio de Vinet-Puranik, con qué fin, cuánto tiempo se conservan y qué derechos le asisten conforme al RGPD.",
+        intro:
+          "Este sitio recoge muy poco. No hay analítica, ni publicidad, ni rastreo de terceros de ningún tipo. Los únicos datos personales que llegan a la casa son los que usted decide escribir en el formulario de consulta.",
+        sections: [
+          {
+            heading: "Responsable del tratamiento",
+            body: [
+              "El responsable del tratamiento es Distillerie Vinet-Puranik SAS, 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, Francia. Para cualquier cuestión relativa a esta política, o para ejercer los derechos que se indican más abajo, escriba a [CORREO DE CONTACTO DE PRIVACIDAD].",
+            ],
+          },
+          {
+            heading: "Qué recogemos, y por qué",
+            body: [
+              "El formulario de consulta le pide su nombre, su empresa (opcional), su dirección de correo electrónico, la naturaleza de su consulta y su mensaje. Esos datos se utilizan con una sola finalidad: leer su consulta y responderla.",
+              "La base jurídica es nuestro interés legítimo en responder a las consultas profesionales que se nos dirigen y, cuando su consulta se refiere a un posible pedido, las medidas precontractuales adoptadas a petición suya.",
+              "No recogemos nada más. No elaboramos ningún perfil, no utilizamos sus datos con fines comerciales salvo que usted lo solicite expresamente, y nunca los vendemos ni los cedemos.",
+            ],
+          },
+          {
+            heading: "Su fecha de nacimiento no se recoge",
+            body: [
+              "La verificación de edad al entrar se realiza íntegramente en su navegador. La fecha que introduce sirve para calcular si tiene la edad legal y después se descarta. Nunca se nos transmite y nunca se almacena: solo se recuerda que la verificación se superó, en una cookie que no contiene ninguna fecha.",
+            ],
+          },
+          {
+            heading: "Quién más accede a ellos",
+            body: [
+              "Las consultas nos llegan por correo electrónico a través de Resend, proveedor de envío que actúa como encargado del tratamiento. Su mensaje pasa por sus sistemas para llegar a nuestro buzón.",
+              "El sitio lo sirve nuestro proveedor de alojamiento, identificado en el aviso legal. Ningún otro tercero recibe sus datos. Las tipografías empleadas se sirven desde nuestros propios servidores, de modo que consultar una página no envía nada a ningún proveedor de fuentes.",
+            ],
+          },
+          {
+            heading: "Cuánto tiempo se conservan",
+            body: [
+              "Las consultas se conservan en el buzón de la casa mientras siga activa la relación comercial a la que se refieren, y hasta tres años desde nuestro último contacto cuando no prospera. [PLAZO PENDIENTE DE CONFIRMAR CON LA CASA.]",
+            ],
+          },
+          {
+            heading: "Sus derechos",
+            body: [
+              "Puede solicitar el acceso a los datos personales que tenemos sobre usted, su rectificación o supresión, la limitación de su tratamiento, oponerse a su uso y pedir una copia en formato portátil. Escriba a [CORREO DE CONTACTO DE PRIVACIDAD] y le responderemos en el plazo de un mes.",
+              "Si considera que sus datos se han tratado indebidamente, puede presentar una reclamación ante la CNIL, la autoridad francesa de protección de datos, en cnil.fr.",
+            ],
+          },
+        ],
+      },
+      cookies: {
+        title: "Política de cookies",
+        metaDescription:
+          "Este sitio instala una única cookie, estrictamente necesaria para la verificación de la edad legal. Sin analítica, publicidad ni rastreo de terceros.",
+        intro:
+          "Este sitio utiliza una cookie. Existe para que no se le pregunte la edad en cada página, y no contiene ningún dato personal.",
+        sections: [
+          {
+            heading: "La única cookie que instalamos",
+            body: [
+              "Nombre: vd_age_verified. Finalidad: registrar que se ha superado la verificación de edad legal. Contenido: el carácter 1 — ninguna fecha de nacimiento, ningún identificador, nada que le describa. Duración: treinta días. La instala únicamente este sitio y nunca se envía a terceros.",
+            ],
+          },
+          {
+            heading: "Por qué no se le pide consentimiento",
+            body: [
+              "Conforme a la normativa ePrivacy y a las orientaciones de la CNIL, las cookies estrictamente necesarias para prestar un servicio solicitado expresamente por el visitante están exentas de consentimiento. La verificación de edad en el sitio de un productor de espirituosos es una de ellas: sin esa cookie, el sitio no puede mostrarle su contenido lícitamente sin volver a preguntar en cada página.",
+              "Como no instalamos nada más, este sitio no tiene banner de consentimiento. No hay nada que usted deba rechazar.",
+            ],
+          },
+          {
+            heading: "Lo que no utilizamos",
+            body: [
+              "Ninguna analítica ni medición de audiencia. Ninguna publicidad ni retargeting. Ningún píxel de redes sociales. Ningún script de terceros. Las tipografías se sirven desde los servidores de este sitio y no desde un proveedor externo.",
+            ],
+          },
+          {
+            heading: "Cómo eliminarla",
+            body: [
+              "Puede eliminar la cookie en cualquier momento desde la configuración de su navegador, y puede rechazar las cookies por completo. Si lo hace, la verificación de edad volverá a mostrarse la próxima vez que abra el sitio.",
+            ],
+          },
+        ],
+      },
+      terms: {
+        title: "Términos y condiciones",
+        metaDescription:
+          "Las condiciones en las que se pone a disposición el sitio de Vinet-Puranik: un sitio informativo profesional, sin venta en línea.",
+        intro:
+          "Estos términos rigen el uso de este sitio web. Al navegar por él, usted los acepta.",
+        sections: [
+          {
+            heading: "Qué es este sitio",
+            body: [
+              "Es un sitio informativo dirigido a socios profesionales: importadores, distribuidores, minoristas y propietarios de marcas. Nada se vende aquí en línea, no se publican precios y no puede cursarse ningún pedido.",
+              "Una consulta enviada mediante el formulario es una solicitud de información. No constituye un pedido, y ni nuestra respuesta ni la información orientativa que podamos facilitarle forman un contrato. Todo suministro se rige por un acuerdo escrito independiente.",
+            ],
+          },
+          {
+            heading: "Edad legal",
+            body: [
+              "Este sitio presenta bebidas alcohólicas. Se dirige únicamente a visitantes que hayan alcanzado la edad legal para consumir alcohol en su país de residencia y que puedan consultar lícitamente este tipo de contenido. Le rogamos que no utilice este sitio si no es su caso.",
+            ],
+          },
+          {
+            heading: "Exactitud",
+            body: [
+              "Describimos nuestros productos y nuestra producción con cuidado, pero las características, la disponibilidad y la composición de la gama pueden cambiar. Las descripciones, notas de cata, edades y cifras que aquí figuran son orientativas y no constituyen compromisos contractuales.",
+            ],
+          },
+          {
+            heading: "Enlaces a otros sitios",
+            body: [
+              "Este sitio enlaza con los sitios de los productores y propietarios de marcas con los que trabajamos. Esos sitios quedan fuera de nuestro control: no respondemos de su contenido, de sus productos ni de sus propias prácticas en materia de datos.",
+            ],
+          },
+          {
+            heading: "Responsabilidad",
+            body: [
+              "Procuramos mantener este sitio disponible y exacto, pero no garantizamos que esté libre de interrupciones o errores. En la medida en que lo permita la ley, no respondemos de los daños indirectos derivados del uso del sitio.",
+            ],
+          },
+          {
+            heading: "Legislación aplicable",
+            body: [
+              "Estos términos se rigen por la legislación francesa. Cualquier litigio será competencia de los tribunales franceses competentes.",
+            ],
+          },
+        ],
+      },
+      accessibility: {
+        title: "Accesibilidad",
+        metaDescription:
+          "El compromiso de accesibilidad de Vinet-Puranik para este sitio, el estándar al que aspira y sus limitaciones conocidas.",
+        intro:
+          "Queremos que este sitio pueda usarlo cualquier persona, incluidos los visitantes que navegan con teclado, con lector de pantalla o con preferencias de movimiento o contraste activadas.",
+        sections: [
+          {
+            heading: "El nivel al que aspiramos",
+            body: [
+              "Aspiramos al nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG 2.1), el estándar en el que se basan el RGAA francés y la Directiva Europea de Accesibilidad.",
+            ],
+          },
+          {
+            heading: "Lo que ya está en marcha",
+            body: [
+              "Cada página tiene un único encabezado principal y un enlace para saltar al contenido. La navegación, el selector de idioma y el formulario de consulta funcionan con teclado, y el foco permanece visible en todo momento. Los errores del formulario se anuncian, se señalan con algo más que el color y el foco se desplaza al campo que requiere atención.",
+              "Todas las animaciones — las apariciones al desplazarse, el paralaje, las cifras animadas y el carrusel de testimonios — se desactivan automáticamente cuando su sistema solicita reducir el movimiento. Las fotografías que aportan información llevan descripción textual; las puramente decorativas se ocultan a los lectores de pantalla en lugar de describirse dos veces.",
+            ],
+          },
+          {
+            heading: "Limitaciones conocidas",
+            body: [
+              "La conformidad es parcial. Algunos textos de tamaño pequeño sobre fondos con color quedan cerca del contraste mínimo, y las fotografías de la finca no se han descrito individualmente más allá de su contexto. [SECCIÓN PENDIENTE DE REVISAR Y ACTUALIZAR TRAS UNA AUDITORÍA RGAA COMPLETA.]",
+            ],
+          },
+          {
+            heading: "Comunicarnos una dificultad",
+            body: [
+              "Si alguna parte de este sitio le impide acceder a una información que necesita, escriba a [CORREO DE CONTACTO DE ACCESIBILIDAD] describiendo lo ocurrido. Le responderemos y, cuando sea posible, le facilitaremos la información por otra vía.",
+            ],
+          },
+        ],
+      },
+    },
   },
 
   responsibleDrinking:

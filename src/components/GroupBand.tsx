@@ -59,7 +59,7 @@ export function GroupBand({
         <div className="mt-20 grid gap-x-16 gap-y-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <div>
-              <h3 className="eyebrow text-ink/45">{content.industriesLabel}</h3>
+              <h3 className="eyebrow text-ink/65">{content.industriesLabel}</h3>
               <ul className="m-0 mt-8 grid list-none gap-x-8 gap-y-6 p-0 sm:grid-cols-2">
                 {content.industries.map((industry) => (
                   <li key={industry} className="border-t border-ink/15 pt-4 text-sm text-ink/70">
@@ -72,7 +72,7 @@ export function GroupBand({
 
           <Reveal delay={150} className="lg:col-span-5">
             <div>
-              <h3 className="eyebrow text-ink/45">{content.officesLabel}</h3>
+              <h3 className="eyebrow text-ink/65">{content.officesLabel}</h3>
               <ul className="m-0 mt-8 grid list-none gap-x-8 gap-y-6 p-0 sm:grid-cols-2">
                 {content.offices.map((office) => (
                   <li key={office} className="border-t border-ink/15 pt-4 text-sm text-ink/70">

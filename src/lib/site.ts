@@ -512,7 +512,9 @@ export const partnerBrandAssets = [
     family: "gin",
     origin: "partner",
     image: "/products/gigi-en-provence.webp",
-    url: "https://gigienprovence.fr/",
+    // gigienprovence.fr stopped resolving; the brand is sold through its
+    // producer, Vignobles Austruy, so the card points there instead.
+    url: "https://www.vignobles-austruy.com/gigi-en-provence-gin-francais/gigi-en-provence-avec-etui.html",
   },
   {
     slug: "patte-blanche",
@@ -782,7 +784,6 @@ export const tourSlugs = [
 export const tastingSlugs = [
   "signature-tasting",
   "cognac-and-pineau-flight",
-  "bespoke-spirits-masterclass",
 ] as const;
 
 /**
@@ -800,7 +801,6 @@ export const experienceImages: Record<TourSlug | TastingSlug, string> = {
   "heritage-tour": "/media/estate/tour-vineyard.webp",
   "signature-tasting": "/media/estate/tasting-signature.webp",
   "cognac-and-pineau-flight": "/media/estate/tasting-room.webp",
-  "bespoke-spirits-masterclass": "/media/estate/tasting-blender.webp",
 };
 
 export type TourSlug = (typeof tourSlugs)[number];
@@ -848,8 +848,45 @@ export const visitEstateImage = "/media/estate/visit-estate-aerial.webp";
  */
 export const footerCapabilityHrefs = ["/#bespoke", "/#know-how", "/#production"] as const;
 
-// TODO(launch): create these pages (or link to hosted policies) before go-live.
-export const footerLegalHrefs = ["#", "#", "#", "#"] as const;
+// ---------------------------------------------------------------------------
+// Legal pages
+// ---------------------------------------------------------------------------
+
+/**
+ * The statutory and policy pages, in footer order. Slugs stay in French for
+ * `mentions-legales` because that is the name of the document in French law —
+ * the same reasoning that keeps the appellations untranslated.
+ *
+ * `mentions-legales` leads: for a French SAS running a commercial site it is a
+ * statutory requirement (Article 6 III of the LCEN), and it was the one page
+ * the original four footer labels did not include.
+ *
+ * TODO(launch): these are drafts. They describe what the site actually does —
+ * one strictly-necessary cookie, no trackers, enquiries mailed and not stored —
+ * but the company identifiers are placeholders and the wording has not been
+ * through the house's counsel. See HANDOVER.md.
+ */
+export const legalSlugs = [
+  "mentions-legales",
+  "privacy",
+  "cookies",
+  "terms",
+  "accessibility",
+] as const;
+
+export type LegalSlug = (typeof legalSlugs)[number];
+
+export type LegalSection = { heading: string; body: readonly string[] };
+export type LegalPage = {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  intro: string;
+  sections: readonly LegalSection[];
+};
+
+/** Positional against `footer.legalLinks` in the dictionaries. */
+export const footerLegalHrefs = legalSlugs.map((slug) => `/legal/${slug}`);
 
 /** Absolute URL for a locale's edition of a path, for canonicals and sitemaps. */
 export function absoluteUrl(locale: Locale, path = "/"): string {

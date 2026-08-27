@@ -47,7 +47,7 @@ export function AwardRow({
               {award.competition && (
                 <p className="mt-1 text-sm leading-6 text-ink/60">
                   {award.competition}
-                  {award.year && <span className="text-ink/40"> · {award.year}</span>}
+                  {award.year && <span className="text-ink/65"> · {award.year}</span>}
                 </p>
               )}
             </div>

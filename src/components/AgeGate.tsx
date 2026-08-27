@@ -103,7 +103,10 @@ export function AgeGate({
       const focusables = Array.from(
         root.querySelectorAll<HTMLElement>("input, button:not([disabled]), [data-focus-target]"),
       ).filter((el) => el.offsetParent !== null);
-      if (focusables.length === 0) return;
+      // With nothing (or only one thing) to cycle between, trapping would pin
+      // focus to a single node forever. Letting Tab through to browser chrome
+      // is the safer failure: a visitor must always be able to leave.
+      if (focusables.length < 2) return;
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
       if (event.shiftKey && document.activeElement === first) {
@@ -235,6 +238,22 @@ export function AgeGate({
           <div ref={deniedRef} tabIndex={-1} data-focus-target role="alert" className="mt-8">
             <p className="display display-sm text-cream">{content.deniedTitle}</p>
             <p className="mt-4 text-sm leading-7 text-cream/70">{deniedMessage}</p>
+            {/* A way back out of the dead end. Without it the denied panel is
+                the only focusable thing on an inert page, which traps a
+                keyboard or screen-reader visitor with no exit at all — and a
+                reload already lets anyone try again, so this concedes nothing. */}
+            <button
+              type="button"
+              onClick={() => {
+                setDenied(false);
+                setValues(EMPTY);
+                setError(null);
+                focusField("month");
+              }}
+              className="btn btn-cream mt-8"
+            >
+              {content.deniedBack}
+            </button>
           </div>
         ) : (
           <form noValidate onSubmit={handleSubmit} className="mt-8">
@@ -295,9 +314,9 @@ export function AgeGate({
         {/* Only meaningful alongside the form — it describes the act of
             entering, which someone turned away has not done. */}
         {!denied && (
-          <p className="mt-8 text-[0.62rem] leading-5 text-cream/45">{legal}</p>
+          <p className="mt-8 text-[0.62rem] leading-5 text-cream/70">{legal}</p>
         )}
-        <p className="mt-4 text-[0.62rem] uppercase leading-6 tracking-[0.18em] text-cream/40">
+        <p className="mt-4 text-[0.62rem] uppercase leading-6 tracking-[0.18em] text-cream/60">
           {responsibleDrinking}
         </p>
       </div>

@@ -23,12 +23,19 @@ export type LocaleMeta = {
   name: string;
   /** Value for <html lang> and hreflang. */
   htmlLang: string;
+  /**
+   * `og:locale`, which takes Open Graph's `language_TERRITORY` form rather
+   * than the bare subtag hreflang uses — Facebook and LinkedIn ignore a plain
+   * "en". British English on purpose: the copy is written in it (programmes,
+   * customised, apéritifs).
+   */
+  ogLocale: string;
 };
 
 export const localeMeta: Record<Locale, LocaleMeta> = {
-  en: { short: "EN", name: "English", htmlLang: "en" },
-  fr: { short: "FR", name: "Français", htmlLang: "fr" },
-  es: { short: "ES", name: "Español", htmlLang: "es" },
+  en: { short: "EN", name: "English", htmlLang: "en", ogLocale: "en_GB" },
+  fr: { short: "FR", name: "Français", htmlLang: "fr", ogLocale: "fr_FR" },
+  es: { short: "ES", name: "Español", htmlLang: "es", ogLocale: "es_ES" },
 };
 
 export function isLocale(value: string): value is Locale {

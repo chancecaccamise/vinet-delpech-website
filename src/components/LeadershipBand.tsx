@@ -66,7 +66,7 @@ export function LeadershipBand({
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ink">
                       {leader.name}
                     </p>
-                    <p className="eyebrow mt-2 text-ink/45">{leader.role}</p>
+                    <p className="eyebrow mt-2 text-ink/65">{leader.role}</p>
                   </figcaption>
                 </div>
 

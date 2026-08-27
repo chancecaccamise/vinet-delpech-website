@@ -490,7 +490,7 @@ export function Header({
             {/* Languages are a flat list in the drawer — a dropdown inside a
                 drawer is a menu inside a menu. Same data as the switcher. */}
             <div className="mt-10 border-t border-ink/10 pt-6">
-              <h2 className="eyebrow text-ink/45">{ui.language}</h2>
+              <h2 className="eyebrow text-ink/65">{ui.language}</h2>
               <ul className="m-0 mt-4 list-none space-y-1 p-0">
                 {locales.map((code) => {
                   const meta = localeMeta[code];
@@ -499,7 +499,7 @@ export function Header({
                     <>
                       <Flag code={code} />
                       <span className="flex-1">{meta.name}</span>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/40">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/65">
                         {meta.short}
                       </span>
                     </>

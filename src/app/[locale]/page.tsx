@@ -10,6 +10,7 @@ import {
   getSpiritFamilies,
   getTestimonials,
 } from "@/lib/content";
+import { graphJsonLd, organizationJsonLd, webSiteJsonLd } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { HeroMedia } from "@/components/HeroMedia";
@@ -20,30 +21,6 @@ import { LeadershipWord } from "@/components/LeadershipWord";
 import { TeamBand } from "@/components/TeamBand";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteConfig.name,
-  legalName: siteConfig.legalName,
-  url: siteConfig.url,
-  email: siteConfig.email,
-  telephone: siteConfig.phone,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "3, impasse Félix Chartier",
-    addressLocality: "Brie-sous-Archiac",
-    postalCode: "17520",
-    addressCountry: "FR",
-  },
-  sameAs: [
-    siteConfig.social.linkedin,
-    siteConfig.social.instagram,
-    siteConfig.social.facebook,
-    ...siteConfig.social.productInstagram,
-    siteConfig.brandSite,
-  ],
-};
-
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) notFound();
@@ -53,10 +30,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
+      {/* Organization and WebSite in one @graph, so the site node can point at
+          the house by @id rather than restating it. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          __html: graphJsonLd([
+            organizationJsonLd(c.metadata.description),
+            webSiteJsonLd(locale, c.metadata.description),
+          ]),
         }}
       />
 
@@ -96,7 +78,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
 
         <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex">
-          <span className="eyebrow text-[0.55rem] text-cream/45">{c.hero.scroll}</span>
+          <span className="eyebrow text-[0.55rem] text-cream/70">{c.hero.scroll}</span>
           <span aria-hidden="true" className="scroll-cue" />
         </div>
       </section>
@@ -133,7 +115,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
 
           <Reveal delay={300}>
-            <p className="mt-14 pr-6 text-[0.62rem] uppercase tracking-[0.22em] text-ink/40">
+            <p className="mt-14 pr-6 text-[0.62rem] uppercase tracking-[0.22em] text-ink/65">
               {c.collection.distributionNote}
             </p>
           </Reveal>
@@ -180,7 +162,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       {family.name}
                       <span
                         aria-hidden="true"
-                        className="text-blue/60 transition-transform duration-300 group-hover:translate-x-1"
+                        className="text-blue/80 transition-transform duration-300 group-hover:translate-x-1"
                       >
                         &rarr;
                       </span>

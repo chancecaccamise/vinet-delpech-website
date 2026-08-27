@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import { siteConfig, visitEntryHrefs, visitEntryImages, visitEstateImage } from "@/lib/site";
 import { isLocale, localizePath } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 
@@ -20,14 +21,12 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const c = getContent(locale);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/visit",
     title: c.metadata.visitTitle,
     description: c.visit.metaDescription,
-    alternates: {
-      canonical: `/${locale}/visit`,
-      languages: languageAlternates("/visit"),
-    },
-  };
+  });
 }
 
 export default async function VisitPage({ params }: { params: Promise<Params> }) {
@@ -40,6 +39,15 @@ export default async function VisitPage({ params }: { params: Promise<Params> })
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: visit.title, path: "/visit" },
+          ]),
+        ]}
+      />
+
       <PageHero title={visit.title} intro={visit.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href="#book" className="btn btn-cream">

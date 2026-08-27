@@ -10,7 +10,9 @@ import {
   getSpiritFamilies,
   pluralize,
 } from "@/lib/content";
-import { languageAlternates } from "@/app/[locale]/layout";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 
@@ -25,14 +27,12 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const c = getContent(locale);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/partnerships",
     title: c.metadata.partnershipsTitle,
     description: c.partnerships.metaDescription,
-    alternates: {
-      canonical: `/${locale}/partnerships`,
-      languages: languageAlternates("/partnerships"),
-    },
-  };
+  });
 }
 
 export default async function PartnershipsPage({ params }: { params: Promise<Params> }) {
@@ -45,6 +45,15 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
 
   return (
     <>
+      <JsonLd
+        nodes={[
+          breadcrumbJsonLd(locale, [
+            { name: siteConfig.name, path: "/" },
+            { name: c.metadata.partnershipsTitle, path: "/partnerships" },
+          ]),
+        ]}
+      />
+
       <PageHero title={c.partnerships.title} intro={c.partnerships.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href={localizePath(locale, "/contact")} className="btn btn-cream">
@@ -103,7 +112,7 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
           </ul>
 
           <Reveal delay={200}>
-            <p className="eyebrow mt-16 text-ink/45">{c.partnerships.note}</p>
+            <p className="eyebrow mt-16 text-ink/65">{c.partnerships.note}</p>
           </Reveal>
         </div>
       </section>

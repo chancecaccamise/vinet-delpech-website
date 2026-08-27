@@ -79,7 +79,7 @@ export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
                   <dl className="mt-7 grid gap-2.5 border-t border-ink/12 pt-6">
                     {panel.details.map((detail) => (
                       <div key={detail.label} className="grid gap-0.5 sm:grid-cols-[9.5rem_1fr] sm:gap-4">
-                        <dt className="eyebrow text-ink/45 sm:pt-0.5">{detail.label}</dt>
+                        <dt className="eyebrow text-ink/65 sm:pt-0.5">{detail.label}</dt>
                         <dd className="m-0 text-sm leading-6 text-ink/70">{detail.body}</dd>
                       </div>
                     ))}
