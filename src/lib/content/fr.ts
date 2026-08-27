@@ -927,6 +927,7 @@ export const fr = {
         "Savoir-faire et innovation",
         "Le mot de la direction",
         "Notre chronologie",
+        "Événements",
       ],
       featuredHeading: "Dans la maison",
       featured: [
@@ -1003,6 +1004,36 @@ export const fr = {
     visitTitle: "Nous rendre visite",
     toursTitle: "Visites",
     tastingsTitle: "Dégustations",
+  },
+
+  events: {
+    title: "Événements",
+    metaDescription:
+      "Dégustations, journées portes ouvertes et salons professionnels à la Distillerie Vinet-Puranik et ailleurs. Où rencontrer la maison.",
+    intro: "Où rencontrer la maison — au domaine comme sur les salons.",
+    empty: "Aucun événement n'est programmé pour le moment. Écrivez-nous et nous organiserons une visite.",
+    placeholderTag: "Exemple",
+    ctaLabel: "Se renseigner sur cet événement",
+    items: {
+      "sample-trade-tasting": {
+        name: "Exemple : dégustation professionnelle, Paris",
+        location: "Paris, France",
+        description:
+          "Une dégustation assise de la gamme de la maison pour importateurs et propriétaires de marques, conduite par le maître de chai.",
+      },
+      "sample-harvest-open-day": {
+        name: "Exemple : journée portes ouvertes des vendanges",
+        location: "Brie-sous-Archiac",
+        description:
+          "Le domaine ouvre sa cour pendant les vendanges : les pressoirs en action, les alambics en chauffe et les eaux-de-vie nouvelles au sortir de l'alambic.",
+      },
+      "sample-distillery-day": {
+        name: "Exemple : journée distillerie",
+        location: "Brie-sous-Archiac",
+        description:
+          "Une journée dans la salle des alambics avec l'équipe de distillation, de la première chauffe à la coupe, pour finir dans les chais.",
+      },
+    },
   },
 
   legal: {

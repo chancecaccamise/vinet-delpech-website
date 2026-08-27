@@ -945,6 +945,7 @@ export const en = {
         "Know-how & innovation",
         "A word from our leadership",
         "Our timeline",
+        "Events",
       ],
       featuredHeading: "In the house",
       featured: [
@@ -1023,6 +1024,36 @@ export const en = {
   // Legal pages. Written to be read by a visitor: short sentences, no
   // recitals, only what the law requires. Identifiers are interpolated from
   // `companyRegistration` in site.ts so they cannot drift between languages.
+  events: {
+    title: "Events",
+    metaDescription:
+      "Tastings, open days and trade shows at Distillerie Vinet-Puranik and beyond. Where to meet the house.",
+    intro: "Where to meet the house — at the estate and at trade shows.",
+    empty: "No events are scheduled at the moment. Write to us and we will arrange a visit.",
+    placeholderTag: "Sample",
+    ctaLabel: "Ask about this event",
+    items: {
+      "sample-trade-tasting": {
+        name: "Sample: trade tasting, Paris",
+        location: "Paris, France",
+        description:
+          "A seated tasting of the house range for importers and brand owners, led by the cellar master.",
+      },
+      "sample-harvest-open-day": {
+        name: "Sample: harvest open day",
+        location: "Brie-sous-Archiac",
+        description:
+          "The estate opens its courtyard during the harvest: the presses at work, the stills running, and the new eaux-de-vie straight off the still.",
+      },
+      "sample-distillery-day": {
+        name: "Sample: distillery day",
+        location: "Brie-sous-Archiac",
+        description:
+          "A day in the still house with the distilling team, from the first heating to the cut, finishing in the cellars.",
+      },
+    },
+  },
+
   legal: {
     updatedLabel: "Last updated",
     updated: "26 August 2026",

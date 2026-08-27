@@ -929,6 +929,7 @@ export const es = {
         "Saber hacer e innovación",
         "Unas palabras de la dirección",
         "Nuestra cronología",
+        "Eventos",
       ],
       featuredHeading: "Puertas adentro",
       featured: [
@@ -1005,6 +1006,36 @@ export const es = {
     visitTitle: "Visítenos",
     toursTitle: "Visitas",
     tastingsTitle: "Catas",
+  },
+
+  events: {
+    title: "Eventos",
+    metaDescription:
+      "Catas, jornadas de puertas abiertas y ferias profesionales en la Distillerie Vinet-Puranik y fuera de ella. Dónde encontrarse con la casa.",
+    intro: "Dónde encontrarse con la casa: en la finca y en las ferias.",
+    empty: "No hay eventos programados por el momento. Escríbanos y organizaremos una visita.",
+    placeholderTag: "Ejemplo",
+    ctaLabel: "Consultar sobre este evento",
+    items: {
+      "sample-trade-tasting": {
+        name: "Ejemplo: cata profesional, París",
+        location: "París, Francia",
+        description:
+          "Una cata en mesa de la gama de la casa para importadores y propietarios de marcas, dirigida por el maestro bodeguero.",
+      },
+      "sample-harvest-open-day": {
+        name: "Ejemplo: jornada de puertas abiertas de la vendimia",
+        location: "Brie-sous-Archiac",
+        description:
+          "La finca abre su patio durante la vendimia: las prensas en marcha, los alambiques en calor y las eaux-de-vie nuevas recién salidas del alambique.",
+      },
+      "sample-distillery-day": {
+        name: "Ejemplo: jornada en la destilería",
+        location: "Brie-sous-Archiac",
+        description:
+          "Una jornada en la sala de alambiques con el equipo de destilación, de la primera calentada al corte, para terminar en las bodegas.",
+      },
+    },
   },
 
   legal: {

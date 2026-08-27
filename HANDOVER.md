@@ -84,6 +84,14 @@ These are live and will be seen by anyone reviewing the site. They are marked
   field — they all read "On enquiry". The pages carry a visible line admitting
   the programme is to be confirmed; that line should come out with the
   placeholders.
+- **Events.** The three entries on `/events` are samples, each carrying a
+  visible **"Sample"** tag so nobody can act on them, and each deliberately
+  left out of the Event structured data so no search engine can surface a date
+  the house is not keeping. Replace them in `eventAssets` (`src/lib/site.ts`)
+  and the `events.items` block in each dictionary, and drop the `placeholder`
+  flag — that flag is what turns the rich-result markup on. If there is nothing
+  to list, delete all three and the page shows a short "no events scheduled"
+  message on its own.
 
 ## 7. Two contradictions in the copy
 

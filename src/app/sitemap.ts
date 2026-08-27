@@ -9,6 +9,7 @@ import { defaultLocale, locales } from "@/lib/i18n";
 const routes: { path: string; priority: number }[] = [
   { path: "", priority: 1 },
   { path: "/about", priority: 0.8 },
+  { path: "/events", priority: 0.7 },
   { path: "/partnerships", priority: 0.8 },
   ...spiritFamilySlugs.map((slug) => ({ path: `/partnerships/${slug}`, priority: 0.7 })),
   { path: "/visit", priority: 0.8 },

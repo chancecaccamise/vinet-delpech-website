@@ -849,6 +849,66 @@ export const visitEstateImage = "/media/estate/visit-estate-aerial.webp";
 export const footerCapabilityHrefs = ["/#bespoke", "/#know-how", "/#production"] as const;
 
 // ---------------------------------------------------------------------------
+// Events
+// ---------------------------------------------------------------------------
+
+export type EventAsset = {
+  slug: string;
+  /** ISO 8601. The displayed form is derived per locale, never hand-written. */
+  date: string;
+  image: string;
+  /**
+   * Marks an illustrative entry. A placeholder renders with a visible "sample"
+   * tag and is left out of the Event structured data, so a search engine can
+   * never surface a date the house is not actually keeping. Delete the flag
+   * with the sample.
+   */
+  placeholder?: true;
+};
+
+/**
+ * Events, newest first — the order is computed in `getEvents`, so entries can
+ * be added here in any order.
+ *
+ * TODO(launch): all three below are samples, there to show the layout. Replace
+ * them with the house's real programme and drop `placeholder`. A visitor can
+ * act on an event listing — travel to a trade show — so nothing here should go
+ * live unreplaced.
+ */
+export const eventAssets: readonly EventAsset[] = [
+  {
+    slug: "sample-trade-tasting",
+    date: "2027-02-09",
+    image: "/media/estate/tasting-room.webp",
+    placeholder: true,
+  },
+  {
+    slug: "sample-harvest-open-day",
+    date: "2026-10-15",
+    image: "/media/estate/tour-vineyard.webp",
+    placeholder: true,
+  },
+  {
+    slug: "sample-distillery-day",
+    date: "2026-06-12",
+    image: "/media/estate/tour-distillery.webp",
+    placeholder: true,
+  },
+];
+
+export type EventItem = {
+  slug: string;
+  date: string;
+  /** Formatted for the current locale. */
+  dateLabel: string;
+  image: string;
+  placeholder: boolean;
+  name: string;
+  location: string;
+  description: string;
+};
+
+// ---------------------------------------------------------------------------
 // Legal pages
 // ---------------------------------------------------------------------------
 

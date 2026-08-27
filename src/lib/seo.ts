@@ -157,6 +157,33 @@ export function webSiteJsonLd(locale: Locale, description: string) {
 }
 
 /**
+ * One event, for the rich result that carries a date and a place into search.
+ *
+ * Only ever called for real events — see the filter in the events page. An
+ * Event node is a claim a visitor can act on, so a sample must never produce
+ * one. `startDate` is the stored ISO date, not the localized label.
+ */
+export function eventJsonLd(event: {
+  slug: string;
+  name: string;
+  date: string;
+  location: string;
+  description: string;
+  image: string;
+}) {
+  return {
+    "@type": "Event",
+    name: event.name,
+    startDate: event.date,
+    description: event.description,
+    image: `${siteConfig.url}${event.image}`,
+    eventStatus: "https://schema.org/EventScheduled",
+    location: { "@type": "Place", name: event.location },
+    organizer: { "@id": ORGANIZATION_ID },
+  };
+}
+
+/**
  * Breadcrumb trail for a subpage. `trail` is ordered from the top of the site
  * down to (but not including) the current page, which is appended by the
  * caller passing its own name last.

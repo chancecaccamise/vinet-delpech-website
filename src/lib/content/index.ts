@@ -1,5 +1,5 @@
 import type { Locale } from "@/lib/i18n";
-import { localizePath } from "@/lib/i18n";
+import { localeMeta, localizePath } from "@/lib/i18n";
 import { en, type Content } from "@/lib/content/en";
 import { fr } from "@/lib/content/fr";
 import { es } from "@/lib/content/es";
@@ -11,6 +11,7 @@ import {
   groupFigures,
   houseBrandAssets,
   companyRegistration,
+  eventAssets,
   knowHowFigures,
   leaderPortraits,
   legalHostDetails,
@@ -23,6 +24,7 @@ import {
   tourSlugs,
   type Brand,
   type BrandAward,
+  type EventItem,
   type Experience,
   type FeatureFigure,
   type FeaturePanel,
@@ -175,6 +177,36 @@ export function getBrandCta(
     };
   }
   return undefined;
+}
+
+/**
+ * Events, newest first.
+ *
+ * The date is stored once as ISO and formatted here per locale, so no month
+ * name is ever typed into a dictionary — "15 October 2026", "15 octobre 2026"
+ * and "15 de octubre de 2026" all come from the same string. The BCP-47 tag is
+ * derived from `ogLocale`, which already carries the territory.
+ */
+export function getEvents(locale: Locale): EventItem[] {
+  const c = getContent(locale);
+  const tag = localeMeta[locale].ogLocale.replace("_", "-");
+  const formatter = new Intl.DateTimeFormat(tag, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  return [...eventAssets]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((asset) => ({
+      slug: asset.slug,
+      date: asset.date,
+      dateLabel: formatter.format(new Date(`${asset.date}T00:00:00Z`)),
+      image: asset.image,
+      placeholder: asset.placeholder === true,
+      ...c.events.items[asset.slug as keyof typeof c.events.items],
+    }));
 }
 
 /**
@@ -354,7 +386,7 @@ export function getNav(locale: Locale): NavGroup[] {
 
   // "Our story" leads: the page about the house outranks its home-page
   // anchors. Order is positional against c.nav.about.links in each dictionary.
-  const aboutHrefs = ["/about", "/#bespoke", "/#know-how", "/#leadership", "/#timeline"];
+  const aboutHrefs = ["/about", "/#bespoke", "/#know-how", "/#leadership", "/#timeline", "/events"];
   // "#practical" stays on the page itself; the dropdown stops listing it.
   const visitHrefs = ["/visit", "/visit/tours", "/visit/tastings", "/visit#book"];
 

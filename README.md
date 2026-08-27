@@ -91,6 +91,7 @@ src/
       layout.tsx              Fonts, metadata defaults, viewport, Header/Footer, AgeGate
       page.tsx                Home
       about/ contact/         Interior pages
+      events/                 Events list (image, date, description)
       partnerships/           Overview + [family] category pages
       visit/                  Hub + tours + tastings
       legal/[slug]/           Mentions légales, privacy, cookies, terms, accessibility
