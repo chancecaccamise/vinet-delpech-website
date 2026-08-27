@@ -1010,7 +1010,7 @@ export const fr = {
     title: "Événements",
     metaDescription:
       "Dégustations, journées portes ouvertes et salons professionnels à la Distillerie Vinet-Puranik et ailleurs. Où rencontrer la maison.",
-    intro: "Où rencontrer la maison — au domaine comme sur les salons.",
+    intro: "Où rencontrer la maison : au domaine comme sur les salons.",
     empty: "Aucun événement n'est programmé pour le moment. Écrivez-nous et nous organiserons une visite.",
     placeholderTag: "Exemple",
     ctaLabel: "Se renseigner sur cet événement",

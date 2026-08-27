@@ -1028,7 +1028,7 @@ export const en = {
     title: "Events",
     metaDescription:
       "Tastings, open days and trade shows at Distillerie Vinet-Puranik and beyond. Where to meet the house.",
-    intro: "Where to meet the house — at the estate and at trade shows.",
+    intro: "Where to meet the house: at the estate and at trade shows.",
     empty: "No events are scheduled at the moment. Write to us and we will arrange a visit.",
     placeholderTag: "Sample",
     ctaLabel: "Ask about this event",

@@ -67,7 +67,7 @@ export default async function EventsPage({ params }: { params: Promise<Params> }
               {events.map((event, index) => (
                 <li key={event.slug}>
                   <Reveal delay={index * 80}>
-                    {/* Image left, detail right — one row per event so the page
+                    {/* Image left, detail right: one row per event so the page
                         scans as a list rather than a grid of cards. */}
                     <article className="grid gap-6 border-t border-ink/12 pt-10 sm:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] sm:gap-10">
                       <div className="relative aspect-[4/3] w-full overflow-hidden">
