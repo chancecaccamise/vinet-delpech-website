@@ -10,8 +10,10 @@ import {
   featurePanelAssets,
   groupFigures,
   houseBrandAssets,
+  companyRegistration,
   knowHowFigures,
   leaderPortraits,
+  legalHostDetails,
   legalSlugs,
   serviceSlugs,
   tastingSlugs,
@@ -181,17 +183,30 @@ export function getBrandCta(
  */
 export function getLegalPages(locale: Locale): LegalPage[] {
   const c = getContent(locale);
-  return legalSlugs.map((slug) => ({ slug, ...c.legal.pages[slug] }));
+  // The statutory identifiers are structural, so the prose carries {tokens}
+  // and they are filled here — one set of numbers, identical in every edition.
+  const values = { ...companyRegistration, host: legalHostDetails };
+  return legalSlugs.map((slug) => {
+    const page = c.legal.pages[slug];
+    return {
+      slug,
+      ...page,
+      sections: page.sections.map((section) => ({
+        heading: section.heading,
+        body: section.body.map((paragraph) => fill(paragraph, values)),
+      })),
+    };
+  });
 }
 
 export function findLegalPage(locale: Locale, slug: string): LegalPage | undefined {
   return getLegalPages(locale).find((page) => page.slug === slug);
 }
 
-/** The chrome shared by every legal page — draft notice, date, back link. */
+/** The chrome shared by every legal page — the date and the way back. */
 export function getLegalChrome(locale: Locale) {
-  const { draftNotice, updatedLabel, updated, backLabel } = getContent(locale).legal;
-  return { draftNotice, updatedLabel, updated, backLabel };
+  const { updatedLabel, updated, backLabel } = getContent(locale).legal;
+  return { updatedLabel, updated, backLabel };
 }
 
 export type Testimonial = { slug: string; name: string; quote: string };

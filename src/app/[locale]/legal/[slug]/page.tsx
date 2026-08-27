@@ -73,21 +73,13 @@ export default async function LegalPage({ params }: { params: Promise<Params> })
 
       <section aria-label={page.title} className="bg-white py-20 text-ink sm:py-28">
         <div className="mx-auto max-w-[46rem] px-6 lg:px-10">
-          {/* TODO(launch): remove this notice once the house's counsel has
-              signed the pages off and the bracketed identifiers are filled in. */}
           <Reveal>
-            <p className="border-l-2 border-blue/40 bg-cream px-6 py-5 text-sm leading-7 text-ink/75">
-              {chrome.draftNotice}
-            </p>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <p className="eyebrow mt-10 text-ink/65">
+            <p className="eyebrow text-ink/65">
               {chrome.updatedLabel} · {chrome.updated}
             </p>
           </Reveal>
 
-          <div className="mt-12 space-y-12">
+          <div className="mt-10 space-y-11">
             {page.sections.map((section, index) => (
               <Reveal key={section.heading} delay={150 + index * 60}>
                 <section>

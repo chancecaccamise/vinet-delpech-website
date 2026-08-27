@@ -97,19 +97,36 @@ These are live and will be seen by anyone reviewing the site. They are marked
   English source and was faithfully translated into French and Spanish, so
   fixing the English fixes all three.
 
-## 8. Legal pages need counsel and company details
+## 8. Legal pages — one value outstanding, plus two facts to check
 
-Five pages now exist in all three languages, drafted to describe what the site
-genuinely does. Each shows a **draft notice** until signed off.
+The five pages are complete and publishable in all three languages. Company
+identifiers were taken from the French public register (SIREN 527 250 120) and
+are real: SAS, share capital 500 000 €, RCS Saintes, SIRET 527 250 120 00021,
+president Bruno Delannoy.
 
-**Values only the house can supply** (each appears in brackets in the text):
-SIRET, RCS number and city, share capital, intra-community VAT number,
-director of publication, hosting provider's name/address/telephone, a privacy
-contact address, an accessibility contact address, and the enquiry retention
-period.
+**Outstanding — must be set before go-live:**
 
-Have counsel review the wording, then remove the notice via the
-`legal.draftNotice` key in each dictionary.
+- **The hosting provider.** French law requires the legal notice to name the
+  host with their address and telephone. Until the deployment target is chosen
+  the page says so plainly. Set `legalHostDetails` in `src/lib/site.ts` — one
+  string, one place.
+
+**Please verify — we derived or inferred these:**
+
+- **VAT number `FR84527250120`.** Derived from the SIREN using the standard
+  French key algorithm rather than read off a document. It is almost certainly
+  correct; confirming it on the EU VIES checker takes about ten seconds.
+- **Registered name.** The register lists the company as **VINET-PURANIK
+  DISTILLERIE**, while the site prints "Distillerie Vinet-Puranik SAS" in the
+  footer and the legal notice. A legal notice should carry the registered form
+  exactly. One-line change in `siteConfig.legalName` if the register is right.
+
+**Also worth knowing:** public records show a *redressement judiciaire*
+(judicial recovery) opened at the Tribunal de Commerce de Saintes on 6 May
+2024. If that is still in force, French law requires it to be disclosed on
+commercial documents, and the legal notice would need a line added. If it has
+since been closed, nothing changes. We could not determine the current status
+from public sources — please confirm.
 
 ## 9. Photography still wanted
 

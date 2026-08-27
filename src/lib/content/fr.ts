@@ -725,7 +725,7 @@ export const fr = {
       "Mentions légales",
       "Politique de confidentialité",
       "Politique de cookies",
-      "Conditions générales",
+      "Conditions d'utilisation",
       "Accessibilité",
     ],
     rights: "Tous droits réservés.",
@@ -1006,8 +1006,6 @@ export const fr = {
   },
 
   legal: {
-    draftNotice:
-      "Projet soumis à relecture. Ce texte décrit le fonctionnement réel du site, mais les informations société indiquées entre crochets restent à fournir et la rédaction n'a pas encore été validée par le conseil juridique de la maison.",
     updatedLabel: "Dernière mise à jour",
     updated: "26 août 2026",
     backLabel: "Retour à l'accueil",
@@ -1015,89 +1013,83 @@ export const fr = {
       "mentions-legales": {
         title: "Mentions légales",
         metaDescription:
-          "Éditeur, hébergement et propriété intellectuelle du site Vinet-Puranik, conformément à la loi française.",
-        intro:
-          "Informations relatives à l'éditeur et à l'hébergeur de ce site, publiées en application de l'article 6 III de la loi pour la confiance dans l'économie numérique (LCEN).",
+          "Qui édite et qui héberge le site Vinet-Puranik : informations société, numéros d'immatriculation et coordonnées.",
+        intro: "Qui édite ce site, et comment nous joindre.",
         sections: [
           {
-            heading: "Éditeur",
+            heading: "La société",
             body: [
-              "Distillerie Vinet-Puranik SAS, société par actions simplifiée au capital de [CAPITAL SOCIAL] euros.",
-              "Siège social : 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
-              "Immatriculée au registre du commerce et des sociétés de [VILLE DU RCS] sous le numéro [NUMÉRO RCS]. SIRET [SIRET]. Numéro de TVA intracommunautaire [NUMÉRO DE TVA].",
-              "Téléphone : +33 5 46 49 10 10. Courriel : contact@vinet-puranik.com.",
+              "Ce site est édité par la Distillerie Vinet-Puranik, {legalForm} au capital de {shareCapital}.",
+              "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
+              "Téléphone +33 5 46 49 10 10. Courriel contact@vinet-puranik.com.",
+            ],
+          },
+          {
+            heading: "Immatriculation",
+            body: [
+              "Immatriculée au registre du commerce et des sociétés de {rcsCity} sous le numéro {siren}.",
+              "SIRET {siret}. Numéro de TVA {vat}.",
             ],
           },
           {
             heading: "Directeur de la publication",
-            body: ["[NOM DU DIRECTEUR DE LA PUBLICATION], en sa qualité de [FONCTION]."],
+            body: ["{directorOfPublication}, président."],
           },
           {
             heading: "Hébergement",
-            body: [
-              "Ce site est hébergé par [NOM DE L'HÉBERGEUR], [ADRESSE DU SIÈGE DE L'HÉBERGEUR], téléphone [TÉLÉPHONE DE L'HÉBERGEUR].",
-            ],
+            body: ["Ce site est hébergé par {host}."],
           },
           {
-            heading: "Propriété intellectuelle",
+            heading: "Textes et images",
             body: [
-              "La structure de ce site, ainsi que les textes, photographies, illustrations et autres œuvres qu'il contient, sont la propriété de la Distillerie Vinet-Puranik SAS ou sont utilisés avec l'autorisation de leur titulaire. Toute reproduction, représentation ou adaptation, totale ou partielle, sur quelque support que ce soit, est interdite sans accord écrit préalable.",
-              "Les noms de marques, les noms de produits et les logos figurant sur ce site — y compris ceux des marques partenaires que la maison élabore — sont les marques de leurs titulaires respectifs et ne peuvent être utilisés sans leur accord.",
+              "Les textes, photographies et la conception de ce site nous appartiennent, ou nous avons l'autorisation de les utiliser. Merci de nous demander avant d'en reproduire une partie.",
+              "Les noms de produits et les logos appartiennent à leurs titulaires, y compris ceux des marques partenaires que nous élaborons.",
             ],
           },
           {
             heading: "Droit applicable",
-            body: [
-              "Ce site et les présentes mentions sont régis par le droit français. Tout litige relatif au site relève de la compétence des juridictions françaises compétentes.",
-            ],
+            body: ["Ce site est régi par le droit français."],
           },
         ],
       },
       privacy: {
         title: "Politique de confidentialité",
         metaDescription:
-          "Quelles données personnelles le site Vinet-Puranik collecte, pourquoi, combien de temps elles sont conservées et quels droits vous détenez au titre du RGPD.",
+          "Le site Vinet-Puranik ne recueille que ce que vous inscrivez dans le formulaire. Aucune mesure d'audience, aucune publicité, aucun traceur.",
         intro:
-          "Ce site collecte très peu de choses. Il n'y a ni mesure d'audience, ni publicité, ni traceur tiers d'aucune sorte. Les seules données personnelles qui parviennent à la maison sont celles que vous choisissez d'inscrire dans le formulaire de demande.",
+          "Nous ne recueillons presque rien. Ce site ne comporte aucune mesure d'audience, aucune publicité et aucun traceur.",
         sections: [
           {
-            heading: "Responsable de traitement",
+            heading: "Ce que nous recueillons",
             body: [
-              "Le responsable de traitement est la Distillerie Vinet-Puranik SAS, 3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France. Pour toute question relative à la présente politique, ou pour exercer les droits exposés ci-dessous, écrivez à [COURRIEL DU CONTACT CONFIDENTIALITÉ].",
+              "Uniquement ce que vous inscrivez dans le formulaire : votre nom, votre société si vous l'indiquez, votre adresse électronique, le type de demande et votre message.",
+              "Nous nous en servons pour lire votre demande et y répondre. Rien d'autre. Nous n'établissons aucun profil, nous ne vous inscrivons à aucune liste de diffusion, et nous ne vendons ni ne communiquons jamais vos coordonnées.",
             ],
           },
           {
-            heading: "Ce que nous collectons, et pourquoi",
+            heading: "Nous ne conservons pas votre date de naissance",
             body: [
-              "Le formulaire de demande vous demande votre nom, votre société (facultatif), votre adresse électronique, la nature de votre demande et votre message. Ces données servent à une seule fin : lire votre demande et y répondre.",
-              "La base légale est notre intérêt légitime à répondre aux demandes professionnelles qui nous sont adressées et, lorsque votre demande porte sur une commande éventuelle, les mesures précontractuelles prises à votre demande.",
-              "Nous ne collectons rien d'autre. Nous ne constituons aucun profil, nous n'utilisons pas vos données à des fins de prospection sauf demande expresse de votre part, et nous ne les vendons ni ne les louons jamais.",
+              "La vérification de l'âge s'effectue dans votre navigateur. Votre date de naissance sert à déterminer si vous avez l'âge requis, puis elle est abandonnée. Elle ne nous parvient jamais.",
             ],
           },
           {
-            heading: "Votre date de naissance n'est pas collectée",
+            heading: "Qui d'autre voit votre demande",
             body: [
-              "La vérification de l'âge à l'entrée s'effectue entièrement dans votre navigateur. La date que vous saisissez sert à calculer si vous avez l'âge légal, puis elle est abandonnée. Elle ne nous est jamais transmise et n'est jamais conservée : seul le fait que la vérification a été passée est mémorisé, dans un cookie qui ne contient aucune date.",
+              "Votre message parvient à notre boîte de réception via Resend, le service qui achemine nos courriels. Notre hébergeur sert les pages. Personne d'autre n'intervient.",
+              "Même les polices de caractères sont servies depuis notre site : lire une page n'envoie donc rien à qui que ce soit d'autre.",
             ],
           },
           {
-            heading: "Qui d'autre y a accès",
+            heading: "Combien de temps nous les conservons",
             body: [
-              "Les demandes nous sont acheminées par courriel via Resend, prestataire d'envoi agissant en qualité de sous-traitant. Votre message transite par ses systèmes pour parvenir à notre boîte de réception.",
-              "Le site est servi par notre hébergeur, désigné dans les mentions légales. Aucun autre tiers ne reçoit vos données. Les polices de caractères utilisées sur ce site sont servies depuis nos propres serveurs : consulter une page n'envoie donc rien à un fournisseur de polices.",
-            ],
-          },
-          {
-            heading: "Durée de conservation",
-            body: [
-              "Les demandes sont conservées dans la messagerie de la maison aussi longtemps que la relation commerciale concernée reste active, et jusqu'à trois ans à compter de notre dernier contact lorsqu'elle n'aboutit pas. [DURÉE À CONFIRMER AVEC LA MAISON.]",
+              "Aussi longtemps que nous travaillons ensemble, et jusqu'à trois ans après notre dernier échange si la demande n'aboutit pas.",
             ],
           },
           {
             heading: "Vos droits",
             body: [
-              "Vous pouvez demander l'accès aux données personnelles que nous détenons sur vous, leur rectification ou leur effacement, la limitation de leur traitement, vous opposer à leur utilisation et en demander une copie sous une forme portable. Écrivez à [COURRIEL DU CONTACT CONFIDENTIALITÉ] : nous répondons sous un mois.",
-              "Si vous estimez que vos données ont été traitées de façon irrégulière, vous pouvez introduire une réclamation auprès de la CNIL, sur cnil.fr.",
+              "Vous pouvez nous demander une copie des données que nous détenons sur vous, leur rectification ou leur suppression, ou nous demander de cesser de les utiliser. Écrivez à contact@vinet-puranik.com : nous répondons sous un mois.",
+              "Si notre réponse ne vous satisfait pas, vous pouvez saisir la CNIL, sur cnil.fr.",
             ],
           },
         ],
@@ -1105,113 +1097,109 @@ export const fr = {
       cookies: {
         title: "Politique de cookies",
         metaDescription:
-          "Ce site dépose un seul cookie, strictement nécessaire à la vérification de l'âge légal. Ni mesure d'audience, ni publicité, ni traceur tiers.",
-        intro:
-          "Ce site utilise un cookie. Il existe pour que votre âge ne vous soit pas redemandé à chaque page, et il ne contient aucune donnée personnelle.",
+          "Ce site utilise un seul cookie, pour mémoriser la vérification de l'âge. Aucune mesure d'audience, aucune publicité, aucun traceur.",
+        intro: "Ce site utilise un seul cookie, et il ne contient rien sur vous.",
         sections: [
           {
-            heading: "Le seul cookie déposé",
+            heading: "L'unique cookie",
             body: [
-              "Nom : vd_age_verified. Finalité : mémoriser que la vérification de l'âge légal a été passée. Contenu : le seul caractère 1 — aucune date de naissance, aucun identifiant, rien qui vous décrive. Durée : trente jours. Il est déposé par ce site uniquement et n'est jamais transmis à un tiers.",
+              "Il s'appelle vd_age_verified. Il retient que vous avez passé la vérification de l'âge, pour ne pas vous la redemander à chaque page.",
+              "Il contient un seul caractère : 1. Aucune date de naissance, aucun identifiant, rien de personnel. Il dure trente jours et n'est jamais transmis à un tiers.",
             ],
           },
           {
-            heading: "Pourquoi votre consentement n'est pas demandé",
+            heading: "Pourquoi il n'y a pas de bandeau cookies",
             body: [
-              "Au regard de la directive ePrivacy et des recommandations de la CNIL, les cookies strictement nécessaires à la fourniture d'un service expressément demandé par l'internaute sont exemptés de consentement. La vérification de l'âge sur le site d'un producteur de spiritueux relève de ce cas : sans ce cookie, le site ne peut pas vous présenter son contenu sans vous interroger de nouveau à chaque page.",
-              "Comme nous ne déposons rien d'autre, ce site ne comporte aucune bannière de consentement. Il n'y a rien à refuser.",
+              "Les cookies strictement nécessaires à un service que vous avez demandé n'exigent pas de consentement, et la vérification de l'âge en fait partie. Comme nous n'en déposons aucun autre, vous n'avez rien à accepter ni à refuser.",
             ],
           },
           {
             heading: "Ce que nous n'utilisons pas",
             body: [
-              "Aucune mesure d'audience. Aucune publicité ni reciblage. Aucun pixel de réseau social. Aucun script tiers, quel qu'il soit. Les polices sont servies depuis les serveurs de ce site plutôt que par un prestataire extérieur.",
+              "Aucune mesure d'audience. Aucune publicité ni reciblage. Aucun pixel de réseau social. Aucun script tiers.",
             ],
           },
           {
             heading: "Le supprimer",
             body: [
-              "Vous pouvez supprimer ce cookie à tout moment depuis les réglages de votre navigateur, et refuser purement et simplement les cookies. Dans ce cas, la vérification de l'âge vous sera simplement présentée de nouveau à votre prochaine visite.",
+              "Vous pouvez le supprimer à tout moment dans les réglages de votre navigateur, ou bloquer les cookies. La vérification de l'âge réapparaîtra simplement à votre prochaine visite.",
             ],
           },
         ],
       },
       terms: {
-        title: "Conditions générales",
+        title: "Conditions d'utilisation",
         metaDescription:
-          "Les conditions dans lesquelles le site Vinet-Puranik est mis à disposition : un site d'information professionnel, sans vente en ligne.",
-        intro:
-          "Les présentes conditions régissent votre utilisation de ce site. En le consultant, vous les acceptez.",
+          "Conditions d'utilisation du site Vinet-Puranik : un site d'information destiné aux professionnels, sans vente en ligne.",
+        intro: "Les conditions d'utilisation de ce site. L'utiliser, c'est les accepter.",
         sections: [
           {
             heading: "Ce qu'est ce site",
             body: [
-              "Il s'agit d'un site d'information destiné aux partenaires professionnels : importateurs, distributeurs, détaillants et propriétaires de marques. Rien n'y est vendu en ligne, aucun prix n'y est publié et aucune commande ne peut y être passée.",
-              "Une demande envoyée via le formulaire est une demande d'information. Elle ne constitue pas une commande, et ni notre réponse ni les éléments indicatifs que nous pourrions vous communiquer ne forment un contrat. Toute fourniture est régie par un accord écrit distinct.",
+              "Un site d'information destiné aux professionnels : importateurs, distributeurs, détaillants et propriétaires de marques. Rien n'y est vendu, aucun prix n'y est publié et aucune commande ne peut y être passée.",
+              "Envoyer une demande, c'est nous poser une question. Ce n'est pas une commande, et notre réponse n'est pas un contrat. Toute fourniture fait l'objet d'un accord écrit distinct.",
             ],
           },
           {
-            heading: "Âge légal",
+            heading: "Vous devez avoir l'âge légal",
             body: [
-              "Ce site présente des boissons alcoolisées. Il s'adresse uniquement aux visiteurs ayant atteint l'âge légal de consommation dans leur pays de résidence et pouvant y consulter licitement ce type de contenu. Merci de ne pas utiliser ce site si tel n'est pas le cas.",
+              "Ce site présente des boissons alcoolisées. Merci de ne l'utiliser que si vous avez atteint l'âge légal de consommation là où vous vivez.",
             ],
           },
           {
-            heading: "Exactitude",
+            heading: "Les informations évoluent",
             body: [
-              "Nous décrivons nos produits et notre production avec soin, mais les caractéristiques, la disponibilité et la composition de la gamme peuvent évoluer. Les descriptions, notes de dégustation, âges et chiffres figurant ici sont indicatifs et ne constituent pas des engagements contractuels.",
+              "Nous décrivons nos produits avec soin, mais la gamme, ses caractéristiques et sa disponibilité changent avec le temps. Les descriptions, notes de dégustation, âges et chiffres donnés ici sont indicatifs, non contractuels.",
             ],
           },
           {
             heading: "Liens vers d'autres sites",
             body: [
-              "Ce site renvoie vers les sites des producteurs et propriétaires de marques avec lesquels nous travaillons. Ces sites échappent à notre contrôle : nous ne répondons ni de leur contenu, ni de leurs produits, ni de leurs propres pratiques en matière de données.",
+              "Nous renvoyons vers les sites des producteurs et propriétaires de marques avec lesquels nous travaillons. Ces sites ne sont pas les nôtres et nous n'en répondons pas.",
             ],
           },
           {
-            heading: "Responsabilité",
+            heading: "Disponibilité",
             body: [
-              "Nous nous efforçons de maintenir ce site disponible et exact, sans garantir qu'il sera exempt d'interruption ou d'erreur. Dans la limite permise par la loi, nous ne répondons pas des préjudices indirects résultant de l'utilisation du site.",
+              "Nous nous efforçons de maintenir ce site en état de marche et à jour, sans pouvoir garantir qu'il soit toujours disponible ni exempt d'erreur.",
             ],
           },
           {
             heading: "Droit applicable",
-            body: [
-              "Les présentes conditions sont régies par le droit français. Tout litige relève de la compétence des juridictions françaises compétentes.",
-            ],
+            body: ["Ces conditions sont régies par le droit français."],
           },
         ],
       },
       accessibility: {
         title: "Accessibilité",
         metaDescription:
-          "L'engagement d'accessibilité de Vinet-Puranik pour ce site, le référentiel visé et ses limites connues.",
-        intro:
-          "Nous souhaitons que ce site soit utilisable par tous, y compris par les visiteurs qui naviguent au clavier, avec un lecteur d'écran, ou avec des préférences de mouvement ou de contraste activées.",
+          "Comment le site Vinet-Puranik fonctionne pour les visiteurs au clavier, au lecteur d'écran, ou avec des réglages de mouvement et de contraste.",
+        intro: "Nous voulons que ce site fonctionne pour tout le monde. Voici où nous en sommes.",
         sections: [
           {
-            heading: "Le niveau visé",
+            heading: "Ce que nous visons",
             body: [
-              "Nous visons le niveau AA des règles pour l'accessibilité des contenus web (WCAG 2.1), référentiel sur lequel reposent le RGAA français et la directive européenne sur l'accessibilité.",
+              "Le niveau AA des règles pour l'accessibilité des contenus web (WCAG 2.1), référentiel sur lequel repose le RGAA.",
             ],
           },
           {
-            heading: "Ce qui est en place",
+            heading: "Ce qui fonctionne aujourd'hui",
             body: [
-              "Chaque page comporte un titre principal unique et un lien d'évitement vers le contenu. La navigation, le sélecteur de langue et le formulaire de demande s'utilisent au clavier, et le focus reste visible partout. Les erreurs de formulaire sont annoncées, signalées autrement que par la seule couleur, et le focus se porte sur le champ concerné.",
-              "Toutes les animations — apparitions au défilement, parallaxe, chiffres animés et carrousel de témoignages — sont désactivées automatiquement lorsque votre système demande une réduction des animations. Les photographies porteuses d'information disposent d'une description textuelle ; les images purement décoratives sont masquées aux lecteurs d'écran plutôt que décrites deux fois.",
+              "Chaque page a un titre principal unique et un lien d'évitement. Les menus, le sélecteur de langue et le formulaire s'utilisent au clavier, et vous voyez toujours où vous êtes.",
+              "Si votre appareil demande une réduction des animations, toutes celles du site se désactivent. Les photographies porteuses d'information ont une description ; les images décoratives sont ignorées plutôt que lues deux fois.",
+              "Les erreurs de formulaire sont annoncées, signalées autrement que par la couleur, et vous amènent au champ à corriger.",
             ],
           },
           {
-            heading: "Limites connues",
+            heading: "Ce qui reste à améliorer",
             body: [
-              "La conformité est partielle. Certains textes de petite taille sur fonds teintés restent proches du rapport de contraste minimal, et les photographies du domaine n'ont pas été décrites individuellement au-delà de leur contexte. [SECTION À REVOIR ET À METTRE À JOUR APRÈS UN AUDIT RGAA COMPLET.]",
+              "Certains textes de petite taille sur fonds teintés restent proches du contraste minimal. Nos photographies du domaine sont décrites par le texte qui les entoure plutôt qu'individuellement. Nous n'avons pas encore fait réaliser d'audit indépendant.",
             ],
           },
           {
-            heading: "Nous signaler une difficulté",
+            heading: "Signalez-nous une difficulté",
             body: [
-              "Si une partie de ce site vous empêche d'accéder à une information dont vous avez besoin, écrivez à [COURRIEL DU CONTACT ACCESSIBILITÉ] en décrivant ce qui s'est passé. Nous vous répondrons et, lorsque cela est possible, vous transmettrons l'information par un autre moyen.",
+              "Écrivez à contact@vinet-puranik.com en nous disant ce qui s'est passé. Nous vous répondrons et, lorsque c'est possible, nous vous transmettrons l'information autrement.",
             ],
           },
         ],

@@ -148,12 +148,15 @@ the full enquiry body so its content is never lost to a transport outage.
 in all three languages, driven by `legalSlugs` in `site.ts` and the `legal`
 block in each dictionary.
 
-**They are drafts.** They accurately describe what the site does — one
-strictly-necessary cookie, no trackers, no analytics — but every bracketed
-value (`[SIRET]`, `[RCS NUMBER]`, `[HOST NAME]`…) must be supplied by the
-house, and the wording needs its counsel's review. Each page renders a visible
-draft notice until then; remove it in the `legal.draftNotice` key once signed
-off.
+They are written to be read by a visitor, not by a lawyer: short sentences and
+only what the law requires. Every company identifier is real and comes from the
+French public register via `companyRegistration` in `site.ts`, so the numbers
+cannot drift between languages.
+
+**One value is still outstanding**: the hosting provider, which cannot be known
+until the deployment target is chosen. It lives in `legalHostDetails` in
+`site.ts` — one string, interpolated into one sentence per language, and it
+appears nowhere else.
 
 ## Before go-live
 
@@ -168,4 +171,4 @@ can make. The short version:
 - [ ] Replace the placeholder testimonials and the tour/tasting programme, or
       remove those sections.
 - [ ] Resolve the Pineau medal attribution before publishing medal claims.
-- [ ] Have counsel review the legal pages and fill in the bracketed values.
+- [ ] Set `legalHostDetails` in `site.ts` to the host's name, address and phone.

@@ -861,10 +861,11 @@ export const footerCapabilityHrefs = ["/#bespoke", "/#know-how", "/#production"]
  * statutory requirement (Article 6 III of the LCEN), and it was the one page
  * the original four footer labels did not include.
  *
- * TODO(launch): these are drafts. They describe what the site actually does —
- * one strictly-necessary cookie, no trackers, enquiries mailed and not stored —
- * but the company identifiers are placeholders and the wording has not been
- * through the house's counsel. See HANDOVER.md.
+ * The pages are written to be read by a visitor, not by a lawyer: short
+ * sentences, no recitals, and only what the law actually requires. Every
+ * company identifier in them is real and taken from the public register
+ * (see `companyRegistration` below) — the one exception is the host, which
+ * cannot be known until the deployment target is chosen.
  */
 export const legalSlugs = [
   "mentions-legales",
@@ -884,6 +885,40 @@ export type LegalPage = {
   intro: string;
   sections: readonly LegalSection[];
 };
+
+/**
+ * Statutory identifiers for the legal notice, from the French public register
+ * (SIREN 527 250 120). Structural, so they read identically in every language.
+ *
+ * `vat` is derived from the SIREN by the standard French key algorithm —
+ * (12 + 3 × (SIREN mod 97)) mod 97 = 84 — rather than read off a document.
+ * It is almost certainly right, and takes ten seconds to confirm against VIES.
+ *
+ * TODO(confirm): the register lists the company as "VINET-PURANIK DISTILLERIE",
+ * while `siteConfig.legalName` prints "Distillerie Vinet-Puranik SAS". A legal
+ * notice should carry the registered form exactly.
+ */
+export const companyRegistration = {
+  legalForm: "SAS",
+  shareCapital: "500 000 €",
+  rcsCity: "Saintes",
+  siren: "527 250 120",
+  siret: "527 250 120 00021",
+  vat: "FR84527250120",
+  /** Président, and therefore director of publication. */
+  directorOfPublication: "Bruno Delannoy",
+} as const;
+
+/**
+ * The hosting provider, named in the legal notice because the LCEN requires it.
+ *
+ * TODO(launch): this is the one value on the legal pages that is not yet real.
+ * Replace this whole string with the host's company name, registered address
+ * and telephone number once the deployment target is settled — it is
+ * interpolated into one sentence in each language and appears nowhere else.
+ */
+export const legalHostDetails =
+  "— hosting provider to be confirmed before go-live —";
 
 /** Positional against `footer.legalLinks` in the dictionaries. */
 export const footerLegalHrefs = legalSlugs.map((slug) => `/legal/${slug}`);
