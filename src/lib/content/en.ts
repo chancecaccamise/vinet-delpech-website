@@ -1051,7 +1051,7 @@ export const en = {
           },
           {
             heading: "Director of publication",
-            body: ["{directorOfPublication}, President."],
+            body: ["{ceoName}, {ceoRole}. {gmName}, {gmRole}."],
           },
           {
             heading: "Hosting",
@@ -1094,6 +1094,7 @@ export const en = {
             heading: "Who else sees your enquiry",
             body: [
               "Your message reaches our inbox through Resend, the service that delivers our email. Our hosting provider serves the pages. Nobody else is involved.",
+              "Resend is based in the United States, so your enquiry leaves the European Union on its way to us. That transfer is covered by a data processing agreement with them, using the standard contractual clauses approved by the European Commission.",
               "Even the typefaces are served from our own site, so simply reading a page sends nothing to anyone else.",
             ],
           },
@@ -1106,7 +1107,8 @@ export const en = {
           {
             heading: "Your rights",
             body: [
-              "You can ask us for a copy of what we hold about you, ask us to correct or delete it, or ask us to stop using it. Write to contact@vinet-puranik.com and we will reply within a month.",
+              "You can ask us for a copy of what we hold about you, have it corrected or deleted, ask us to limit how we use it, object to our using it, or ask for it in a form you can take elsewhere. Write to contact@vinet-puranik.com and we will reply within a month.",
+              "Nothing here makes automated decisions about you, and we do not profile you.",
               "If you are not satisfied, you can complain to the CNIL, the French data protection authority, at cnil.fr.",
             ],
           },
@@ -1183,6 +1185,12 @@ export const en = {
             ],
           },
           {
+            heading: "Changes to these terms",
+            body: [
+              "We may update these terms; the version on this page is the one that applies. If part of them turns out not to be enforceable, the rest still stands.",
+            ],
+          },
+          {
             heading: "Applicable law",
             body: ["These terms are governed by French law."],
           },
@@ -1198,6 +1206,7 @@ export const en = {
             heading: "What we aim for",
             body: [
               "Level AA of the Web Content Accessibility Guidelines (WCAG 2.1), the standard behind the French RGAA.",
+              "This statement covers the whole of this site and reflects our own review on the date above, not an independent audit.",
             ],
           },
           {
@@ -1218,6 +1227,7 @@ export const en = {
             heading: "Tell us if something blocks you",
             body: [
               "Write to contact@vinet-puranik.com and tell us what happened. We will reply, and where we can we will get you the information another way.",
+              "If you tell us about a problem and our answer does not satisfy you, you can refer the matter to the Défenseur des droits at defenseurdesdroits.fr.",
             ],
           },
         ],

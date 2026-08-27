@@ -185,7 +185,17 @@ export function getLegalPages(locale: Locale): LegalPage[] {
   const c = getContent(locale);
   // The statutory identifiers are structural, so the prose carries {tokens}
   // and they are filled here — one set of numbers, identical in every edition.
-  const values = { ...companyRegistration, host: legalHostDetails };
+  const leaders = c.leadership.leaders;
+  const values = {
+    ...companyRegistration,
+    host: legalHostDetails,
+    // Names and titles come from the leadership block rather than being
+    // repeated here, so the legal notice and the About page cannot disagree.
+    ceoName: leaders.rahul.name,
+    ceoRole: leaders.rahul.role,
+    gmName: leaders.bruno.name,
+    gmRole: leaders.bruno.role,
+  };
   return legalSlugs.map((slug) => {
     const page = c.legal.pages[slug];
     return {

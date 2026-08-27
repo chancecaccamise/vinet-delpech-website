@@ -905,9 +905,12 @@ export const companyRegistration = {
   siren: "527 250 120",
   siret: "527 250 120 00021",
   vat: "FR84527250120",
-  /** Président, and therefore director of publication. */
-  directorOfPublication: "Bruno Delannoy",
 } as const;
+
+// The directors of publication are NOT listed here. They are built from
+// `leadership.leaders` in the dictionaries, so the legal notice takes the same
+// names and titles the About page shows. The public register still lists a
+// former président, which is exactly how a hard-coded name here would go stale.
 
 /**
  * The hosting provider, named in the legal notice because the LCEN requires it.

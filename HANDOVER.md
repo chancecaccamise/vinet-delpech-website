@@ -97,36 +97,51 @@ These are live and will be seen by anyone reviewing the site. They are marked
   English source and was faithfully translated into French and Spanish, so
   fixing the English fixes all three.
 
-## 8. Legal pages — one value outstanding, plus two facts to check
+## 8. Legal pages — two actions, two things to verify
 
-The five pages are complete and publishable in all three languages. Company
-identifiers were taken from the French public register (SIREN 527 250 120) and
-are real: SAS, share capital 500 000 €, RCS Saintes, SIRET 527 250 120 00021,
-president Bruno Delannoy.
+The five pages are complete and publishable in all three languages, written to
+be legally sufficient but readable by a customer. Company identifiers come from
+the French public register (SIREN 527 250 120): SAS, share capital 500 000 €,
+RCS Saintes, SIRET 527 250 120 00021.
 
-**Outstanding — must be set before go-live:**
+**Directors of publication** are named as Rahul Puranik (Chief Executive
+Officer) and Bruno Delannoy (General manager). They are pulled from the About
+page's leadership block rather than typed into the legal notice, so the two can
+never disagree. Note the public register still lists Bruno as *président* — an
+old filing. **If the register is out of date, updating it is worth doing**, as
+third parties rely on it.
 
-- **The hosting provider.** French law requires the legal notice to name the
-  host with their address and telephone. Until the deployment target is chosen
-  the page says so plainly. Set `legalHostDetails` in `src/lib/site.ts` — one
-  string, one place.
+**You must do these two things:**
 
-**Please verify — we derived or inferred these:**
+- **Set the hosting provider.** French law requires the legal notice to name
+  the host with their address and telephone. Until the deployment target is
+  chosen the page says so plainly. Set `legalHostDetails` in `src/lib/site.ts` —
+  one string, one place, all three languages.
+- **Sign Resend's Data Processing Agreement.** The privacy policy now discloses
+  that enquiries leave the EU (Resend is US-based) and states the transfer is
+  covered by a DPA using the European Commission's standard contractual
+  clauses. That disclosure is required by the GDPR — but the statement must be
+  true, so the DPA has to be in place before the form goes live.
+
+**Please verify:**
 
 - **VAT number `FR84527250120`.** Derived from the SIREN using the standard
-  French key algorithm rather than read off a document. It is almost certainly
-  correct; confirming it on the EU VIES checker takes about ten seconds.
+  French key algorithm rather than read off a document. Almost certainly right;
+  confirming it on the EU VIES checker takes about ten seconds.
 - **Registered name.** The register lists the company as **VINET-PURANIK
-  DISTILLERIE**, while the site prints "Distillerie Vinet-Puranik SAS" in the
-  footer and the legal notice. A legal notice should carry the registered form
-  exactly. One-line change in `siteConfig.legalName` if the register is right.
+  DISTILLERIE**, while the site prints "Distillerie Vinet-Puranik SAS". A legal
+  notice should carry the registered form exactly — a one-line change in
+  `siteConfig.legalName`.
 
-**Also worth knowing:** public records show a *redressement judiciaire*
-(judicial recovery) opened at the Tribunal de Commerce de Saintes on 6 May
-2024. If that is still in force, French law requires it to be disclosed on
-commercial documents, and the legal notice would need a line added. If it has
-since been closed, nothing changes. We could not determine the current status
-from public sources — please confirm.
+**One more to check:** public records showed a *redressement judiciaire* opened
+at the Tribunal de Commerce de Saintes in May 2024. We could not establish its
+current status, and the same records were wrong about the president, so treat
+this as a prompt rather than a fact. If such a procedure is in force it must be
+disclosed on commercial documents and the legal notice would need a line added.
+
+**Not covered, because we cannot know it:** if the distillery holds an
+*entrepositaire agréé* (excise warehouse) number or any licence number that
+must appear on its commercial communications, add it to the legal notice.
 
 ## 9. Photography still wanted
 

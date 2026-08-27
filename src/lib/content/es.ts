@@ -583,7 +583,7 @@ export const es = {
       },
       rahul: {
         name: "Rahul Puranik",
-        role: "Director ejecutivo del grupo",
+        role: "Director ejecutivo",
         quote: "Un equipo. Una visión. Un futuro.",
         body: [
           "La Distillerie Vinet-Puranik combina la experiencia histórica de la destilación francesa con la red internacional del grupo.",
@@ -1035,7 +1035,7 @@ export const es = {
           },
           {
             heading: "Director de la publicación",
-            body: ["{directorOfPublication}, presidente."],
+            body: ["{ceoName}, {ceoRole}. {gmName}, {gmRole}."],
           },
           {
             heading: "Alojamiento",
@@ -1078,6 +1078,7 @@ export const es = {
             heading: "Quién más ve su consulta",
             body: [
               "Su mensaje llega a nuestro buzón a través de Resend, el servicio que entrega nuestro correo. Nuestro proveedor de alojamiento sirve las páginas. Nadie más interviene.",
+              "Resend tiene su sede en Estados Unidos, de modo que su consulta sale de la Unión Europea para llegar hasta nosotros. Esa transferencia está amparada por un acuerdo de tratamiento con ellos, basado en las cláusulas contractuales tipo aprobadas por la Comisión Europea.",
               "Incluso las tipografías se sirven desde nuestro propio sitio, así que leer una página no envía nada a nadie.",
             ],
           },
@@ -1090,7 +1091,8 @@ export const es = {
           {
             heading: "Sus derechos",
             body: [
-              "Puede pedirnos una copia de lo que tenemos sobre usted, su corrección o su supresión, o pedirnos que dejemos de usarlo. Escriba a contact@vinet-puranik.com y le responderemos en el plazo de un mes.",
+              "Puede pedirnos una copia de lo que tenemos sobre usted, su corrección o su supresión, que limitemos su uso, oponerse a ese uso, o pedirla en un formato que pueda llevarse a otra parte. Escriba a contact@vinet-puranik.com y le responderemos en el plazo de un mes.",
+              "Aquí nada toma decisiones automatizadas sobre usted, y no elaboramos perfiles.",
               "Si no queda conforme, puede reclamar ante la CNIL, la autoridad francesa de protección de datos, en cnil.fr.",
             ],
           },
@@ -1167,6 +1169,12 @@ export const es = {
             ],
           },
           {
+            heading: "Cambios en estas condiciones",
+            body: [
+              "Podemos actualizar estas condiciones; la versión publicada en esta página es la que se aplica. Si alguna de ellas resultara inaplicable, el resto seguiría vigente.",
+            ],
+          },
+          {
             heading: "Legislación aplicable",
             body: ["Estas condiciones se rigen por la legislación francesa."],
           },
@@ -1182,6 +1190,7 @@ export const es = {
             heading: "A qué aspiramos",
             body: [
               "Al nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG 2.1), el estándar en el que se basa el RGAA francés.",
+              "Esta declaración abarca todo el sitio y refleja nuestra propia revisión en la fecha indicada arriba, no una auditoría independiente.",
             ],
           },
           {
@@ -1202,6 +1211,7 @@ export const es = {
             heading: "Cuéntenos si algo le bloquea",
             body: [
               "Escriba a contact@vinet-puranik.com y cuéntenos qué ha pasado. Le responderemos y, cuando sea posible, le haremos llegar la información por otra vía.",
+              "Si nos comunica un problema y nuestra respuesta no le satisface, puede dirigirse al Défenseur des droits en defenseurdesdroits.fr.",
             ],
           },
         ],
