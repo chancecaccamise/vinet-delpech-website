@@ -5,7 +5,7 @@ import type { TastingSense } from "@/lib/site";
  * The three tasting glyphs — eye, nose, palate — after the brochure's own.
  *
  * The site has no icon system and does not want one for three drawings, so
- * these follow the idiom already in `BrandRail`: a 24-unit grid, `currentColor`
+ * these follow the idiom already in the brand cards: a 24-unit grid, `currentColor`
  * at hairline weight, with size and colour supplied by the caller so the same
  * glyph works on cream and on navy.
  *

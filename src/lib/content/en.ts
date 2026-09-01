@@ -143,13 +143,35 @@ export const en = {
     crossLinkPartnerships: "The brands we shape",
   },
 
-  collection: {
-    kicker: "The collection",
-    title: "Brands shaped by the house",
+  estate: {
+    kicker: "The estate",
+    title: "One estate, every stage",
     intro:
-      "The house's own range, and the private-label brands it shapes for partners: proof of reach across categories, casks and markets.",
-    distributionNote: "Distributed in France by Mähler-Besse.",
-    allProducts: "All our products",
+      "Copper stills, ageing cellars and bottling lines share one courtyard at Brie-sous-Archiac. Every stage of a spirit's life happens here, in the house's own hands.",
+    ctaLabel: "Visit the estate",
+    alts: {
+      stills: "A copper pot still in the Vinet-Puranik still house.",
+      cellar: "Oak casks resting in a barrel cellar at the estate.",
+      vines: "Rows of vines at sunrise near Brie-sous-Archiac.",
+    },
+    metiers: {
+      distillation: {
+        title: "Distillation",
+        body: "Copper pot stills, run slowly and watched closely, turn wine and wash into eau-de-vie.",
+      },
+      ageing: {
+        title: "Ageing",
+        body: "French oak casks rest in dim cellars, giving each spirit its colour and depth.",
+      },
+      blending: {
+        title: "Blending",
+        body: "The cellar master composes each expression from the house's reserves, cask by cask.",
+      },
+      bottling: {
+        title: "Bottling",
+        body: "Lines under the same roof dress, fill and seal every case before it ships.",
+      },
+    },
   },
 
   // Keyed by brand slug — all sixteen, the house's own bottles first and the
@@ -454,6 +476,7 @@ export const en = {
     intro:
       "Cognac and brandy, whisky, rum, gin, vodka, liqueurs and apéritifs. The house distils, ages, blends and bottles across eight categories, for its own range and for the private-label brands it builds with partners.",
     frameLabel: "New-make spirit running from the still into a copper receiver",
+    allProducts: "All our products",
   },
 
   timeline: {
@@ -569,9 +592,9 @@ export const en = {
   },
 
   team: {
-    alt: "The Vinet-Puranik team, photographed among the copper stills in the distillation hall.",
+    alt: "Copper pot stills in the Vinet-Puranik still house at Brie-sous-Archiac.",
     label: "The house",
-    caption: "The Vinet-Puranik team: Brie-sous-Archiac, Charente",
+    caption: "The still house: Brie-sous-Archiac, Charente",
   },
 
   // TODO(launch): placeholder quotes — see the note on `testimonialSlugs` in
@@ -926,9 +949,6 @@ export const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Language",
-    previousBrands: "Previous brands",
-    nextBrands: "Next brands",
-    brandCollection: "Brand collection",
     featured: "Featured",
     startAProject: "Start a project",
     skipToContent: "Skip to content",

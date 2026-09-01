@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { heroMedia, leaderPortraits, productionImage, siteConfig } from "@/lib/site";
 import { isLocale, localizePath } from "@/lib/i18n";
 import {
-  getBrands,
   getContent,
   getFeaturePanels,
   getSpiritFamilies,
@@ -14,7 +13,7 @@ import { graphJsonLd, organizationJsonLd, webSiteJsonLd } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { HeroMedia } from "@/components/HeroMedia";
-import { BrandRail } from "@/components/BrandRail";
+import { EstateShowcase } from "@/components/EstateShowcase";
 import { FeaturePanels } from "@/components/FeaturePanels";
 import { Timeline } from "@/components/Timeline";
 import { LeadershipWord } from "@/components/LeadershipWord";
@@ -110,43 +109,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* ------------------------------------------------------------------
-          The collection — the house's own range and the brands it shapes for
-          partners, in a wide horizontal rail. Sits directly under the intro:
-          title column on the left, cards gliding off the right edge of the
-          viewport.
+          The estate — the place before any brand: still house, cellar and
+          vines beside the four métiers. The bottles live on the Partners
+          and Private Labels pages.
       ------------------------------------------------------------------ */}
-      <section id="collection" className="overflow-hidden bg-white py-24 text-ink sm:py-32">
-        <div className="mx-auto max-w-[1600px] pl-6 lg:pl-12">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] lg:items-center lg:gap-16">
-            <div className="pr-6 lg:pr-0">
-              <Reveal>
-                <h2 className="display display-lg uppercase tracking-[0.05em]">{c.collection.title}</h2>
-                <p className="mt-6 max-w-sm text-sm leading-7 text-ink/60">{c.collection.intro}</p>
-                {/* The rail is a taste of the collection; the category pages
-                    are where it is actually browsable. */}
-                <Link href={localizePath(locale, "/private-label")} className="btn btn-blue mt-9">
-                  {c.collection.allProducts}
-                </Link>
-              </Reveal>
-            </div>
-
-            <Reveal delay={200} className="min-w-0">
-              <BrandRail
-                locale={locale}
-                brands={getBrands(locale)}
-                labels={c.privateLabel}
-                ui={c.ui}
-              />
-            </Reveal>
-          </div>
-
-          <Reveal delay={300}>
-            <p className="mt-14 pr-6 text-[0.62rem] uppercase tracking-[0.22em] text-ink/65">
-              {c.collection.distributionNote}
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <EstateShowcase locale={locale} content={c.estate} />
 
       {/* ------------------------------------------------------------------
           Feature panels — two full-bleed halves, alternating sides.
@@ -202,7 +169,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 href={localizePath(locale, "/private-label")}
                 className="link-quiet mt-10 inline-block text-blue"
               >
-                {c.collection.allProducts}
+                {c.production.allProducts}
               </Link>
             </Reveal>
           </div>

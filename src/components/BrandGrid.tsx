@@ -7,9 +7,8 @@ import { BrandCard } from "@/components/BrandCard";
 /**
  * The brands of one category, laid out as a static grid.
  *
- * The home page shows the whole collection as a horizontal rail; a category
- * page holds one to three bottles, where a rail would have nothing to glide
- * through. Server-rendered — no client JS, unlike `BrandRail`.
+ * A category page holds one to three bottles, so a static grid reads better
+ * than anything that glides. Server-rendered — no client JS.
  *
  * The column count follows the number of brands rather than a fixed track, so
  * a single-bottle category reads as a plate rather than as a lonely card in a

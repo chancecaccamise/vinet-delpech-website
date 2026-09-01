@@ -4,17 +4,17 @@ import type { Content } from "@/lib/content/en";
 import { Reveal } from "@/components/Reveal";
 
 /**
- * The team, edge to edge on the dark house ground.
+ * The house, edge to edge on the dark navy ground.
  *
  * Its own chapter rather than a plate inside the president's statement: the
  * `bg-navy` band separates the cream president section above from the
- * white contact section below, and gives the only full-colour photograph on
- * the page a ground of its own.
+ * white contact section below, and gives the photograph a ground of its own.
  *
- * The image is full-bleed and uncropped — laid out on the file's own
- * 1800 × 782 ratio (`h-auto w-full`, no `object-cover`), because a group shot
- * cropped to a fixed band loses whoever stands at the ends. That means the
- * band's height follows the viewport width; that is the intended behaviour.
+ * The image is full-bleed and uncropped — laid out on the file's own wide
+ * ratio (`h-auto w-full`, no `object-cover`), so the band's height follows
+ * the viewport width; that is the intended behaviour. It currently carries
+ * the still house (see `teamImage` in src/lib/site.ts); when the house sends
+ * a new team photograph, repointing that export is the whole swap.
  */
 export function TeamBand({ content }: { content: Content["team"] }) {
   const team = content;

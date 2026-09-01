@@ -7,13 +7,11 @@ import { PlaceholderFrame } from "@/components/PlaceholderFrame";
 /**
  * One bottle as a card — packshot, name, category, descriptor, call to action.
  *
- * The home page rail and the category grids show the same card; only the
- * viewport `sizes` hint differs between them, so that is the single layout
- * knob this takes. It lived as two near-identical copies in `BrandRail` and
- * `BrandGrid` until the house's own range arrived needing a second kind of
- * link, at which point the copies had already drifted — the grid rendered no
- * button at all without a producer URL, the rail rendered one pointing at a
- * home page anchor that does not exist.
+ * Every grid shows the same card; only the viewport `sizes` hint differs
+ * between placements, so that is the single layout knob this takes. It began
+ * as two near-identical copies in the old home-page rail and `BrandGrid`,
+ * which had already drifted apart by the time the house's own range arrived
+ * needing a second kind of link.
  *
  * Where the card leads is decided once, in `getBrandCta`, not here.
  */

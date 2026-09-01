@@ -144,13 +144,35 @@ export const fr = {
     crossLinkPartnerships: "Les marques que nous façonnons",
   },
 
-  collection: {
-    kicker: "La collection",
-    title: "Des marques façonnées par la maison",
+  estate: {
+    kicker: "Le domaine",
+    title: "Un domaine, toutes les étapes",
     intro:
-      "La gamme de la maison, et les marques de distributeur qu'elle façonne pour ses partenaires : la preuve d'une étendue de savoir-faire, à travers les catégories, les fûts et les marchés.",
-    distributionNote: "Distribué en France par Mähler-Besse.",
-    allProducts: "Tous nos produits",
+      "Alambics de cuivre, chais de vieillissement et lignes d'embouteillage partagent la même cour à Brie-sous-Archiac. Chaque étape de la vie d'un spiritueux se déroule ici, entre les mains de la maison.",
+    ctaLabel: "Visiter le domaine",
+    alts: {
+      stills: "Un alambic de cuivre dans la salle des alambics de la Distillerie Vinet-Puranik.",
+      cellar: "Des fûts de chêne au repos dans un chai du domaine.",
+      vines: "Des rangs de vigne au lever du soleil près de Brie-sous-Archiac.",
+    },
+    metiers: {
+      distillation: {
+        title: "Distillation",
+        body: "Les alambics de cuivre, menés lentement et surveillés de près, transforment vins et moûts en eaux-de-vie.",
+      },
+      ageing: {
+        title: "Vieillissement",
+        body: "Les fûts de chêne français reposent dans la pénombre des chais et donnent à chaque spiritueux sa couleur et sa profondeur.",
+      },
+      blending: {
+        title: "Assemblage",
+        body: "Le maître de chai compose chaque expression à partir des réserves de la maison, fût par fût.",
+      },
+      bottling: {
+        title: "Embouteillage",
+        body: "Sous le même toit, les lignes habillent, remplissent et scellent chaque caisse avant l'expédition.",
+      },
+    },
   },
 
   brands: {
@@ -446,6 +468,7 @@ export const fr = {
     intro:
       "Cognac et brandy, whisky, rhum, gin, vodka, liqueurs et apéritifs. La maison distille, vieillit, assemble et embouteille dans huit catégories, pour sa propre gamme comme pour les marques de distributeur qu'elle construit avec ses partenaires.",
     frameLabel: "L'eau-de-vie nouvelle coulant de l'alambic dans un récipient de cuivre",
+    allProducts: "Tous nos produits",
   },
 
   timeline: {
@@ -553,9 +576,9 @@ export const fr = {
   },
 
   team: {
-    alt: "L'équipe Vinet-Puranik, photographiée parmi les alambics de cuivre de la distillerie.",
+    alt: "Les alambics de cuivre dans la salle des alambics de la Distillerie Vinet-Puranik à Brie-sous-Archiac.",
     label: "La maison",
-    caption: "L'équipe Vinet-Puranik : Brie-sous-Archiac, Charente",
+    caption: "La salle des alambics : Brie-sous-Archiac, Charente",
   },
 
   testimonials: {
@@ -914,9 +937,6 @@ export const fr = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     language: "Langue",
-    previousBrands: "Marques précédentes",
-    nextBrands: "Marques suivantes",
-    brandCollection: "Collection de marques",
     featured: "À la une",
     startAProject: "Démarrer un projet",
     skipToContent: "Aller au contenu",

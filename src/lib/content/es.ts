@@ -146,13 +146,35 @@ export const es = {
     crossLinkPartnerships: "Las marcas que moldeamos",
   },
 
-  collection: {
-    kicker: "La colección",
-    title: "Marcas moldeadas por la casa",
+  estate: {
+    kicker: "La finca",
+    title: "Una finca, todas las etapas",
     intro:
-      "La gama propia de la casa, y las marcas de distribución que moldea para sus socios: la prueba de un alcance amplio, entre categorías, barricas y mercados.",
-    distributionNote: "Distribuido en Francia por Mähler-Besse.",
-    allProducts: "Todos nuestros productos",
+      "Alambiques de cobre, bodegas de envejecimiento y líneas de embotellado comparten un mismo patio en Brie-sous-Archiac. Cada etapa de la vida de un espirituoso sucede aquí, en manos de la casa.",
+    ctaLabel: "Visitar la finca",
+    alts: {
+      stills: "Un alambique de cobre en la sala de alambiques de la Destilería Vinet-Puranik.",
+      cellar: "Barricas de roble reposando en una bodega de la finca.",
+      vines: "Hileras de viñas al amanecer cerca de Brie-sous-Archiac.",
+    },
+    metiers: {
+      distillation: {
+        title: "Destilación",
+        body: "Los alambiques de cobre, conducidos despacio y vigilados de cerca, convierten vinos y mostos en eaux-de-vie.",
+      },
+      ageing: {
+        title: "Envejecimiento",
+        body: "Las barricas de roble francés reposan en la penumbra de las bodegas y dan a cada espirituoso su color y su profundidad.",
+      },
+      blending: {
+        title: "Ensamblaje",
+        body: "El maestro de bodega compone cada expresión a partir de las reservas de la casa, barrica a barrica.",
+      },
+      bottling: {
+        title: "Embotellado",
+        body: "Bajo el mismo techo, las líneas visten, llenan y sellan cada caja antes de enviarla.",
+      },
+    },
   },
 
   brands: {
@@ -448,6 +470,7 @@ export const es = {
     intro:
       "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
     frameLabel: "El aguardiente nuevo cayendo del alambique a un recipiente de cobre",
+    allProducts: "Todos nuestros productos",
   },
 
   timeline: {
@@ -555,9 +578,9 @@ export const es = {
   },
 
   team: {
-    alt: "El equipo de Vinet-Puranik, fotografiado entre los alambiques de cobre de la destilería.",
+    alt: "Los alambiques de cobre en la sala de alambiques de la Destilería Vinet-Puranik en Brie-sous-Archiac.",
     label: "La casa",
-    caption: "El equipo de Vinet-Puranik: Brie-sous-Archiac, Charente",
+    caption: "La sala de alambiques: Brie-sous-Archiac, Charente",
   },
 
   testimonials: {
@@ -916,9 +939,6 @@ export const es = {
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
     language: "Idioma",
-    previousBrands: "Marcas anteriores",
-    nextBrands: "Marcas siguientes",
-    brandCollection: "Colección de marcas",
     featured: "Destacado",
     startAProject: "Iniciar un proyecto",
     skipToContent: "Ir al contenido",

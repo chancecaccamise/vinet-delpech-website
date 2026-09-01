@@ -632,6 +632,17 @@ export type TimelineEntry = { year: string; body: string };
  */
 export const productionImage = "/media/estate/production-bottling.webp";
 
+/**
+ * The estate showcase under the home hero — the still house, a barrel cellar
+ * and the vines, derived from the house's own photography. The still is the
+ * tall frame; the other two stack beside it.
+ */
+export const estateShowcaseImages = {
+  stills: "/media/estate/showcase-stills.webp",
+  cellar: "/media/estate/showcase-cellar.webp",
+  vines: "/media/estate/showcase-vines.webp",
+} as const;
+
 export const aboutSkillImages = [
   "/media/estate/skill-quality.webp",
   "/media/estate/skill-reliability.webp",
@@ -692,13 +703,14 @@ export const groupFigures = [
 export type GroupFigureKey = (typeof groupFigures)[number]["key"];
 
 /**
- * The team photograph — a 1800 × 782 panorama, laid out on its own aspect ratio
- * rather than cropped to a band, so no one is lost at either end of the frame.
+ * The full-bleed band photograph on the home page — currently the still house,
+ * cropped wide. It replaced the team panorama at the house's request; when a
+ * new team photograph arrives, repointing this export is the whole swap.
  */
 export const teamImage = {
-  src: "/media/vinetDelpechTeamImage.jpg",
-  width: 1800,
-  height: 782,
+  src: "/media/estate/band-still-house.webp",
+  width: 2000,
+  height: 860,
 } as const;
 
 // ---------------------------------------------------------------------------
