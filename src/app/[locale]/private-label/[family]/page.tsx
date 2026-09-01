@@ -5,7 +5,7 @@ import { siteConfig, spiritFamilySlugs } from "@/lib/site";
 import { isLocale, locales, localizePath } from "@/lib/i18n";
 import {
   findSpiritFamily,
-  getBrandsInFamily,
+  getPrivateLabelBrands,
   getContent,
   getHouseBrands,
   getPartnerBrandsInFamily,
@@ -46,7 +46,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     locale,
-    path: `/partnerships/${family.slug}`,
+    path: `/private-label/${family.slug}`,
     title: family.title,
     description: family.summary,
   });
@@ -62,8 +62,11 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
 
   const c = getContent(locale);
   // The category's bottles, split by who they belong to: the house's own get
-  // the long-form brochure treatment, the partners' stay as cards linking out.
-  const brands = getBrandsInFamily(locale, family.slug);
+  // the long-form brochure treatment, the clients' stay as cards linking out.
+  // A partner company's own range is not here — it has its own page under
+  // Partners — so the count in the hero has to come from the same filtered
+  // selector the sections below do, or it promises bottles this page omits.
+  const brands = getPrivateLabelBrands(locale, family.slug);
   const houseBrands = getHouseBrands(locale, family.slug);
   const partnerBrands = getPartnerBrandsInFamily(locale, family.slug);
   const others = getSpiritFamilies(locale).filter((entry) => entry.slug !== family.slug);
@@ -87,26 +90,32 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
         nodes={[
           breadcrumbJsonLd(locale, [
             { name: siteConfig.name, path: "/" },
-            { name: c.metadata.partnershipsTitle, path: "/partnerships" },
-            { name: family.name, path: `/partnerships/${family.slug}` },
+            { name: c.metadata.privateLabelTitle, path: "/private-label" },
+            { name: family.name, path: `/private-label/${family.slug}` },
           ]),
         ]}
       />
 
       <PageHero title={family.title} intro={family.intro}>
         <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
-          {pluralize(c.partnerships.inCollectionOne, c.partnerships.inCollectionOther, brands.length)}
+          {brands.length === 0
+            ? c.privateLabel.noBrandsYet
+            : pluralize(
+                c.privateLabel.inCollectionOne,
+                c.privateLabel.inCollectionOther,
+                brands.length,
+              )}
         </p>
       </PageHero>
 
       {houseBrands.length > 0 && (
         <section
-          aria-label={c.partnerships.houseHeading}
+          aria-label={c.privateLabel.houseHeading}
           className={`${band("house")} py-20 text-ink sm:py-28`}
         >
           <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
             <Reveal>
-              <p className="eyebrow text-ink/65">{c.partnerships.houseHeading}</p>
+              <p className="eyebrow text-ink/65">{c.privateLabel.houseHeading}</p>
             </Reveal>
             {houseBrands.map((brand, index) => (
               <BrandStory
@@ -126,22 +135,22 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
           rather than leaving an empty three-column track behind. */}
       {partnerBrands.length > 0 && (
         <section
-          aria-label={c.partnerships.partnerHeading}
+          aria-label={c.privateLabel.partnerHeading}
           className={`${band("partners")} py-20 text-ink sm:py-28`}
         >
           <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
             {houseBrands.length > 0 && (
               <Reveal>
                 <h2 className="display display-md mb-12 uppercase tracking-[0.05em]">
-                  {c.partnerships.partnerHeading}
+                  {c.privateLabel.partnerHeading}
                 </h2>
               </Reveal>
             )}
 
-            <BrandGrid locale={locale} brands={partnerBrands} labels={c.partnerships} />
+            <BrandGrid locale={locale} brands={partnerBrands} labels={c.privateLabel} />
 
             <Reveal delay={200}>
-              <p className="eyebrow mt-16 text-ink/65">{c.partnerships.note}</p>
+              <p className="eyebrow mt-16 text-ink/65">{c.privateLabel.note}</p>
             </Reveal>
           </div>
         </section>
@@ -152,12 +161,12 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
       <section aria-label="Other categories" className={`${band("others")} py-20 text-ink sm:py-24`}>
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
-            <h2 className="display display-md uppercase tracking-[0.05em]">{c.partnerships.otherCategories}</h2>
+            <h2 className="display display-md uppercase tracking-[0.05em]">{c.privateLabel.otherCategories}</h2>
             <ul className="m-0 mt-8 flex list-none flex-wrap gap-x-8 gap-y-4 p-0">
               {others.map((entry) => (
                 <li key={entry.slug}>
                   <Link
-                    href={localizePath(locale, `/partnerships/${entry.slug}`)}
+                    href={localizePath(locale, `/private-label/${entry.slug}`)}
                     className="link-quiet text-blue"
                   >
                     {entry.name}
@@ -168,13 +177,13 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
               <Link href={localizePath(locale, "/contact")} className="btn btn-blue">
-                {c.partnerships.ctaLabel}
+                {c.privateLabel.ctaLabel}
               </Link>
               <Link
-                href={localizePath(locale, "/partnerships")}
+                href={localizePath(locale, "/private-label")}
                 className="link-quiet text-blue"
               >
-                {c.partnerships.backToAll}
+                {c.privateLabel.backToAll}
               </Link>
             </div>
           </Reveal>

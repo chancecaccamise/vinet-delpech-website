@@ -98,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <p className="mt-6 max-w-sm text-sm leading-7 text-ink/60">{c.collection.intro}</p>
                 {/* The rail is a taste of the collection; the category pages
                     are where it is actually browsable. */}
-                <Link href={localizePath(locale, "/partnerships")} className="btn btn-blue mt-9">
+                <Link href={localizePath(locale, "/private-label")} className="btn btn-blue mt-9">
                   {c.collection.allProducts}
                 </Link>
               </Reveal>
@@ -108,7 +108,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <BrandRail
                 locale={locale}
                 brands={getBrands(locale)}
-                labels={c.partnerships}
+                labels={c.privateLabel}
                 ui={c.ui}
               />
             </Reveal>
@@ -156,7 +156,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 {getSpiritFamilies(locale).map((family) => (
                   <li key={family.slug} className="border-t border-ink/15">
                     <Link
-                      href={localizePath(locale, `/partnerships/${family.slug}`)}
+                      href={localizePath(locale, `/private-label/${family.slug}`)}
                       className="group flex items-center justify-between py-3.5 text-sm text-ink/70 transition-colors duration-300 hover:text-blue"
                     >
                       {family.name}
@@ -173,7 +173,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </Reveal>
             <Reveal delay={500}>
               <Link
-                href={localizePath(locale, "/partnerships")}
+                href={localizePath(locale, "/private-label")}
                 className="link-quiet mt-10 inline-block text-blue"
               >
                 {c.collection.allProducts}

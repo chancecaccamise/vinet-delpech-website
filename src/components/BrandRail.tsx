@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Brand } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
-import { getBrandCta } from "@/lib/content";
+import { getBrandCta, type BrandCtaLabels } from "@/lib/content";
 import type { Content } from "@/lib/content/en";
 import { BrandCard } from "@/components/BrandCard";
 import { clsx } from "@/lib/clsx";
@@ -22,7 +22,7 @@ export function BrandRail({
 }: {
   locale: Locale;
   brands: readonly Brand[];
-  labels: Content["partnerships"];
+  labels: BrandCtaLabels;
   ui: Content["ui"];
 }) {
   const railRef = useRef<HTMLUListElement>(null);

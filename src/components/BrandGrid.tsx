@@ -1,7 +1,6 @@
 import type { Brand } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
-import { getBrandCta } from "@/lib/content";
-import type { Content } from "@/lib/content/en";
+import { getBrandCta, type BrandCtaLabels } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 import { BrandCard } from "@/components/BrandCard";
 
@@ -23,7 +22,7 @@ export function BrandGrid({
 }: {
   locale: Locale;
   brands: readonly Brand[];
-  labels: Content["partnerships"];
+  labels: BrandCtaLabels;
 }) {
   const columns =
     brands.length === 1

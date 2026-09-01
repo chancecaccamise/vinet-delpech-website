@@ -15,12 +15,27 @@ import { Flag, LocaleSwitcher } from "@/components/LocaleSwitcher";
 const CLOSE_DELAY = 140;
 
 /**
- * Rémy-style fixed navigation: monogram left, four condensed top-level items
+ * Props that send a nav item off-site. Puranique is the only one today, but the
+ * megamenu column, the featured cards and the mobile drawer each render their
+ * own anchor, so the rel/target pair is written once here rather than three
+ * times with one of them eventually forgotten.
+ */
+const outbound = (external?: boolean) =>
+  external ? ({ target: "_blank", rel: "noopener noreferrer" } as const) : {};
+
+/**
+ * Rémy-style fixed navigation: monogram left, six condensed top-level items
  * in the centre — each opening a full-width megamenu (text-link column +
  * hairline divider + featured image cards) — language switcher right.
  * Transparent over the hero, solid/blurred once scrolled or while a menu is
- * open. On mobile the megamenus collapse into an accessible drawer of
+ * open. Below xl the megamenus collapse into an accessible drawer of
  * accordions.
+ *
+ * That crossover is xl rather than lg because of the bar's own width. Six
+ * items, one of them "Private labels / White labels", do not fit beside the
+ * lockup and the language switcher at 1024px, and the centred nav is
+ * absolutely positioned — it would have slid under the monogram rather than
+ * wrapping. The tracking opens back up at 2xl, where there is room for it.
  *
  * Nav and labels arrive as props from the locale layout: the header is a
  * client component, so it cannot read the route's locale param itself.
@@ -208,7 +223,7 @@ export function Header({
             aria-controls="mobile-menu"
             onClick={() => setDrawerOpen((value) => !value)}
             className={clsx(
-              "mr-4 flex h-11 w-11 flex-col items-center justify-center gap-1.5 border transition-colors duration-300 lg:hidden",
+              "mr-4 flex h-11 w-11 flex-col items-center justify-center gap-1.5 border transition-colors duration-300 xl:hidden",
               c.hairline,
               c.text,
               solid ? "hover:border-blue hover:text-blue" : "hover:border-sand hover:text-sand",
@@ -246,7 +261,7 @@ export function Header({
 
           <nav
             aria-label={ui.mainNavigation}
-            className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 lg:flex"
+            className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 xl:flex 2xl:gap-8"
           >
             {nav.map((group, index) => {
               // Anchor groups (…/#know-how) never mark a route active — only
@@ -274,7 +289,7 @@ export function Header({
                     onFocus={() => (hasMenu ? openNow(index) : closeMenuNow())}
                     onClick={closeAll}
                     className={clsx(
-                      "nav-link text-[11px] font-semibold uppercase tracking-[0.24em] transition-colors duration-300",
+                      "nav-link whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-300 2xl:tracking-[0.2em]",
                       solid ? "nav-link-ink text-ink/75 hover:text-ink" : "text-cream/85 hover:text-cream",
                     )}
                   >
@@ -299,7 +314,7 @@ export function Header({
             Desktop megamenus — all panels are server-rendered (crawlable)
             and toggled with the `hidden` attribute; only one open at a time.
         -------------------------------------------------------------- */}
-        <div className="absolute inset-x-0 top-full max-lg:hidden">
+        <div className="absolute inset-x-0 top-full max-xl:hidden">
           {nav.map((group, index) =>
             !group.links?.length || !group.featured ? null : (
             <div
@@ -315,6 +330,7 @@ export function Header({
                       <Link
                         href={link.href}
                         onClick={closeAll}
+                        {...outbound(link.external)}
                         className="group/link block py-2 text-sm text-ink/65 transition-colors duration-300 hover:text-ink"
                       >
                         <span className="border-b border-transparent pb-0.5 transition-colors duration-300 group-hover/link:border-blue">
@@ -346,6 +362,7 @@ export function Header({
                         key={item.label}
                         href={item.href}
                         onClick={closeAll}
+                        {...outbound(item.external)}
                         className="group/card block w-56"
                       >
                         <div className="overflow-hidden">
@@ -396,7 +413,7 @@ export function Header({
       {drawerOpen && (
         <div
           id="mobile-menu"
-          className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-ink/10 bg-white/97 px-6 pb-16 pt-6 text-ink backdrop-blur-xl lg:hidden"
+          className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-ink/10 bg-white/97 px-6 pb-16 pt-6 text-ink backdrop-blur-xl xl:hidden"
         >
           <nav aria-label={ui.mobileNavigation} className="mx-auto flex max-w-xl flex-col">
             {nav.map((group, index) => {
@@ -449,6 +466,7 @@ export function Header({
                         <Link
                           href={link.href}
                           onClick={closeAll}
+                          {...outbound(link.external)}
                           className="block py-2 text-sm text-ink/65 transition-colors duration-300 hover:text-ink"
                         >
                           {link.label}
@@ -457,9 +475,9 @@ export function Header({
                     ))}
                     {/* Featured cards collapse to simple links on mobile —
                         minus any that already appear in the column above.
-                        Partnerships features three of its own categories, so
-                        without this the drawer lists Cognac, Gin and Rum
-                        twice. */}
+                        Private labels features three of its own categories and
+                        Partners features both of its companies, so without this
+                        the drawer lists them twice. */}
                     {featured?.items
                       .filter((item) => !links.some((link) => link.href === item.href))
                       .map((item) => (
@@ -467,6 +485,7 @@ export function Header({
                           <Link
                             href={item.href}
                             onClick={closeAll}
+                            {...outbound(item.external)}
                             className="block py-2 text-sm text-blue/85 transition-colors duration-300 hover:text-blue"
                           >
                             {item.label}

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { legalSlugs, siteConfig, spiritFamilySlugs } from "@/lib/site";
+import { legalSlugs, partnerCompanyAssets, siteConfig, spiritFamilySlugs } from "@/lib/site";
 import { defaultLocale, locales } from "@/lib/i18n";
 
 /**
@@ -10,8 +10,14 @@ const routes: { path: string; priority: number }[] = [
   { path: "", priority: 1 },
   { path: "/about", priority: 0.8 },
   { path: "/events", priority: 0.7 },
-  { path: "/partnerships", priority: 0.8 },
-  ...spiritFamilySlugs.map((slug) => ({ path: `/partnerships/${slug}`, priority: 0.7 })),
+  { path: "/partners", priority: 0.8 },
+  // Only the partner that has a page here. Puranique is a link out, so it has
+  // no URL of ours to list.
+  ...partnerCompanyAssets
+    .filter((company) => company.portfolio)
+    .map((company) => ({ path: `/partners/${company.slug}`, priority: 0.7 })),
+  { path: "/private-label", priority: 0.8 },
+  ...spiritFamilySlugs.map((slug) => ({ path: `/private-label/${slug}`, priority: 0.7 })),
   { path: "/visit", priority: 0.8 },
   { path: "/visit/tours", priority: 0.7 },
   { path: "/visit/tastings", priority: 0.7 },

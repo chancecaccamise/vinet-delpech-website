@@ -1,43 +1,44 @@
 # Handover — questions for the house
 
 Everything below needs a decision or a piece of information from Vinet-Puranik.
-It is ordered by risk, not by effort. Items 1–4 carry legal or commercial
-exposure; the rest are quality and completeness.
+It is ordered by risk, not by effort. Items 2–4 carry legal or commercial
+exposure; the rest are quality and completeness. Item 1 is a record of what the
+house has already decided, kept because it retires three earlier questions and
+leaves one open choice.
 
 Technical setup lives in `README.md`. This file is only what we cannot answer
 ourselves.
 
 ---
 
-## 1. Pineau medal attribution — labelling risk
+## 1. The Puranique range has left this site
 
-`src/lib/site.ts` (see the `TODO(confirm)` above `puranique-pineau-blanc`)
+At the house's request, nothing carrying the Maison D' Puranique mark is shown
+here any more: the vodka, both cognacs, both Pineaux, and both mango liqueurs
+(Jus d'Manguier and Mangeaux). The range lives on **puraniques.com**, and the
+**Partners** section links straight out to it rather than restating it.
 
-Four medals are printed in the brochure for the **Pineau range as a whole**.
-They are currently duplicated onto **both** the Blanc and the Rouge records, so
-the site claims each expression won all four.
+The house's own bottles on this site are now **Montlieu X.O and Glen Mac Clay**.
 
-A medal claim attached to the wrong expression is a labelling problem, not a
-copy nit. **Please confirm which medal belongs to which expression.** If it
-cannot be confirmed from the competition records, the safe course is to remove
-them from both — which is what the code comment already recommends.
+Three questions this file used to carry are retired with those records: the
+Pineau medal attribution (four medals printed for the range as a whole and
+duplicated onto both expressions), the unattributed point scores on the two
+cognacs, and the unattributed 92 on Jus d'Manguier. **If any of the range comes
+back to this site, its question comes back with it** — in particular the medals
+must be matched to the right expression before publication, since a medal claim
+on the wrong bottle is a labelling problem rather than a copy nit.
 
-## 2. Unattributed award scores — currently invisible
+**Liqueurs is now an empty category.** Both mango liqueurs were its only
+bottles. The page was kept rather than deleted, because the house does still
+produce the category to order and says so across the rest of the site ("every
+spirit, one house", eight categories). It now reads as an offer — the process,
+"Made to order" in place of a bottle count, and a route to the enquiry form —
+and its cover is the still house rather than a packshot. **If the house would
+rather drop liqueurs from the site altogether, say so and it comes out of
+`familyAssets`; the nav, the sitemap and the "what we produce" list all follow
+from that one array.**
 
-Puranique Cognac V.S (88 points), V.S.O.P (92) and Jus d'Manguier (92) carry
-scores with **no awarding panel named**. The site deliberately hides any score
-without a competition behind it, because "92 points" from nobody in particular
-reads as invented — so **these three products currently display no awards at
-all**.
-
-Naming the panels restores four award tiles. Also to confirm:
-
-- Puranique Vodka: a **gold and a silver from the same competition in the same
-  year** (London Spirits 2018) is unusual — is that right?
-- Mangeaux: the brochure says "New York Spirits & Wine". Is that the New York
-  World Wine & Spirits Competition, and which year?
-
-## 3. Published contact details — two conflicts
+## 2. Published contact details — two conflicts
 
 | Field | Site currently uses | Conflict |
 |---|---|---|
@@ -49,7 +50,7 @@ These are not cosmetic any more: they now feed the **Organization structured
 data**, which Google can surface directly in search results, and the house
 email is also the fallback shown to a visitor if the enquiry form fails.
 
-## 4. The logo is an upscaled JPEG
+## 3. The logo is an upscaled JPEG
 
 `src/components/Logo.tsx`
 
@@ -58,6 +59,27 @@ derived from a supplied **200 × 200 JPEG**: background knocked out, trimmed and
 upscaled 4×. It is soft at large sizes and it is the first thing a visitor
 sees. **Please supply the real vector artwork** (SVG or EPS) from the rebrand
 pack.
+
+## 4. Navigation restructure — what moved
+
+The bar is now six items: **About Us · Partners · Private Labels / White Labels ·
+Visit Us · Tours & Tastings · Contact**.
+
+- **Partners** is new. It holds Les Brûleries Modernes, whose four bottles moved
+  here off the category pages, and an outbound card for Puranique.
+- **Private Labels / White Labels** is the old Partnerships section: same eight
+  category pages, now at `/private-label/…`, carrying the eight client brands
+  and the house's own four remaining bottles.
+- **Tours & Tastings** is promoted out of the Visit Us menu. The pages
+  themselves did not move — they are still `/visit/tours` and `/visit/tastings`.
+- The desktop bar now crosses over to the mobile drawer at **1280px** rather
+  than 1024px: six items, one of them "Private labels / White labels", do not
+  fit beside the lockup and the language switcher at the narrower width.
+
+**To confirm:** Les Brûleries Modernes shares the distillery's address and its
+site describes itself as building on the Vinet-Delpech heritage, so it is
+presented here as a house alongside the distillery rather than as a client. If
+the relationship is something else, the copy on `/partners` should say so.
 
 ## 5. Production domain and email delivery
 
@@ -155,9 +177,13 @@ must appear on its commercial communications, add it to the legal notice.
 
 - **A bottling line.** The house runs four and has never photographed one; the
   "what we produce" section borrows a shot of spirit running off the still.
-- **Studio packshots** for both Pineaux and Montlieu X.O — the current files are
-  ~500 px crops recovered from the brochure PDF, against 1000 × 1250 for the
-  rest, and they render visibly soft.
+- **A studio packshot for Montlieu X.O** — the current file is a ~500 px crop
+  recovered from the brochure PDF, against 1000 × 1250 for the rest, and it
+  renders visibly soft.
+- **Packshots for the rest of the Les Brûleries Modernes range.** Its own site
+  lists Excellency Club, Irie and Palisson batches 02 and 03; the new
+  `/partners/les-bruleries-modernes` page can only show the four bottles we
+  hold files for.
 - **More of the tasting room.** One good frame now exists and is used on the
   Cognac & Pineau Flight; the other tastings still borrow cellar imagery.
 - **A 1440p hero video export**, ideally with a `.webm` sibling. The current

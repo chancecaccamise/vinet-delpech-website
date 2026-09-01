@@ -61,7 +61,16 @@ export const siteConfig = {
 // interpolate it, so changing it here carries through every language.
 export const MINIMUM_AGE = 18;
 
-export type NavLink = { label: string; href: string };
+export type NavLink = {
+  label: string;
+  href: string;
+  /**
+   * Leaves the site. Only Puranique does, today: it has its own site and the
+   * house asked that its range not be restated here, so the menu hands the
+   * visitor over rather than pretending to a page we do not have.
+   */
+  external?: boolean;
+};
 
 export type NavFeaturedItem = {
   label: string;
@@ -77,6 +86,8 @@ export type NavFeaturedItem = {
    * zoomed-in sliver.
    */
   packshot?: boolean;
+  /** Leaves the site — see `NavLink.external`. */
+  external?: boolean;
 };
 
 export type NavGroup = {
@@ -163,9 +174,10 @@ export type FeatureDetail = { label: string; body: string };
  * separate on purpose. Montlieu X.O is column-distilled and labelled "Finest
  * Brandy": cognac is a PDO requiring double distillation in copper pot stills
  * inside the delimited area, so filing it under `cognac` would be a false
- * appellation claim. Jus d'Manguier and Mangeaux are fruit liqueurs — neither
- * grape-based nor apéritif strength — so they do not belong under `aperitifs`
- * either.
+ * appellation claim. `liqueurs` now carries no bottle at all — both mango
+ * liqueurs went to puraniques.com — but it stays, because a fruit liqueur is
+ * neither grape-based nor apéritif strength and would be mis-filed under
+ * `aperitifs`, and because the house does still produce the category to order.
  */
 export type SpiritFamilySlug =
   | "cognac"
@@ -233,6 +245,13 @@ export type Brand = {
   image?: string;
   /** Producer/product page. Partner brands only; the house links inward. */
   url?: string;
+  /**
+   * The partner company whose own section on this site carries the brand.
+   * Set only where that section exists: those brands are shown under Partners
+   * and are left out of the private-label listings, so one bottle is never
+   * both a named partner's product and an anonymous example of client work.
+   */
+  company?: PartnerCompanySlug;
 };
 
 /**
@@ -255,164 +274,31 @@ export type HouseBrand = Brand & {
 export type LabelledAward = BrandAward & { label: string };
 
 /**
- * The house's own bottles — the Puranique range, plus Montlieu and Glen Mac
- * Clay. Kept in their own array rather than interleaved with the partner
- * records so `HouseBrandSlug` is derived rather than hand-listed, and so
- * `origin: "house"` is pinned by the satisfies clause below instead of being
- * typed out nine times and trusted.
+ * The house's own bottles: Montlieu X.O and Glen Mac Clay. Kept in their own
+ * array rather than interleaved with the partner records so `HouseBrandSlug` is
+ * derived rather than hand-listed, and so `origin: "house"` is pinned by the
+ * satisfies clause below instead of being typed out twice and trusted.
+ *
+ * Everything under the Puranique label is deliberately absent — the five
+ * Puranique bottles and, since they carry the same Maison D' Puranique mark,
+ * both mango liqueurs. That range has its own site (see `siteConfig.brandSite`)
+ * and the house does not want the portfolio duplicated here, so Partners links
+ * out to puraniques.com rather than restating it.
  *
  * These carry the brochure's long-form copy (`c.houseBrands.items`); partner
  * records do not, which is why the two live in separate dictionary blocks.
  *
- * Packshots: six are the house's own studio files, refitted to the 4:5 card —
- * the vodka, both cognacs, both liqueurs and Glen Mac Clay. Each is centred on
- * the bottle rather than on its content box, since several trail a shadow to
- * one side that would otherwise drag the composition off-centre.
+ * No record here declares `awards` any more: every awarded house bottle went
+ * with the Puranique range. `getHouseBrands` is written so that stays a fact
+ * about the data rather than a compile error.
  *
- * TODO(assets): the remaining three — both Pineaux and Montlieu — are still
- * crops recovered from the brochure PDF and top out around 500 px wide, against
- * the 1000 x 1250 the partner packshots use. Since the story-block cap was
- * lifted they render slightly soft at full column width; ask the house for
- * studio files to match the other six.
+ * TODO(assets): Montlieu is still a crop recovered from the brochure PDF and
+ * tops out around 500 px wide, against the 1000 x 1250 the partner packshots
+ * use. Since the story-block cap was lifted it renders slightly soft at full
+ * column width; ask the house for a studio file. Glen Mac Clay is the house's
+ * own studio file, centred on the bottle rather than its content box.
  */
 export const houseBrandAssets = [
-  {
-    slug: "puranique-vodka",
-    name: "Puranique Vodka",
-    family: "vodka",
-    origin: "house",
-    image: "/spirits/puranique-vodka.webp",
-    figures: [{ key: "distillations", value: 9, suffix: "×" }],
-    // TODO(confirm): the 94-point score is unattributed in the brochure, and a
-    // gold *and* a silver from one competition in one year is unusual. Confirm
-    // both with the house before these are published.
-    awards: [
-      {
-        competition: "London Spirits Competition",
-        year: 2018,
-        rank: "gold",
-        image: "/awards/lsc-gold-2018.png",
-      },
-      {
-        competition: "London Spirits Competition",
-        year: 2018,
-        rank: "silver",
-        image: "/awards/lsc-silver-2018.png",
-      },
-      { rank: "score", score: 94 },
-    ],
-  },
-  {
-    slug: "puranique-cognac-vs",
-    name: "Puranique Cognac V.S",
-    family: "cognac",
-    origin: "house",
-    image: "/spirits/puranique-cognac-vs.webp",
-    figures: [{ key: "ageing", value: 2, suffix: "" }],
-    // TODO(confirm): awarding panel unknown.
-    awards: [{ rank: "score", score: 88 }],
-  },
-  {
-    slug: "puranique-cognac-vsop",
-    name: "Puranique Cognac V.S.O.P",
-    family: "cognac",
-    origin: "house",
-    image: "/spirits/puranique-cognac-vsop.webp",
-    figures: [{ key: "ageing", value: 4, suffix: "" }],
-    // TODO(confirm): awarding panel unknown.
-    awards: [{ rank: "score", score: 92 }],
-  },
-  {
-    slug: "jus-d-manguier",
-    name: "Jus d'Manguier",
-    family: "liqueurs",
-    origin: "house",
-    image: "/spirits/jus-d-manguier.webp",
-    // TODO(confirm): awarding panel unknown.
-    awards: [{ rank: "score", score: 92 }],
-  },
-  {
-    slug: "mangeaux",
-    name: "Mangeaux",
-    family: "liqueurs",
-    origin: "house",
-    image: "/spirits/mangeaux.webp",
-    // TODO(confirm): the brochure says "New York Spirits & Wine", most likely
-    // the New York World Wine & Spirits Competition. Confirm name and year.
-    awards: [{ competition: "New York Spirits & Wine Competition", rank: "silver" }],
-  },
-  // Pineau splits into two records, following the brigitte-et-louise-blanc /
-  // -rouge precedent already in the partner array: two bottles, two tasting
-  // profiles, one shared heritage.
-  //
-  // TODO(confirm): the four medals are printed for the Pineau range as a whole.
-  // Establish which colour won which before go-live — a medal claim on the
-  // wrong expression is a labelling problem, not a copy nit. If the house
-  // cannot confirm, strip them from both records.
-  {
-    slug: "puranique-pineau-blanc",
-    name: "Puranique Pineau des Charentes Blanc",
-    family: "aperitifs",
-    origin: "house",
-    image: "/spirits/puranique-pineau-blanc.png",
-    awards: [
-      {
-        competition: "Concours Mondial des Féminalise",
-        rank: "gold",
-        image: "/awards/feminalise-gold.png",
-      },
-      {
-        competition: "Concours Mondial de Bruxelles",
-        year: 2022,
-        rank: "gold",
-        image: "/awards/bruxelles-gold-2022.png",
-      },
-      {
-        competition: "Concours Général Agricole Paris",
-        year: 2023,
-        rank: "bronze",
-        image: "/awards/paris-bronze-2023.png",
-      },
-      {
-        competition: "Women's International Trophy",
-        year: 2022,
-        rank: "gold",
-        image: "/awards/womens-trophy-2022.png",
-      },
-    ],
-  },
-  {
-    slug: "puranique-pineau-rouge",
-    name: "Puranique Pineau des Charentes Rouge",
-    family: "aperitifs",
-    origin: "house",
-    image: "/spirits/puranique-pineau-rouge.png",
-    awards: [
-      {
-        competition: "Concours Mondial des Féminalise",
-        rank: "gold",
-        image: "/awards/feminalise-gold.png",
-      },
-      {
-        competition: "Concours Mondial de Bruxelles",
-        year: 2022,
-        rank: "gold",
-        image: "/awards/bruxelles-gold-2022.png",
-      },
-      {
-        competition: "Concours Général Agricole Paris",
-        year: 2023,
-        rank: "bronze",
-        image: "/awards/paris-bronze-2023.png",
-      },
-      {
-        competition: "Women's International Trophy",
-        year: 2022,
-        rank: "gold",
-        image: "/awards/womens-trophy-2022.png",
-      },
-    ],
-  },
   {
     slug: "montlieu-xo",
     name: "Montlieu X.O",
@@ -444,6 +330,67 @@ export const houseBrandAssets = [
   awards?: readonly BrandAward[];
 }[];
 
+// ---------------------------------------------------------------------------
+// Partner companies
+// ---------------------------------------------------------------------------
+
+/**
+ * The two houses that sit alongside the distillery under Partners.
+ *
+ * They are not interchangeable, and the `portfolio` flag is what says so.
+ * Les Brûleries Modernes shares the distillery's address and its range is
+ * shown here in full, so it gets a page. Puranique already has its own site;
+ * the house asked that its portfolio not be restated on this one, so its card
+ * is a signpost and nothing more.
+ *
+ * Order is the order the cards appear in.
+ */
+export const partnerCompanyAssets = [
+  {
+    slug: "les-bruleries-modernes",
+    name: "Les Brûleries Modernes",
+    url: "https://lesbruleriesmodernes.com",
+    /** Its brands are carried here, so the card opens a page on this site. */
+    portfolio: true,
+    // Hold Up is the range's best studio file; the card is a portrait of the
+    // company, not a claim that gin is all it makes.
+    image: "/products/hold-up.jpg",
+  },
+  {
+    slug: "puranique",
+    name: "Puranique",
+    url: siteConfig.brandSite,
+    /** No page here: the card links straight out to puraniques.com. */
+    portfolio: false,
+    // One packshot as a portrait of the brand. The range itself is not
+    // duplicated here — that is the whole point of this record.
+    image: "/spirits/puranique-cognac-vsop.webp",
+  },
+] as const satisfies readonly {
+  slug: string;
+  name: string;
+  url: string;
+  portfolio: boolean;
+  image: string;
+}[];
+
+export type PartnerCompanySlug = (typeof partnerCompanyAssets)[number]["slug"];
+
+/** A partner company with its translated copy and resolved destination. */
+export type PartnerCompany = {
+  slug: PartnerCompanySlug;
+  name: string;
+  url: string;
+  portfolio: boolean;
+  image: string;
+  /** Where its card leads: a page here, or the company's own site. */
+  href: string;
+  descriptor: string;
+  intro: string;
+  frameLabel: string;
+  linkLabel: string;
+};
+
 /**
  * The brands the house makes for partners. Identity only: slug, trade name,
  * category membership, packshot and the producer's own product page. Names are
@@ -460,6 +407,7 @@ export const houseBrandAssets = [
 export const partnerBrandAssets = [
   {
     slug: "hold-up",
+    company: "les-bruleries-modernes",
     name: "Gin Hold Up",
     family: "gin",
     origin: "partner",
@@ -468,6 +416,7 @@ export const partnerBrandAssets = [
   },
   {
     slug: "palisson-batch-01",
+    company: "les-bruleries-modernes",
     name: "Palisson Batch 01",
     family: "whisky",
     origin: "partner",
@@ -476,6 +425,7 @@ export const partnerBrandAssets = [
   },
   {
     slug: "brigitte-et-louise-blanc",
+    company: "les-bruleries-modernes",
     name: "Brigitte et Louise Blanc",
     family: "aperitifs",
     origin: "partner",
@@ -484,6 +434,7 @@ export const partnerBrandAssets = [
   },
   {
     slug: "brigitte-et-louise-rouge",
+    company: "les-bruleries-modernes",
     name: "Brigitte et Louise Rouge",
     family: "aperitifs",
     origin: "partner",
@@ -569,6 +520,7 @@ export const partnerBrandAssets = [
   image: string;
   /** Producer/product page. Every partner brand has one. */
   url: string;
+  company?: PartnerCompanySlug;
 }[];
 
 /**
@@ -597,19 +549,23 @@ export type SpiritFamily = {
  * Membership is not listed here: it is derived from each brand's `family`, so a
  * brand can never appear on two pages or none.
  *
- * Four categories are fronted by the house's own bottle rather than a partner's
- * — a category card carrying our own label reads stronger than one carrying
- * someone else's. TODO(confirm): check this with the house, since it changes
- * which brand a visitor meets first in each category.
+ * Every cover is a bottle the visitor will actually meet on the page behind it.
+ * That is a constraint, not a preference: four of these covers used to be
+ * Puranique or Les Brûleries Modernes packshots, and when those ranges moved to
+ * Partners the cards were left promising bottles the page no longer listed.
  */
 export const familyAssets = [
-  { slug: "cognac", image: "/spirits/puranique-cognac-vsop.webp" },
+  { slug: "cognac", image: "/products/patte-blanche.webp" },
   { slug: "brandy", image: "/spirits/montlieu-xo.png" },
-  { slug: "whisky", image: "/products/palisson-batch-01.jpg" },
+  { slug: "whisky", image: "/spirits/glen-mac-clay-card.webp" },
   { slug: "rum", image: "/products/maca-rum.jpg" },
-  { slug: "gin", image: "/products/hold-up.jpg" },
-  { slug: "vodka", image: "/spirits/puranique-vodka.webp" },
-  { slug: "liqueurs", image: "/spirits/mangeaux.webp" },
+  { slug: "gin", image: "/products/gin40.jpg" },
+  { slug: "vodka", image: "/products/nade-vodka-2022.jpg" },
+  // The one cover that is not a bottle: both mango liqueurs went to
+  // puraniques.com and the category has nothing of its own left to front it.
+  // The still house is the honest stand-in — this page is now an offer of what
+  // the house can macerate and blend, not a shelf.
+  { slug: "liqueurs", image: "/media/estate/nav-production.webp" },
   { slug: "aperitifs", image: "/products/sephina.jpg" },
 ] as const satisfies readonly { slug: SpiritFamilySlug; image: string }[];
 
@@ -846,7 +802,7 @@ export const visitEstateImage = "/media/estate/visit-estate-aerial.webp";
  * which read as broken. Dry-goods sourcing and custom bottling are rows of
  * the six-métiers list the first link lands on.
  */
-export const footerCapabilityHrefs = ["/#bespoke", "/#know-how", "/#production"] as const;
+export const footerCapabilityHrefs = ["/private-label", "/#know-how", "/#production"] as const;
 
 // ---------------------------------------------------------------------------
 // Events

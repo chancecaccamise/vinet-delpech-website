@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
 import {
   fill,
-  getBrandsInFamily,
+  getPrivateLabelBrands,
   getContent,
   getSpiritFamilies,
   pluralize,
@@ -29,9 +29,9 @@ export async function generateMetadata({
 
   return pageMetadata({
     locale,
-    path: "/partnerships",
-    title: c.metadata.partnershipsTitle,
-    description: c.partnerships.metaDescription,
+    path: "/private-label",
+    title: c.metadata.privateLabelTitle,
+    description: c.privateLabel.metaDescription,
   });
 }
 
@@ -49,24 +49,24 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
         nodes={[
           breadcrumbJsonLd(locale, [
             { name: siteConfig.name, path: "/" },
-            { name: c.metadata.partnershipsTitle, path: "/partnerships" },
+            { name: c.metadata.privateLabelTitle, path: "/private-label" },
           ]),
         ]}
       />
 
-      <PageHero title={c.partnerships.title} intro={c.partnerships.intro}>
+      <PageHero title={c.privateLabel.title} intro={c.privateLabel.intro}>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href={localizePath(locale, "/contact")} className="btn btn-cream">
-            {c.partnerships.ctaLabel}
+            {c.privateLabel.ctaLabel}
           </Link>
         </div>
       </PageHero>
 
-      <section aria-label={c.metadata.partnershipsTitle} className="bg-white py-20 text-ink sm:py-28">
+      <section aria-label={c.metadata.privateLabelTitle} className="bg-white py-20 text-ink sm:py-28">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <ul className="m-0 grid list-none gap-x-10 gap-y-14 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {families.map((family, index) => {
-              const count = getBrandsInFamily(locale, family.slug).length;
+              const count = getPrivateLabelBrands(locale, family.slug).length;
               // `h-full` is carried down through the Reveal wrapper so the
               // "Explore" link lands on the same baseline in every card,
               // whatever the length of the summary above it.
@@ -74,7 +74,7 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
                 <li key={family.slug} className="h-full">
                   <Reveal delay={index * 90} className="h-full">
                     <Link
-                      href={localizePath(locale, `/partnerships/${family.slug}`)}
+                      href={localizePath(locale, `/private-label/${family.slug}`)}
                       className="group flex h-full flex-col"
                     >
                       <div className="relative aspect-[4/5] w-full overflow-hidden">
@@ -92,17 +92,21 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
                       </h2>
                       {/* The count is the honest measure of the category — it
                           tells a trade visitor how deep the house's range runs
-                          before they click. */}
+                          before they click. A category the house can produce
+                          but has no bottle to show says that instead: "0
+                          brands" reads as a broken page, not as an offer. */}
                       <p className="eyebrow mt-2 text-blue">
-                        {pluralize(
-                          c.partnerships.brandCountOne,
-                          c.partnerships.brandCountOther,
-                          count,
-                        )}
+                        {count === 0
+                          ? c.privateLabel.noBrandsYet
+                          : pluralize(
+                              c.privateLabel.brandCountOne,
+                              c.privateLabel.brandCountOther,
+                              count,
+                            )}
                       </p>
                       <p className="mt-3 flex-1 text-sm leading-7 text-ink/60">{family.summary}</p>
                       <span className="link-quiet mt-5 text-blue">
-                        {fill(c.partnerships.explore, { name: family.name })}
+                        {fill(c.privateLabel.explore, { name: family.name })}
                       </span>
                     </Link>
                   </Reveal>
@@ -112,7 +116,7 @@ export default async function PartnershipsPage({ params }: { params: Promise<Par
           </ul>
 
           <Reveal delay={200}>
-            <p className="eyebrow mt-16 text-ink/65">{c.partnerships.note}</p>
+            <p className="eyebrow mt-16 text-ink/65">{c.privateLabel.note}</p>
           </Reveal>
         </div>
       </section>

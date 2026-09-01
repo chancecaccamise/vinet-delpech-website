@@ -137,7 +137,7 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
               <Link href={localizePath(locale, "/#leadership")} className="link-quiet text-blue">
                 {about.crossLinkPresident}
               </Link>
-              <Link href={localizePath(locale, "/partnerships")} className="link-quiet text-blue">
+              <Link href={localizePath(locale, "/private-label")} className="link-quiet text-blue">
                 {about.crossLinkPartnerships}
               </Link>
             </div>

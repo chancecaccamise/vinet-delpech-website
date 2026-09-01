@@ -16,6 +16,7 @@ import {
   leaderPortraits,
   legalHostDetails,
   legalSlugs,
+  partnerCompanyAssets,
   serviceSlugs,
   tastingSlugs,
   tastingSenses,
@@ -24,6 +25,7 @@ import {
   tourSlugs,
   type Brand,
   type BrandAward,
+  type BrandFigure,
   type EventItem,
   type Experience,
   type FeatureFigure,
@@ -33,6 +35,8 @@ import {
   type LeaderKey,
   type LegalPage,
   type NavGroup,
+  type PartnerCompany,
+  type PartnerCompanySlug,
   type Service,
   type SpiritFamily,
   type SpiritFamilySlug,
@@ -73,8 +77,18 @@ export function getBrands(locale: Locale): Brand[] {
   return brandAssets.map((asset) => ({ ...asset, ...c.brands[asset.slug] }));
 }
 
-export function getBrandsInFamily(locale: Locale, family: SpiritFamilySlug): Brand[] {
-  return getBrands(locale).filter((brand) => brand.family === family);
+/**
+ * Everything the private-label section may show: the house's own bottles and
+ * the brands it makes for clients who have no section of their own here.
+ *
+ * The exclusion is the point. A brand carrying a `company` is one of a named
+ * partner's own products and is shown under Partners; listing it here as well
+ * would offer a partner's range as an example of anonymous client work.
+ */
+export function getPrivateLabelBrands(locale: Locale, family?: SpiritFamilySlug): Brand[] {
+  return getBrands(locale).filter(
+    (brand) => !brand.company && (!family || brand.family === family),
+  );
 }
 
 
@@ -93,20 +107,24 @@ export function getHouseBrands(locale: Locale, family?: SpiritFamilySlug): House
     .filter((asset) => !family || asset.family === family)
     .map((asset) => {
       const copy = c.houseBrands.items[asset.slug];
-      const figures: readonly FeatureFigure[] = ("figures" in asset ? asset.figures : []).map(
-        (figure) => ({
-          value: figure.value,
-          suffix: figure.suffix,
-          label: labels.figures[figure.key],
-        }),
-      );
+      // `figures` and `awards` are optional on a house record, and the obvious
+      // `"awards" in asset` test does not survive them being absent from every
+      // record: TypeScript narrows the check to `never` and the value comes
+      // back `unknown`. That is precisely what happened when the awarded
+      // bottles moved to puraniques.com. Widening once, here, keeps both reads
+      // typed however few records happen to declare them.
+      const extras = asset as { figures?: readonly BrandFigure[]; awards?: readonly BrandAward[] };
+
+      const figures: readonly FeatureFigure[] = (extras.figures ?? []).map((figure) => ({
+        value: figure.value,
+        suffix: figure.suffix,
+        label: labels.figures[figure.key],
+      }));
+
       // An award tile reading just "92 points" with no competition behind it
-      // reads as invented. The unattributed scores stay in site.ts under their
-      // TODO(confirm) and return here once the house names the panel.
-      // Typed as the broad award shape on purpose: the inferred filter
-      // predicate would otherwise erase the score branch below, which must
-      // survive for the day a score arrives with its competition named.
-      const attributed: readonly BrandAward[] = ("awards" in asset ? asset.awards : []).filter(
+      // reads as invented, so a score with no panel named is dropped. The
+      // branch stays for the day the house names one.
+      const attributed = (extras.awards ?? []).filter(
         (award) => award.rank !== "score" || "competition" in award,
       );
       const awards: readonly LabelledAward[] = attributed.map(
@@ -132,11 +150,37 @@ export function getHouseBrands(locale: Locale, family?: SpiritFamilySlug): House
     });
 }
 
-/** The partner bottles of one category — the house's own render separately. */
+/** The client bottles of one category — the house's own render separately. */
 export function getPartnerBrandsInFamily(locale: Locale, family: SpiritFamilySlug): Brand[] {
-  return getBrands(locale).filter(
-    (brand) => brand.family === family && brand.origin === "partner",
-  );
+  return getPrivateLabelBrands(locale, family).filter((brand) => brand.origin === "partner");
+}
+
+/**
+ * The two houses under Partners, with their translated copy attached.
+ *
+ * `portfolio` decides where a card leads, and it is the record that decides it,
+ * not the caller: Les Brûleries Modernes opens its page here, Puranique opens
+ * puraniques.com. Nothing downstream has to remember which is which.
+ */
+export function getPartnerCompanies(locale: Locale): PartnerCompany[] {
+  const c = getContent(locale);
+  return partnerCompanyAssets.map((asset) => ({
+    ...asset,
+    ...c.partners.companies[asset.slug],
+    href: asset.portfolio ? localizePath(locale, `/partners/${asset.slug}`) : asset.url,
+  }));
+}
+
+export function getPartnerCompany(
+  locale: Locale,
+  slug: string,
+): PartnerCompany | undefined {
+  return getPartnerCompanies(locale).find((company) => company.slug === slug);
+}
+
+/** The brands one partner company's own section carries. */
+export function getPartnerCompanyBrands(locale: Locale, slug: PartnerCompanySlug): Brand[] {
+  return getBrands(locale).filter((brand) => brand.company === slug);
 }
 
 export type BrandCardCta = {
@@ -155,10 +199,21 @@ export type BrandCardCta = {
  * such page: its story sits on the category page, so the card scrolls there
  * and says "read the story" rather than promising a spec sheet elsewhere.
  */
+/**
+ * The four strings a brand card's call to action can need. Named separately
+ * from the dictionary block that holds them because three sections render
+ * brand cards — the home rail, the private-label categories and a partner
+ * company's portfolio — and only this much is common to all three.
+ */
+export type BrandCtaLabels = Pick<
+  Content["privateLabel"],
+  "viewDetails" | "viewDetailsAria" | "readTheStory" | "readTheStoryAria"
+>;
+
 export function getBrandCta(
   locale: Locale,
   brand: Brand,
-  labels: Content["partnerships"],
+  labels: BrandCtaLabels,
 ): BrandCardCta | undefined {
   if (brand.url) {
     return {
@@ -170,7 +225,7 @@ export function getBrandCta(
   }
   if (brand.origin === "house") {
     return {
-      href: localizePath(locale, `/partnerships/${brand.family}#brand-${brand.slug}`),
+      href: localizePath(locale, `/private-label/${brand.family}#brand-${brand.slug}`),
       external: false,
       label: labels.readTheStory,
       ariaLabel: fill(labels.readTheStoryAria, { name: brand.name }),
@@ -383,12 +438,13 @@ export function getNav(locale: Locale): NavGroup[] {
   const c = getContent(locale);
   const path = (p: string) => localizePath(locale, p);
   const families = getSpiritFamilies(locale);
+  const companies = getPartnerCompanies(locale);
 
   // "Our story" leads: the page about the house outranks its home-page
   // anchors. Order is positional against c.nav.about.links in each dictionary.
-  const aboutHrefs = ["/about", "/#bespoke", "/#know-how", "/#leadership", "/#timeline", "/events"];
-  // "#practical" stays on the page itself; the dropdown stops listing it.
-  const visitHrefs = ["/visit", "/visit/tours", "/visit/tastings", "/visit#book"];
+  const aboutHrefs = ["/about", "/#know-how", "/#leadership", "/#timeline", "/events"];
+  const visitHrefs = ["/visit", "/visit#book", "/visit#practical"];
+  const toursTastingsHrefs = ["/visit/tours", "/visit/tastings"];
 
   return [
     {
@@ -413,27 +469,52 @@ export function getNav(locale: Locale): NavGroup[] {
       viewAll: { label: c.nav.about.viewAll, href: path("/#know-how") },
     },
     {
-      label: c.nav.partnerships.label,
-      href: path("/partnerships"),
+      // Both the column and the cards are built from the same two company
+      // records, so `href` and `external` are decided once — in
+      // `getPartnerCompanies` — and Puranique cannot end up a live link in one
+      // half of the panel and a dead in-site path in the other.
+      label: c.nav.partners.label,
+      href: path("/partners"),
+      links: companies.map((company) => ({
+        label: company.name,
+        href: company.href,
+        external: !company.portfolio,
+      })),
+      featured: {
+        heading: c.nav.partners.featuredHeading,
+        items: companies.map((company) => ({
+          label: company.name,
+          href: company.href,
+          external: !company.portfolio,
+          frameLabel: company.frameLabel,
+          image: company.image,
+          packshot: true,
+        })),
+      },
+      viewAll: { label: c.nav.partners.viewAll, href: path("/partners") },
+    },
+    {
+      label: c.nav.privateLabel.label,
+      href: path("/private-label"),
       // One link per category rather than one per bottle: twelve product names
       // outgrew the column, and a visitor arrives knowing the category they
       // work in long before they know a brand's name.
       links: [
-        { label: c.nav.partnerships.overview, href: path("/partnerships") },
+        { label: c.nav.privateLabel.overview, href: path("/private-label") },
         ...families.map((family) => ({
           label: family.name,
-          href: path(`/partnerships/${family.slug}`),
+          href: path(`/private-label/${family.slug}`),
         })),
       ],
       featured: {
-        heading: c.nav.partnerships.featuredHeading,
+        heading: c.nav.privateLabel.featuredHeading,
         // Cognac, gin and rum — the three the house leads with.
         items: (["cognac", "gin", "rum"] as const).map((slug, index) => {
           const family = families.find((entry) => entry.slug === slug)!;
           return {
             label: family.name,
-            href: path(`/partnerships/${slug}`),
-            frameLabel: c.nav.partnerships.featuredFrameLabels[index],
+            href: path(`/private-label/${slug}`),
+            frameLabel: c.nav.privateLabel.featuredFrameLabels[index],
             image: family.image,
             // Bottles keep the tall product canvas; every other featured
             // card is estate photography on the landscape frame.
@@ -441,7 +522,7 @@ export function getNav(locale: Locale): NavGroup[] {
           };
         }),
       },
-      viewAll: { label: c.nav.partnerships.viewAll, href: path("/partnerships") },
+      viewAll: { label: c.nav.privateLabel.viewAll, href: path("/private-label") },
     },
     {
       label: c.nav.visit.label,
@@ -452,11 +533,33 @@ export function getNav(locale: Locale): NavGroup[] {
         items: [
           {
             ...c.nav.visit.featured[0],
+            href: path("/visit"),
+            image: "/media/estate/visit-estate-aerial.webp",
+          },
+        ],
+      },
+      viewAll: { label: c.nav.visit.viewAll, href: path("/visit") },
+    },
+    {
+      label: c.nav.toursTastings.label,
+      // The top-level item lands on Tours rather than on a landing page of its
+      // own: there is no third thing here, and inventing a page to hold two
+      // links the panel already shows would be a click for nothing.
+      href: path("/visit/tours"),
+      links: c.nav.toursTastings.links.map((label, index) => ({
+        label,
+        href: path(toursTastingsHrefs[index]),
+      })),
+      featured: {
+        heading: c.nav.toursTastings.featuredHeading,
+        items: [
+          {
+            ...c.nav.toursTastings.featured[0],
             href: path("/visit/tours#cellar-and-distillery-tour"),
             image: "/media/estate/nav-tour.webp",
           },
           {
-            ...c.nav.visit.featured[1],
+            ...c.nav.toursTastings.featured[1],
             href: path("/visit/tastings#signature-tasting"),
             // The tasting room itself — the ageing line on the white bench —
             // which finally exists in the galleries. Fresh filename, as ever,
@@ -465,7 +568,7 @@ export function getNav(locale: Locale): NavGroup[] {
           },
         ],
       },
-      viewAll: { label: c.nav.visit.viewAll, href: path("/visit") },
+      viewAll: { label: c.nav.toursTastings.viewAll, href: path("/visit") },
     },
     {
       // No `links`/`featured`: Contact is a plain link straight to the
