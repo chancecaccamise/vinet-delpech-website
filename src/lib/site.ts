@@ -599,7 +599,9 @@ export const featurePanelAssets = [
   // ageing cellars already carry the sections either side of it.
   { slug: "bespoke", image: "/media/estate/panel-bespoke-spec.webp", mediaSide: "left" },
   // `slug` is the anchor id: the nav and megamenus link to /#know-how.
-  { slug: "know-how", image: "/media/distilleryImage.jpg", mediaSide: "right" },
+  // Not the frame the estate showcase uses further up the page: that one was
+  // the same photograph as this panel's, cropped differently.
+  { slug: "know-how", image: "/media/estate/panel-knowhow-stills.webp", mediaSide: "right" },
 ] as const satisfies readonly {
   slug: "bespoke" | "know-how";
   image: string;
