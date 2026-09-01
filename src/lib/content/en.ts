@@ -27,10 +27,10 @@ export const en = {
     ],
   },
 
+  // Only `origin` survives of the old house statement — the "100% made in
+  // France" mark on /about. The rest of the block retired when the home page
+  // took the client's own positioning copy.
   maisonStatement: {
-    kicker: "The house",
-    line: "From the soil to the glass. From the vineyard to the bottle. Your dream in a bottle.",
-    body: "Vinet-Puranik is a distillery with a rich heritage and deep roots. We do not simply sell products. We offer an experience, a way of life. Every product is crafted at the distillery: from the vineyard to the cellars, through distillation, and finally to the bottle.",
     origin: "100% made in France",
   },
 

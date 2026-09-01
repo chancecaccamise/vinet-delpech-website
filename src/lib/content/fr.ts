@@ -29,9 +29,6 @@ export const fr = {
   },
 
   maisonStatement: {
-    kicker: "La maison",
-    line: "De la terre au verre. De la vigne à la bouteille. Votre rêve en bouteille.",
-    body: "Vinet-Puranik est une distillerie à l'héritage riche et aux racines profondes. Nous ne vendons pas seulement des produits : nous proposons une expérience, un art de vivre. Chaque produit est élaboré à la distillerie : de la vigne aux chais, de la distillation à la mise en bouteille.",
     origin: "100 % fabriqué en France",
   },
 

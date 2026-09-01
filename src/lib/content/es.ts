@@ -30,9 +30,6 @@ export const es = {
   },
 
   maisonStatement: {
-    kicker: "La casa",
-    line: "De la tierra a la copa. De la viña a la botella. Su sueño hecho botella.",
-    body: "Vinet-Puranik es una destilería de rica herencia y raíces profundas. No vendemos solo productos: ofrecemos una experiencia, un modo de vida. Elaboramos cada producto en la destilería: de la viña a las bodegas, pasando por la destilación, hasta el embotellado.",
     origin: "100 % hecho en Francia",
   },
 

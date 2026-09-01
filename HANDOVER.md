@@ -101,11 +101,12 @@ These are live and will be seen by anyone reviewing the site. They are marked
   Camille Roussel, James Ashworth, Sofía Herrero — are **invented**, written to
   fill the layout. Replace with real, approved quotes, or remove the section.
   Publishing invented client praise is a real risk.
-- **Tours and tastings.** Every name, duration, group size, language pairing
-  and inclusion is a **structured placeholder**. Prices are the one honest
-  field — they all read "On enquiry". The pages carry a visible line admitting
+- **Tastings.** Both flights' names, durations, group sizes, language pairings
+  and inclusions are **structured placeholders**. Prices are the one honest
+  field — they all read "On enquiry". The page carries a visible line admitting
   the programme is to be confirmed; that line should come out with the
-  placeholders.
+  placeholders. (The tours page no longer has this problem: its invented
+  programme was replaced with the house's own Private Tours copy — see §10.)
 - **Events.** The three entries on `/events` are samples, each carrying a
   visible **"Sample"** tag so nobody can act on them, and each deliberately
   left out of the Event structured data so no search engine can surface a date
@@ -115,17 +116,17 @@ These are live and will be seen by anyone reviewing the site. They are marked
   to list, delete all three and the page shows a short "no events scheduled"
   message on its own.
 
-## 7. Two contradictions in the copy
+## 7. A contradiction in the copy — now more urgent
 
-- **Founding date.** Seven strings, including the browser title, say the house
-  has been creating spirits **"since 1777"**. The timeline attributes 1777 to
-  the Delpech Fougerat family buying the Font Gireau estate, and dates the
-  distillery itself to **1934**. Both may be defensible, but the site should
-  say which claim it is making.
-- **Tour length.** The tours introduction promises "a full day inside the
-  métiers", while the longest tour listed is **"Half day"**. This is in the
-  English source and was faithfully translated into French and Spanish, so
-  fixing the English fixes all three.
+- **Founding date.** The home page **headline** now reads "French Distilling
+  Heritage Since 1777" — the claim the house asked for, and far more prominent
+  than the seven supporting strings that already made it. The timeline on the
+  same page attributes 1777 to the Delpech Fougerat family buying the Font
+  Gireau estate, and dates the distillery itself to **1934**. Both may be
+  defensible, but with the claim now in the H1 the house should confirm which
+  one it is making. (A second contradiction listed here previously — a tour
+  introduction promising "a full day" while the longest tour was "Half day" —
+  retired with the invented tour programme; see §10.)
 
 ## 8. Legal pages — two actions, two things to verify
 
@@ -186,6 +187,11 @@ must appear on its commercial communications, add it to the legal notice.
   hold files for.
 - **More of the tasting room.** One good frame now exists and is used on the
   Cognac & Pineau Flight; the other tastings still borrow cellar imagery.
+- **A new team photograph.** The old panorama was removed from the home page at
+  the house's request; the full-bleed band currently shows the still house.
+  When a new group photograph arrives, repointing `teamImage` in
+  `src/lib/site.ts` (and the `team` alt/caption in the three dictionaries) is
+  the whole swap.
 - **A 1440p hero video export**, ideally with a `.webm` sibling. The current
   file is 720p and 7.2 MB, which reads soft on large displays and is the
   heaviest thing a mobile visitor downloads.
@@ -195,6 +201,36 @@ must appear on its commercial communications, add it to the legal notice.
   closed gate.
 
 ---
+
+## 10. The distillery-first reposition (September 2026)
+
+At the house's direction, the site now leads with the distillery rather than
+any product range. What changed, in order:
+
+- **Old `/partnerships/*` URLs redirect permanently** to `/private-label/*`
+  (`redirects()` in `next.config.ts`), so links indexed before the rename in
+  §4 no longer 404.
+- **The home hero** carries the house's verbatim headline — "French Distilling
+  Heritage Since 1777" — with the house name in the eyebrow above it and
+  "Distilled. Aged. Blended. Bottled. All Under One Roof." beneath. It is a
+  real content key now (`hero.title`), translated in all three dictionaries;
+  the H1 is no longer the hardcoded site name. A cream introduction band under
+  the hero holds the house's two positioning paragraphs (`homeIntro`).
+- **The bottle rail is gone from the home page.** In its place, an estate
+  showcase (`EstateShowcase`): the still house, a barrel cellar and the vines,
+  beside short notes on the four métiers — distillation, ageing, blending,
+  bottling. The bottles remain on the Partners and Private Labels pages. The
+  four frames were derived from the house's own photography (now in
+  `assets/photo-source/`) at web sizes.
+- **The team band** swapped the team panorama for a wide still-house frame at
+  the house's request; §9 lists the replacement photograph as wanted, and the
+  original file is kept at `assets/photo-source/vinetDelpechTeamImage.jpg`.
+- **The tours page** dropped its three invented programmes for the house's own
+  Private Tours copy: visits by prior appointment, arranged through the
+  office. The tastings page and its placeholder flights are unchanged (§6).
+- **Dead assets left the deploy**: the six retired Puranique packshots (git
+  history keeps them if the range returns — §1), the six unreferenced award
+  badges, and the camera-original folders (see the note below).
 
 ## Notes on things we decided, so nobody undoes them
 
@@ -224,9 +260,13 @@ must appear on its commercial communications, add it to the legal notice.
   own language rather than being restated in French on every edition. If the
   house's counsel reads the Loi Évin as requiring the French sanitary message
   on all editions regardless of language, that is a one-line change back.
-- **`public/Distillery`, `public/Cellars` and `public/Vineyards`** hold ~206 MB
-  of camera-original photography, including nine Nikon `.NEF` raw files (94 MB)
-  that no browser can display. They are unreferenced by the site but are
-  deployed and publicly downloadable — kept that way at your request. If deploy
-  size or download costs ever matter, moving them out of `public/` is a
-  five-minute change with no visible effect on the site.
+- **The camera originals moved out of `public/`.** The ~206 MB of source
+  photography (including nine Nikon `.NEF` raw files no browser can display)
+  that sat in `public/Distillery`, `public/Cellars` and `public/Vineyards` now
+  lives in `assets/photo-source/`, beside the existing
+  `assets/products-source/` convention — it was shipping with every deploy and
+  was publicly downloadable. This reverses an earlier "keep them in public/"
+  decision, made as part of the reposition (§10). The files remain in git
+  history, so repository size is unchanged; only the deploy slimmed, from
+  ~215 MB of `public/` to ~14 MB. The old team panorama and the six retired
+  award badges (`assets/awards-source/`) moved the same way.

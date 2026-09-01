@@ -34,11 +34,10 @@ export const config = {
   // robots.txt, sitemap.xml, the icon and the OG image are single-URL assets
   // and must not be pushed under a locale.
   //
-  // The public asset folders are listed here too — /media, /products, and the
-  // /spirits and /awards folders the house range arrived with. Miss one and its
-  // images 307 to /en/... instead of being served, which shows up as silently
-  // broken packshots rather than as an error.
+  // The public asset folders are listed here too — /media, /products and
+  // /spirits. Miss one and its images 307 to /en/... instead of being served,
+  // which shows up as silently broken packshots rather than as an error.
   matcher: [
-    "/((?!_next|api|favicon.ico|icon.svg|apple-icon.png|manifest.webmanifest|robots.txt|sitemap.xml|opengraph-image|media|products|spirits|awards).*)",
+    "/((?!_next|api|favicon.ico|icon.svg|apple-icon.png|manifest.webmanifest|robots.txt|sitemap.xml|opengraph-image|media|products|spirits).*)",
   ],
 };
