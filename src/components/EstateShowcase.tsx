@@ -29,7 +29,10 @@ export function EstateShowcase({
 
   return (
     <section id="estate" className="bg-white py-24 text-ink sm:py-32">
-      <div className="mx-auto grid max-w-[1320px] gap-x-16 gap-y-12 px-6 lg:grid-cols-12 lg:px-10">
+      {/* The media sections share the chrome's 1480px frame (header, hero),
+          not the 1320px of the text bands — the old brand rail here was wider
+          still for the same reason. */}
+      <div className="mx-auto grid max-w-[1480px] gap-x-16 gap-y-12 px-6 sm:px-10 lg:grid-cols-12 lg:px-12">
         <div className="lg:col-span-5">
           <Reveal>
             <p className="eyebrow text-blue">{content.kicker}</p>
@@ -60,33 +63,35 @@ export function EstateShowcase({
         </div>
 
         <Reveal delay={200} className="lg:col-span-7">
-          <div className="grid h-full grid-cols-2 gap-3 sm:gap-4">
-            {/* The still spans both rows; the cellar and the vines stack
-                beside it and set the column's height. */}
+          {/* The still spans both rows. On desktop the stacked pair drops its
+              aspect lock and fills the column, so the trio shares clean edges
+              with no gap; below lg the grid has no outside height to fill, so
+              the aspect ratio is what gives the cells their size. */}
+          <div className="grid h-full grid-cols-2 gap-3 sm:gap-4 lg:grid-rows-2">
             <div className="relative row-span-2 overflow-hidden">
               <Image
                 src={estateShowcaseImages.stills}
                 alt={content.alts.stills}
                 fill
-                sizes="(min-width: 1024px) 28vw, 45vw"
+                sizes="(min-width: 1024px) 30vw, 45vw"
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/2] overflow-hidden">
+            <div className="relative aspect-[3/2] overflow-hidden lg:aspect-auto">
               <Image
                 src={estateShowcaseImages.cellar}
                 alt={content.alts.cellar}
                 fill
-                sizes="(min-width: 1024px) 28vw, 45vw"
+                sizes="(min-width: 1024px) 30vw, 45vw"
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/2] overflow-hidden">
+            <div className="relative aspect-[3/2] overflow-hidden lg:aspect-auto">
               <Image
                 src={estateShowcaseImages.vines}
                 alt={content.alts.vines}
                 fill
-                sizes="(min-width: 1024px) 28vw, 45vw"
+                sizes="(min-width: 1024px) 30vw, 45vw"
                 className="object-cover"
               />
             </div>
