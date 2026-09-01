@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
-import { getContent, getTours } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { privateToursImage, siteConfig } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { ExperienceSection } from "@/components/ExperienceSection";
 import { Reveal } from "@/components/Reveal";
 
 type Params = { locale: string };
@@ -36,7 +36,6 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
 
   const c = getContent(locale);
   const page = c.tours;
-  const items = getTours(locale);
 
   return (
     <>
@@ -50,23 +49,40 @@ export default async function ToursPage({ params }: { params: Promise<Params> })
         ]}
       />
 
-      <PageHero title={page.title} intro={[page.intro]}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
-          {page.note}
-        </p>
-      </PageHero>
+      <PageHero title={page.title} intro={[page.intro]} />
 
-      <section aria-label={page.title} className="bg-white text-ink">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-          {items.map((experience, index) => (
-            <ExperienceSection
-              key={experience.slug}
-              locale={locale}
-              experience={experience}
-              labels={c.experiences}
-              flip={index % 2 === 1}
-            />
-          ))}
+      {/* The offer in the house's own words — private visits by prior
+          appointment — beside the still house, with the way in. No invented
+          programme of durations and prices. */}
+      <section aria-label={page.title} className="bg-white py-24 text-ink sm:py-32">
+        <div className="mx-auto grid max-w-[1320px] items-center gap-x-16 gap-y-12 px-6 lg:grid-cols-12 lg:px-10">
+          <div className="lg:col-span-5">
+            <Reveal>
+              <p className="max-w-xl text-base leading-8 text-ink/70">{page.body}</p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <Link href={localizePath(locale, "/contact")} className="btn btn-blue">
+                  {page.ctaLabel}
+                </Link>
+                <a href={`mailto:${siteConfig.email}`} className="link-quiet text-blue">
+                  {siteConfig.email}
+                </a>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={150} className="lg:col-span-6 lg:col-start-7">
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src={privateToursImage}
+                alt={page.frameLabel}
+                fill
+                sizes="(min-width: 1024px) 45vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 

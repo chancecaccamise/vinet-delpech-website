@@ -768,56 +768,17 @@ export const fr = {
 
   tours: {
     kicker: "Nous rendre visite · Visites",
-    title: "Les visites de la maison",
+    title: "Visites privées",
     intro:
-      "Trois façons de parcourir le domaine : du premier regard sur les chais à une journée entière au cœur des métiers du spiritueux sur mesure.",
-    note: "Programme, durées et tarifs à confirmer par la maison : toutes les visites sur rendez-vous.",
+      "Des visites privées peuvent être organisées pour les particuliers, les groupes, les clients, les distributeurs, les partenaires commerciaux et les invités de marque.",
+    body: "Les visites et dégustations se font uniquement sur rendez-vous. Merci de contacter notre bureau pour organiser votre venue.",
+    ctaLabel: "Contactez-nous",
+    frameLabel: "Les alambics de cuivre dans la salle des alambics",
     crossLinkTitle: "Vous préférez rester à table ?",
     crossLinkCta: "Découvrir nos dégustations",
     crossLinkBack: "Retour au domaine",
     metaDescription:
-      "Visites guidées du domaine Vinet-Puranik : chais de vieillissement, alambics de cuivre et l'histoire familiale depuis 1777. Sur rendez-vous à Brie-sous-Archiac.",
-    items: {
-      "discovery-tour": {
-        name: "Visite Découverte",
-        duration: "1 heure",
-        groupSize: "2 à 15 personnes",
-        languages: "Français · Anglais",
-        includes: [
-          "Accueil dans la cour du domaine",
-          "Parcours dans le chai de vieillissement",
-          "Dégustation d'initiation de deux spiritueux de la maison",
-        ],
-        body: "Une première rencontre avec la maison : l'histoire depuis 1777, les chais, et une courte dégustation guidée de ce que fait Vinet-Puranik.",
-        frameLabel: "Visite : portes du chai ouvrant sur la cour",
-      },
-      "cellar-and-distillery-tour": {
-        name: "Visite Chais et Distillerie",
-        duration: "2 heures",
-        groupSize: "2 à 10 personnes",
-        languages: "Français · Anglais",
-        includes: [
-          "Visite de la distillerie avec l'équipe de distillation",
-          "Chais de vieillissement et salle d'assemblage",
-          "Dégustation guidée de quatre spiritueux, au fût et à la bouteille",
-        ],
-        body: "Tout le parcours de production, du raisin et de la céréale au cuivre, au fût et à la ligne d'embouteillage, guidé par ceux qui le font vivre.",
-        frameLabel: "Visite : alambics de cuivre dans la distillerie",
-      },
-      "heritage-tour": {
-        name: "Visite Patrimoine : Depuis 1777",
-        duration: "Demi-journée",
-        groupSize: "2 à 8 personnes",
-        languages: "Français · Anglais",
-        includes: [
-          "Visite privée du domaine et des archives familiales",
-          "Visite du vignoble en Petite Champagne et Fins Bois",
-          "Dégustation prolongée dans le chai familial",
-        ],
-        body: "Pour les partenaires et les collectionneurs : la longue histoire de la maison des Delannoy, racontée à travers les vignes, les archives et les plus vieux fûts.",
-        frameLabel: "Visite : rangs de vigne au-dessus du domaine",
-      },
-    },
+      "Visites privées de la Distillerie Vinet-Puranik à Brie-sous-Archiac pour les particuliers, les groupes, les distributeurs et les partenaires commerciaux. Visites et dégustations sur rendez-vous.",
   },
 
   tastings: {
@@ -916,7 +877,7 @@ export const fr = {
       featuredHeading: "Nos expériences favorites",
       featured: [
         {
-          label: "Visite Chais et Distillerie",
+          label: "Visites privées",
           frameLabel: "À la une : allée du chai de vieillissement",
         },
         { label: "Dégustation Signature", frameLabel: "À la une : la salle de dégustation du domaine" },
@@ -958,7 +919,7 @@ export const fr = {
     partnersTitle: "Partenaires",
     contactTitle: "Contact",
     visitTitle: "Nous rendre visite",
-    toursTitle: "Visites",
+    toursTitle: "Visites privées",
     tastingsTitle: "Dégustations",
   },
 

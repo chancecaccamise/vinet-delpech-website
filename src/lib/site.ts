@@ -738,16 +738,12 @@ export const testimonialNames: Record<TestimonialSlug, string> = {
 
 // ---------------------------------------------------------------------------
 // Visit us — tours & tastings.
-// TODO(launch): every offering (names, durations, group sizes, languages,
-// inclusions, prices, opening arrangements) is a structured placeholder.
-// Confirm the real programme with the house before go-live.
+// TODO(launch): the tasting offerings (names, durations, group sizes,
+// languages, inclusions, prices) are structured placeholders — confirm the
+// real programme with the house before go-live. The tours page carries no
+// invented programme any more: private visits by appointment, in the house's
+// own words.
 // ---------------------------------------------------------------------------
-
-export const tourSlugs = [
-  "discovery-tour",
-  "cellar-and-distillery-tour",
-  "heritage-tour",
-] as const;
 
 export const tastingSlugs = [
   "signature-tasting",
@@ -755,23 +751,26 @@ export const tastingSlugs = [
 ] as const;
 
 /**
- * Photography for each experience, from the house's cellar, distillery and
- * vineyard galleries. Cropped to the 4:3 box `ExperienceSection` draws.
+ * The tours page photograph — the still house, from the estate gallery.
+ * (`tour-cellar.webp` and `tour-vineyard.webp` stay on disk for the events
+ * cards that reference them.)
+ */
+export const privateToursImage = "/media/estate/tour-distillery.webp";
+
+/**
+ * Photography for each tasting, cropped to the 4:3 box `ExperienceSection`
+ * draws.
  *
  * TODO(assets): real tasting-room photography now exists but only one frame
- * of it — the ageing-line bench on the flight card. The other two tastings
- * still borrow the nearest production and cellar imagery; replace once more
- * of the tasting room is shot.
+ * of it — the ageing-line bench on the flight card. The signature tasting
+ * still borrows the nearest cellar imagery; replace once more of the tasting
+ * room is shot.
  */
-export const experienceImages: Record<TourSlug | TastingSlug, string> = {
-  "discovery-tour": "/media/estate/tour-cellar.webp",
-  "cellar-and-distillery-tour": "/media/estate/tour-distillery.webp",
-  "heritage-tour": "/media/estate/tour-vineyard.webp",
+export const experienceImages: Record<TastingSlug, string> = {
   "signature-tasting": "/media/estate/tasting-signature.webp",
   "cognac-and-pineau-flight": "/media/estate/tasting-room.webp",
 };
 
-export type TourSlug = (typeof tourSlugs)[number];
 export type TastingSlug = (typeof tastingSlugs)[number];
 
 export type Experience = {

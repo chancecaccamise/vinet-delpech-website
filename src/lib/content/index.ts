@@ -22,7 +22,6 @@ import {
   tastingSenses,
   testimonialNames,
   testimonialSlugs,
-  tourSlugs,
   type Brand,
   type BrandAward,
   type BrandFigure,
@@ -409,16 +408,6 @@ export function getFeaturePanels(locale: Locale): FeaturePanel[] {
   });
 }
 
-export function getTours(locale: Locale): Experience[] {
-  const c = getContent(locale);
-  return tourSlugs.map((slug) => ({
-    slug,
-    ...c.tours.items[slug],
-    price: c.experiences.onEnquiry,
-    image: experienceImages[slug],
-  }));
-}
-
 export function getTastings(locale: Locale): Experience[] {
   const c = getContent(locale);
   return tastingSlugs.map((slug) => ({
@@ -555,7 +544,7 @@ export function getNav(locale: Locale): NavGroup[] {
         items: [
           {
             ...c.nav.toursTastings.featured[0],
-            href: path("/visit/tours#cellar-and-distillery-tour"),
+            href: path("/visit/tours"),
             image: "/media/estate/nav-tour.webp",
           },
           {

@@ -770,56 +770,17 @@ export const es = {
 
   tours: {
     kicker: "Visítenos · Visitas",
-    title: "Las visitas de la casa",
+    title: "Visitas privadas",
     intro:
-      "Tres maneras de recorrer la finca: de un primer vistazo a las bodegas a una jornada completa dentro de los oficios del espirituoso a medida.",
-    note: "Programa, duraciones y tarifas pendientes de confirmación por la casa; todas las visitas con cita previa.",
+      "Se pueden organizar visitas privadas para particulares, grupos, clientes, distribuidores, socios comerciales e invitados especiales.",
+    body: "Las visitas y catas están disponibles con cita previa. Póngase en contacto con nuestra oficina para organizar su visita.",
+    ctaLabel: "Contáctenos",
+    frameLabel: "Los alambiques de cobre en la sala de alambiques",
     crossLinkTitle: "¿Prefiere quedarse en la mesa?",
     crossLinkCta: "Descubrir nuestras catas",
     crossLinkBack: "Volver a la finca",
     metaDescription:
-      "Visitas guiadas de la finca Vinet-Puranik: bodegas de barricas, alambiques de cobre y la historia familiar desde 1777. Con cita previa en Brie-sous-Archiac.",
-    items: {
-      "discovery-tour": {
-        name: "Visita Descubrimiento",
-        duration: "1 hora",
-        groupSize: "De 2 a 15 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Bienvenida en el patio de la finca",
-          "Recorrido por la bodega de barricas",
-          "Cata de iniciación de dos espirituosos de la casa",
-        ],
-        body: "Un primer encuentro con la casa: la historia desde 1777, las bodegas y una breve cata guiada de lo que elabora Vinet-Puranik.",
-        frameLabel: "Visita: puertas de la bodega abiertas al patio",
-      },
-      "cellar-and-distillery-tour": {
-        name: "Visita Bodegas y Destilería",
-        duration: "2 horas",
-        groupSize: "De 2 a 10 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Visita a la destilería con el equipo de destilación",
-          "Bodegas de crianza y sala de ensamblaje",
-          "Cata guiada de cuatro espirituosos, de barrica y de botella",
-        ],
-        body: "El recorrido completo de producción, de la uva y el cereal al cobre, la barrica y la línea de embotellado, guiado por quienes lo hacen funcionar.",
-        frameLabel: "Visita: alambiques de cobre en la destilería",
-      },
-      "heritage-tour": {
-        name: "Visita Patrimonio: Desde 1777",
-        duration: "Media jornada",
-        groupSize: "De 2 a 8 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Visita privada de la finca y de los archivos familiares",
-          "Visita al viñedo en Petite Champagne y Fins Bois",
-          "Cata ampliada en la bodega familiar",
-        ],
-        body: "Para socios y coleccionistas: la larga historia de la casa de los Delannoy, contada a través de los viñedos, los archivos y las barricas más antiguas.",
-        frameLabel: "Visita: hileras de viñedo sobre la finca",
-      },
-    },
+      "Visitas privadas de la Destilería Vinet-Puranik en Brie-sous-Archiac para particulares, grupos, distribuidores y socios comerciales. Visitas y catas con cita previa.",
   },
 
   tastings: {
@@ -918,7 +879,7 @@ export const es = {
       featuredHeading: "Experiencias favoritas",
       featured: [
         {
-          label: "Visita Bodegas y Destilería",
+          label: "Visitas privadas",
           frameLabel: "Destacado: pasillo de la bodega de barricas",
         },
         { label: "Cata Signature", frameLabel: "Destacado: la sala de catas de la finca" },
@@ -960,7 +921,7 @@ export const es = {
     partnersTitle: "Socios",
     contactTitle: "Contacto",
     visitTitle: "Visítenos",
-    toursTitle: "Visitas",
+    toursTitle: "Visitas privadas",
     tastingsTitle: "Catas",
   },
 

@@ -785,56 +785,17 @@ export const en = {
 
   tours: {
     kicker: "Visit us · Tours",
-    title: "Tours of the house",
+    title: "Private Tours",
     intro:
-      "Three ways through the estate, from a first look at the cellars to a full day inside the métiers of tailor-made spirits.",
-    note: "Programme, durations and prices to be confirmed by the house: all visits by appointment.",
+      "Private tours can be arranged for individuals, groups, customers, distributors, trade partners and special guests.",
+    body: "Tours and tastings are available by prior appointment. Please contact our office to arrange your visit.",
+    ctaLabel: "Contact us",
+    frameLabel: "Copper pot stills in the still house",
     crossLinkTitle: "Prefer to stay at the table?",
     crossLinkCta: "Discover our tastings",
     crossLinkBack: "Back to the estate",
     metaDescription:
-      "Guided tours of the Vinet-Puranik estate: barrel cellars, copper pot stills and the family's story since 1777. By appointment at Brie-sous-Archiac.",
-    items: {
-      "discovery-tour": {
-        name: "Discovery Tour",
-        duration: "1 hour",
-        groupSize: "2–15 guests",
-        languages: "French · English",
-        includes: [
-          "Welcome in the estate courtyard",
-          "Barrel cellar walk-through",
-          "Introductory tasting of two house spirits",
-        ],
-        body: "A first encounter with the house: the story since 1777, the cellars, and a short guided taste of what Vinet-Puranik makes.",
-        frameLabel: "Tour: cellar doors opening onto the courtyard",
-      },
-      "cellar-and-distillery-tour": {
-        name: "Cellar & Distillery Tour",
-        duration: "2 hours",
-        groupSize: "2–10 guests",
-        languages: "French · English",
-        includes: [
-          "Still house visit with the distilling team",
-          "Ageing cellars and blending room",
-          "Guided tasting of four spirits from cask and bottle",
-        ],
-        body: "The full production journey, from grape and grain to copper, cask and bottling line, guided by the people who run it.",
-        frameLabel: "Tour: copper pot stills in the still house",
-      },
-      "heritage-tour": {
-        name: "Heritage Tour: Since 1777",
-        duration: "Half day",
-        groupSize: "2–8 guests",
-        languages: "French · English",
-        includes: [
-          "Private tour of the estate and family archives",
-          "Vineyard visit in Petite Champagne and Fins Bois",
-          "Extended tasting hosted in the family cellar",
-        ],
-        body: "For partners and collectors: the long story of the Delannoy family's house, told across the vineyards, the archives and the oldest casks.",
-        frameLabel: "Tour: vineyard rows above the estate",
-      },
-    },
+      "Private tours of the Vinet-Puranik distillery at Brie-sous-Archiac for individuals, groups, distributors and trade partners. Tours and tastings by prior appointment.",
   },
 
   tastings: {
@@ -930,7 +891,7 @@ export const en = {
       links: ["Tours", "Tastings"],
       featuredHeading: "Favorite experiences",
       featured: [
-        { label: "Cellar & Distillery Tour", frameLabel: "Featured: barrel cellar walkway" },
+        { label: "Private Tours", frameLabel: "Featured: barrel cellar walkway" },
         { label: "Signature Tasting", frameLabel: "Featured: the estate tasting room" },
       ],
       viewAll: "Plan your visit",
@@ -970,7 +931,7 @@ export const en = {
     partnersTitle: "Partners",
     contactTitle: "Contact",
     visitTitle: "Visit us",
-    toursTitle: "Tours",
+    toursTitle: "Private tours",
     tastingsTitle: "Tastings",
   },
 
