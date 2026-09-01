@@ -552,10 +552,9 @@ export function getNav(locale: Locale): NavGroup[] {
           {
             ...c.nav.toursTastings.featured[1],
             href: path("/visit/tastings#signature-tasting"),
-            // A flight being prepared — sample tubes in the copper. The one
-            // true tasting-room frame stays on the flight card itself, so the
-            // menu doesn't repeat it.
-            image: "/media/estate/nav-tasting-samples.webp",
+            // The tasting room itself, which is what this card promises — the
+            // one frame of it the galleries hold.
+            image: "/media/estate/tasting-room.webp",
           },
         ],
       },

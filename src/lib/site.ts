@@ -594,7 +594,10 @@ export const featurePanelAssets = [
   // two read as the same picture twice. The receding barrel aisle also suits
   // the panel's tall half-page frame, where the old tight crop of two still
   // bulbs lost all sense of place. Fresh filename to clear the image cache;
-  { slug: "bespoke", image: "/media/estate/panel-bespoke-cellar.webp", mediaSide: "left" },
+  // The spirit under the alcoholmeter, not a barrel aisle: this panel is about
+  // composing a liquid to a brief and finishing it to specification, and the
+  // ageing cellars already carry the sections either side of it.
+  { slug: "bespoke", image: "/media/estate/panel-bespoke-spec.webp", mediaSide: "left" },
   // `slug` is the anchor id: the nav and megamenus link to /#know-how.
   { slug: "know-how", image: "/media/distilleryImage.jpg", mediaSide: "right" },
 ] as const satisfies readonly {
@@ -766,7 +769,7 @@ export const privateToursImage = "/media/estate/tour-distillery.webp";
  */
 export const experienceImages: Record<TastingSlug, string> = {
   "signature-tasting": "/media/estate/tasting-signature.webp",
-  "cognac-and-pineau-flight": "/media/estate/tasting-room.webp",
+  "cognac-and-pineau-flight": "/media/estate/tasting-flight-cellar.webp",
 };
 
 export type TastingSlug = (typeof tastingSlugs)[number];
