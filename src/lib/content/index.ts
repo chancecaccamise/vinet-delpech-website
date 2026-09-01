@@ -523,7 +523,9 @@ export function getNav(locale: Locale): NavGroup[] {
           {
             ...c.nav.visit.featured[0],
             href: path("/visit"),
-            image: "/media/estate/visit-estate-aerial.webp",
+            // Dawn over the vine rows — the visit page keeps the aerial for
+            // itself, so the menu card carries its own frame.
+            image: "/media/estate/nav-visit-vines.webp",
           },
         ],
       },
@@ -550,10 +552,10 @@ export function getNav(locale: Locale): NavGroup[] {
           {
             ...c.nav.toursTastings.featured[1],
             href: path("/visit/tastings#signature-tasting"),
-            // The tasting room itself — the ageing line on the white bench —
-            // which finally exists in the galleries. Fresh filename, as ever,
-            // to dodge the four-hour image cache a same-name swap sits behind.
-            image: "/media/estate/nav-tasting-room.webp",
+            // A flight being prepared — sample tubes in the copper. The one
+            // true tasting-room frame stays on the flight card itself, so the
+            // menu doesn't repeat it.
+            image: "/media/estate/nav-tasting-samples.webp",
           },
         ],
       },

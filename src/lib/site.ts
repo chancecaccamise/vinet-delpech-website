@@ -565,7 +565,7 @@ export const familyAssets = [
   // puraniques.com and the category has nothing of its own left to front it.
   // The still house is the honest stand-in — this page is now an offer of what
   // the house can macerate and blend, not a shelf.
-  { slug: "liqueurs", image: "/media/estate/nav-production.webp" },
+  { slug: "liqueurs", image: "/media/estate/family-liqueurs-still.webp" },
   { slug: "aperitifs", image: "/products/sephina.jpg" },
 ] as const satisfies readonly { slug: SpiritFamilySlug; image: string }[];
 
@@ -594,7 +594,6 @@ export const featurePanelAssets = [
   // two read as the same picture twice. The receding barrel aisle also suits
   // the panel's tall half-page frame, where the old tight crop of two still
   // bulbs lost all sense of place. Fresh filename to clear the image cache;
-  // panel-bespoke.webp stays on disk as an archive.
   { slug: "bespoke", image: "/media/estate/panel-bespoke-cellar.webp", mediaSide: "left" },
   // `slug` is the anchor id: the nav and megamenus link to /#know-how.
   { slug: "know-how", image: "/media/distilleryImage.jpg", mediaSide: "right" },
@@ -645,7 +644,7 @@ export const estateShowcaseImages = {
 
 export const aboutSkillImages = [
   "/media/estate/skill-quality.webp",
-  "/media/estate/skill-reliability.webp",
+  "/media/estate/skill-reliability-barrels.webp",
   "/media/estate/skill-export.webp",
 ] as const;
 
@@ -752,8 +751,7 @@ export const tastingSlugs = [
 
 /**
  * The tours page photograph — the still house, from the estate gallery.
- * (`tour-cellar.webp` and `tour-vineyard.webp` stay on disk for the events
- * cards that reference them.)
+ * Its only use: every section now carries its own frame, none shared.
  */
 export const privateToursImage = "/media/estate/tour-distillery.webp";
 
@@ -792,8 +790,8 @@ export const visitEntryHrefs = ["/visit/tours", "/visit/tastings"] as const;
 
 /** Photographs for those two cards, in the same order. 16:10. */
 export const visitEntryImages = [
-  "/media/estate/visit-tours-card.webp",
-  "/media/estate/visit-tastings-card.webp",
+  "/media/estate/card-tours-still-house.webp",
+  "/media/estate/card-tastings-grapes.webp",
 ] as const;
 
 /**
@@ -804,7 +802,7 @@ export const visitEntryImages = [
  * TODO(confirm): a visitor looking for directions is better served by a real
  * map. Check whether the house wants one here instead.
  */
-export const visitEstateImage = "/media/estate/visit-estate-aerial.webp";
+export const visitEstateImage = "/media/estate/visit-estate-dawn.webp";
 
 /**
  * Destinations for the footer's Capabilities column, positional against
@@ -846,19 +844,19 @@ export const eventAssets: readonly EventAsset[] = [
   {
     slug: "sample-trade-tasting",
     date: "2027-02-09",
-    image: "/media/estate/tasting-room.webp",
+    image: "/media/estate/event-trade-tasting.webp",
     placeholder: true,
   },
   {
     slug: "sample-harvest-open-day",
     date: "2026-10-15",
-    image: "/media/estate/tour-vineyard.webp",
+    image: "/media/estate/event-harvest-bin.webp",
     placeholder: true,
   },
   {
     slug: "sample-distillery-day",
     date: "2026-06-12",
-    image: "/media/estate/tour-distillery.webp",
+    image: "/media/estate/event-distillery-day.webp",
     placeholder: true,
   },
 ];
