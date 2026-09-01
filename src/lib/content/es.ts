@@ -14,10 +14,19 @@ import type { Content } from "@/lib/content/en";
 export const es = {
   hero: {
     eyebrow: "Distillerie Vinet-Puranik · Cognac, Francia",
-    support: "Una herencia francesa. Una presencia global.",
+    title: "Herencia destiladora francesa desde 1777",
+    support: "Destilado. Envejecido. Ensamblado. Embotellado. Todo bajo un mismo techo.",
     primaryCtaLabel: "Iniciar un proyecto",
     posterLabel: "Apertura: bodega de barricas, travelling lento",
     scroll: "Desplazar",
+  },
+
+  homeIntro: {
+    kicker: "La destilería",
+    paragraphs: [
+      "Situada en Brie-sous-Archiac, en el suroeste de Francia, la Destilería Vinet-Puranik une siglos de herencia destiladora francesa con medios de producción modernos.",
+      "De la destilación y el envejecimiento al ensamblaje, el embotellado y el desarrollo de marcas de distribución, trabajamos para nuestras propias marcas y para socios de todo el mundo.",
+    ],
   },
 
   maisonStatement: {
@@ -922,7 +931,7 @@ export const es = {
   },
 
   metadata: {
-    homeTitle: "Creadores de espirituosos a medida desde 1777",
+    homeTitle: "Herencia destiladora francesa desde 1777",
     titleTemplate: "Vinet-Puranik · %s",
     description:
       "Destilería familiar de la región de Cognac que diseña espirituosos a medida, marcas de distribución y marca blanca, soluciones de embotellado y programas de desarrollo de producto para socios comerciales en más de veinte países.",

@@ -63,8 +63,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
         <div className="relative mx-auto flex min-h-svh max-w-[1480px] items-end px-6 pb-24 pt-40 sm:px-10 lg:px-14 lg:pb-32">
           <div className="max-w-4xl">
+            <Reveal>
+              <p className="eyebrow text-cream/70">{c.hero.eyebrow}</p>
+            </Reveal>
             <Reveal delay={150}>
-              <h1 className="display display-xl uppercase tracking-[0.04em]">{siteConfig.name}</h1>
+              <h1 className="display display-xl mt-6 uppercase tracking-[0.04em]">{c.hero.title}</h1>
             </Reveal>
             <Reveal delay={300}>
               <p className="mt-6 text-base text-cream/80 sm:text-lg">{c.hero.support}</p>
@@ -84,8 +87,31 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* ------------------------------------------------------------------
+          Introduction — the distillery itself, before any brand appears:
+          where it stands and what it does, in the house's own words. Cream,
+          so the navy hero and the white section below keep the page's
+          alternation of tones.
+      ------------------------------------------------------------------ */}
+      <section aria-label={c.homeIntro.kicker} className="bg-cream py-24 text-ink sm:py-32">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+          <Reveal>
+            <p className="eyebrow text-blue">{c.homeIntro.kicker}</p>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-16">
+              {c.homeIntro.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="max-w-xl text-base leading-8 text-ink/70">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
           The collection — the house's own range and the brands it shapes for
-          partners, in a wide horizontal rail. Sits directly under the hero:
+          partners, in a wide horizontal rail. Sits directly under the intro:
           title column on the left, cards gliding off the right edge of the
           viewport.
       ------------------------------------------------------------------ */}

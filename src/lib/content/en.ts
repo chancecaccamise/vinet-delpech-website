@@ -12,10 +12,19 @@
 export const en = {
   hero: {
     eyebrow: "Distillerie Vinet-Puranik · Cognac, France",
-    support: "A French heritage. A global presence.",
+    title: "French Distilling Heritage Since 1777",
+    support: "Distilled. Aged. Blended. Bottled. All Under One Roof.",
     primaryCtaLabel: "Start a project",
     posterLabel: "Hero: barrel cellar, cinematic slow dolly",
     scroll: "Scroll",
+  },
+
+  homeIntro: {
+    kicker: "The distillery",
+    paragraphs: [
+      "Located in Brie-sous-Archiac in Southwest France, Vinet-Puranik Distillerie brings together centuries of French distilling heritage with modern production capabilities.",
+      "From distillation and ageing to blending, bottling and private-label development, we work with our own brands and partners around the world.",
+    ],
   },
 
   maisonStatement: {
@@ -932,7 +941,7 @@ export const en = {
   },
 
   metadata: {
-    homeTitle: "Creators of tailor-made spirits since 1777",
+    homeTitle: "French distilling heritage since 1777",
     titleTemplate: "Vinet-Puranik · %s",
     description:
       "Family-owned Cognac-region distillery designing bespoke spirits, private-label and white-label programmes, bottling solutions and product development for trade partners in more than twenty countries.",
