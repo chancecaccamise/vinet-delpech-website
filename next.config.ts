@@ -77,6 +77,26 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+
+  // The Partnerships section became Private Labels / White Labels at
+  // /private-label; family slugs were unchanged, so the mapping is 1:1.
+  // Redirects run before the filesystem and before proxy.ts, which is why
+  // the unprefixed form can stay simple: its follow-up request gets a
+  // locale prefix from the proxy like any other bare path.
+  async redirects() {
+    return [
+      {
+        source: "/:locale(en|fr|es)/partnerships/:path*",
+        destination: "/:locale/private-label/:path*",
+        permanent: true,
+      },
+      {
+        source: "/partnerships/:path*",
+        destination: "/private-label/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
