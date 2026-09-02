@@ -91,19 +91,25 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           so the navy hero and the white section below keep the page's
           alternation of tones.
       ------------------------------------------------------------------ */}
-      <section aria-label={c.homeIntro.kicker} className="bg-cream py-24 text-ink sm:py-32">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+      {/* The first line carries the weight, in the display serif but not in
+          capitals — the hero owns the only shouted line on this page. The
+          second follows as quiet supporting text, the same kicker → statement
+          → body order the closing invitation uses further down. Shares the
+          hero's 1480px frame so the top of the page holds one left edge. */}
+      <section aria-label={c.homeIntro.kicker} className="bg-cream py-20 text-ink sm:py-24">
+        <div className="mx-auto max-w-[1480px] px-6 sm:px-10 lg:px-12">
           <Reveal>
             <p className="eyebrow text-blue">{c.homeIntro.kicker}</p>
           </Reveal>
           <Reveal delay={150}>
-            <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-16">
-              {c.homeIntro.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="max-w-xl text-base leading-8 text-ink/70">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            <p className="display display-md display-prose mt-7 max-w-4xl">
+              {c.homeIntro.paragraphs[0]}
+            </p>
+          </Reveal>
+          <Reveal delay={300}>
+            <p className="mt-7 max-w-xl text-sm leading-8 text-ink/65">
+              {c.homeIntro.paragraphs[1]}
+            </p>
           </Reveal>
         </div>
       </section>
