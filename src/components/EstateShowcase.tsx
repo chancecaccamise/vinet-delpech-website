@@ -28,7 +28,7 @@ export function EstateShowcase({
   ];
 
   return (
-    <section id="estate" className="bg-white py-24 text-ink sm:py-32">
+    <section id="estate" className="bg-cream py-24 text-ink sm:py-32">
       {/* The media sections share the chrome's 1480px frame (header, hero),
           not the 1320px of the text bands — the old brand rail here was wider
           still for the same reason. */}

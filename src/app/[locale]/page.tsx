@@ -87,16 +87,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       {/* ------------------------------------------------------------------
           Introduction — the distillery itself, before any brand appears:
-          where it stands and what it does, in the house's own words. Cream,
-          so the navy hero and the white section below keep the page's
-          alternation of tones.
+          where it stands and what it does, in the house's own words. This is
+          where the page's white/cream alternation starts, so every band below
+          takes its tone from this one.
       ------------------------------------------------------------------ */}
       {/* The first line carries the weight, in the display serif but not in
           capitals — the hero owns the only shouted line on this page. The
           second follows as quiet supporting text, the same kicker → statement
           → body order the closing invitation uses further down. Shares the
           hero's 1480px frame so the top of the page holds one left edge. */}
-      <section aria-label={c.homeIntro.kicker} className="bg-cream py-20 text-ink sm:py-24">
+      <section aria-label={c.homeIntro.kicker} className="bg-white py-20 text-ink sm:py-24">
         <div className="mx-auto max-w-[1480px] px-6 sm:px-10 lg:px-12">
           <Reveal>
             <p className="eyebrow text-blue">{c.homeIntro.kicker}</p>
@@ -128,13 +128,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
 
       {/* ------------------------------------------------------------------
-          What we produce — the eight categories as a linked index, on white
-          after the cream feature panels; the timeline and president sections
-          below swap tones to keep the page alternating. Category names come
-          from the families data, so this list can never drift from the
-          partnership pages.
+          What we produce — the eight categories as a linked index, on cream
+          after the white feature panels; the timeline and president sections
+          below keep swapping tones. Category names come from the families
+          data, so this list can never drift from the private-label pages.
       ------------------------------------------------------------------ */}
-      <section id="production" className="bg-white py-24 text-ink sm:py-32">
+      <section id="production" className="bg-cream py-24 text-ink sm:py-32">
         <div className="mx-auto grid max-w-[1320px] gap-x-16 gap-y-12 px-6 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-6">
             <Reveal>
@@ -200,7 +199,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       {/* No `overflow-hidden` here: an ancestor with a clipped overflow becomes
           the sticky scroll container and the pin silently stops working. The
           track is clipped inside Timeline instead. */}
-      <section id="timeline" className="bg-cream pb-24 pt-24 text-ink lg:pb-32 lg:pt-28">
+      <section id="timeline" className="bg-white pb-24 pt-24 text-ink lg:pb-32 lg:pt-28">
         <Timeline
           entries={c.timeline.entries}
           title={c.timeline.title}
@@ -252,7 +251,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           page; what stays here is the invitation to go there, so the home page
           still ends on a way in rather than on the team photograph.
       ------------------------------------------------------------------ */}
-      <section aria-label={c.contact.kicker} className="bg-white py-24 text-ink sm:py-32">
+      <section aria-label={c.contact.kicker} className="bg-cream py-24 text-ink sm:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
             <p className="eyebrow text-blue">{c.contact.kicker}</p>

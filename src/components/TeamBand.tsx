@@ -8,7 +8,9 @@ import { Reveal } from "@/components/Reveal";
  *
  * Its own chapter rather than a plate inside the president's statement: the
  * `bg-navy` band separates the cream president section above from the
- * white contact section below, and gives the photograph a ground of its own.
+ * white testimonials below, and gives the photograph a ground of its own.
+ * It is the one break in the page's white/cream alternation, which resumes
+ * underneath it.
  *
  * The image is full-bleed and uncropped — laid out on the file's own wide
  * ratio (`h-auto w-full`, no `object-cover`), so the band's height follows

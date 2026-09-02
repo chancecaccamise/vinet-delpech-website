@@ -14,7 +14,7 @@ import { clsx } from "@/lib/clsx";
  */
 export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
   return (
-    <section aria-label="Featured" className="bg-cream text-ink">
+    <section aria-label="Featured" className="bg-white text-ink">
       {panels.map((panel) => {
         const isSpec = Boolean(panel.figures?.length || panel.details?.length);
         return (

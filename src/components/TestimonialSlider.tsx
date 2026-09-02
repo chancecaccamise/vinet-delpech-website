@@ -28,8 +28,8 @@ function usePrefersReducedMotion(): boolean {
 }
 
 /**
- * Client testimonials on the cream ground — its own chapter between the navy
- * team band and the white closing call to action, deliberately not an
+ * Client testimonials on the white ground — its own chapter between the navy
+ * team band and the cream closing call to action, deliberately not an
  * extension of either.
  *
  * All three voices show side by side from `lg` up; the timer still glides the
@@ -101,7 +101,7 @@ export function TestimonialSlider({
   return (
     <section
       aria-label={label}
-      className="bg-cream py-20 text-ink sm:py-24"
+      className="bg-white py-20 text-ink sm:py-24"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

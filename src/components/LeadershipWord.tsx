@@ -37,7 +37,7 @@ export function LeadershipWord({
     <section
       id="leadership"
       aria-labelledby="leadership-title"
-      className="border-t border-ink/10 bg-white py-20 text-ink sm:py-24"
+      className="border-t border-ink/10 bg-cream py-20 text-ink sm:py-24"
     >
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
         <Reveal>
