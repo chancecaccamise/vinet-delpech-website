@@ -561,11 +561,14 @@ export const familyAssets = [
   { slug: "rum", image: "/products/maca-rum.jpg" },
   { slug: "gin", image: "/products/gin40.jpg" },
   { slug: "vodka", image: "/products/nade-vodka-2022.jpg" },
-  // The one cover that is not a bottle: both mango liqueurs went to
-  // puraniques.com and the category has nothing of its own left to front it.
-  // The still house is the honest stand-in — this page is now an offer of what
-  // the house can macerate and blend, not a shelf.
-  { slug: "liqueurs", image: "/media/estate/family-liqueurs-still.webp" },
+  // Both mango liqueurs went to puraniques.com, so this category lists no
+  // bottle of its own. The cover is a Jus d'Manguier packshot all the same, at
+  // the house's request: every other category is fronted by a bottle, and the
+  // still house that stood here read as a photograph of the building rather
+  // than an example of what the house can macerate and blend. The product is
+  // shown, not offered — it has no card, no page and no entry in `brandAssets`.
+  // NOTE: the label carries the Maison D' Puranique mark; see HANDOVER §1.
+  { slug: "liqueurs", image: "/spirits/jus-d-manguier.webp" },
   { slug: "aperitifs", image: "/products/sephina.jpg" },
 ] as const satisfies readonly { slug: SpiritFamilySlug; image: string }[];
 

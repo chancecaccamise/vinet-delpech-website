@@ -332,7 +332,7 @@ export const en = {
       summary: "Fruit and cognac-based liqueurs, macerated and blended to a brief.",
       intro: [
         "Fruit liqueurs made in the Cognac region: whole fruit macerated and blended without artificial additives, on a neutral spirit or on a cognac base, at the strength and sweetness a market asks for.",
-        "The house has made mango liqueurs both ways — one on fruit alone, one infused into an award-winning cognac — and the same route is open to any fruit a partner brings.",
+        "The house has made mango liqueurs both ways: one on fruit alone, one infused into an award-winning cognac; and the same route is open to any fruit a partner brings.",
       ],
     },
     cognac: {
@@ -637,7 +637,7 @@ export const en = {
     items: {
       "private-label": {
         quote:
-          "From the first sample to the sealed case, the house held our brief exactly — and the cognac that came back was better than the one we asked for.",
+          "From the first sample to the sealed case, the house held our brief exactly, and the cognac that came back was better than the one we asked for.",
       },
       creation: {
         quote:
@@ -645,7 +645,7 @@ export const en = {
       },
       export: {
         quote:
-          "Three markets, three sets of paperwork, one bottling run — their team carried the compliance so ours could carry the brand.",
+          "Three markets, three sets of paperwork, one bottling run: their team carried the compliance so ours could carry the brand.",
       },
     },
   },

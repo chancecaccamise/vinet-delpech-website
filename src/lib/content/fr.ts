@@ -323,7 +323,7 @@ export const fr = {
         "Liqueurs de fruit et liqueurs sur base de cognac, macérées et assemblées sur cahier des charges.",
       intro: [
         "Des liqueurs de fruit élaborées dans la région de Cognac : le fruit entier macéré puis assemblé sans additif artificiel, sur alcool neutre ou sur base de cognac, au degré et à la sucrosité que demande un marché.",
-        "La maison a élaboré des liqueurs de mangue des deux façons — l'une sur le fruit seul, l'autre infusée dans un cognac primé — et la même voie est ouverte à tout fruit qu'un partenaire apporte.",
+        "La maison a élaboré des liqueurs de mangue des deux façons : l'une sur le fruit seul, l'autre infusée dans un cognac primé ; et la même voie est ouverte à tout fruit qu'un partenaire apporte.",
       ],
     },
     cognac: {
@@ -614,7 +614,7 @@ export const fr = {
     items: {
       "private-label": {
         quote:
-          "Du premier échantillon au carton scellé, la maison a tenu notre cahier des charges à la lettre — et le cognac livré dépassait celui que nous avions demandé.",
+          "Du premier échantillon au carton scellé, la maison a tenu notre cahier des charges à la lettre, et le cognac livré dépassait celui que nous avions demandé.",
       },
       creation: {
         quote:
@@ -622,7 +622,7 @@ export const fr = {
       },
       export: {
         quote:
-          "Trois marchés, trois réglementations, un seul embouteillage — leur équipe a porté la conformité pour que la nôtre porte la marque.",
+          "Trois marchés, trois réglementations, un seul embouteillage : leur équipe a porté la conformité pour que la nôtre porte la marque.",
       },
     },
   },

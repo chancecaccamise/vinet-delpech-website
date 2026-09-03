@@ -20,6 +20,17 @@ here any more: the vodka, both cognacs, both Pineaux, and both mango liqueurs
 
 The house's own bottles on this site are now **Montlieu X.O and Glen Mac Clay**.
 
+**Two Puranique packshots remain as cover images, not as products.** The
+Partners card for Puranique is fronted by the Cognac V.S.O.P bottle, and on
+3 September the Liqueurs category cover became a **Jus d'Manguier** packshot at
+the house's request: every other category on `/private-label` is fronted by a
+bottle, and the still-house photograph that stood there read as a picture of
+the building rather than an example of the category. Neither bottle is listed,
+linked or described anywhere: they have no brand card, no product page and no
+entry in `brandAssets`. **Both labels carry the Maison D' Puranique mark and it
+is legible at card size** — if the house wants the mark off the site
+altogether, these two covers are what is left to change.
+
 Three questions this file used to carry are retired with those records: the
 Pineau medal attribution (four medals printed for the range as a whole and
 duplicated onto both expressions), the unattributed point scores on the two
