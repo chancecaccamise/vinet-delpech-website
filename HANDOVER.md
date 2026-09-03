@@ -101,12 +101,11 @@ These are live and will be seen by anyone reviewing the site. They are marked
   Camille Roussel, James Ashworth, Sofía Herrero — are **invented**, written to
   fill the layout. Replace with real, approved quotes, or remove the section.
   Publishing invented client praise is a real risk.
-- **Tastings.** Both flights' names, durations, group sizes, language pairings
-  and inclusions are **structured placeholders**. Prices are the one honest
-  field — they all read "On enquiry". The page carries a visible line admitting
-  the programme is to be confirmed; that line should come out with the
-  placeholders. (The tours page no longer has this problem: its invented
-  programme was replaced with the house's own Private Tours copy — see §10.)
+- **Tours and tastings** no longer carry any placeholder programme. Both
+  pages say what the house told us — visits and tastings by prior appointment,
+  arranged through the office — with a button to the enquiry form and the
+  house email. If the house wants to publish real flights, durations or
+  prices, that is new content for both pages, not something to switch back on.
 - **Events.** The three entries on `/events` are samples, each carrying a
   visible **"Sample"** tag so nobody can act on them, and each deliberately
   left out of the Event structured data so no search engine can surface a date
@@ -185,8 +184,9 @@ must appear on its commercial communications, add it to the legal notice.
   lists Excellency Club, Irie and Palisson batches 02 and 03; the new
   `/partners/les-bruleries-modernes` page can only show the four bottles we
   hold files for.
-- **More of the tasting room.** One good frame now exists and is used on the
-  Cognac & Pineau Flight; the other tastings still borrow cellar imagery.
+- **More of the tasting room.** One good frame exists and sits on the
+  Tours & Tastings menu card; the tastings page itself shows spirit running
+  off the still, because the room has only been photographed once.
 - **A new team photograph.** The old panorama was removed from the home page at
   the house's request; the full-bleed band currently shows the still house.
   When a new group photograph arrives, repointing `teamImage` in
@@ -227,10 +227,57 @@ any product range. What changed, in order:
   original file is kept at `assets/photo-source/vinetDelpechTeamImage.jpg`.
 - **The tours page** dropped its three invented programmes for the house's own
   Private Tours copy: visits by prior appointment, arranged through the
-  office. The tastings page and its placeholder flights are unchanged (§6).
+  office. **The tastings page followed on 3 September**: its two placeholder
+  flights are gone and it now carries the same appointment copy, the same
+  contact button and email, and one photograph. Both pages render one shared
+  block (`AppointmentSection`), so how a booking is asked for is written once.
+- **The home page's leadership section became the vineyards section** on
+  3 September, at the house's request that the page show the estate, the
+  vines and the craft rather than the people. The two leaders still speak on
+  /about, which is where the nav's leadership link now goes.
 - **Dead assets left the deploy**: the six retired Puranique packshots (git
   history keeps them if the range returns — §1), the six unreferenced award
   badges, and the camera-original folders (see the note below).
+
+## 11. Copy review (3 September 2026): decisions for the house
+
+All three dictionaries were reviewed against each other on 3 September:
+mistranslations, untranslated terms, terminology drift, typography (French
+narrow no-break spaces, Spanish ¿ ¡), stale references to the retired tasting
+flights and home-page leadership section, and English source errors were
+corrected. What remains are questions only the house can settle:
+
+- **The house's name in prose.** The site mostly says "Distillerie
+  Vinet-Puranik"; the house's own supplied copy (home introduction, both
+  leadership statements) says "Vinet-Puranik Distillerie", which is also the
+  registered form. Choose one; the legal notice should carry the registered
+  name exactly.
+- **Ownership wording.** "Independent", "family-owned" and "owned and run by
+  the two families that built it" sit beside the Sawnee Group section. Confirm
+  these are still the words the house wants.
+- **The timeline stops before the Puranik family arrives.** The 2011 entry
+  reads "Distillerie Vinet-Puranik is born" from the merger of the Delpech
+  Fougerat and Vinet families; the Puranik family and the group appear nowhere
+  in it. Supply the year the house took its current name and we add the entry.
+- **Who is General Manager.** The 2018 entry makes Jean-Baptiste Delannoy
+  General Manager; the leadership block and the legal notice name Bruno
+  Delannoy. One of them is out of date.
+- **"Distributed in France by Mähler-Besse."** This note renders under every
+  partner brand and category page. Confirm which brands, if any, it applies
+  to; it likely belonged to the Puranique range only.
+- **The puraniques.com link under the house bottles.** Montlieu X.O and Glen
+  Mac Clay both carry a "puraniques.com" link beneath their story. Confirm
+  they are sold there, or the link comes out.
+- **Menu label parity.** The English menu says "Private labels / white
+  labels"; French says "Marques de distributeur" and Spanish "Marca blanca",
+  shortened so the bar fits at 1280px. Say if the full pair is wanted in all
+  three, accepting the bar will cross over to the drawer at a wider width.
+- **Spanish "ecológico".** Used for organic products; correct in Spain, but
+  in Latin America it reads as "eco-friendly". "Orgánico" is understood in
+  both markets. Choose one and it changes in five places.
+- **Two small facts to confirm.** GIN40's category line gives a bottle size
+  ("50 cl") where every other bottle gives a strength; and "hybrid products"
+  in the know-how details is unexplained jargon on a public page.
 
 ## Notes on things we decided, so nobody undoes them
 

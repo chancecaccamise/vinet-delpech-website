@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { heroMedia, leaderPortraits, productionImage, siteConfig } from "@/lib/site";
+import { heroMedia, productionImage, siteConfig } from "@/lib/site";
 import { isLocale, localizePath } from "@/lib/i18n";
 import {
   getContent,
@@ -14,9 +14,10 @@ import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { HeroMedia } from "@/components/HeroMedia";
 import { EstateShowcase } from "@/components/EstateShowcase";
+import { OriginMap } from "@/components/OriginMap";
 import { FeaturePanels } from "@/components/FeaturePanels";
 import { Timeline } from "@/components/Timeline";
-import { LeadershipWord } from "@/components/LeadershipWord";
+import { TerroirSection } from "@/components/TerroirSection";
 import { TeamBand } from "@/components/TeamBand";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 
@@ -60,7 +61,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* Hairline frame, inset from the viewport edge. */}
         <div aria-hidden="true" className="absolute bottom-8 left-8 right-8 top-28 border border-cream/15" />
 
-        <div className="relative mx-auto flex min-h-svh max-w-[1480px] items-end px-6 pb-24 pt-40 sm:px-10 lg:px-14 lg:pb-32">
+        <div className="page-frame relative flex min-h-svh items-end pb-24 pt-40 lg:pb-32">
           <div className="max-w-4xl">
             <Reveal>
               <p className="eyebrow text-cream/70">{c.hero.eyebrow}</p>
@@ -97,19 +98,35 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           → body order the closing invitation uses further down. Shares the
           hero's 1480px frame so the top of the page holds one left edge. */}
       <section aria-label={c.homeIntro.kicker} className="bg-white py-20 text-ink sm:py-24">
-        <div className="mx-auto max-w-[1480px] px-6 sm:px-10 lg:px-12">
-          <Reveal>
-            <p className="eyebrow text-blue">{c.homeIntro.kicker}</p>
-          </Reveal>
-          <Reveal delay={150}>
-            <p className="display display-md display-prose mt-7 max-w-4xl">
-              {c.homeIntro.paragraphs[0]}
-            </p>
-          </Reveal>
-          <Reveal delay={300}>
-            <p className="mt-7 max-w-xl text-sm leading-8 text-ink/65">
-              {c.homeIntro.paragraphs[1]}
-            </p>
+        {/* Twelve columns: seven for the statement, five for the map. The
+            words still lead the band, and the drawing settles the one claim
+            they can otherwise only assert — where, exactly, the house is.
+            The split waits for xl: the map's place names are set in the
+            drawing, so they shrink with it, and five columns of a 1024px
+            screen is narrower than the labels can survive. */}
+        <div className="page-frame grid gap-x-16 gap-y-12 xl:grid-cols-12">
+          <div className="xl:col-span-7">
+            <Reveal>
+              <p className="eyebrow text-blue">{c.homeIntro.kicker}</p>
+            </Reveal>
+            <Reveal delay={150}>
+              <p className="display display-md display-prose mt-7 max-w-4xl">
+                {c.homeIntro.paragraphs[0]}
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <p className="mt-7 max-w-xl text-sm leading-8 text-ink/65">
+                {c.homeIntro.paragraphs[1]}
+              </p>
+            </Reveal>
+          </div>
+
+          {/* The locator map answers the sentence beside it: not a photograph
+              of the country but the country itself, with the house on it. */}
+          <Reveal delay={300} className="xl:col-span-5">
+            <div className="mx-auto max-w-[30rem] xl:mr-0">
+              <OriginMap labels={c.homeIntro.map} />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -124,17 +141,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       {/* ------------------------------------------------------------------
           Feature panels — two full-bleed halves, alternating sides.
       ------------------------------------------------------------------ */}
-      <FeaturePanels panels={getFeaturePanels(locale)} />
+      <FeaturePanels panels={getFeaturePanels(locale)} label={c.ui.featured} />
 
 
       {/* ------------------------------------------------------------------
           What we produce — the eight categories as a linked index, on cream
-          after the white feature panels; the timeline and president sections
+          after the white feature panels; the timeline and vineyard sections
           below keep swapping tones. Category names come from the families
           data, so this list can never drift from the private-label pages.
       ------------------------------------------------------------------ */}
       <section id="production" className="bg-cream py-24 text-ink sm:py-32">
-        <div className="mx-auto grid max-w-[1320px] gap-x-16 gap-y-12 px-6 lg:grid-cols-12 lg:px-10">
+        <div className="page-frame grid gap-x-16 gap-y-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Reveal>
               <p className="eyebrow text-blue">{c.production.kicker}</p>
@@ -208,29 +225,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* ------------------------------------------------------------------
-          A word from the president — opens the cream chapter it shares
-          with the house statement below.
+          The vineyards and the region — opens the cream chapter it shares
+          with the team band below. Where the leadership quotes used to sit;
+          the house asked for the estate, the vines and the craft here instead.
       ------------------------------------------------------------------ */}
-      <LeadershipWord
-        title={c.leadership.homeTitle}
-        voices={[
-          // Rahul first, Bruno second — the house's requested reading order.
-          {
-            key: "rahul",
-            portrait: leaderPortraits.rahul,
-            ...c.leadership.leaders.rahul,
-          },
-          {
-            key: "bruno",
-            portrait: leaderPortraits.bruno,
-            ...c.leadership.leaders.bruno,
-            // Bruno keeps the longer statement this section has always
-            // carried, rather than the short brochure version /about uses.
-            quote: c.presidentWord.quote,
-            body: c.presidentWord.body,
-          },
-        ]}
-      />
+      <TerroirSection locale={locale} content={c.terroir} />
 
       {/* ------------------------------------------------------------------
           The team — full-bleed photograph on the dark ground, closing the
@@ -252,7 +251,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           still ends on a way in rather than on the team photograph.
       ------------------------------------------------------------------ */}
       <section aria-label={c.contact.kicker} className="bg-cream py-24 text-ink sm:py-32">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+        <div className="page-frame">
           <Reveal>
             <p className="eyebrow text-blue">{c.contact.kicker}</p>
           </Reveal>

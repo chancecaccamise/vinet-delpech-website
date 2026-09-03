@@ -211,7 +211,7 @@ export function Header({
       >
         <div
           className={clsx(
-            "mx-auto flex max-w-[1480px] items-center px-5 transition-[height] duration-500 sm:px-8 lg:px-12",
+            "page-frame flex items-center transition-[height] duration-500",
             scrolled ? "h-[72px]" : "h-[96px]",
           )}
         >
@@ -323,7 +323,7 @@ export function Header({
               hidden={openMenu !== index}
               className="megapanel border-b border-ink/10 bg-white/97 shadow-2xl backdrop-blur-xl"
             >
-              <div className="mx-auto grid max-w-[1480px] grid-cols-[0.9fr_1px_1.5fr] gap-12 px-5 py-12 sm:px-8 lg:px-12">
+              <div className="page-frame grid grid-cols-[0.9fr_1px_1.5fr] gap-12 py-12">
                 <ul className="m-0 list-none space-y-1 p-0">
                   {group.links.map((link) => (
                     <li key={`${link.label}-${link.href}`}>

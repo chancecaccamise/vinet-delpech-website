@@ -107,7 +107,7 @@ export function TestimonialSlider({
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
+      <div className="page-frame">
         <Reveal>
           <h2 className="eyebrow flex items-center gap-4 text-[0.6rem] text-blue">
             <span aria-hidden="true" className="h-px w-10 shrink-0 bg-blue/30" />

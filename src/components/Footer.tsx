@@ -24,7 +24,7 @@ export function Footer({
   return (
     <footer className="mt-auto bg-navy text-cream">
       <div className="hairline-sand" />
-      <div className="mx-auto max-w-[1480px] px-6 py-16 sm:px-10 lg:px-14">
+      <div className="page-frame py-16">
         <div className="flex flex-col gap-10 border-b border-cream/10 pb-12 lg:flex-row lg:items-start lg:justify-between">
           <Link
             href={localizePath(locale, "/#home")}

@@ -20,8 +20,8 @@ export const siteConfig = {
   // TODO(confirm): the house brochure prints yml@vinet-delpech.com — the
   // LEGACY domain — while this whole site is branded Vinet-Puranik. Do not
   // swap this without sign-off: it feeds the enquiry form fallback
-  // (app/actions/contact.ts), every mailto on /visit and in
-  // ExperienceSection, the footer, and the Organization JSON-LD.
+  // (app/actions/contact.ts), every mailto on /visit and its tours and
+  // tastings pages, the footer, and the Organization JSON-LD.
   email: "contact@vinet-puranik.com",
 
   // TODO(confirm): the brochure prints +33 546 700 466 against the named
@@ -599,9 +599,12 @@ export const featurePanelAssets = [
   // ageing cellars already carry the sections either side of it.
   { slug: "bespoke", image: "/media/estate/panel-bespoke-spec.webp", mediaSide: "left" },
   // `slug` is the anchor id: the nav and megamenus link to /#know-how.
-  // Not the frame the estate showcase uses further up the page: that one was
-  // the same photograph as this panel's, cropped differently.
-  { slug: "know-how", image: "/media/estate/panel-knowhow-stills.webp", mediaSide: "right" },
+  // The distillation hall down its length, not a still in close-up: the panel
+  // claims six stills, four bottling lines and a warehouse, and a cropped
+  // copper belly shows none of that. It is also the one frame on this page
+  // taken from the floor looking down the hall — the estate showcase, the team
+  // band and the panel above it are all close on the same coppers.
+  { slug: "know-how", image: "/media/estate/panel-knowhow-hall.webp", mediaSide: "right" },
 ] as const satisfies readonly {
   slug: "bespoke" | "know-how";
   image: string;
@@ -609,14 +612,14 @@ export const featurePanelAssets = [
 }[];
 
 // ---------------------------------------------------------------------------
-// Timeline and president
+// Timeline, the vineyards and the leaders
 // ---------------------------------------------------------------------------
 
 export type TimelineEntry = { year: string; body: string };
 
 // The tall black-and-white Bruno portrait (/media/vinetDelpechPresidentPortrait.jpg)
-// is no longer referenced: the home page leadership section uses the circular
-// pair in `leaderPortraits` below. The file stays on disk as an archive.
+// is no longer referenced: the leadership pair on /about uses the circular
+// portraits in `leaderPortraits` below. The file stays on disk as an archive.
 
 /**
  * Photography for the three "our skills" tiles on /about, in the same order
@@ -647,6 +650,20 @@ export const estateShowcaseImages = {
   vines: "/media/estate/showcase-vines.webp",
 } as const;
 
+/**
+ * The vineyards and the region, on the home page where the leadership quotes
+ * used to sit. Three frames from the house's vineyard gallery, each cut from
+ * an original no other page uses: the wide view across the vines to the
+ * treeline (IMG_3206), the rows running to the horizon (IMG_3193) and ripe
+ * grapes on the vine (IMG_3215). The gallery's other originals already serve
+ * the showcase, the visit menu, the harvest event and the tastings card.
+ */
+export const terroirImages = {
+  landscape: "/media/estate/terroir-landscape.webp",
+  rows: "/media/estate/terroir-rows.webp",
+  grapes: "/media/estate/terroir-grapes.webp",
+} as const;
+
 export const aboutSkillImages = [
   "/media/estate/skill-quality.webp",
   "/media/estate/skill-reliability-barrels.webp",
@@ -655,8 +672,8 @@ export const aboutSkillImages = [
 
 /**
  * Circular portraits of the two people who speak for the house, harvested from
- * the brochure. They serve both leadership sections: the pair on /about and
- * the two-voice "word from our leadership" on the home page.
+ * the brochure. They serve the leadership pair on /about; the home page no
+ * longer carries a leadership section of its own.
  *
  * Both carry real alpha — the brochure masks them to a circle — so they sit on
  * cream without a plate behind them.
@@ -741,18 +758,14 @@ export const testimonialNames: Record<TestimonialSlug, string> = {
 };
 
 // ---------------------------------------------------------------------------
-// Visit us — tours & tastings.
-// TODO(launch): the tasting offerings (names, durations, group sizes,
-// languages, inclusions, prices) are structured placeholders — confirm the
-// real programme with the house before go-live. The tours page carries no
-// invented programme any more: private visits by appointment, in the house's
-// own words.
+// Visit us — tours & tastings. Neither page carries a programme any more:
+// the house offers private tours and seated tastings by prior appointment,
+// arranged through the office, and both pages say exactly that in the
+// house's own words (`tours` and `tastings` in the dictionaries) with one
+// photograph and the way in. The invented durations, group sizes and
+// inclusions that used to fill both pages are gone; if the house publishes a
+// real programme, it comes back as content, not as placeholders.
 // ---------------------------------------------------------------------------
-
-export const tastingSlugs = [
-  "signature-tasting",
-  "cognac-and-pineau-flight",
-] as const;
 
 /**
  * The tours page photograph — the still house, from the estate gallery.
@@ -761,34 +774,15 @@ export const tastingSlugs = [
 export const privateToursImage = "/media/estate/tour-distillery.webp";
 
 /**
- * Photography for each tasting, cropped to the 4:3 box `ExperienceSection`
- * draws.
+ * The tastings page photograph — new-make spirit running off the still into
+ * a copper receiver. The one real frame of the tasting room stays on the
+ * Tours & Tastings menu card, which is what promises the room; the page
+ * itself shows the liquid.
  *
- * TODO(assets): real tasting-room photography now exists but only one frame
- * of it — the ageing-line bench on the flight card. The signature tasting
- * still borrows the nearest cellar imagery; replace once more of the tasting
- * room is shot.
+ * TODO(assets): more of the tasting room, so the page can show where a
+ * tasting actually happens — see HANDOVER §9.
  */
-export const experienceImages: Record<TastingSlug, string> = {
-  "signature-tasting": "/media/estate/tasting-signature.webp",
-  "cognac-and-pineau-flight": "/media/estate/tasting-flight-cellar.webp",
-};
-
-export type TastingSlug = (typeof tastingSlugs)[number];
-
-export type Experience = {
-  slug: string;
-  name: string;
-  duration: string;
-  groupSize: string;
-  languages: string;
-  includes: readonly string[];
-  price: string;
-  body: string;
-  frameLabel: string;
-  /** Estate photograph; falls back to the labelled frame when absent. */
-  image?: string;
-};
+export const tastingsImage = "/media/estate/tastings-pour.webp";
 
 /** The two cards on /visit, in order, with the routes they lead to. */
 export const visitEntryHrefs = ["/visit/tours", "/visit/tastings"] as const;

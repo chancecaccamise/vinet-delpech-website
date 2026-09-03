@@ -33,8 +33,8 @@ export async function generateMetadata({
 
 /**
  * Our story — what the house is, in its own words. The chronology stays on the
- * homepage (`/#timeline`) and the president keeps his own section there too;
- * this page carries the positioning and links back to both.
+ * homepage (`/#timeline`), as does the vineyard section (`/#terroir`); this
+ * page carries the positioning, the two leaders, and links back to both.
  */
 export default async function AboutPage({ params }: { params: Promise<Params> }) {
   const { locale: raw } = await params;
@@ -134,8 +134,8 @@ export default async function AboutPage({ params }: { params: Promise<Params> })
               <Link href={localizePath(locale, "/#timeline")} className="link-quiet text-blue">
                 {about.crossLinkHistory}
               </Link>
-              <Link href={localizePath(locale, "/#leadership")} className="link-quiet text-blue">
-                {about.crossLinkPresident}
+              <Link href={localizePath(locale, "/#terroir")} className="link-quiet text-blue">
+                {about.crossLinkTerroir}
               </Link>
               <Link href={localizePath(locale, "/private-label")} className="link-quiet text-blue">
                 {about.crossLinkPartnerships}

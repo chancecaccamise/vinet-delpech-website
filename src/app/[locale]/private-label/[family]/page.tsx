@@ -158,7 +158,7 @@ export default async function SpiritFamilyPage({ params }: { params: Promise<Par
 
       {/* Sideways navigation: the other categories, so a visitor can move
           across the collection without going back up to the megamenu. */}
-      <section aria-label="Other categories" className={`${band("others")} py-20 text-ink sm:py-24`}>
+      <section aria-label={c.privateLabel.otherCategories} className={`${band("others")} py-20 text-ink sm:py-24`}>
         <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
           <Reveal>
             <h2 className="display display-md uppercase tracking-[0.05em]">{c.privateLabel.otherCategories}</h2>

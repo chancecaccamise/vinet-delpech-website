@@ -22,9 +22,14 @@ export const en = {
   homeIntro: {
     kicker: "The distillery",
     paragraphs: [
-      "Located in Brie-sous-Archiac in Southwest France, Vinet-Puranik Distillerie brings together centuries of French distilling heritage with modern production capabilities.",
+      "Located in Brie-sous-Archiac in south-west France, Vinet-Puranik Distillerie brings together centuries of French distilling heritage with modern production capabilities.",
       "From distillation and ageing to blending, bottling and private-label development, we work with our own brands and partners around the world.",
     ],
+    map: {
+      ocean: "Atlantic Ocean",
+      description:
+        "Map of the Charentes in south-west France: the distillery is marked at Brie-sous-Archiac, in Charente-Maritime, south of Cognac and north of Bordeaux.",
+    },
   },
 
   // Only `origin` survives of the old house statement — the "100% made in
@@ -69,7 +74,7 @@ export const en = {
 
   knowHow: {
     title: "Know-how & innovation",
-    body: "Stills, cellars and bottling halls share one courtyard at Brie-sous-Archiac, among 100 hectares of Fins Bois and Petite Champagne vines.",
+    body: "Stills, cellars and bottling halls share one courtyard at Brie-sous-Archiac, among a hundred hectares of Fins Bois and Petite Champagne vines.",
     figureLabels: {
       stills: "pot stills",
       lines: "bottling lines",
@@ -115,7 +120,7 @@ export const en = {
       },
       {
         label: "French heritage",
-        body: "Fins Bois and Petite Champagne vines, a Charente estate, and the appellations that come with them.",
+        body: "Fins Bois and Petite Champagne vines, a Charente estate and the appellations that come with them.",
       },
       {
         label: "Premium and luxury products",
@@ -139,7 +144,7 @@ export const en = {
     ],
     crossLinkTitle: "More of the house",
     crossLinkHistory: "Our history",
-    crossLinkPresident: "A word from our leadership",
+    crossLinkTerroir: "The vineyards and the region",
     crossLinkPartnerships: "The brands we shape",
   },
 
@@ -169,7 +174,7 @@ export const en = {
       },
       bottling: {
         title: "Bottling",
-        body: "Lines under the same roof dress, fill and seal every case before it ships.",
+        body: "Lines under the same roof dress, fill and seal every bottle before the case ships.",
       },
     },
   },
@@ -214,13 +219,13 @@ export const en = {
     "brigitte-et-louise-rouge": {
       category: "Apéritif · 17.5%",
       descriptor:
-        "Merlot and Cabernet Sauvignon must with cognac eau-de-vie: lively and round, on woodland and stone fruit.",
+        "Merlot and Cabernet Sauvignon must with cognac eau-de-vie: lively and round, on forest fruits and stone fruit.",
       frameLabel: "Packshot: Brigitte et Louise Rouge",
     },
     "maca-rum": {
       category: "Spiced rum",
       descriptor:
-        "Distilled in Mauritius, aged and finished in France: enveloping cinnamon and the round mystery of tonka bean.",
+        "Distilled in Mauritius, aged and finished in France: enveloping cinnamon and the roundness of tonka bean.",
       frameLabel: "Packshot: MACA rum bottle",
     },
     tijuca: {
@@ -250,7 +255,7 @@ export const en = {
     gin40: {
       category: "Gin · 50 cl",
       descriptor:
-        "Artisanally distilled in south-west France with Landes influences: juniper, pine and wild blackberry.",
+        "Distilled by hand in south-west France, with the Landes in its botanicals: juniper, pine and wild blackberry.",
       frameLabel: "Packshot: GIN40 bottle",
     },
     "nade-vodka-2022": {
@@ -262,7 +267,7 @@ export const en = {
     "nade-vodka-2019": {
       category: "Vodka · 40%",
       descriptor:
-        "Rested four months in Fronsac red-wine casks: faintly pink with golden nuance, in fewer than 250 numbered bottles.",
+        "Rested four months in Fronsac red-wine casks: faintly pink with golden glints, in fewer than 250 numbered bottles.",
       frameLabel: "Packshot: Nade Vodka 2019 vintage",
     },
   },
@@ -286,9 +291,9 @@ export const en = {
     items: {
       "montlieu-xo": {
         heritage:
-          "This authentic finest brandy comes from a very careful selection of grapes. Distilled in a column still, Montlieu X.O is then aged in oak barrels for a minimum of three years.",
+          "This authentic brandy comes from a careful selection of grapes. Distilled in a column still, Montlieu X.O is then aged in oak casks for a minimum of three years.",
         story:
-          "Aged in oak casks, Montlieu X.O is recommended as a digestive, neat or over ice. It seduces with its elegance, its balance and its aromas.",
+          "Aged in oak casks, Montlieu X.O is recommended as a digestif, neat or over ice. It wins you over with its elegance, balance and aromas.",
         notes: {
           eye: "Amber colour",
           nose: "Delicate notes of almond and vanilla",
@@ -298,13 +303,13 @@ export const en = {
       },
       "glen-mac-clay": {
         heritage:
-          "Glen Mac Clay Blended Scotch Whisky was carefully selected in the south of the Highlands. It is composed primarily of wheat and malt distilled in a column still, then blended with an unpeated blended malt from the same distillery, distilled in a copper pot still, and matured in Bourbon casks for a minimum of three years.",
+          "Glen Mac Clay Blended Scotch Whisky was carefully selected in the south of the Highlands. It is composed primarily of wheat and malt distilled in a column still, then blended with an unpeated malt from the same distillery, distilled in a copper pot still. It is matured in Bourbon casks for a minimum of three years.",
         story:
-          "This Scotch was elaborated in the purest tradition: distilled with passion and aged in oak barrels for several years. Enjoy it as a long drink with soda water or ginger beer.",
+          "This Scotch is made in the traditional way: distilled with care and aged in oak casks for several years. Enjoy it as a long drink with soda water or ginger beer.",
         notes: {
           eye: "Bright, with light hints of gold",
           nose: "Fruity notes of pear, apple and grape",
-          palate: "Balanced and smooth, malted, on refreshing pear",
+          palate: "Balanced and smooth, malty, on refreshing pear",
         },
         storyFrameLabel: "Lifestyle: Glen Mac Clay in a Highland landscape",
       },
@@ -315,10 +320,10 @@ export const en = {
     brandy: {
       name: "Brandy",
       title: "Brandy",
-      summary: "Column-distilled grape brandy, aged in oak: outside the cognac appellation by design.",
+      summary: "Column-distilled grape brandy, aged in oak: outside the Cognac appellation by design.",
       intro: [
         "Brandy made from a careful selection of grapes and distilled in a column still rather than the copper pot the appellation requires. It is a different method and a different spirit, so it is shown on its own page rather than folded in beside the cognacs.",
-        "Montlieu X.O is the house's own: at least three years in oak casks, recommended as a digestive, neat or over ice.",
+        "Montlieu X.O is the house's own: at least three years in oak casks, recommended as a digestif, neat or over ice.",
       ],
     },
     liqueurs: {
@@ -327,7 +332,7 @@ export const en = {
       summary: "Fruit and cognac-based liqueurs, macerated and blended to a brief.",
       intro: [
         "Fruit liqueurs made in the Cognac region: whole fruit macerated and blended without artificial additives, on a neutral spirit or on a cognac base, at the strength and sweetness a market asks for.",
-        "The house has built mango liqueurs both ways — one on fruit alone, one infused into an award-winning cognac — and the same route is open to any fruit a partner brings.",
+        "The house has made mango liqueurs both ways — one on fruit alone, one infused into an award-winning cognac — and the same route is open to any fruit a partner brings.",
       ],
     },
     cognac: {
@@ -335,7 +340,7 @@ export const en = {
       title: "Cognac",
       summary: "The house appellation, worked for partners from the crus around Brie-sous-Archiac.",
       intro: [
-        "The house stands among the Petite Champagne and Fins Bois crus, and cognac is the spirit it has made longest. For partners, that means eaux-de-vie selected and blended to a brief, then aged in Limousin oak until the quality (VS, VSOP, XO) is the one the market asks for.",
+        "The house stands among the Petite Champagne and Fins Bois crus, and cognac is the spirit it has made longest. For partners, that means eaux-de-vie selected and blended to a brief, then aged in Limousin oak to the grade the market asks for: VS, VSOP or XO.",
         "Patte Blanche is the collection's organic expression: ECOCERT-certified, hand-distilled at Arthenac, with no artificial input from vine to glass.",
       ],
     },
@@ -344,8 +349,8 @@ export const en = {
       title: "Whisky",
       summary: "Charentais double distillation and cognac-cask finishing, for malt and blend alike.",
       intro: [
-        "Whisky made the Charentais way: double-distilled in the same copper pot stills the house uses for cognac, then laid down in Limousin oak casks that previously held it.",
-        "Glen Mac Clay is the house's own bottling in the category: a Blended Scotch selected in the southern Highlands, married with an unpeated malt and matured in Bourbon casks.",
+        "For partners, whisky can be made the Charentais way: double-distilled in the same copper pot stills the house uses for cognac, then laid down in Limousin oak casks that previously held cognac.",
+        "Glen Mac Clay is the house's own bottling in the category: a blended Scotch selected in the southern Highlands, married with an unpeated malt and matured in Bourbon casks.",
       ],
     },
     rum: {
@@ -354,7 +359,7 @@ export const en = {
       summary:
         "Cane distillates sourced abroad, then aged, finished, blended and dressed in France.",
       intro: [
-        "Rum arrives as a distillate and leaves as a brand. The house sources from the cane-growing origins, then carries out the work that gives a rum its character here in the Charente: ageing, finishing in cognac wood, blending and dress.",
+        "Rum arrives as a distillate and leaves as a brand. The house sources from cane-growing origins, then carries out the work that gives a rum its character here in the Charente: ageing, finishing in cognac wood, blending and dress.",
         "MACA is distilled in Mauritius and finished in France on cinnamon and tonka bean; TIJUCA is a Brazilian blend, coppery, on vanilla, pepper and honey.",
       ],
     },
@@ -373,7 +378,7 @@ export const en = {
       summary: "Grape vodka from Bordeaux, distilled and released by vintage.",
       intro: [
         "Vodka need not be neutral in origin. Nade is distilled from Bordeaux grapes and released by vintage: the power of Cabernet Sauvignon, the roundness of Merlot, the finesse of Sémillon.",
-        "The 2019 was rested four months in Fronsac red-wine casks and bottled in fewer than 250 numbered bottles; the 2022 is the current vintage.",
+        "The 2019 was rested four months in Fronsac red-wine casks and bottled in fewer than 250 numbered bottles; the 2022 is the latest vintage shown here.",
       ],
     },
     aperitifs: {
@@ -382,7 +387,7 @@ export const en = {
       summary: "Lower-strength grape products: French apéritifs and cognac-based spirit drinks.",
       intro: [
         "Grape must, eaux-de-vie and Pineau des Charentes, composed at apéritif strength. These are the house's answer to markets that want a cognac character served long, chilled or over ice.",
-        "Sephina is a spirit drink at 30%: 56% VSOP cognac blended with 44% Pineau des Charentes, and so outside the cognac appellation by design.",
+        "Sephina is a spirit drink at 30%: 56% VSOP cognac blended with 44% Pineau des Charentes, and so outside the Cognac appellation by design.",
       ],
     },
   },
@@ -406,19 +411,19 @@ export const en = {
     viewRange: "View the range",
     viewRangeAria: "View the {name} range",
     metaDescription:
-      "The two houses alongside Distillerie Vinet-Puranik: Les Brûleries Modernes, whose aperitifs and spirits are made on the estate, and Puranique, the family's own label.",
+      "The two houses alongside Distillerie Vinet-Puranik: Les Brûleries Modernes, whose apéritifs and spirits are made on the estate, and Puranique, the family's own label.",
     companies: {
       "les-bruleries-modernes": {
-        descriptor: "French aperitifs and spirits for the on-trade",
+        descriptor: "French apéritifs and spirits for the on-trade",
         intro:
-          "Founded in 2019 and built on the distillery's own stills, Les Brûleries Modernes assembles a portfolio of French aperitifs and spirits for bars, restaurants and independent merchants. Its bottles are made in the same courtyard at Brie-sous-Archiac.",
-        frameLabel: "Packshot: Gin Hold Up",
+          "Founded in 2019 and built on the distillery's own stills, Les Brûleries Modernes assembles a portfolio of French apéritifs and spirits for bars, restaurants and independent merchants. Its bottles are made in the same courtyard at Brie-sous-Archiac.",
+        frameLabel: "Packshot: Hold Up gin",
         linkLabel: "lesbruleriesmodernes.com",
       },
       puranique: {
         descriptor: "The family's own label",
         intro:
-          "Puranique is the house's own range of French spirits. It has a site of its own, and that is where the range lives: cognac, vodka, pineau and liqueurs, with the tasting notes and awards that belong to them.",
+          "Puranique is the family's own range of French spirits. It has a site of its own, and that is where the range lives: cognac, vodka, Pineau and liqueurs, with the tasting notes and awards that belong to them.",
         frameLabel: "Packshot: Puranique Cognac V.S.O.P",
         linkLabel: "puraniques.com",
       },
@@ -463,7 +468,7 @@ export const en = {
     },
     "know-how": {
       ctaLabel: "Start a project",
-      frameLabel: "Feature: copper pot stills in the distillation hall",
+      frameLabel: "Feature: copper pot stills in the still house",
     },
   },
 
@@ -476,7 +481,7 @@ export const en = {
     intro:
       "Cognac and brandy, whisky, rum, gin, vodka, liqueurs and apéritifs. The house distils, ages, blends and bottles across eight categories, for its own range and for the private-label brands it builds with partners.",
     frameLabel: "New-make spirit running from the still into a copper receiver",
-    allProducts: "All our products",
+    allProducts: "All categories",
   },
 
   timeline: {
@@ -487,19 +492,19 @@ export const en = {
     entries: [
       {
         year: "1777",
-        body: "The Delpech Fougerat family buys the Font Gireau estate and begins creating their own eaux-de-vie.",
+        body: "The Delpech Fougerat family buys the Font Gireau estate and begins making its own eaux-de-vie.",
       },
       { year: "1934", body: "Félix Chartier establishes his first cognac distillery." },
       {
         year: "1972",
-        body: "He transmits the distillery to his nephew Guy Vinet, who renames it after himself and later passes it to his daughter Annie Delannoy and his son-in-law Bruno Delannoy.",
+        body: "Félix Chartier passes the distillery to his nephew Guy Vinet, who renames it after himself and later hands it on to his daughter Annie Delannoy and his son-in-law Bruno Delannoy.",
       },
       {
         year: "2011",
         body: "Both families decide to work together and merge: Distillerie Vinet-Puranik is born.",
       },
       {
-        year: "2014-2017",
+        year: "2014–2017",
         body: "A new bottling plant and storage warehouse open, with the installation of a fourth bottling line.",
       },
       {
@@ -517,24 +522,22 @@ export const en = {
     ],
   },
 
-  // The two people who speak for the house. The home page keeps Bruno's longer
-  // statement in `presidentWord`; these are the brochure's shorter quotes, so
-  // /about does not simply repeat the home page.
+  // The two people who speak for the house, on /about: the brochure's shorter
+  // quotes. Bruno's longer statement used to sit on the home page as well; that
+  // section now belongs to the vineyards (`terroir`).
   leadership: {
     label: "Leadership",
-    // Title of the two-voice section on the home page.
-    homeTitle: "A word from our leadership",
     title: "Two leaders, one house",
     intro:
-      "A family distillery in the Charente, and a group with offices on four continents. The house is run by both.",
+      "A family distillery in the Charente, and a group with offices on three continents. The house is run by both.",
     leaders: {
       bruno: {
         name: "Bruno Delannoy",
-        role: "General manager",
+        role: "General Manager",
         quote: "Passion above all.",
         body: [
-          "After taking over the family business for generations at the beginning of the 1990s, I decided to enter into export, and I discovered another world.",
-          "Over thirty years later, with a vibrant, motivated and multicultural team, Vinet-Puranik Distillerie is present in more than twenty different countries.",
+          "At the beginning of the 1990s I took over a family business handed down for generations, decided to enter into export, and discovered another world.",
+          "Over thirty years later, with a vibrant, motivated and multicultural team, Vinet-Puranik Distillerie is present in more than twenty countries.",
         ],
         portraitAlt: "Bruno Delannoy in the still house, holding a tasting glass.",
       },
@@ -556,7 +559,7 @@ export const en = {
     title: "The Sawnee Group",
     body: [
       "The Sawnee Group is a multinational organisation headquartered in Atlanta, United States. The group brings its multinational experience and global business perspective across several industries, including aviation, real-estate investment, hospitality, distilling, beverage retail, international logistics and strategic procurement.",
-      "Through its diversified portfolio and international network, Sawnee Group operates across multiple regions with offices in France, Ireland, Singapore, India and the United States. That presence lets the group combine operational expertise with strategic market access.",
+      "Through its diversified portfolio and international network, the Sawnee Group operates across multiple regions with offices in France, Ireland, Singapore, India and the United States. That presence lets the group combine operational expertise with strategic market access.",
     ],
     industriesLabel: "Industries",
     industries: [
@@ -578,23 +581,52 @@ export const en = {
     },
   },
 
-  presidentWord: {
-    title: "A word from the general manager",
-    quote: "Passion above all",
-    body: [
-      "After taking over the family business in 1994, I decided to enter into export, and discovered another world. Asia in particular captivated me, and it has been a large part of my life ever since.",
-      "I understood immediately that the importers I met wanted bespoke products, made to their own wishes. It didn't matter which country: they felt more invested in products they had helped to design.",
-      "So I became a promoter of tailor-made spirits, and a specialist in private brands. More than thirty years on, with a vibrant, motivated and multicultural team, Vinet-Puranik is present in more than twenty countries.",
+  // The vineyards and the region, where the two leadership quotes used to sit
+  // on the home page: the house asked that the page show the estate, the vines
+  // and the craft rather than the people. The leaders still speak on /about.
+  terroir: {
+    kicker: "The vineyards and the region",
+    title: "French craftsmanship, rooted in the Charente",
+    intro: [
+      "Brie-sous-Archiac stands in the south of the Cognac appellation, where the Petite Champagne and Fins Bois crus meet. Around the courtyard, a hundred hectares of vines run over low chalk hills between Cognac and Bordeaux, an hour from the Atlantic coast.",
+      "The craft is the region's own: white grapes pressed within hours of picking, wine distilled twice in copper pot stills, eau-de-vie left to rest in French oak. The house keeps those methods at the heart of everything it makes, for its own labels and for partners around the world.",
     ],
-    portraitAlt:
-      "Bruno Delannoy, general manager of Distillerie Vinet-Puranik, photographed in the still house.",
-    signatureRole: "General manager",
+    facetsLabel: "From the vineyard to the bottle",
+    facets: [
+      {
+        title: "The region",
+        body: "The Haute-Saintonge, in Charente-Maritime: low hills of vines, Romanesque churches and stone villages, with Cognac thirty-five minutes to the north and the Gironde estuary to the west.",
+      },
+      {
+        title: "The crus",
+        body: "Petite Champagne and Fins Bois, two of the appellation's six growth areas, on chalk and limestone soils that give their eaux-de-vie finesse and length.",
+      },
+      {
+        title: "The grape",
+        body: "Ugni Blanc, the white grape that makes almost all cognac: picked in early autumn, pressed the same day and distilled through the winter.",
+      },
+      {
+        title: "The craft",
+        body: "Double distillation in copper Charentais pot stills, then years in Limousin oak: the method the appellation wrote down, still worked by hand at the house.",
+      },
+    ],
+    alts: {
+      landscape: "Vines stretching to a line of trees under a blue sky near Brie-sous-Archiac.",
+      rows: "Rows of vines running to the horizon in late summer.",
+      grapes: "Ripe white grapes on the vine, a few days before the harvest.",
+    },
+    captions: {
+      landscape: "The vineyard around Brie-sous-Archiac",
+      rows: "The vines in late summer",
+      grapes: "Before the harvest",
+    },
+    ctaLabel: "Visit the estate",
   },
 
   team: {
     alt: "Copper pot stills in the Vinet-Puranik still house at Brie-sous-Archiac.",
     label: "The house",
-    caption: "The still house: Brie-sous-Archiac, Charente",
+    caption: "The still house: Brie-sous-Archiac, Charente-Maritime",
   },
 
   // TODO(launch): placeholder quotes — see the note on `testimonialSlugs` in
@@ -623,7 +655,7 @@ export const en = {
     title: "Build your next spirit with Vinet-Puranik",
     body: "Share your brief: product ambition, market and timeline. The house replies with a considered path from first idea to finished bottle.",
     metaDescription:
-      "Talk to Distillerie Vinet-Puranik about bespoke spirits, private label, bulk, bottling or a visit. Named commercial contact, direct lines and an enquiry form.",
+      "Talk to Distillerie Vinet-Puranik about bespoke spirits, private label, bulk spirits, bottling or a visit. Named commercial contact, direct lines and an enquiry form.",
     intro: [
       "Tell us what you are trying to build: the product, the market, the timeline. Every enquiry reaches a person, not a queue.",
     ],
@@ -692,19 +724,19 @@ export const en = {
   },
 
   ageGate: {
-    title: "Age Verification Required",
+    title: "Age verification required",
     subhead: "You must be of legal drinking age to enter this website",
     dobPrompt: "Please enter your date of birth",
     labels: { month: "Month", day: "Day", year: "Year" },
     placeholders: { month: "MM", day: "DD", year: "YYYY" },
-    submit: "Verify Age",
+    submit: "Verify age",
     errors: {
       incomplete: "Please enter your full date of birth.",
-      invalid: "That date doesn't exist. Please check and try again.",
+      invalid: "That date does not exist. Please check and try again.",
       future: "Please enter a date in the past.",
     },
     deniedTitle: "We're sorry",
-    deniedMessage: "You must be at least {age} years old to visit Vinet-Puranik.",
+    deniedMessage: "You must be at least {age} years old to enter this site.",
     deniedBack: "Go back",
     legal:
       "By entering, you confirm you are at least {age} years old and that it is lawful to view alcohol-related content in your country of residence. Your date of birth is checked in your browser and is never sent to us or stored.",
@@ -716,12 +748,12 @@ export const en = {
     heroLabel: "Hero: estate courtyard and cellars, golden hour",
     intro: [
       "Between the Petite Champagne and Fins Bois crus, the distillery opens its courtyard, cellars and stills to trade partners and curious visitors alike.",
-      "Walk the barrel cellars, stand beside the copper pot stills, and taste the house's work where it is made.",
+      "Walk the ageing cellars, stand beside the copper pot stills and taste the house's work where it is made.",
     ],
     expect: [
       {
         title: "The cellars",
-        body: "Ageing halls where cognac, brandy and cask-finished whiskies rest.",
+        body: "Ageing cellars where cognac, brandy and cask-finished whiskies rest.",
       },
       {
         title: "The still house",
@@ -729,7 +761,7 @@ export const en = {
       },
       {
         title: "The tasting room",
-        body: "Guided flights of the house's brands and works-in-progress.",
+        body: "Seated tastings of the house's spirits and works in progress, by appointment.",
       },
     ],
     entries: [
@@ -740,7 +772,7 @@ export const en = {
       },
       {
         title: "Tastings",
-        body: "Seated flights in the estate tasting room.",
+        body: "Seated tastings in the estate tasting room.",
         frameLabel: "Card: tasting glasses on oak",
       },
     ],
@@ -751,7 +783,7 @@ export const en = {
     practicalCta: "Practical information",
     book: {
       heading: "Book a visit",
-      body: "All visits are by appointment. Send the dates you have in mind, your party size and the experience you would like. The house will confirm by return.",
+      body: "All visits are by appointment. Send the dates you have in mind, your party size and whether you would like a tour, a tasting or both. The house will confirm by return.",
       ctaLabel: "Book through the enquiry form",
       mailSubject: "Visit booking: Vinet-Puranik estate",
     },
@@ -759,7 +791,7 @@ export const en = {
       heading: "Practical information",
       items: [
         { label: "Address", value: "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France" },
-        { label: "Hours", value: "By appointment. Monday to Friday" },
+        { label: "Hours", value: "By appointment, Monday to Friday" },
         {
           label: "Access",
           value: "20 minutes from Jonzac, 35 minutes from Cognac; on-site parking",
@@ -771,21 +803,9 @@ export const en = {
       "Visit the Vinet-Puranik estate at Brie-sous-Archiac: cellars, copper pot stills and tastings in the heart of the Cognac region. Tours and tastings by appointment.",
   },
 
-  experiences: {
-    included: "Included",
-    book: "Book this experience",
-    orEmail: "Or email the house",
-    bookingSubject: "Visit booking: {name}",
-    duration: "Duration",
-    groupSize: "Group size",
-    languages: "Languages",
-    price: "Price",
-    onEnquiry: "On enquiry",
-  },
-
   tours: {
     kicker: "Visit us · Tours",
-    title: "Private Tours",
+    title: "Private tours",
     intro:
       "Private tours can be arranged for individuals, groups, customers, distributors, trade partners and special guests.",
     body: "Tours and tastings are available by prior appointment. Please contact our office to arrange your visit.",
@@ -802,41 +822,15 @@ export const en = {
     kicker: "Visit us · Tastings",
     title: "Tastings at the estate",
     intro:
-      "Seated flights in the estate tasting room, from a signature tour of the house's brands to the Charente classics side by side.",
-    note: "Flights, durations and prices to be confirmed by the house: all tastings by appointment.",
+      "Seated tastings in the estate tasting room can be arranged for individuals, groups, customers, distributors, trade partners and special guests.",
+    body: "Tours and tastings are available by prior appointment. Please contact our office to arrange your visit.",
+    ctaLabel: "Contact us",
+    frameLabel: "New-make spirit running off the still into a copper receiver",
     crossLinkTitle: "Rather walk the cellars first?",
     crossLinkCta: "Discover our tours",
     crossLinkBack: "Back to the estate",
     metaDescription:
-      "Seated tastings at the Vinet-Puranik estate: signature flights of the house range, and cognac and Pineau side by side. By appointment at Brie-sous-Archiac.",
-    items: {
-      "signature-tasting": {
-        name: "Signature Tasting",
-        duration: "1 hour",
-        groupSize: "2–12 guests",
-        languages: "French · English",
-        includes: [
-          "Five spirits across the house collection",
-          "Guided by a member of the tasting committee",
-          "Tasting notes to take home",
-        ],
-        body: "The house in five glasses: gin, whisky, rum, Pineau des Charentes and cognac, tasted side by side.",
-        frameLabel: "Tasting: five glasses on the tasting-room table",
-      },
-      "cognac-and-pineau-flight": {
-        name: "Cognac & Pineau Flight",
-        duration: "45 minutes",
-        groupSize: "2–12 guests",
-        languages: "French · English",
-        includes: [
-          "Puranique cognacs by age",
-          "Brigitte et Louise red and white",
-          "Regional pairing bites",
-        ],
-        body: "The Charente classics. The house cognac marque and its Pineau, tasted the way the region drinks them.",
-        frameLabel: "Tasting: cognac snifters and Pineau glasses",
-      },
-    },
+      "Seated tastings of the house's spirits at the Vinet-Puranik estate in Brie-sous-Archiac, for individuals, groups, distributors and trade partners. Tours and tastings by prior appointment.",
   },
 
   // Six top-level items, in the order the house asked for them. "Private label
@@ -849,8 +843,8 @@ export const en = {
       links: [
         "Our story",
         "Know-how & innovation",
-        "A word from our leadership",
-        "Our timeline",
+        "Our leadership",
+        "Our history",
         "Events",
       ],
       featuredHeading: "In the house",
@@ -866,7 +860,7 @@ export const en = {
       viewAll: "Both partners",
     },
     privateLabel: {
-      label: "Private labels / White labels",
+      label: "Private labels / white labels",
       overview: "Overview",
       featuredHeading: "By category",
       featuredFrameLabels: [
@@ -877,7 +871,7 @@ export const en = {
       viewAll: "View all categories",
     },
     visit: {
-      label: "Visit Us",
+      label: "Visit us",
       links: ["The estate", "Book a visit", "Practical information"],
       featuredHeading: "The estate",
       featured: [{ label: "Brie-sous-Archiac", frameLabel: "Featured: the estate from the air" }],
@@ -887,12 +881,12 @@ export const en = {
     // house's request that they be reachable without going through the estate
     // page first.
     toursTastings: {
-      label: "Tours & Tastings",
+      label: "Tours & tastings",
       links: ["Tours", "Tastings"],
-      featuredHeading: "Favorite experiences",
+      featuredHeading: "At the estate",
       featured: [
-        { label: "Private Tours", frameLabel: "Featured: barrel cellar walkway" },
-        { label: "Signature Tasting", frameLabel: "Featured: the estate tasting room" },
+        { label: "Private tours", frameLabel: "Featured: barrel cellar walkway" },
+        { label: "Tastings at the estate", frameLabel: "Featured: the estate tasting room" },
       ],
       viewAll: "Plan your visit",
     },
@@ -917,15 +911,25 @@ export const en = {
 
   notFound: {
     title: "Lost in the cellars",
-    body: "The page you are looking for has been moved, renamed, or never existed.",
+    body: "The page you are looking for has been moved, renamed or never existed.",
     cta: "Back to the house",
   },
 
   metadata: {
+    // Meta keywords, one list per language; search engines weigh them little,
+    // but the French and Spanish editions should not carry English ones.
+    keywords: [
+      "bespoke spirits",
+      "private label spirits",
+      "contract distilling",
+      "custom bottling",
+      "Cognac region distillery",
+      "white label spirits",
+    ],
     homeTitle: "French distilling heritage since 1777",
     titleTemplate: "Vinet-Puranik · %s",
     description:
-      "Family-owned Cognac-region distillery designing bespoke spirits, private-label and white-label programmes, bottling solutions and product development for trade partners in more than twenty countries.",
+      "Family-owned Cognac-region distillery offering bespoke spirits, private-label and white-label programmes, bottling and product development for trade partners in more than twenty countries.",
     aboutTitle: "Our story",
     privateLabelTitle: "Private labels & white labels",
     partnersTitle: "Partners",
@@ -962,7 +966,7 @@ export const en = {
         name: "Sample: harvest open day",
         location: "Brie-sous-Archiac",
         description:
-          "The estate opens its courtyard during the harvest: the presses at work, the stills running, and the new eaux-de-vie straight off the still.",
+          "The estate opens its courtyard during the harvest: the presses at work, the stills running and the new eaux-de-vie straight off the still.",
       },
       "sample-distillery-day": {
         name: "Sample: distillery day",
@@ -976,7 +980,7 @@ export const en = {
   legal: {
     updatedLabel: "Last updated",
     updated: "26 August 2026",
-    backLabel: "Back to home",
+    backLabel: "Back to the house",
     pages: {
       "mentions-legales": {
         title: "Legal notice",
@@ -987,7 +991,7 @@ export const en = {
           {
             heading: "The company",
             body: [
-              "This site is published by Distillerie Vinet-Puranik, a {legalForm} with share capital of {shareCapital}.",
+              "This site is published by Distillerie Vinet-Puranik, an {legalForm} with share capital of {shareCapital}.",
               "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
               "Telephone +33 5 46 49 10 10. Email contact@vinet-puranik.com.",
             ],
@@ -1000,7 +1004,7 @@ export const en = {
             ],
           },
           {
-            heading: "Director of publication",
+            heading: "Directors of publication",
             body: ["{ceoName}, {ceoRole}. {gmName}, {gmRole}."],
           },
           {
@@ -1010,7 +1014,7 @@ export const en = {
           {
             heading: "Text and images",
             body: [
-              "The words, photographs and design on this site belong to us, or we have permission to use them. Please ask before reproducing any of it.",
+              "The words, photographs and design on this site belong to us, or we have permission to use them. Please ask before reproducing any of them.",
               "Product names and logos belong to their owners, including the partner brands we produce for.",
             ],
           },
@@ -1170,7 +1174,7 @@ export const en = {
           {
             heading: "Where it falls short",
             body: [
-              "Some small text on tinted backgrounds sits close to the minimum contrast. Our estate photography is described by its surrounding text rather than individually. We have not yet had an independent audit.",
+              "Some small text on tinted backgrounds sits close to the minimum contrast. We have not yet had an independent audit.",
             ],
           },
           {

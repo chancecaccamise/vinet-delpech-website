@@ -34,7 +34,7 @@ export function TeamBand({ content }: { content: Content["team"] }) {
       </Reveal>
 
       <Reveal delay={150}>
-        <figure className="mx-auto max-w-[1320px] px-6 py-8 lg:px-10">
+        <figure className="page-frame py-8">
           {/* `items-start` with the rule nudged onto the first baseline — the
               caption wraps to two lines on narrow screens, and a centred rule
               then floats between them. */}

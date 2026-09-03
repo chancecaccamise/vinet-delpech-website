@@ -14,7 +14,7 @@ import type { Content } from "@/lib/content/en";
 export const es = {
   hero: {
     eyebrow: "Distillerie Vinet-Puranik · Cognac, Francia",
-    title: "Herencia destiladora francesa desde 1777",
+    title: "Tradición destiladora francesa desde 1777",
     support: "Destilado. Envejecido. Ensamblado. Embotellado. Todo bajo un mismo techo.",
     primaryCtaLabel: "Iniciar un proyecto",
     posterLabel: "Apertura: bodega de barricas, travelling lento",
@@ -24,9 +24,14 @@ export const es = {
   homeIntro: {
     kicker: "La destilería",
     paragraphs: [
-      "Situada en Brie-sous-Archiac, en el suroeste de Francia, la Destilería Vinet-Puranik une siglos de herencia destiladora francesa con medios de producción modernos.",
+      "Situada en Brie-sous-Archiac, en el suroeste de Francia, la Distillerie Vinet-Puranik une siglos de tradición destiladora francesa con medios de producción modernos.",
       "De la destilación y el envejecimiento al ensamblaje, el embotellado y el desarrollo de marcas de distribución, trabajamos para nuestras propias marcas y para socios de todo el mundo.",
     ],
+    map: {
+      ocean: "Océano Atlántico",
+      description:
+        "Mapa de las Charentes, en el suroeste de Francia: la destilería está señalada en Brie-sous-Archiac, en Charente-Maritime, al sur de Cognac y al norte de Burdeos.",
+    },
   },
 
   maisonStatement: {
@@ -44,8 +49,8 @@ export const es = {
         body: "Recetas, estilos y perfiles de líquido compuestos según su brief y su mercado, del primer boceto a la firma.",
       },
       sourcing: {
-        title: "Abastecimiento de materiales secos",
-        body: "Botellas, tapones, cápsulas y vestido seleccionados con precisión, fiabilidad y criterio de lineal.",
+        title: "Abastecimiento de materia seca",
+        body: "Botellas, tapones, cápsulas y presentación seleccionados con precisión, fiabilidad y ojo para el punto de venta.",
       },
       advisory: {
         title: "Asesoría técnica y de marketing",
@@ -68,7 +73,7 @@ export const es = {
 
   knowHow: {
     title: "Saber hacer e innovación",
-    body: "Alambiques, bodegas y naves de embotellado comparten un mismo patio en Brie-sous-Archiac, entre 100 hectáreas de viñedo en Fins Bois y Petite Champagne.",
+    body: "Alambiques, bodegas y naves de embotellado comparten un mismo patio en Brie-sous-Archiac, entre un centenar de hectáreas de viñedo en Fins Bois y Petite Champagne.",
     figureLabels: {
       stills: "alambiques",
       lines: "líneas de embotellado",
@@ -95,7 +100,7 @@ export const es = {
       "Una destilería independiente en la región de Cognac: saber hacer secular, el arte de la destilación y espirituosos premium elaborados en Francia, de la viña a la botella.",
     intro: [
       "Vinet-Puranik es una destilería de rica herencia y raíces profundas: dos familias, una casa y un patio en Brie-sous-Archiac donde cada etapa de un espirituoso ocurre bajo el mismo techo.",
-      "De la tierra a la copa. De la viña a la botella. Su sueño hecho botella.",
+      "De la tierra a la copa. De la viña a la botella. Su sueño en una botella.",
     ],
     projectCta: "Iniciar un proyecto",
     visitCta: "Visitar la finca",
@@ -111,11 +116,11 @@ export const es = {
       },
       {
         label: "El arte de la destilación",
-        body: "Uva y cereal, barrica y tiempo: compuestos hasta que el líquido responda al encargo.",
+        body: "Uva y cereal, barrica y tiempo: compuestos hasta que el líquido responda al brief.",
       },
       {
         label: "Herencia francesa",
-        body: "Viñedos de Fins Bois y Petite Champagne, una finca charentesa y las appellations que los acompañan.",
+        body: "Viñedos de Fins Bois y Petite Champagne, una finca charentesa y las denominaciones que los acompañan.",
       },
       {
         label: "Productos premium y de lujo",
@@ -130,7 +135,7 @@ export const es = {
       },
       {
         title: "Fiabilidad",
-        body: "Volúmenes, plazos y pliegos cumplidos: líneas flexibles y un único interlocutor.",
+        body: "Volúmenes, plazos y especificaciones cumplidos: líneas flexibles y un único interlocutor.",
       },
       {
         title: "Exportación mundial",
@@ -139,8 +144,8 @@ export const es = {
     ],
     crossLinkTitle: "Más sobre la casa",
     crossLinkHistory: "Nuestra cronología",
-    crossLinkPresident: "Unas palabras de la dirección",
-    crossLinkPartnerships: "Las marcas que moldeamos",
+    crossLinkTerroir: "Los viñedos y la región",
+    crossLinkPartnerships: "Las marcas a las que damos forma",
   },
 
   estate: {
@@ -150,7 +155,7 @@ export const es = {
       "Alambiques de cobre, bodegas de envejecimiento y líneas de embotellado comparten un mismo patio en Brie-sous-Archiac. Cada etapa de la vida de un espirituoso sucede aquí, en manos de la casa.",
     ctaLabel: "Visitar la finca",
     alts: {
-      stills: "Un alambique de cobre en la sala de alambiques de la Destilería Vinet-Puranik.",
+      stills: "Un alambique de cobre en la sala de alambiques de la Distillerie Vinet-Puranik.",
       cellar: "Barricas de roble reposando en una bodega de la finca.",
       vines: "Hileras de viñas al amanecer cerca de Brie-sous-Archiac.",
     },
@@ -169,7 +174,7 @@ export const es = {
       },
       bottling: {
         title: "Embotellado",
-        body: "Bajo el mismo techo, las líneas visten, llenan y sellan cada caja antes de enviarla.",
+        body: "Bajo el mismo techo, las líneas visten, llenan y sellan cada botella antes de que salga la caja.",
       },
     },
   },
@@ -178,13 +183,13 @@ export const es = {
     "montlieu-xo": {
       category: "Brandy X.O · tres años mínimo",
       descriptor:
-        "Una selección cuidada de uva, destilada en columna y envejecida al menos tres años en roble: elegante, equilibrado, aromático.",
+        "Uvas cuidadosamente seleccionadas, destiladas en columna y envejecidas al menos tres años en roble: un brandy elegante, equilibrado y aromático.",
       frameLabel: "Packshot: brandy Montlieu X.O",
     },
     "glen-mac-clay": {
       category: "Blended Scotch Whisky · tres años mínimo",
       descriptor:
-        "Blended Scotch seleccionado en el sur de las Highlands, ensamblada con una malta no turbada y madurada en barrica de Bourbon: pera, manzana y uva.",
+        "Blended Scotch seleccionado en el sur de las Highlands, ensamblado con una malta sin turba y madurado en barrica de bourbon: pera, manzana y uva.",
       frameLabel: "Packshot: Glen Mac Clay Blended Scotch Whisky",
     },
     "hold-up": {
@@ -244,7 +249,7 @@ export const es = {
     gin40: {
       category: "Ginebra · 50 cl",
       descriptor:
-        "Destilada artesanalmente en el suroeste de Francia con influencia de Las Landas: enebro, pino y mora silvestre.",
+        "Destilada artesanalmente en el suroeste de Francia con influencia de las Landas: enebro, pino y mora silvestre.",
       frameLabel: "Packshot: botella GIN40",
     },
     "nade-vodka-2022": {
@@ -289,13 +294,13 @@ export const es = {
       },
       "glen-mac-clay": {
         heritage:
-          "Glen Mac Clay Blended Scotch Whisky se seleccionó con cuidado en el sur de las Highlands. Compuesto principalmente por trigo y malta destilados en columna, se ensambla después con una blended malt sin turba de la misma destilería, destilada en alambique de cobre, y madura en barrica de Bourbon un mínimo de tres años.",
+          "Glen Mac Clay Blended Scotch Whisky se seleccionó con cuidado en el sur de las Highlands. Compuesto principalmente por trigo y malta destilados en columna, se ensambla después con una malta sin turba de la misma destilería, destilado en alambique de cobre, y madura en barrica de bourbon un mínimo de tres años.",
         story:
           "Este Scotch se elaboró en la más pura tradición: destilado con pasión y envejecido varios años en barrica de roble. Para disfrutarlo en trago largo, con agua con gas o ginger beer.",
         notes: {
           eye: "Brillante, con ligeros reflejos dorados",
           nose: "Notas frutales de pera, manzana y uva",
-          palate: "Equilibrado y suave, maltoso, sobre una pera refrescante",
+          palate: "Equilibrado y suave, maltoso, con un fresco recuerdo de pera",
         },
         storyFrameLabel: "Ambiente: Glen Mac Clay en un paisaje de las Highlands",
       },
@@ -307,9 +312,9 @@ export const es = {
       name: "Brandy",
       title: "Brandy",
       summary:
-        "Brandy de uva destilado en columna y envejecido en roble: deliberadamente fuera de la denominación cognac.",
+        "Brandy de uva destilado en columna y envejecido en roble: deliberadamente fuera de la denominación Cognac.",
       intro: [
-        "Un brandy nacido de una selección cuidada de uva, destilado en columna y no en el alambique charentais que exige la denominación. Método distinto, espirituoso distinto: por eso tiene página propia en lugar de un sitio entre los cognacs.",
+        "Un brandy nacido de una selección cuidada de uva, destilado en columna y no en el alambique de cobre que exige la denominación. Método distinto, espirituoso distinto: por eso tiene página propia en lugar de un sitio entre los cognacs.",
         "Montlieu X.O es el de la casa: al menos tres años en barrica de roble, recomendado como digestivo, solo o con hielo.",
       ],
     },
@@ -320,14 +325,14 @@ export const es = {
         "Licores de fruta y licores sobre base de cognac, macerados y ensamblados según el brief.",
       intro: [
         "Licores de fruta elaborados en la región de Cognac: fruta entera macerada y ensamblada sin aditivos artificiales, sobre alcohol neutro o sobre base de cognac, a la graduación y el dulzor que pide un mercado.",
-        "La casa ha construido licores de mango de las dos maneras —uno sobre la fruta sola, otro infusionado en un cognac premiado— y la misma vía está abierta a cualquier fruta que traiga un socio.",
+        "La casa ha elaborado licores de mango de las dos maneras: uno solo con la fruta, otro infusionado en un cognac premiado; y la misma vía está abierta a cualquier fruta que traiga un socio.",
       ],
     },
     cognac: {
       name: "Cognac",
       title: "Cognac",
       summary:
-        "La denominación de la casa, trabajada para nuestros socios desde los crus de Brie-sous-Archiac.",
+        "La denominación de la casa, trabajada para nuestros socios a partir de los crus que rodean Brie-sous-Archiac.",
       intro: [
         "La casa se asienta entre los crus de Petite Champagne y Fins Bois, y el cognac es el espirituoso que lleva más tiempo elaborando. Para nuestros socios, eso significa eaux-de-vie seleccionadas y ensambladas según un brief, y después envejecidas en roble del Limousin hasta la calidad que pide el mercado: VS, VSOP, XO.",
         "Patte Blanche es su expresión ecológica: certificada por ECOCERT, destilada a mano en Arthenac, sin insumos artificiales de la viña a la copa.",
@@ -339,8 +344,8 @@ export const es = {
       summary:
         "Doble destilación charentesa y afinado en roble de cognac, tanto para malta como para blend.",
       intro: [
-        "Whisky elaborado a la manera charentesa: doble destilación en los mismos alambiques de cobre que la casa emplea para el cognac, y después reposo en barricas de roble del Limousin que antes lo contuvieron.",
-        "Glen Mac Clay es la botella de la casa en la categoría: un Blended Scotch seleccionado en el sur de las Highlands, casado con una malta sin turba y madurado en barrica de Bourbon.",
+        "Para nuestros socios, el whisky puede elaborarse a la manera charentesa: doble destilación en los mismos alambiques de cobre que la casa emplea para el cognac, y después reposo en barricas de roble del Limousin que antes contuvieron cognac.",
+        "Glen Mac Clay es la botella de la casa en la categoría: un Blended Scotch seleccionado en el sur de las Highlands, casado con una malta sin turba y madurado en barrica de bourbon.",
       ],
     },
     rum: {
@@ -349,7 +354,7 @@ export const es = {
       summary:
         "Destilados de caña de origen extranjero, envejecidos, afinados, ensamblados y vestidos en Francia.",
       intro: [
-        "El ron llega como destilado y sale como marca. La casa se abastece en los orígenes cañeros y realiza aquí, en la Charente, el trabajo que da carácter a un ron: envejecimiento, afinado en madera de cognac, ensamblaje y vestido.",
+        "El ron llega como destilado y sale como marca. La casa se abastece en los países productores de caña y realiza aquí, en la Charente, el trabajo que da carácter a un ron: envejecimiento, afinado en madera de cognac, ensamblaje y presentación.",
         "MACA se destila en Mauricio y se afina en Francia sobre canela y haba tonka; TIJUCA es un ensamblaje brasileño, cobrizo, sobre vainilla, pimienta y miel.",
       ],
     },
@@ -360,7 +365,7 @@ export const es = {
         "El enebro compuesto según el brief de un socio, macerado y destilado en cobre.",
       intro: [
         "Es en la ginebra donde mejor se lee un brief: la lista de botánicos es la marca. La casa macera y destila en cobre, y puede llevar una receta del primer boceto a la caja precintada sin salir del patio.",
-        "Gigi en Provence es ecológica, sobre violeta, romero y una nota discreta de oliva; GIN40 lleva Las Landas: pino y mora silvestre.",
+        "Gigi en Provence es ecológica, sobre violeta, romero y una nota discreta de oliva; GIN40 lleva el sello de las Landas: pino y mora silvestre.",
       ],
     },
     vodka: {
@@ -369,17 +374,17 @@ export const es = {
       summary: "Un vodka de uva bordelesa, destilado y lanzado por añadas.",
       intro: [
         "Un vodka no tiene por qué ser neutro de origen. Nade se destila a partir de uvas bordelesas y se lanza por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
-        "La añada 2019 reposó cuatro meses en barricas de vino tinto de Fronsac y se embotelló en menos de 250 botellas numeradas; la 2022 es la añada en curso.",
+        "La añada 2019 reposó cuatro meses en barricas de vino tinto de Fronsac y se embotelló en menos de 250 botellas numeradas; la 2022 es la última añada que mostramos aquí.",
       ],
     },
     aperitifs: {
-      name: "Aperitivos y spirit drinks",
-      title: "Aperitivos y spirit drinks",
+      name: "Aperitivos y bebidas espirituosas",
+      title: "Aperitivos y bebidas espirituosas",
       summary:
-        "Productos de uva de baja graduación: aperitivos franceses y spirit drinks a base de cognac.",
+        "Productos de uva de menor graduación: aperitivos franceses y bebidas espirituosas a base de cognac.",
       intro: [
         "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido en trago largo, frío o con hielo.",
-        "Sephina es un spirit drink de 30 %: 56 % de cognac VSOP ensamblado con 44 % de Pineau des Charentes y, por tanto, deliberadamente fuera de la denominación cognac.",
+        "Sephina es una bebida espirituosa de 30 %: 56 % de cognac VSOP ensamblado con 44 % de Pineau des Charentes y, por tanto, deliberadamente fuera de la denominación Cognac.",
       ],
     },
   },
@@ -399,14 +404,14 @@ export const es = {
     backToPartners: "Volver a socios",
     rangeHeading: "La gama",
     visitSite: "Ver el sitio",
-    visitSiteAria: "Ver el sitio de {name} (abre una pestaña nueva)",
+    visitSiteAria: "Ver el sitio de {name} (se abre en una pestaña nueva)",
     viewRange: "Ver la gama",
     viewRangeAria: "Ver la gama de {name}",
     metaDescription:
-      "Las dos casas junto a la Destilería Vinet-Puranik: Les Brûleries Modernes, cuyos aperitivos y espirituosos se elaboran en la finca, y Puranique, la marca de la familia.",
+      "Las dos casas junto a la Distillerie Vinet-Puranik: Les Brûleries Modernes, cuyos aperitivos y espirituosos se elaboran en la finca, y Puranique, la marca de la familia.",
     companies: {
       "les-bruleries-modernes": {
-        descriptor: "Aperitivos y espirituosos franceses para hostelería",
+        descriptor: "Aperitivos y espirituosos franceses para el canal HORECA",
         intro:
           "Fundada en 2019 y construida sobre los alambiques de la destilería, Les Brûleries Modernes reúne una cartera de aperitivos y espirituosos franceses para bares, restaurantes y tiendas independientes. Sus botellas nacen en el mismo patio, en Brie-sous-Archiac.",
         frameLabel: "Packshot: Gin Hold Up",
@@ -415,7 +420,7 @@ export const es = {
       puranique: {
         descriptor: "La marca de la familia",
         intro:
-          "Puranique es la gama de espirituosos franceses de la casa. Tiene su propio sitio, y ahí es donde vive la gama: coñac, vodka, pineau y licores, con las notas de cata y las medallas que les corresponden.",
+          "Puranique es la gama de espirituosos franceses de la familia. Tiene su propio sitio, y ahí es donde se encuentra la gama: cognac, vodka, pineau y licores, con las notas de cata y las distinciones que les corresponden.",
         frameLabel: "Packshot: Puranique Cognac V.S.O.P",
         linkLabel: "puraniques.com",
       },
@@ -425,7 +430,7 @@ export const es = {
   privateLabel: {
     title: "Marca de distribuidor y marca blanca",
     intro: [
-      "La mayoría de estas botellas pertenecen a los importadores, distribuidores y propietarios de marcas que llegaron a Brie-sous-Archiac con un mercado en mente: la casa compone el líquido, gestiona el vestido y envía la caja terminada con su nombre.",
+      "La mayoría de estas botellas pertenecen a importadores, minoristas y propietarios de marcas que llegaron a Brie-sous-Archiac con un mercado en mente: la casa compone el líquido, gestiona la presentación y envía la caja terminada a su nombre.",
       "Están agrupadas por categorías, junto a las botellas de la propia casa: la prueba de un alcance amplio, de la uva al cereal y a la caña, y el camino más corto hacia lo más parecido al proyecto que tiene en mente.",
     ],
     note: "Distribuido en Francia por Mähler-Besse.",
@@ -435,7 +440,7 @@ export const es = {
     brandCountOther: "{count} marcas",
     inCollectionOne: "1 marca en la colección",
     inCollectionOther: "{count} marcas en la colección",
-    explore: "Descubrir: {name}",
+    explore: "Descubrir {name}",
     otherCategories: "Otras categorías",
     backToAll: "Volver a todas las categorías",
     viewDetails: "Ver detalle",
@@ -443,15 +448,15 @@ export const es = {
     readTheStory: "Leer la historia",
     readTheStoryAria: "Leer la historia de {name}",
     houseHeading: "De la casa",
-    partnerHeading: "Moldeadas para nuestros socios",
+    partnerHeading: "Creadas para nuestros socios",
     metaDescription:
-      "Marca de distribuidor y marca blanca de la Destilería Vinet-Puranik: cognac, brandy, whisky, ron, ginebra, vodka, licores y aperitivos elaborados para importadores, distribuidores y propietarios de marcas, agrupados por categoría.",
+      "Marca de distribuidor y marca blanca de la Distillerie Vinet-Puranik: cognac, brandy, whisky, ron, ginebra, vodka, licores y aperitivos elaborados para importadores, minoristas y propietarios de marcas, agrupados por categoría.",
   },
 
   featurePanels: {
     bespoke: {
       title: "Marca de distribución y espirituosos a medida",
-      body: "Programas de marca de distribución y marca blanca construidos en torno a su mercado: receta, líquido, vestido y dosier, llevados del primer boceto a una caja precintada con su nombre.",
+      body: "Programas de marca de distribución y marca blanca construidos en torno a su mercado: receta, líquido, presentación y dosier, llevados del primer boceto a una caja precintada con su nombre.",
       ctaLabel: "Iniciar un proyecto",
       frameLabel: "Imagen: barricas envejeciendo en la bodega",
     },
@@ -466,8 +471,8 @@ export const es = {
     title: "Todos los espirituosos, una sola casa",
     intro:
       "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
-    frameLabel: "El aguardiente nuevo cayendo del alambique a un recipiente de cobre",
-    allProducts: "Todos nuestros productos",
+    frameLabel: "Eau-de-vie nueva saliendo del alambique hacia un recipiente de cobre",
+    allProducts: "Todas las categorías",
   },
 
   timeline: {
@@ -483,14 +488,14 @@ export const es = {
       { year: "1934", body: "Félix Chartier funda su primera destilería de cognac." },
       {
         year: "1972",
-        body: "Transmite la destilería a su sobrino Guy Vinet, que le da su nombre y más tarde la cede a su hija Annie Delannoy y a su yerno Bruno Delannoy.",
+        body: "Félix Chartier transmite la destilería a su sobrino Guy Vinet, que le da su nombre y más tarde la cede a su hija Annie Delannoy y a su yerno Bruno Delannoy.",
       },
       {
         year: "2011",
         body: "Ambas familias deciden trabajar juntas y fusionarse: nace la Distillerie Vinet-Puranik.",
       },
       {
-        year: "2014-2017",
+        year: "2014–2017",
         body: "Se abren una nueva planta de embotellado y un almacén, con la instalación de una cuarta línea.",
       },
       {
@@ -506,10 +511,9 @@ export const es = {
 
   leadership: {
     label: "Dirección",
-    homeTitle: "Unas palabras de la dirección",
     title: "Dos líderes, una casa",
     intro:
-      "Una destilería familiar en la Charente y un grupo con oficinas en cuatro continentes: la casa la dirigen ambos.",
+      "Una destilería familiar en la Charente y un grupo con oficinas en tres continentes: la casa la dirigen ambos.",
     leaders: {
       bruno: {
         name: "Bruno Delannoy",
@@ -519,7 +523,7 @@ export const es = {
           "Después de asumir a principios de los años noventa la empresa familiar transmitida de generación en generación, decidí volcarme en la exportación, y descubrí otro mundo.",
           "Más de treinta años después, con un equipo vivo, motivado y multicultural, la Distillerie Vinet-Puranik está presente en más de veinte países.",
         ],
-        portraitAlt: "Bruno Delannoy en la destilería, con una copa de cata en la mano.",
+        portraitAlt: "Bruno Delannoy en la sala de alambiques, con una copa de cata en la mano.",
       },
       rahul: {
         name: "Rahul Puranik",
@@ -529,7 +533,7 @@ export const es = {
           "La Distillerie Vinet-Puranik combina la experiencia histórica de la destilación francesa con la red internacional del grupo.",
           "Queremos reforzar nuestra presencia en los mercados internacionales apoyándonos en la infraestructura y las competencias que ya existen.",
         ],
-        portraitAlt: "Rahul Puranik, director general del grupo, Distillerie Vinet-Puranik.",
+        portraitAlt: "Rahul Puranik, director ejecutivo de la Distillerie Vinet-Puranik.",
       },
     },
   },
@@ -538,7 +542,7 @@ export const es = {
     label: "Nuestro grupo",
     title: "El Sawnee Group",
     body: [
-      "El Sawnee Group es una organización multinacional con sede en Atlanta, Estados Unidos. El grupo aporta su experiencia multinacional y su visión global de los negocios a varios sectores: aviación, inversión inmobiliaria, hotelería, destilación, distribución de bebidas, logística internacional y compras estratégicas.",
+      "El Sawnee Group es una organización multinacional con sede en Atlanta, Estados Unidos. El grupo aporta su experiencia multinacional y su visión global de los negocios a varios sectores: aviación, inversión inmobiliaria, hotelería, destilación, venta minorista de bebidas, logística internacional y compras estratégicas.",
       "Gracias a su cartera diversificada y a su red internacional, el Sawnee Group opera en varias regiones, con oficinas en Francia, Irlanda, Singapur, India y Estados Unidos. Esa presencia le permite unir la experiencia operativa con un acceso estratégico a los mercados.",
     ],
     industriesLabel: "Sectores",
@@ -547,7 +551,7 @@ export const es = {
       "Inversión inmobiliaria",
       "Hotelería",
       "Destilación",
-      "Distribución de bebidas",
+      "Venta minorista de bebidas",
       "Logística internacional",
       "Compras estratégicas",
     ],
@@ -561,23 +565,49 @@ export const es = {
     },
   },
 
-  presidentWord: {
-    title: "Unas palabras del director general",
-    quote: "La pasión ante todo",
-    body: [
-      "Tras hacerme cargo de la empresa familiar en 1994, decidí abrirme a la exportación, y descubrí otro mundo. Asia en particular me cautivó, y desde entonces ocupa buena parte de mi vida.",
-      "Entendí enseguida que los importadores con los que me reunía querían productos a medida, hechos según sus propios deseos. Daba igual el país: se sentían más implicados en productos que ellos mismos habían ayudado a diseñar.",
-      "Así me convertí en promotor de espirituosos a medida y en especialista en marcas de distribución. Más de treinta años después, con un equipo vivo, motivado y multicultural, Vinet-Puranik está presente en más de veinte países.",
+  terroir: {
+    kicker: "Los viñedos y la región",
+    title: "Oficio francés, arraigado en la Charente",
+    intro: [
+      "Brie-sous-Archiac se encuentra en el sur de la denominación Cognac, donde se unen los crus de Petite Champagne y Fins Bois. Alrededor del patio, un centenar de hectáreas de viñas se extienden por suaves colinas calcáreas entre Cognac y Burdeos, a una hora de la costa atlántica.",
+      "El oficio es el propio de la región: uvas blancas prensadas pocas horas después de la vendimia, vino destilado dos veces en alambiques de cobre, eau-de-vie que reposa en roble francés. La casa mantiene esos métodos en el centro de todo lo que elabora, para sus propias marcas y para sus socios en todo el mundo.",
     ],
-    portraitAlt:
-      "Bruno Delannoy, director general de la Distillerie Vinet-Puranik, fotografiado en la destilería.",
-    signatureRole: "Director general",
+    facetsLabel: "De la viña a la botella",
+    facets: [
+      {
+        title: "La región",
+        body: "La Haute-Saintonge, en Charente-Maritime: colinas de viñas, iglesias románicas y pueblos de piedra, con Cognac a treinta y cinco minutos al norte y el estuario de la Gironda al oeste.",
+      },
+      {
+        title: "Los crus",
+        body: "Petite Champagne y Fins Bois, dos de los seis crus de la denominación, sobre suelos de creta y caliza que dan a las eaux-de-vie su finura y su longitud.",
+      },
+      {
+        title: "La uva",
+        body: "Ugni blanc, la uva blanca con la que se elabora casi todo el cognac: vendimiada a principios de otoño, prensada el mismo día y destilada durante todo el invierno.",
+      },
+      {
+        title: "El oficio",
+        body: "Doble destilación en alambiques charenteses de cobre y, después, años en barricas de roble del Limousin: el método que fijó la denominación, todavía practicado a mano en la casa.",
+      },
+    ],
+    alts: {
+      landscape: "Viñas que se extienden hasta una hilera de árboles bajo un cielo azul, cerca de Brie-sous-Archiac.",
+      rows: "Hileras de viñas hacia el horizonte a finales del verano.",
+      grapes: "Uvas blancas maduras en la cepa, pocos días antes de la vendimia.",
+    },
+    captions: {
+      landscape: "El viñedo alrededor de Brie-sous-Archiac",
+      rows: "Las viñas a finales del verano",
+      grapes: "Antes de la vendimia",
+    },
+    ctaLabel: "Visitar la finca",
   },
 
   team: {
-    alt: "Los alambiques de cobre en la sala de alambiques de la Destilería Vinet-Puranik en Brie-sous-Archiac.",
+    alt: "Los alambiques de cobre en la sala de alambiques de la Distillerie Vinet-Puranik en Brie-sous-Archiac.",
     label: "La casa",
-    caption: "La sala de alambiques: Brie-sous-Archiac, Charente",
+    caption: "La sala de alambiques: Brie-sous-Archiac, Charente-Maritime",
   },
 
   testimonials: {
@@ -586,7 +616,7 @@ export const es = {
     items: {
       "private-label": {
         quote:
-          "De la primera muestra a la caja precintada, la casa siguió nuestro pliego al pie de la letra — y el cognac entregado superó al que habíamos pedido.",
+          "De la primera muestra a la caja precintada, la casa siguió nuestro brief al pie de la letra, y el cognac que nos entregaron superó al que habíamos pedido.",
       },
       creation: {
         quote:
@@ -594,7 +624,7 @@ export const es = {
       },
       export: {
         quote:
-          "Tres mercados, tres normativas, un solo embotellado — su equipo se ocupó del cumplimiento normativo para que el nuestro se ocupara de la marca.",
+          "Tres mercados, tres normativas, un solo embotellado: su equipo se ocupó del cumplimiento normativo para que el nuestro se ocupara de la marca.",
       },
     },
   },
@@ -602,11 +632,11 @@ export const es = {
   contact: {
     kicker: "Iniciar un proyecto",
     title: "Cree su próximo espirituoso con Vinet-Puranik",
-    body: "Cuéntenos su brief: ambición de producto, mercado y calendario. La casa responde con un recorrido meditado, de la primera idea a la botella terminada.",
+    body: "Cuéntenos su brief: ambición de producto, mercado y calendario. La casa responde con una hoja de ruta meditada, de la primera idea a la botella terminada.",
     metaDescription:
-      "Hable con Distillerie Vinet-Puranik sobre espirituosos a medida, marca de distribución, granel, embotellado o una visita. Contacto comercial con nombre, líneas directas y formulario.",
+      "Hable con Distillerie Vinet-Puranik sobre espirituosos a medida, marca de distribución, granel, embotellado o una visita. Un interlocutor comercial con nombre y apellidos, líneas directas y formulario de consulta.",
     intro: [
-      "Cuéntenos qué quiere construir: el producto, el mercado, el calendario. Cada consulta llega a una persona, no a una cola.",
+      "Cuéntenos qué quiere construir: el producto, el mercado, el calendario. Cada consulta llega a una persona, no a un buzón genérico.",
     ],
     formHeading: "Enviar una consulta",
     formIntro: "Los campos marcados con asterisco son obligatorios.",
@@ -644,9 +674,9 @@ export const es = {
         "Se ha producido un error y su consulta no se ha enviado. Escríbanos directamente, por favor.",
       errorReview: "Revise los campos señalados, por favor.",
       errors: {
-        name: "Indíquenos su nombre, por favor.",
+        name: "Indíquenos su nombre.",
         email: "Indique una dirección de correo válida.",
-        enquiryType: "Elija la naturaleza de su consulta.",
+        enquiryType: "Elija el tipo de consulta.",
         message: "Cuéntenos algo sobre su proyecto.",
       },
     },
@@ -659,7 +689,7 @@ export const es = {
     legalHeading: "Legal",
     contactHeading: "Contacto",
     capabilities: [
-      "Marca de distribuidor y espirituosos a medida",
+      "Marca de distribución y espirituosos a medida",
       "Saber hacer e innovación",
       "Lo que producimos",
     ],
@@ -674,8 +704,8 @@ export const es = {
   },
 
   ageGate: {
-    title: "Verificación de edad requerida",
-    subhead: "Debe tener la edad legal para consumir alcohol para acceder a este sitio",
+    title: "Es necesario verificar su edad",
+    subhead: "Para acceder a este sitio debe tener la edad legal para consumir alcohol",
     dobPrompt: "Introduzca su fecha de nacimiento",
     labels: { month: "Mes", day: "Día", year: "Año" },
     placeholders: { month: "MM", day: "DD", year: "AAAA" },
@@ -686,7 +716,7 @@ export const es = {
       future: "Introduzca una fecha pasada.",
     },
     deniedTitle: "Lo sentimos",
-    deniedMessage: "Debe tener al menos {age} años para visitar Vinet-Puranik.",
+    deniedMessage: "Debe tener al menos {age} años para acceder a este sitio.",
     deniedBack: "Volver atrás",
     legal:
       "Al entrar, confirma que tiene al menos {age} años y que es legal consultar contenido relacionado con el alcohol en su país de residencia. Su fecha de nacimiento se comprueba en su navegador: nunca se nos envía ni se almacena.",
@@ -697,13 +727,13 @@ export const es = {
     title: "La finca de Brie-sous-Archiac",
     heroLabel: "Apertura: patio de la finca y bodegas, luz dorada",
     intro: [
-      "Entre los crus de Petite Champagne y Fins Bois, la destilería abre su patio, sus bodegas y sus alambiques tanto a socios profesionales como a visitantes curiosos.",
-      "Recorra las bodegas de barricas, sitúese junto a los alambiques de cobre y pruebe el trabajo de la casa allí donde se hace.",
+      "Entre los crus de Petite Champagne y Fins Bois, la destilería abre su patio, sus bodegas y sus alambiques tanto a socios comerciales como a visitantes curiosos.",
+      "Recorra las bodegas de envejecimiento, sitúese junto a los alambiques de cobre y pruebe el trabajo de la casa allí donde se hace.",
     ],
     expect: [
       {
         title: "Las bodegas",
-        body: "Las naves de crianza donde reposan cognacs, brandies y whiskies afinados en barrica.",
+        body: "Las bodegas de envejecimiento donde reposan cognacs, brandies y whiskies afinados en barrica.",
       },
       {
         title: "La sala de alambiques",
@@ -711,18 +741,18 @@ export const es = {
       },
       {
         title: "La sala de catas",
-        body: "Catas guiadas de las marcas de la casa y de sus trabajos en curso.",
+        body: "Catas en mesa de los espirituosos de la casa y de sus creaciones en curso, con cita previa.",
       },
     ],
     entries: [
       {
         title: "Visitas",
-        body: "Recorridos guiados por las bodegas, la destilería y las naves de embotellado.",
+        body: "Recorridos guiados por las bodegas, la sala de alambiques y las naves de embotellado.",
         frameLabel: "Tarjeta: pasillo de la bodega de barricas",
       },
       {
         title: "Catas",
-        body: "Catas sentadas en la sala de catas de la finca.",
+        body: "Catas en mesa en la sala de catas de la finca.",
         frameLabel: "Tarjeta: copas de cata sobre roble",
       },
     ],
@@ -733,7 +763,7 @@ export const es = {
     practicalCta: "Información práctica",
     book: {
       heading: "Reservar una visita",
-      body: "Todas las visitas son con cita previa. Envíenos las fechas que tiene en mente, el número de personas y la experiencia que desea: la casa se lo confirmará a vuelta de correo.",
+      body: "Todas las visitas son con cita previa. Envíenos las fechas que tiene en mente, el número de personas y si desea una visita, una cata o ambas: la casa se lo confirmará a vuelta de correo.",
       ctaLabel: "Reservar mediante el formulario",
       mailSubject: "Reserva de visita: finca Vinet-Puranik",
     },
@@ -744,25 +774,13 @@ export const es = {
         { label: "Horario", value: "Con cita previa. De lunes a viernes" },
         {
           label: "Acceso",
-          value: "A 20 minutos de Jonzac y 35 de Cognac; aparcamiento en el recinto",
+          value: "A 20 minutos de Jonzac y 35 de Cognac; estacionamiento en el recinto",
         },
         { label: "Idiomas", value: "Visitas en francés e inglés" },
       ],
     },
     metaDescription:
       "Visite la finca Vinet-Puranik en Brie-sous-Archiac: bodegas, alambiques de cobre y catas en el corazón de la región de Cognac. Visitas y catas con cita previa.",
-  },
-
-  experiences: {
-    included: "Incluye",
-    book: "Reservar esta experiencia",
-    orEmail: "O escribir a la casa",
-    bookingSubject: "Reserva de visita: {name}",
-    duration: "Duración",
-    groupSize: "Grupo",
-    languages: "Idiomas",
-    price: "Tarifa",
-    onEnquiry: "Bajo consulta",
   },
 
   tours: {
@@ -777,48 +795,22 @@ export const es = {
     crossLinkCta: "Descubrir nuestras catas",
     crossLinkBack: "Volver a la finca",
     metaDescription:
-      "Visitas privadas de la Destilería Vinet-Puranik en Brie-sous-Archiac para particulares, grupos, distribuidores y socios comerciales. Visitas y catas con cita previa.",
+      "Visitas privadas a la Distillerie Vinet-Puranik en Brie-sous-Archiac para particulares, grupos, distribuidores y socios comerciales. Visitas y catas con cita previa.",
   },
 
   tastings: {
     kicker: "Visítenos · Catas",
     title: "Las catas en la finca",
     intro:
-      "Catas sentadas en la sala de catas de la finca: del recorrido por las marcas de la casa a los clásicos charenteses reunidos.",
-    note: "Selecciones, duraciones y tarifas pendientes de confirmación por la casa; todas las catas con cita previa.",
+      "Se pueden organizar catas en mesa en la sala de catas de la finca para particulares, grupos, clientes, distribuidores, socios comerciales e invitados especiales.",
+    body: "Las visitas y catas están disponibles con cita previa. Póngase en contacto con nuestra oficina para organizar su visita.",
+    ctaLabel: "Contáctenos",
+    frameLabel: "Eau-de-vie nueva saliendo del alambique hacia un recipiente de cobre",
     crossLinkTitle: "¿Prefiere recorrer antes las bodegas?",
     crossLinkCta: "Descubrir nuestras visitas",
     crossLinkBack: "Volver a la finca",
     metaDescription:
-      "Catas sentadas en la finca Vinet-Puranik: selección signature de la gama, cognac y Pineau reunidos. Con cita previa en Brie-sous-Archiac.",
-    items: {
-      "signature-tasting": {
-        name: "Cata Signature",
-        duration: "1 hora",
-        groupSize: "De 2 a 12 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Cinco espirituosos de toda la colección de la casa",
-          "Guiada por un miembro del comité de cata",
-          "Notas de cata para llevar",
-        ],
-        body: "La casa en cinco copas: ginebra, whisky, ron, Pineau des Charentes y cognac, catados uno junto a otro.",
-        frameLabel: "Cata: cinco copas sobre la mesa de catas",
-      },
-      "cognac-and-pineau-flight": {
-        name: "Cata de Cognac y Pineau",
-        duration: "45 minutos",
-        groupSize: "De 2 a 12 personas",
-        languages: "Francés · Inglés",
-        includes: [
-          "Los cognacs Puranique por edad",
-          "Brigitte et Louise, tinto y blanco",
-          "Bocados de maridaje regional",
-        ],
-        body: "Los clásicos charenteses: la marca de cognac de la casa y su Pineau, catados como los bebe la región.",
-        frameLabel: "Cata: copas de cognac y copas de Pineau",
-      },
-    },
+      "Catas en mesa de los espirituosos de la casa en la finca Vinet-Puranik, en Brie-sous-Archiac, para particulares, grupos, distribuidores y socios comerciales. Visitas y catas con cita previa.",
   },
 
   nav: {
@@ -827,7 +819,7 @@ export const es = {
       links: [
         "Nuestra historia",
         "Saber hacer e innovación",
-        "Unas palabras de la dirección",
+        "Nuestra dirección",
         "Nuestra cronología",
         "Eventos",
       ],
@@ -871,15 +863,15 @@ export const es = {
     // house's request that they be reachable without going through the estate
     // page first.
     toursTastings: {
-      label: "Visitas y Catas",
+      label: "Visitas y catas",
       links: ["Visitas", "Catas"],
-      featuredHeading: "Experiencias favoritas",
+      featuredHeading: "En la finca",
       featured: [
         {
           label: "Visitas privadas",
           frameLabel: "Destacado: pasillo de la bodega de barricas",
         },
-        { label: "Cata Signature", frameLabel: "Destacado: la sala de catas de la finca" },
+        { label: "Las catas en la finca", frameLabel: "Destacado: la sala de catas de la finca" },
       ],
       viewAll: "Prepare su visita",
     },
@@ -909,10 +901,18 @@ export const es = {
   },
 
   metadata: {
-    homeTitle: "Herencia destiladora francesa desde 1777",
+    keywords: [
+      "espirituosos a medida",
+      "espirituosos de marca blanca",
+      "destilación por encargo",
+      "embotellado a medida",
+      "destilería de la región de Cognac",
+      "espirituosos de marca de distribuidor",
+    ],
+    homeTitle: "Tradición destiladora francesa desde 1777",
     titleTemplate: "Vinet-Puranik · %s",
     description:
-      "Destilería familiar de la región de Cognac que diseña espirituosos a medida, marcas de distribución y marca blanca, soluciones de embotellado y programas de desarrollo de producto para socios comerciales en más de veinte países.",
+      "Destilería familiar de la región de Cognac que diseña espirituosos a medida, programas de marca de distribución y marca blanca, soluciones de embotellado y desarrollo de producto para socios comerciales en más de veinte países.",
     aboutTitle: "Nuestra historia",
     privateLabelTitle: "Marca de distribuidor y marca blanca",
     partnersTitle: "Socios",
@@ -935,19 +935,19 @@ export const es = {
         name: "Ejemplo: cata profesional, París",
         location: "París, Francia",
         description:
-          "Una cata en mesa de la gama de la casa para importadores y propietarios de marcas, dirigida por el maestro bodeguero.",
+          "Una cata en mesa de la gama de la casa para importadores y propietarios de marcas, dirigida por el maestro de bodega.",
       },
       "sample-harvest-open-day": {
         name: "Ejemplo: jornada de puertas abiertas de la vendimia",
         location: "Brie-sous-Archiac",
         description:
-          "La finca abre su patio durante la vendimia: las prensas en marcha, los alambiques en calor y las eaux-de-vie nuevas recién salidas del alambique.",
+          "La finca abre su patio durante la vendimia: las prensas en marcha, los alambiques encendidos y las eaux-de-vie nuevas recién salidas del alambique.",
       },
       "sample-distillery-day": {
         name: "Ejemplo: jornada en la destilería",
         location: "Brie-sous-Archiac",
         description:
-          "Una jornada en la sala de alambiques con el equipo de destilación, de la primera calentada al corte, para terminar en las bodegas.",
+          "Una jornada en la sala de alambiques con el equipo de destilación, del primer calentamiento al corte, para terminar en las bodegas.",
       },
     },
   },
@@ -966,7 +966,7 @@ export const es = {
           {
             heading: "La empresa",
             body: [
-              "Este sitio lo edita Distillerie Vinet-Puranik, {legalForm} con un capital social de {shareCapital}.",
+              "Este sitio lo edita Distillerie Vinet-Puranik, una {legalForm} con un capital social de {shareCapital}.",
               "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, Francia.",
               "Teléfono +33 5 46 49 10 10. Correo electrónico contact@vinet-puranik.com.",
             ],
@@ -979,7 +979,7 @@ export const es = {
             ],
           },
           {
-            heading: "Director de la publicación",
+            heading: "Directores de la publicación",
             body: ["{ceoName}, {ceoRole}. {gmName}, {gmRole}."],
           },
           {
@@ -990,7 +990,7 @@ export const es = {
             heading: "Textos e imágenes",
             body: [
               "Los textos, las fotografías y el diseño de este sitio nos pertenecen, o contamos con permiso para usarlos. Pregúntenos antes de reproducir cualquier parte.",
-              "Los nombres de producto y los logotipos pertenecen a sus titulares, incluidos los de las marcas de socios que elaboramos.",
+              "Los nombres de producto y los logotipos pertenecen a sus titulares, incluidos los de las marcas asociadas para las que producimos.",
             ],
           },
           {
@@ -1004,13 +1004,13 @@ export const es = {
         metaDescription:
           "El sitio de Vinet-Puranik solo recoge lo que usted escribe en el formulario. Sin analítica, sin publicidad y sin rastreo.",
         intro:
-          "Recogemos casi nada. Este sitio no tiene analítica, ni publicidad, ni rastreo.",
+          "No recogemos casi nada. Este sitio no tiene analítica, ni publicidad, ni rastreo.",
         sections: [
           {
             heading: "Qué recogemos",
             body: [
               "Solo lo que usted escribe en el formulario: su nombre, su empresa si la indica, su correo electrónico, el tipo de consulta y su mensaje.",
-              "Lo usamos para leer su consulta y responderla. Nada más. No elaboramos perfiles, no le añadimos a ninguna lista de correo y nunca vendemos ni cedemos sus datos.",
+              "Lo usamos para leer su consulta y responderla. Nada más. No elaboramos perfiles, no incluimos su dirección en ninguna lista de correo y nunca vendemos ni cedemos sus datos.",
             ],
           },
           {
@@ -1128,7 +1128,7 @@ export const es = {
       accessibility: {
         title: "Accesibilidad",
         metaDescription:
-          "Cómo funciona el sitio de Vinet-Puranik para quienes navegan con teclado, con lector de pantalla o con ajustes de movimiento y contraste.",
+          "Cómo funciona el sitio de Vinet-Puranik para quienes navegan con teclado, con lector de pantalla o con ajustes de reducción de movimiento y de contraste.",
         intro: "Queremos que este sitio funcione para todo el mundo. Este es su estado actual.",
         sections: [
           {
@@ -1143,17 +1143,17 @@ export const es = {
             body: [
               "Cada página tiene un único encabezado principal y un enlace para saltar al contenido. Los menús, el selector de idioma y el formulario funcionan con teclado, y siempre se ve dónde está.",
               "Si su dispositivo pide reducir el movimiento, todas las animaciones del sitio se desactivan. Las fotografías que aportan información llevan descripción; las decorativas se omiten en lugar de leerse dos veces.",
-              "Los errores del formulario se anuncian, se señalan con algo más que el color y le llevan al campo que hay que corregir.",
+              "Los errores del formulario se anuncian, se señalan con algo más que el color y sitúan el foco en el campo que hay que corregir.",
             ],
           },
           {
             heading: "Lo que falta por mejorar",
             body: [
-              "Algunos textos pequeños sobre fondos con color quedan cerca del contraste mínimo. Nuestras fotografías de la finca se describen por el texto que las rodea y no de forma individual. Todavía no hemos encargado una auditoría independiente.",
+              "Algunos textos pequeños sobre fondos con color quedan cerca del contraste mínimo. Todavía no hemos encargado una auditoría independiente.",
             ],
           },
           {
-            heading: "Cuéntenos si algo le bloquea",
+            heading: "Cuéntenos si algo se lo impide",
             body: [
               "Escriba a contact@vinet-puranik.com y cuéntenos qué ha pasado. Le responderemos y, cuando sea posible, le haremos llegar la información por otra vía.",
               "Si nos comunica un problema y nuestra respuesta no le satisface, puede dirigirse al Défenseur des droits en defenseurdesdroits.fr.",

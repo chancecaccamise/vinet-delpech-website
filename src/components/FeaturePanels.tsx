@@ -12,9 +12,16 @@ import { clsx } from "@/lib/clsx";
  * `mediaSide`. Below `lg` the halves stack, media first, so the image always
  * introduces its statement.
  */
-export function FeaturePanels({ panels }: { panels: readonly FeaturePanel[] }) {
+export function FeaturePanels({
+  panels,
+  label,
+}: {
+  panels: readonly FeaturePanel[];
+  /** Accessible name for the group, translated: `ui.featured`. */
+  label: string;
+}) {
   return (
-    <section aria-label="Featured" className="bg-white text-ink">
+    <section aria-label={label} className="bg-white text-ink">
       {panels.map((panel) => {
         const isSpec = Boolean(panel.figures?.length || panel.details?.length);
         return (

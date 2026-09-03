@@ -16,11 +16,10 @@ type Leader = {
 /**
  * The two people who speak for the house, side by side.
  *
- * `LeadershipWord` on the home page carries Bruno's longer statement in a
- * bespoke single-portrait layout; this is the pair, with the shorter brochure
- * quotes, so /about does not simply repeat the home page. The two are kept
- * apart on purpose — folding both into one component would mean branching its
- * layout on how many people it was handed.
+ * The only leadership section on the site, now that the home page has given
+ * its two-voice "word from our leadership" to the vineyards: the pair, with
+ * the brochure's shorter quotes. The nav's leadership link and the legal
+ * notice's directors of publication both resolve here.
  *
  * Portraits are circular cutouts with real alpha, so they need no plate behind
  * them; the ring is a hairline, matching the rules used elsewhere on cream.

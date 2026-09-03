@@ -142,7 +142,7 @@ export function Timeline({ entries, title, intro }: TimelineProps) {
       >
         {/* Inside the sticky area so the heading stays with the years while
             the track scrubs, rather than scrolling away before the pin. */}
-        <div className="mx-auto w-full max-w-[1320px] shrink-0 px-6 pb-14 lg:px-10">
+        <div className="page-frame shrink-0 pb-14">
           <h2 className="display display-lg uppercase tracking-[0.05em]">{title}</h2>
           <p className="mt-5 max-w-xl text-sm leading-8 text-ink/65">{intro}</p>
         </div>

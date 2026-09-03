@@ -14,9 +14,10 @@ import { AwardRow } from "@/components/AwardRow";
  * One house bottle told at length — heritage, origin story, tasting notes and
  * medals — as an alternating editorial block.
  *
- * The skeleton is `ExperienceSection`'s, deliberately copied rather than
- * shared: the two diverge in their meta row, their list and their tail, and
- * retrofitting one component to serve both would mean four conditional
+ * The skeleton was copied from the tours-and-tastings offering block (since
+ * retired: both visit pages are by-appointment pages now) rather than shared
+ * with it, because the two diverged in their meta row, their list and their
+ * tail, and one component serving both would have meant four conditional
  * branches inside it.
  *
  * Partner bottles never reach here. Their story lives on the producer's own

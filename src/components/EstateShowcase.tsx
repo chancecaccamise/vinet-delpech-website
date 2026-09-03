@@ -32,7 +32,7 @@ export function EstateShowcase({
       {/* The media sections share the chrome's 1480px frame (header, hero),
           not the 1320px of the text bands — the old brand rail here was wider
           still for the same reason. */}
-      <div className="mx-auto grid max-w-[1480px] gap-x-16 gap-y-12 px-6 sm:px-10 lg:grid-cols-12 lg:px-12">
+      <div className="page-frame grid gap-x-16 gap-y-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Reveal>
             <p className="eyebrow text-blue">{content.kicker}</p>

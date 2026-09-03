@@ -5,7 +5,6 @@ import { fr } from "@/lib/content/fr";
 import { es } from "@/lib/content/es";
 import {
   brandAssets,
-  experienceImages,
   familyAssets,
   featurePanelAssets,
   groupFigures,
@@ -18,7 +17,6 @@ import {
   legalSlugs,
   partnerCompanyAssets,
   serviceSlugs,
-  tastingSlugs,
   tastingSenses,
   testimonialNames,
   testimonialSlugs,
@@ -26,7 +24,6 @@ import {
   type BrandAward,
   type BrandFigure,
   type EventItem,
-  type Experience,
   type FeatureFigure,
   type FeaturePanel,
   type HouseBrand,
@@ -408,16 +405,6 @@ export function getFeaturePanels(locale: Locale): FeaturePanel[] {
   });
 }
 
-export function getTastings(locale: Locale): Experience[] {
-  const c = getContent(locale);
-  return tastingSlugs.map((slug) => ({
-    slug,
-    ...c.tastings.items[slug],
-    price: c.experiences.onEnquiry,
-    image: experienceImages[slug],
-  }));
-}
-
 /**
  * The grouped navigation, with every href already carrying the locale prefix.
  * Building it here (rather than storing hrefs per language) is what keeps the
@@ -431,7 +418,9 @@ export function getNav(locale: Locale): NavGroup[] {
 
   // "Our story" leads: the page about the house outranks its home-page
   // anchors. Order is positional against c.nav.about.links in each dictionary.
-  const aboutHrefs = ["/about", "/#know-how", "/#leadership", "/#timeline", "/events"];
+  // The leadership link goes to /about: the home page gave that section to
+  // the vineyards, and the two leaders now speak only there.
+  const aboutHrefs = ["/about", "/#know-how", "/about#leadership", "/#timeline", "/events"];
   const visitHrefs = ["/visit", "/visit#book", "/visit#practical"];
   const toursTastingsHrefs = ["/visit/tours", "/visit/tastings"];
 
@@ -551,7 +540,7 @@ export function getNav(locale: Locale): NavGroup[] {
           },
           {
             ...c.nav.toursTastings.featured[1],
-            href: path("/visit/tastings#signature-tasting"),
+            href: path("/visit/tastings"),
             // The tasting room itself, which is what this card promises — the
             // one frame of it the galleries hold.
             image: "/media/estate/tasting-room.webp",

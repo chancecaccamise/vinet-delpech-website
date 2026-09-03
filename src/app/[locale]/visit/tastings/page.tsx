@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, localizePath } from "@/lib/i18n";
-import { getContent, getTastings } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, tastingsImage } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { ExperienceSection } from "@/components/ExperienceSection";
+import { AppointmentSection } from "@/components/AppointmentSection";
 import { Reveal } from "@/components/Reveal";
 
 type Params = { locale: string };
@@ -36,7 +36,6 @@ export default async function TastingsPage({ params }: { params: Promise<Params>
 
   const c = getContent(locale);
   const page = c.tastings;
-  const items = getTastings(locale);
 
   return (
     <>
@@ -50,25 +49,20 @@ export default async function TastingsPage({ params }: { params: Promise<Params>
         ]}
       />
 
-      <PageHero title={page.title} intro={[page.intro]}>
-        <p className="mt-8 text-[0.62rem] uppercase tracking-[0.22em] text-cream/70">
-          {page.note}
-        </p>
-      </PageHero>
+      <PageHero title={page.title} intro={[page.intro]} />
 
-      <section aria-label={page.title} className="bg-white text-ink">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-          {items.map((experience, index) => (
-            <ExperienceSection
-              key={experience.slug}
-              locale={locale}
-              experience={experience}
-              labels={c.experiences}
-              flip={index % 2 === 1}
-            />
-          ))}
-        </div>
-      </section>
+      {/* The same page as Tours, in the house's own words: tastings by prior
+          appointment, arranged through the office. The two placeholder
+          flights that used to sit here, with invented durations, group sizes
+          and inclusions, are gone. */}
+      <AppointmentSection
+        locale={locale}
+        label={page.title}
+        body={page.body}
+        ctaLabel={page.ctaLabel}
+        image={tastingsImage}
+        alt={page.frameLabel}
+      />
 
       {/* Cross-link */}
       <section className="bg-cream py-20 text-ink sm:py-24">

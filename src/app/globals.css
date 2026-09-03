@@ -92,6 +92,37 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+   Page frame
+
+   One measure for the whole page. The header, the hero and every band under
+   them share this width and these gutters, so a single left edge runs from the
+   logo to the footer — which only holds if there is one definition of it, not
+   a copy per section. Bands add their own `grid`, flex and vertical padding on
+   top; nothing else sets its own horizontal padding or max width.
+
+   1480px with 48px gutters puts the text edge at 108px on a 1600px viewport.
+   Named `page-frame`, not `frame`: `.frame` is the placeholder figure below.
+--------------------------------------------------------------------------- */
+.page-frame {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .page-frame {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-frame {
+    padding-inline: 3rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Typography
 --------------------------------------------------------------------------- */
 .eyebrow {

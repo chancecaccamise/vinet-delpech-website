@@ -68,14 +68,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteConfig.url),
     title: { default: title, template: c.metadata.titleTemplate },
     description: c.metadata.description,
-    keywords: [
-      "bespoke spirits",
-      "private label spirits",
-      "contract distilling",
-      "custom bottling",
-      "Cognac region distillery",
-      "white label spirits",
-    ],
+    keywords: [...c.metadata.keywords],
     alternates: {
       canonical: `/${locale}`,
       languages: languageAlternates("/"),
