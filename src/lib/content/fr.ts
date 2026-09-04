@@ -12,7 +12,6 @@ import type { Content } from "@/lib/content/en";
 
 export const fr = {
   hero: {
-    eyebrow: "Distillerie Vinet-Puranik · Cognac, France",
     title: "L'héritage de la distillation française depuis 1777",
     support: "Distillé. Vieilli. Assemblé. Embouteillé. Le tout sous un même toit.",
     primaryCtaLabel: "Démarrer un projet",

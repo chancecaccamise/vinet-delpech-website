@@ -13,7 +13,6 @@ import type { Content } from "@/lib/content/en";
 
 export const es = {
   hero: {
-    eyebrow: "Distillerie Vinet-Puranik · Cognac, Francia",
     title: "Tradición destiladora francesa desde 1777",
     support: "Destilado. Envejecido. Ensamblado. Embotellado. Todo bajo un mismo techo.",
     primaryCtaLabel: "Iniciar un proyecto",

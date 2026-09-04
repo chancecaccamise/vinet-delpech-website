@@ -11,7 +11,6 @@
 
 export const en = {
   hero: {
-    eyebrow: "Distillerie Vinet-Puranik · Cognac, France",
     title: "French Distilling Heritage Since 1777",
     support: "Distilled. Aged. Blended. Bottled. All Under One Roof.",
     primaryCtaLabel: "Start a project",

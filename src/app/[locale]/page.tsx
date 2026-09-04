@@ -64,15 +64,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="page-frame relative flex min-h-svh items-end pb-24 pt-40 lg:pb-32">
           <div className="max-w-4xl">
             <Reveal>
-              <p className="eyebrow text-cream/70">{c.hero.eyebrow}</p>
+              <h1 className="display display-xl uppercase tracking-[0.04em]">{c.hero.title}</h1>
             </Reveal>
             <Reveal delay={150}>
-              <h1 className="display display-xl mt-6 uppercase tracking-[0.04em]">{c.hero.title}</h1>
-            </Reveal>
-            <Reveal delay={300}>
               <p className="mt-6 text-base text-cream/80 sm:text-lg">{c.hero.support}</p>
             </Reveal>
-            <Reveal delay={450}>
+            <Reveal delay={300}>
               <Link href={localizePath(locale, "/contact")} className="btn btn-cream mt-10">
                 {c.hero.primaryCtaLabel}
               </Link>
