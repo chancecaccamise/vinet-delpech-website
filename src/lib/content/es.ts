@@ -345,7 +345,7 @@ export const es = {
         "La denominación de la casa, trabajada para nuestros socios a partir de los crus que rodean Brie-sous-Archiac.",
       intro: [
         "La casa se asienta entre los crus de Petite Champagne y Fins Bois, y el cognac es el espirituoso que lleva más tiempo elaborando. Para nuestros socios, eso significa eaux-de-vie seleccionadas y ensambladas según un brief, y después envejecidas en roble del Limousin hasta la calidad que pide el mercado: VS, VSOP, XO.",
-        "Puranique es el cognac de la familia. La gama vive en puraniques.com y no aquí.",
+        "Puranique es el cognac de la familia. La gama se encuentra en puraniques.com, no aquí.",
       ],
     },
     whisky: {
@@ -375,7 +375,7 @@ export const es = {
         "El enebro compuesto según el brief de un socio, macerado y destilado en cobre.",
       intro: [
         "Es en la ginebra donde mejor se lee un brief: la lista de botánicos es la marca. La casa macera y destila en cobre, y puede llevar una receta del primer boceto a la caja precintada sin salir del patio.",
-        "En Hold Up el enebro se encuentra con el haba tonka, el anís y un ligero toque cítrico; GIN40 lleva el sello de las Landas: pino y mora silvestre.",
+        "Hold Up se destila en alambique de cobre, sobre el haba tonka, el anís y un ligero toque cítrico; GIN40 lleva el sello de las Landas: pino y mora silvestre.",
       ],
     },
     vodka: {
@@ -383,8 +383,8 @@ export const es = {
       title: "Vodka",
       summary: "Un vodka de uva bordelesa, destilado y lanzado por añadas.",
       intro: [
-        "Un vodka no tiene por qué ser neutro de origen. La casa destila a partir de uvas bordelesas y lanza por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
-        "Puranique es el vodka de la familia. La gama vive en puraniques.com y no aquí.",
+        "Un vodka no tiene por qué ser neutro de origen. La casa destila uvas bordelesas y lanza su vodka por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
+        "Puranique es el vodka de la familia. La gama se encuentra en puraniques.com, no aquí.",
       ],
     },
     aperitifs: {
@@ -394,7 +394,7 @@ export const es = {
         "Productos de uva de menor graduación: aperitivos franceses y bebidas espirituosas a base de cognac.",
       intro: [
         "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido en trago largo, frío o con hielo.",
-        "El Pineau des Charentes Puranique es el aperitivo de la familia. La gama vive en puraniques.com y no aquí.",
+        "El Pineau des Charentes Puranique es el aperitivo de la familia. La gama se encuentra en puraniques.com, no aquí.",
       ],
     },
   },

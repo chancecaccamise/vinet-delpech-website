@@ -379,7 +379,7 @@ export const en = {
       summary: "Juniper composed to a partner's brief, macerated and distilled in copper.",
       intro: [
         "Gin is where a brief becomes most legible: the botanical bill is the brand. The house macerates and distils in copper, and can move a recipe from first sketch to sealed case without leaving the courtyard.",
-        "Hold Up meets juniper with tonka bean, anise and a light citrus edge; GIN40 carries the Landes: pine and wild blackberry.",
+        "Hold Up is distilled in copper stills, on tonka bean, anise and a light citrus edge; GIN40 carries the Landes: pine and wild blackberry.",
       ],
     },
     vodka: {
@@ -387,7 +387,7 @@ export const en = {
       title: "Vodka",
       summary: "Grape vodka from Bordeaux, distilled and released by vintage.",
       intro: [
-        "Vodka need not be neutral in origin. The house distils from Bordeaux grapes and releases by vintage: the power of Cabernet Sauvignon, the roundness of Merlot, the finesse of Sémillon.",
+        "Vodka need not be neutral in origin. The house distils Bordeaux grapes and releases its vodka by vintage: the power of Cabernet Sauvignon, the roundness of Merlot, the finesse of Sémillon.",
         "Puranique is the family's own vodka. The range lives on puraniques.com rather than here.",
       ],
     },

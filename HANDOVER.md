@@ -435,6 +435,42 @@ any product range. What changed, in order:
   went with it (`about.crossLinkHistory` is retired in all three
   dictionaries).
 
+## 11a. Translation pass on the September 11 changes
+
+Every French and Spanish string touched on 11 September was read back against
+the English and against the rest of its own dictionary. Sixteen corrections:
+
+- **"The range lives on puraniques.com"** was calqued into French as "La gamme
+  vit sur puraniques.com" and Spanish as "La gama vive en puraniques.com", in
+  three places each. "Vivre sur un site" is an anglicism, and both dictionaries
+  already had their own phrasing for exactly this idea in the Partners blurb
+  ("c'est là qu'elle se découvre" / "ahí es donde se encuentra la gama"). Now
+  "La gamme se découvre sur puraniques.com, pas ici." and "La gama se encuentra
+  en puraniques.com, no aquí."
+- **Two verbs had lost their object.** "La maison distille … et décline par
+  millésime" and "La casa destila … y lanza por añadas" — both transitive, both
+  left dangling when the sentence stopped being about Nade. They now decline
+  and release *sa vodka* / *su vodka*.
+- **"Chez Hold Up" / "En Hold Up"** read as premises rather than a bottle, and
+  broke the parallel with the GIN40 clause beside them. Both now follow the
+  shape the sentence had before ("X est distillé …, sur [notes] ; GIN40 porte
+  …"), and the English was brought into the same shape so the three editions
+  match.
+- **"Trinidad-et-Tobago"** in a French category line; the French name of the
+  country is **Trinité-et-Tobago**, which the rum page already used. The trade
+  name "Irie Trinidad & Tobago" is untouched — it is a trade mark.
+- **"praline"** (the confection) for **"praliné"** (the tasting term) in French,
+  twice. Spanish already had "praliné"; English keeps "praline", which is right
+  in English.
+- **One missing narrow no-break space**, before the colon in the French terroir
+  alt text. The rest of that day's French strings had it.
+
+Checked and left alone: `la vodka` is feminine in the French dictionary and
+`el vodka` masculine in the Spanish one, so "Vodka · élaborée en France" and
+"Vodka · elaborado en Francia" are both right; percent signs keep the plain
+space before them that both dictionaries already use, against the narrow
+no-break space used before `: ; ! ?`.
+
 ## 11. Copy review (3 September 2026): decisions for the house
 
 All three dictionaries were reviewed against each other on 3 September:

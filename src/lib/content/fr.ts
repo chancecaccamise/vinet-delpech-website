@@ -219,9 +219,9 @@ export const fr = {
       frameLabel: "Packshot : Irie République Dominicaine",
     },
     "irie-trinidad-tobago": {
-      category: "Rhum · Trinidad-et-Tobago · 41 %",
+      category: "Rhum · Trinité-et-Tobago · 41 %",
       descriptor:
-        "Robe ambrée, nez de fruits exotiques et de banane flambée sur une note végétale : bouche gourmande et structurée, praline, banane et caramel.",
+        "Robe ambrée, nez de fruits exotiques et de banane flambée sur une note végétale : bouche gourmande et structurée, praliné, banane et caramel.",
       frameLabel: "Packshot : Irie Trinidad & Tobago",
     },
     "maca-rum": {
@@ -343,7 +343,7 @@ export const fr = {
         "L'appellation de la maison, travaillée pour nos partenaires à partir des crus qui entourent Brie-sous-Archiac.",
       intro: [
         "La maison se tient au cœur des crus de Petite Champagne et de Fins Bois, et le cognac est le spiritueux qu'elle élabore depuis le plus longtemps. Pour nos partenaires, cela signifie des eaux-de-vie sélectionnées et assemblées selon un cahier des charges, puis vieillies en chêne du Limousin jusqu'à la qualité recherchée : VS, VSOP, XO.",
-        "Puranique est le cognac de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
+        "Puranique est le cognac de la famille. La gamme se découvre sur puraniques.com, pas ici.",
       ],
     },
     whisky: {
@@ -363,7 +363,7 @@ export const fr = {
         "Des distillats de canne sourcés à l'étranger, puis vieillis, affinés, assemblés et habillés en France.",
       intro: [
         "Le rhum arrive comme distillat et repart comme marque. La maison s'approvisionne auprès des pays producteurs de canne, puis mène ici, en Charente, le travail qui donne à un rhum son caractère : vieillissement, affinage en fût de cognac, assemblage et habillage.",
-        "Irie vient de République dominicaine et de Trinité-et-Tobago, robe ambrée, sur les fruits exotiques, la praline et le caramel ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
+        "Irie vient de République dominicaine et de Trinité-et-Tobago, robe ambrée, sur les fruits exotiques, le praliné et le caramel ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
       ],
     },
     gin: {
@@ -373,7 +373,7 @@ export const fr = {
         "Le genièvre composé selon le cahier des charges d'un partenaire, macéré et distillé en cuivre.",
       intro: [
         "C'est dans le gin qu'un cahier des charges se lit le mieux : la liste des botaniques fait la marque. La maison macère et distille en cuivre, et peut mener une recette du premier croquis au carton scellé sans quitter la cour.",
-        "Chez Hold Up, le genièvre rencontre la fève tonka, l'anis et une pointe d'agrumes ; GIN40 porte les Landes : pin et mûre sauvage.",
+        "Hold Up est distillé en alambic de cuivre, sur la fève tonka, l'anis et une pointe d'agrumes ; GIN40 porte les Landes : pin et mûre sauvage.",
       ],
     },
     vodka: {
@@ -381,8 +381,8 @@ export const fr = {
       title: "Vodka",
       summary: "Une vodka de raisin bordelais, distillée et déclinée par millésime.",
       intro: [
-        "Une vodka n'a pas à être d'origine neutre. La maison distille à partir de raisins bordelais et décline par millésime : la puissance du cabernet-sauvignon, la rondeur du merlot, la finesse du sémillon.",
-        "Puranique est la vodka de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
+        "Une vodka n'a pas à être d'origine neutre. La maison distille des raisins bordelais et décline sa vodka par millésime : la puissance du cabernet-sauvignon, la rondeur du merlot, la finesse du sémillon.",
+        "Puranique est la vodka de la famille. La gamme se découvre sur puraniques.com, pas ici.",
       ],
     },
     aperitifs: {
@@ -392,7 +392,7 @@ export const fr = {
         "Des produits de raisin à degré modéré : apéritifs français et boissons spiritueuses à base de cognac.",
       intro: [
         "Moût de raisin, eaux-de-vie et Pineau des Charentes, composés au degré de l'apéritif. C'est la réponse de la maison aux marchés qui veulent un caractère de cognac servi en long drink, frais ou sur glace.",
-        "Le Pineau des Charentes Puranique est l'apéritif de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
+        "Le Pineau des Charentes Puranique est l'apéritif de la famille. La gamme se découvre sur puraniques.com, pas ici.",
       ],
     },
   },
@@ -568,7 +568,7 @@ export const fr = {
     ],
     alts: {
       landscape:
-        "La distillerie de Brie-sous-Archiac vue du ciel : les cuves inox alignées le long du hall d'embouteillage, le village, les champs et les vignes tout autour.",
+        "La distillerie de Brie-sous-Archiac vue du ciel : les cuves inox alignées le long du hall d'embouteillage, le village, les champs et les vignes tout autour.",
       rows: "Des rangs de vignes filant vers l'horizon à la fin de l'été.",
       grapes: "Des raisins blancs mûrs sur le cep, quelques jours avant les vendanges.",
     },
