@@ -24,10 +24,10 @@ export const siteConfig = {
   // tastings pages, the footer, and the Organization JSON-LD.
   email: "contact@vinet-puranik.com",
 
-  // TODO(confirm): the brochure prints +33 546 700 466 against the named
-  // commercial contact. That is a different number from this switchboard
-  // (49 10 10 against 70 04 66) — establish which should be published.
-  phone: "+33 5 46 49 10 10",
+  // The house's switchboard, confirmed by the house on 11 September 2026:
+  // the brochure's number, which it also prints against the named commercial
+  // contact below. One line serves both, so the two match on purpose.
+  phone: "+33 546 700 466",
   address: "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France",
   region: "Cognac, France",
   /** The Puranique product-brand site, printed on the brochure's back page. */
@@ -40,7 +40,10 @@ export const siteConfig = {
   commercial: {
     name: "Yiyi Ma-Ladrat",
     email: "yml@vinet-delpech.com", // TODO(confirm): legacy domain, see above.
-    phone: "+33 546 700 466", // TODO(confirm): see above.
+    // The same line as the switchboard above — the brochure prints this
+    // number in both places. Kept as its own field, not an alias, so giving
+    // the commercial contact a direct line later cannot move the switchboard.
+    phone: "+33 546 700 466",
     portrait: { src: "/media/contactYiyiMaLadrat.png", width: 486, height: 485 },
   },
 
@@ -292,11 +295,11 @@ export type LabelledAward = BrandAward & { label: string };
  * with the Puranique range. `getHouseBrands` is written so that stays a fact
  * about the data rather than a compile error.
  *
- * TODO(assets): Montlieu is still a crop recovered from the brochure PDF and
- * tops out around 500 px wide, against the 1000 x 1250 the partner packshots
- * use. Since the story-block cap was lifted it renders slightly soft at full
- * column width; ask the house for a studio file. Glen Mac Clay is the house's
- * own studio file, centred on the bottle rather than its content box.
+ * Both bottles here are studio files on white, cut to the 1000 x 1250 card with
+ * the bottle at 87% of the frame. Montlieu's ~390 px brochure crop was replaced
+ * in September 2026, when the house sent studio shots of it, Glen Smith and
+ * Velorin together — but only Montlieu belongs in this array. The other two are
+ * white-label bottles the distillery produces for clients and live below.
  */
 export const houseBrandAssets = [
   {
@@ -304,7 +307,10 @@ export const houseBrandAssets = [
     name: "Montlieu X.O",
     family: "brandy",
     origin: "house",
-    image: "/spirits/montlieu-xo.png",
+    // The studio file the house sent in September 2026, replacing the ~390 px
+    // brochure crop this pointed at. New filename, not a same-name swap: see
+    // the Glen Mac Clay note below for why that matters.
+    image: "/spirits/montlieu-xo-card.webp",
     figures: [{ key: "ageing", value: 3, suffix: "" }],
   },
   {
@@ -397,12 +403,12 @@ export type PartnerCompany = {
  * trade marks and stay as they are in every language; `category`, `descriptor`
  * and `frameLabel` are translated.
  *
- * Patte Blanche, Gigi and TIJUCA are studio packshots on white, refitted to
- * the 4:5 card the same way the house's own bottles were (bottle at ~87% of
- * the frame, centred on the base). Gigi is the one deliberate full-bleed: its
- * scarf runs off the frame's right edge, so any padded fit would leave the
- * cut floating mid-card. The remaining .jpg files are the producers'
- * lifestyle shots, kept on disk as archive.
+ * Patte Blanche, Gigi, TIJUCA and the two Irie rums are studio packshots on
+ * white, refitted to the 4:5 card the same way the house's own bottles were
+ * (the bottle at a fixed share of the frame, centred on the base). Gigi is the
+ * one deliberate full-bleed: its scarf runs off the frame's right edge, so any
+ * padded fit would leave the cut floating mid-card. The remaining .jpg files
+ * are the producers' lifestyle shots, kept on disk as archive.
  */
 export const partnerBrandAssets = [
   {
@@ -423,23 +429,51 @@ export const partnerBrandAssets = [
     image: "/products/palisson-batch-01.jpg",
     url: "https://lesbruleriesmodernes.com/produit/palisson-batch-01/",
   },
+  // The two Irie rums took the slots the Brigitte et Louise pair held until
+  // 11 September 2026: that Pineau is becoming Puranique Pineau des Charentes
+  // and is no longer a Brûleries Modernes product. Both packshots are the
+  // producer's own studio shots on white, refitted to the 4:5 card with the
+  // bottle at 75% of the frame — the same height as Gin Hold Up beside them,
+  // so the four cards read as one row.
   {
-    slug: "brigitte-et-louise-blanc",
+    slug: "irie-republique-dominicaine",
     company: "les-bruleries-modernes",
-    name: "Brigitte et Louise Blanc",
-    family: "aperitifs",
+    name: "Irie République Dominicaine",
+    family: "rum",
     origin: "partner",
-    image: "/products/brigitte-et-louise-blanc.jpg",
-    url: "https://lesbruleriesmodernes.com/produit/brigitte-et-louise-blanc/",
+    image: "/products/irie-republique-dominicaine.webp",
+    url: "https://lesbruleriesmodernes.com/produit/irie-rhum-republique-dominicaine/",
   },
   {
-    slug: "brigitte-et-louise-rouge",
+    slug: "irie-trinidad-tobago",
     company: "les-bruleries-modernes",
-    name: "Brigitte et Louise Rouge",
-    family: "aperitifs",
+    name: "Irie Trinidad & Tobago",
+    family: "rum",
     origin: "partner",
-    image: "/products/brigitte-et-louise-rouge.jpg",
-    url: "https://lesbruleriesmodernes.com/produit/brigitte-et-louise-rouge/",
+    image: "/products/irie-trinidad-tobago.webp",
+    url: "https://lesbruleriesmodernes.com/produit/irie-rhum-trinidad-tobago/",
+  },
+  // White-label bottles produced at Brie-sous-Archiac for the brand owners who
+  // commissioned them. They carry no Vinet-Puranik mark and are not house
+  // brands: the distillery makes the liquid and dresses the bottle, the name on
+  // the label belongs to someone else. Packshots came from the house in
+  // September 2026 and were refitted to the 4:5 card like the rest.
+  //
+  // Neither has a `url`: a white label has no public product page of its own,
+  // which is exactly what distinguishes it from a named partner's bottle.
+  {
+    slug: "glen-smith",
+    name: "Glen Smith",
+    family: "whisky",
+    origin: "partner",
+    image: "/spirits/glen-smith-card.webp",
+  },
+  {
+    slug: "velorin-vodka",
+    name: "Velorin Vodka",
+    family: "vodka",
+    origin: "partner",
+    image: "/spirits/velorin-vodka-card.webp",
   },
   {
     slug: "maca-rum",
@@ -518,8 +552,12 @@ export const partnerBrandAssets = [
   /** Pinned here, so a record cannot land in this array mislabelled. */
   origin: "partner";
   image: string;
-  /** Producer/product page. Every partner brand has one. */
-  url: string;
+  /**
+   * Producer/product page. Every named brand has one; the white labels the
+   * house produces for clients do not, and their cards simply carry no call to
+   * action — `getBrandCta` already returns nothing for a partner without a url.
+   */
+  url?: string;
   company?: PartnerCompanySlug;
 }[];
 
@@ -556,11 +594,11 @@ export type SpiritFamily = {
  */
 export const familyAssets = [
   { slug: "cognac", image: "/products/patte-blanche.webp" },
-  { slug: "brandy", image: "/spirits/montlieu-xo.png" },
-  { slug: "whisky", image: "/spirits/glen-mac-clay-card.webp" },
+  { slug: "brandy", image: "/spirits/montlieu-xo-card.webp" },
+  { slug: "whisky", image: "/spirits/glen-smith-card.webp" },
   { slug: "rum", image: "/products/maca-rum.jpg" },
   { slug: "gin", image: "/products/gin40.jpg" },
-  { slug: "vodka", image: "/products/nade-vodka-2022.jpg" },
+  { slug: "vodka", image: "/spirits/velorin-vodka-card.webp" },
   // Both mango liqueurs went to puraniques.com, so this category lists no
   // bottle of its own. The cover is a Jus d'Manguier packshot all the same, at
   // the house's request: every other category is fronted by a bottle, and the
@@ -615,10 +653,8 @@ export const featurePanelAssets = [
 }[];
 
 // ---------------------------------------------------------------------------
-// Timeline, the vineyards and the leaders
+// The vineyards and the leaders
 // ---------------------------------------------------------------------------
-
-export type TimelineEntry = { year: string; body: string };
 
 // The tall black-and-white Bruno portrait (/media/vinetDelpechPresidentPortrait.jpg)
 // is no longer referenced: the leadership pair on /about uses the circular
@@ -632,15 +668,17 @@ export type TimelineEntry = { year: string; body: string };
  * estate's vines for reach.
  */
 /**
- * The "what we produce" section's photograph: new-make spirit running off the
- * still into a copper receiver — the closest image the galleries hold to the
- * bottling idea the slot wants.
+ * The "what we produce" section's photograph, replaced by the house in
+ * September 2026: a sample drawn from the cask with the pipette, the glass
+ * waiting beside the bung, barrels stacked behind. It says ageing and blending
+ * — the middle of the eight categories the section lists — where the previous
+ * frame said distillation only.
  *
- * TODO(assets): the house runs four bottling lines and has no photograph of
- * any of them. A real bottles-being-filled shot belongs here; this pour is
- * the interim.
+ * Cut portrait from a 3796 x 2126 original, off-centre so the hand, the
+ * pipette and the glass all survive the crop; a centred cut loses them to the
+ * barrels. The original is in `assets/photo-source/`.
  */
-export const productionImage = "/media/estate/production-bottling.webp";
+export const productionImage = "/media/estate/production-cellar-draw.webp";
 
 /**
  * The estate showcase under the home hero — the still house, a barrel cellar
@@ -662,9 +700,31 @@ export const estateShowcaseImages = {
  * the showcase, the visit menu, the harvest event and the tastings card.
  */
 export const terroirImages = {
-  landscape: "/media/estate/terroir-landscape.webp",
   rows: "/media/estate/terroir-rows.webp",
   grapes: "/media/estate/terroir-grapes.webp",
+} as const;
+
+/**
+ * The house from the air, in the wide slot the terroir section opens with.
+ * The house's own drone edit ("VD EP1 vues drones"): H.264, 1920 × 1080,
+ * 8.1 s, 6.7 MB — a slow pull-back over the tank farm, the bottling hall and
+ * the courtyard, with the village, the fields and the vines around them. It
+ * replaces the ground-level vineyard still that held this slot, which is why
+ * the caption and alt text in the dictionaries now describe the estate rather
+ * than a row of vines.
+ *
+ * The poster is the clip's own first frame, cut with AVFoundation and encoded
+ * at the same settings as the rest of `estate/`, so the still and the footage
+ * are the same shot.
+ *
+ * TODO(assets): the file carries a silent AAC track and runs at ~6.6 Mbps,
+ * more than twice the hero's bitrate for a clip a quarter as long. A re-encode
+ * with no audio track would drop it to roughly 2 MB with no visible loss; ask
+ * the house for one, or run it through ffmpeg before launch.
+ */
+export const terroirVideo = {
+  src: "/media/estate-aerial.mp4",
+  poster: "/media/estate/terroir-aerial-poster.webp",
 } as const;
 
 export const aboutSkillImages = [

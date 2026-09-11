@@ -49,15 +49,25 @@ rather drop liqueurs from the site altogether, say so and it comes out of
 `familyAssets`; the nav, the sitemap and the "what we produce" list all follow
 from that one array.**
 
-## 2. Published contact details — two conflicts
+## 2. Published contact details — two conflicts, one settled
 
 | Field | Site currently uses | Conflict |
 |---|---|---|
-| Switchboard | `+33 5 46 49 10 10` | Brochure prints `+33 546 700 466` |
+| Switchboard | `+33 546 700 466` | **Settled 11 September** — see below |
 | House email | `contact@vinet-puranik.com` | Brochure prints `yml@vinet-delpech.com` (legacy domain) |
 | Commercial email | `yml@vinet-delpech.com` | Still on the pre-rebrand domain |
 
-These are not cosmetic any more: they now feed the **Organization structured
+**The switchboard number is confirmed.** The house settled the conflict on
+11 September in favour of the brochure's number: `+33 546 700 466` replaces
+`+33 5 46 49 10 10` everywhere — the contact page, the footer, the legal
+notice and the Organization structured data. It is the same number the
+brochure prints against the named commercial contact, so the contact page now
+shows one line under both the Switchboard and the Commercial headings. That is
+correct, not a duplication bug. If Yiyi Ma-Ladrat has a direct line, send it
+and it goes in `siteConfig.commercial.phone`, which is deliberately kept as its
+own field rather than aliased to the switchboard.
+
+The two email rows are not cosmetic: they feed the **Organization structured
 data**, which Google can surface directly in search results, and the house
 email is also the fallback shown to a visitor if the enquiry form fails.
 
@@ -128,13 +138,13 @@ These are live and will be seen by anyone reviewing the site. They are marked
 
 ## 7. A contradiction in the copy — now more urgent
 
-- **Founding date.** The home page **headline** now reads "French Distilling
+- **Founding date.** The home page **headline** reads "French Distilling
   Heritage Since 1777" — the claim the house asked for, and far more prominent
-  than the seven supporting strings that already made it. The timeline on the
-  same page attributes 1777 to the Delpech Fougerat family buying the Font
-  Gireau estate, and dates the distillery itself to **1934**. Both may be
-  defensible, but with the claim now in the H1 the house should confirm which
-  one it is making. (A second contradiction listed here previously — a tour
+  than the seven supporting strings that already made it. The retired timeline
+  (§10) attributed 1777 to the Delpech Fougerat family buying the Font Gireau
+  estate and dated the distillery itself to **1934**; with that section cut,
+  1777 is now the site's only stated origin and nothing on the page qualifies
+  it. The house should confirm the claim it is making. (A second contradiction listed here previously — a tour
   introduction promising "a full day" while the longest tour was "Half day" —
   retired with the invented tour programme; see §10.)
 
@@ -186,15 +196,19 @@ must appear on its commercial communications, add it to the legal notice.
 
 ## 9. Photography still wanted
 
-- **A bottling line.** The house runs four and has never photographed one; the
-  "what we produce" section borrows a shot of spirit running off the still.
-- **A studio packshot for Montlieu X.O** — the current file is a ~500 px crop
-  recovered from the brochure PDF, against 1000 × 1250 for the rest, and it
-  renders visibly soft.
+- **A bottling line.** The house runs four and has never photographed one.
+  Nothing on the site stands in for one now: "what we produce" shows a sample
+  drawn from the cask (§10), which is ageing rather than bottling.
 - **Packshots for the rest of the Les Brûleries Modernes range.** Its own site
-  lists Excellency Club, Irie and Palisson batches 02 and 03; the new
-  `/partners/les-bruleries-modernes` page can only show the four bottles we
-  hold files for.
+  also lists Excellency Club and Palisson batches 02 and 03, which the
+  `/partners/les-bruleries-modernes` page cannot show. The two Irie rums named
+  here previously are now on the page: their packshots were taken from the
+  producer's own product pages in September 2026 (§10), the same route the
+  rest of the collection came by.
+- **Tasting copy for Glen Smith and Velorin.** Both are on the site since
+  11 September (§10) as white-label bottles, and their cards say only what
+  their labels say — nothing about how either tastes. Every other client card
+  carries a line of tasting copy; send one for each and they match.
 - **More of the tasting room.** One good frame exists and sits on the
   Tours & Tastings menu card; the tastings page itself shows spirit running
   off the still, because the room has only been photographed once.
@@ -206,6 +220,13 @@ must appear on its commercial communications, add it to the legal notice.
 - **A 1440p hero video export**, ideally with a `.webm` sibling. The current
   file is 720p and 7.2 MB, which reads soft on large displays and is the
   heaviest thing a mobile visitor downloads.
+- **A lighter export of the drone clip** now in the terroir section (§10). The
+  house's file is 1920 × 1080 and looks excellent, but it runs 8.1 s at about
+  6.6 Mbps — more than twice the hero's bitrate — and still carries a silent
+  AAC track. Re-encoding without audio at a sane bitrate takes it from 6.7 MB
+  to roughly 2 MB with no visible loss. Until then the page holds the download
+  back until the section is nearly in view, so it costs nothing to a visitor
+  who never scrolls that far.
 - **Opening hours and map coordinates**, which would let us complete the
   local-business structured data and improve the site's showing in local
   search. Omitted rather than guessed — invented hours send visitors to a
@@ -249,6 +270,170 @@ any product range. What changed, in order:
 - **Dead assets left the deploy**: the six retired Puranique packshots (git
   history keeps them if the range returns — §1), the six unreferenced award
   badges, and the camera-original folders (see the note below).
+- **Three bottles arrived** (11 September): Glen Smith, Velorin Vodka and a
+  studio Montlieu X.O, supplied by the house.
+  - **Glen Smith and Velorin are white labels, not house brands.** The
+    distillery produces them; the names on the labels belong to the clients who
+    commissioned them, and neither bottle carries a Vinet-Puranik mark. They
+    sit in `partnerBrandAssets` with no `company`, so they show as client cards
+    on `/private-label/whisky` and `/private-label/vodka` — which now read
+    2 and 3 brands — alongside Patte Blanche, Nade and the rest.
+
+    They were briefly filed as house bottles, which put "A Vinet-Puranik brand"
+    over each of them and had them claiming to be the house's own Scotch and
+    vodka. That was an inference from the phrase "traditional range" and from
+    their being named beside Montlieu X.O, and it was wrong. **If a bottle's
+    ownership is not documented, it is a white label**: the house's own bottles
+    are the ones §1 lists, and that list is the authority.
+
+    One structural consequence: `url` on a partner record is now optional. A
+    white label has no public product page, which is exactly what separates it
+    from a named partner's bottle, and `getBrandCta` already returned nothing
+    in that case — so those two cards simply carry no call to action.
+  - **Montlieu X.O finally has a studio file.** The ~390 px brochure crop is
+    gone. The new file is a different filename (`montlieu-xo-card.webp`), not a
+    same-name swap, so nobody is stuck behind the four-hour image cache.
+  - **The three now front their categories**, on `/private-label` and in the
+    nav dropdown, which leads with whisky, vodka and brandy instead of cognac,
+    gin and rum. The dropdown card takes the category cover, so the two can
+    never show different bottles for the same category.
+  - **All three packshots were refitted** from 1080 × 1920 originals to the
+    1000 × 1250 card with the bottle at 87% of the frame, matching the rest of
+    the house range. Originals are in `assets/products-source/`.
+
+- **The home page's "every spirit, one house" photograph changed**
+  (11 September) to the cellar shot the house sent: a sample drawn from an oak
+  cask, the pipette in hand, the tasting glass beside the bung. It says ageing
+  and blending, where the frame it replaced said distillation only. Cut
+  portrait off-centre from a 3796 × 2126 original so the hand, pipette and
+  glass survive — a centred crop loses all three to the barrels. The original
+  is in `assets/photo-source/cellars/`, and the retired
+  `production-bottling.webp` left the deploy.
+
+- **The vodka and apéritifs pages name Puranique** (11 September) — copy only,
+  the same treatment as cognac, gin and rum below.
+  - **Vodka.** Nade was named in *both* paragraphs, unlike every other category
+    page, so both moved. The first now says "The house distils from Bordeaux
+    grapes and releases by vintage" rather than "Nade is distilled…", which
+    also brings it into line with the other categories, whose opening
+    paragraphs describe the house rather than a brand. The second — previously
+    the 2019's Fronsac casks and 250 numbered bottles — now reads "Puranique is
+    the family's own vodka. The range lives on puraniques.com rather than
+    here."
+  - **Apéritifs.** "Sephina is a spirit drink at 30%: 56% VSOP cognac blended
+    with 44% Pineau des Charentes…" becomes "Puranique Pineau des Charentes is
+    the family's own apéritif. The range lives on puraniques.com rather than
+    here."
+  - **No detail was lost.** Every specific these paragraphs carried is already
+    in the card copy directly beneath them, verbatim: the Cabernet/Merlot/
+    Sémillon line is the Nade 2022 descriptor, the Fronsac casks and 250 bottles
+    are the Nade 2019 descriptor, and the 56/44 split is Sephina's. The facts
+    now sit only on the bottles they belong to.
+  - **All three products are untouched** — cards, copy, packshots — and Sephina
+    is still the cover for the apéritifs category, Nade 2022 for vodka.
+
+- **The rum page names Irie instead of MACA** (11 September) — copy only, like
+  the gin and cognac changes below. The second paragraph read "MACA is
+  distilled in Mauritius and finished in France on cinnamon and tonka bean;
+  TIJUCA is a Brazilian blend"; it now opens "Irie comes from the Dominican
+  Republic and from Trinidad & Tobago, amber, on tropical fruit, praline and
+  caramel". Irie is two bottles, so the clause names both origins and gives the
+  profile their two descriptors share, rather than picking one of the pair.
+
+  **MACA Rum is untouched** — card, copy, packshot, and it is still the cover
+  for the rum category on `/private-label`. As on the gin page, the bottle now
+  named in the prose is a Brûleries Modernes one and so is not carded here; the
+  grid still shows MACA Rum and TIJUCA.
+
+- **The gin page names Hold Up instead of Gigi en Provence** (11 September),
+  and, like the cognac change below, only the copy moved. The second paragraph
+  read "Gigi en Provence is organic, on violet, rosemary and a discreet note of
+  olive; GIN40 carries the Landes"; it now reads "Hold Up meets juniper with
+  tonka bean, anise and a light citrus edge; GIN40 carries the Landes". The
+  Hold Up clause is drawn from that bottle's own descriptor, so the two say the
+  same thing in both places.
+
+  **Gigi en Provence is untouched** — its card, its copy and its packshot all
+  stand. One thing to know: Hold Up carries `company: "les-bruleries-modernes"`,
+  and brands with a company are deliberately excluded from the private-label
+  category grids (`getBrands` in `content/index.ts`). So the gin page now names
+  a bottle that is not carded on it — the grid still shows Gigi en Provence and
+  GIN40. That is the same shape the whisky page has always had, where the
+  paragraph names Glen Mac Clay above a grid that does not list it.
+
+- **The cognac page names Puranique instead of Patte Blanche** (11 September).
+  Only the copy changed. The hero's second paragraph used to read "Patte Blanche
+  is the collection's organic expression: ECOCERT-certified, hand-distilled at
+  Arthenac, with no artificial input from vine to glass"; it now reads
+  "Puranique is the family's own cognac. The range lives on puraniques.com
+  rather than here." The sentence claims nothing beyond the name on purpose —
+  the certification, the hand distillation and the vine-to-glass claim belonged
+  to Patte Blanche and cannot be moved to another bottle without the house
+  confirming they apply to it.
+
+  **Patte Blanche itself is untouched**: its card still sits in the collection,
+  its packshot still fronts the cognac category, and its own copy — where the
+  ECOCERT and Arthenac claims still live — is unchanged in all three
+  dictionaries. The page now works the way the whisky page does, where the
+  second paragraph names the house's own bottling (Glen Mac Clay) above a grid
+  of partner bottles.
+
+- **Brigitte et Louise left the Brûleries Modernes range** (11 September). The
+  house confirmed that the Pineau is becoming Puranique Pineau des Charentes
+  and is no longer a Brûleries Modernes product, so the Blanc and Rouge cards
+  were replaced by the two Irie rums — République Dominicaine and Trinidad &
+  Tobago, both 41%, both listed on the producer's own site. Three notes:
+  - **The company blurb changed with them.** It read "French apéritifs and
+    spirits for the on-trade", and with the Pineau gone the page shows no
+    apéritif at all: it now reads "Gin, whisky and rum for the on-trade". The
+    intro also claimed the bottles "are made in the same courtyard"; the Irie
+    rums are distilled in the Caribbean, so it now says they are finished and
+    dressed there, which is what the house actually does with imported rum
+    (compare the MACA Rum note). **Confirm both readings.**
+  - **The Puranique blurb needed nothing.** It already lists Pineau among what
+    lives on puraniques.com, so the moved product is covered where it lands.
+  - **The packshots were refitted, not merely dropped in.** The producer's two
+    studio shots sit high in their frames; both were recut to the 1000 × 1250
+    card with the bottle at 75% of the height — the same as Gin Hold Up beside
+    them — so the four cards read as one row. Originals are in
+    `assets/products-source/`. The two Brigitte et Louise packshots left
+    `public/products/` and are in git history at commit `7ca7714`, with their
+    originals also kept in `assets/products-source/`.
+
+- **The terroir section leads with drone footage** (11 September). The house
+  supplied an aerial clip of the estate ("VD EP1 vues drones"), and it replaces
+  the wide vineyard still that opened the vineyards section. It plays silently
+  on a loop, muted and without controls, exactly where the photograph was.
+  Three things follow from it:
+  - **The caption and alt text changed in all three dictionaries.** The clip
+    shows the working site from the air — the steel vats, the bottling hall,
+    the courtyard, with the village and the vines around them — not a row of
+    vines, so `terroir.captions.landscape` and `terroir.alts.landscape` now
+    describe the estate. The caption reads "The house at Brie-sous-Archiac,
+    from the air".
+  - **Nothing is fetched until the section is nearly in view**, and the clip
+    pauses again when it scrolls away (`AmbientVideo`). A visitor who stops
+    before the vineyards never downloads it.
+  - **The poster is the clip's own opening frame**, cut from the file itself,
+    so the still and the footage are the same shot and the hand-off cannot
+    jump. It is also what a visitor sees with reduced motion, with autoplay
+    blocked, or with no JavaScript — in each case the section is simply a
+    photograph again. The ground-level still it replaced
+    (`terroir-landscape.webp`) left the deploy; it is in git history at
+    commit `0936ae2`.
+
+- **The heritage chronology is gone** (11 September). "Two families, one
+  house" — the pinned, horizontally scrolling timeline that sat between the
+  category index and the vineyards on the home page — was cut at the house's
+  request: hard to read, and nothing in it of interest beyond the dates. The
+  vineyard section took its white ground so the page's white/cream alternation
+  still holds. Its eight dated entries, the `timeline` block in all three
+  dictionaries and `src/components/Timeline.tsx` are in git history if the
+  house wants them back in a plainer form. The two nav routes into it now go
+  to /about: the "Our history"/"Notre chronologie" column link is gone, and
+  the "Since 1777" card points at the story page. The /about cross-link to it
+  went with it (`about.crossLinkHistory` is retired in all three
+  dictionaries).
 
 ## 11. Copy review (3 September 2026): decisions for the house
 
@@ -266,13 +451,16 @@ corrected. What remains are questions only the house can settle:
 - **Ownership wording.** "Independent", "family-owned" and "owned and run by
   the two families that built it" sit beside the Sawnee Group section. Confirm
   these are still the words the house wants.
-- **The timeline stops before the Puranik family arrives.** The 2011 entry
-  reads "Distillerie Vinet-Puranik is born" from the merger of the Delpech
-  Fougerat and Vinet families; the Puranik family and the group appear nowhere
-  in it. Supply the year the house took its current name and we add the entry.
-- **Who is General Manager.** The 2018 entry makes Jean-Baptiste Delannoy
-  General Manager; the leadership block and the legal notice name Bruno
-  Delannoy. One of them is out of date.
+- **When the house took its current name.** The retired timeline (§10) had
+  the 2011 merger of the Delpech Fougerat and Vinet families producing
+  "Distillerie Vinet-Puranik", with the Puranik family and the group appearing
+  nowhere in it. The question outlives the section: supply the year the house
+  took its present name, and it can be stated wherever the story is told.
+- **Who is General Manager.** The timeline's 2018 entry made Jean-Baptiste
+  Delannoy General Manager; the leadership block and the legal notice name
+  Bruno Delannoy. Cutting the timeline removed the conflicting claim from the
+  site, so the pages now agree on Bruno — but confirm that is current, and
+  what Jean-Baptiste's role is.
 - **"Distributed in France by Mähler-Besse."** This note renders under every
   partner brand and category page. Confirm which brands, if any, it applies
   to; it likely belonged to the Puranique range only.

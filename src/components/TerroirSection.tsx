@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { terroirImages } from "@/lib/site";
+import { terroirImages, terroirVideo } from "@/lib/site";
 import { localizePath, type Locale } from "@/lib/i18n";
 import type { Content } from "@/lib/content/en";
 import { Reveal } from "@/components/Reveal";
+import { AmbientVideo } from "@/components/AmbientVideo";
 
 /**
  * The vineyards and the region — French craftsmanship shown where it comes
@@ -11,19 +12,20 @@ import { Reveal } from "@/components/Reveal";
  * house asked that the home page show the estate, the vines and the craft
  * rather than the people, and the two leaders still speak on /about.
  *
- * Three photographs, none used anywhere else on the site, in two tiers. The
- * wide view across the vines to the treeline runs the full width of the
- * frame and carries the region; beneath it the rows and the ripe grapes sit
- * beside four short facets (the region, the crus, the grape, the craft) and
- * the one call to action, which goes to the visit page.
+ * Two tiers. The wide slot at the top runs the full width of the frame and
+ * carries the region: the house's drone footage of the estate from the air,
+ * the one moving image on the page after the hero. Beneath it the rows and
+ * the ripe grapes sit beside four short facets (the region, the crus, the
+ * grape, the craft) and the one call to action, which goes to the visit page.
  *
  * The photographs take the left of the lower tier and the facets the right —
  * the estate showcase and the production section above both put their text
  * on the left, so the page's eye line changes side here. Below lg the tiers
- * simply stack, so the section reads photograph, photographs, facets, and
- * ends on the button rather than burying it between pictures.
+ * simply stack, so the section reads footage, photographs, facets, and ends
+ * on the button rather than burying it between pictures.
  *
- * Server-rendered — nothing here needs client JS.
+ * Server-rendered apart from the clip, which needs a client for the observer
+ * that holds its download back until the section is nearly in view.
  */
 export function TerroirSection({
   locale,
@@ -41,7 +43,7 @@ export function TerroirSection({
     <section
       id="terroir"
       aria-labelledby="terroir-title"
-      className="bg-cream py-24 text-ink sm:py-32"
+      className="bg-white py-24 text-ink sm:py-32"
     >
       <div className="page-frame">
         <Reveal>
@@ -71,16 +73,16 @@ export function TerroirSection({
 
         {/* The region, edge to edge of the frame. Two to one on wide screens;
             on a phone that ratio would make a letterbox, so it opens to 4:3
-            and the crop closes in on the centre of the field. */}
+            and the crop closes in on the centre of the frame. The footage is
+            16:9, so both crops take from its top and bottom. */}
         <Reveal delay={200} className="mt-14 sm:mt-16">
           <figure className="m-0">
             <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[2/1]">
-              <Image
-                src={terroirImages.landscape}
+              <AmbientVideo
+                src={terroirVideo.src}
+                poster={terroirVideo.poster}
                 alt={content.alts.landscape}
-                fill
                 sizes="(min-width: 1480px) 1384px, 100vw"
-                className="object-cover"
               />
             </div>
             <figcaption className="eyebrow mt-4 flex items-start gap-4 text-[0.6rem] text-ink/50">

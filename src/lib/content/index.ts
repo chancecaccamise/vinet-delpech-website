@@ -17,6 +17,7 @@ import {
   legalSlugs,
   partnerCompanyAssets,
   serviceSlugs,
+  siteConfig,
   tastingSenses,
   testimonialNames,
   testimonialSlugs,
@@ -272,6 +273,11 @@ export function getLegalPages(locale: Locale): LegalPage[] {
   const values = {
     ...companyRegistration,
     host: legalHostDetails,
+    // The switchboard and the house email come from siteConfig rather than
+    // being retyped in three dictionaries, so changing the published contact
+    // details cannot leave the legal notice printing the old ones.
+    phone: siteConfig.phone,
+    email: siteConfig.email,
     // Names and titles come from the leadership block rather than being
     // repeated here, so the legal notice and the About page cannot disagree.
     ceoName: leaders.rahul.name,
@@ -419,8 +425,10 @@ export function getNav(locale: Locale): NavGroup[] {
   // "Our story" leads: the page about the house outranks its home-page
   // anchors. Order is positional against c.nav.about.links in each dictionary.
   // The leadership link goes to /about: the home page gave that section to
-  // the vineyards, and the two leaders now speak only there.
-  const aboutHrefs = ["/about", "/#know-how", "/about#leadership", "/#timeline", "/events"];
+  // the vineyards, and the two leaders now speak only there. The heritage
+  // card beside the column goes to /about as well — the house cut the
+  // chronology that used to sit at /#timeline.
+  const aboutHrefs = ["/about", "/#know-how", "/about#leadership", "/events"];
   const visitHrefs = ["/visit", "/visit#book", "/visit#practical"];
   const toursTastingsHrefs = ["/visit/tours", "/visit/tastings"];
 
@@ -439,7 +447,7 @@ export function getNav(locale: Locale): NavGroup[] {
           },
           {
             ...c.nav.about.featured[1],
-            href: path("/#timeline"),
+            href: path("/about"),
             image: "/media/estate/nav-heritage.webp",
           },
         ],
@@ -486,8 +494,12 @@ export function getNav(locale: Locale): NavGroup[] {
       ],
       featured: {
         heading: c.nav.privateLabel.featuredHeading,
-        // Cognac, gin and rum — the three the house leads with.
-        items: (["cognac", "gin", "rum"] as const).map((slug, index) => {
+        // Whisky, vodka and brandy — the categories fronted by the three
+        // bottles of the traditional range the house sent in September 2026
+        // (Glen Smith, Velorin, Montlieu X.O). The card takes the category
+        // cover, so the dropdown and `/private-label` always show the same
+        // bottle for a category.
+        items: (["whisky", "vodka", "brandy"] as const).map((slug, index) => {
           const family = families.find((entry) => entry.slug === slug)!;
           return {
             label: family.name,

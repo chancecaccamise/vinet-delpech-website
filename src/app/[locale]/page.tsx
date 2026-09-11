@@ -16,7 +16,6 @@ import { HeroMedia } from "@/components/HeroMedia";
 import { EstateShowcase } from "@/components/EstateShowcase";
 import { OriginMap } from "@/components/OriginMap";
 import { FeaturePanels } from "@/components/FeaturePanels";
-import { Timeline } from "@/components/Timeline";
 import { TerroirSection } from "@/components/TerroirSection";
 import { TeamBand } from "@/components/TeamBand";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
@@ -143,8 +142,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       {/* ------------------------------------------------------------------
           What we produce — the eight categories as a linked index, on cream
-          after the white feature panels; the timeline and vineyard sections
-          below keep swapping tones. Category names come from the families
+          after the white feature panels; the vineyard section below keeps
+          swapping tones. Category names come from the families
           data, so this list can never drift from the private-label pages.
       ------------------------------------------------------------------ */}
       <section id="production" className="bg-cream py-24 text-ink sm:py-32">
@@ -208,23 +207,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* ------------------------------------------------------------------
-          Timeline — horizontal chronology, pinned while it scrolls.
-      ------------------------------------------------------------------ */}
-      {/* No `overflow-hidden` here: an ancestor with a clipped overflow becomes
-          the sticky scroll container and the pin silently stops working. The
-          track is clipped inside Timeline instead. */}
-      <section id="timeline" className="bg-white pb-24 pt-24 text-ink lg:pb-32 lg:pt-28">
-        <Timeline
-          entries={c.timeline.entries}
-          title={c.timeline.title}
-          intro={c.timeline.intro}
-        />
-      </section>
-
-      {/* ------------------------------------------------------------------
-          The vineyards and the region — opens the cream chapter it shares
-          with the team band below. Where the leadership quotes used to sit;
-          the house asked for the estate, the vines and the craft here instead.
+          The vineyards and the region — white, taking the tone the heritage
+          chronology used to hold here before the house cut it, so the band
+          still alternates against the cream index above. Where the leadership
+          quotes used to sit; the house asked for the estate, the vines and the
+          craft here instead.
       ------------------------------------------------------------------ */}
       <TerroirSection locale={locale} content={c.terroir} />
 

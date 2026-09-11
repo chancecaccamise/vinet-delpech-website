@@ -142,7 +142,6 @@ export const es = {
       },
     ],
     crossLinkTitle: "Más sobre la casa",
-    crossLinkHistory: "Nuestra cronología",
     crossLinkTerroir: "Los viñedos y la región",
     crossLinkPartnerships: "Las marcas a las que damos forma",
   },
@@ -179,6 +178,18 @@ export const es = {
   },
 
   brands: {
+    "glen-smith": {
+      category: "Blended Scotch whisky · 40 %",
+      descriptor:
+        "Blended Scotch whisky, destilado y envejecido en Escocia, embotellado allí a 40 % en 70 cl.",
+      frameLabel: "Packshot: blended Scotch whisky Glen Smith",
+    },
+    "velorin-vodka": {
+      category: "Vodka · elaborado en Francia",
+      descriptor:
+        "Vodka elaborado en Francia, vestido con las tres palabras que lleva su etiqueta: pureza, tradición, elegancia.",
+      frameLabel: "Packshot: Velorin Vodka",
+    },
     "montlieu-xo": {
       category: "Brandy X.O · tres años mínimo",
       descriptor:
@@ -203,17 +214,17 @@ export const es = {
         "Single malt charentés de doble destilación, envejecido al menos tres años en roble del Limousin que antes contuvo cognac.",
       frameLabel: "Packshot: single malt Palisson Batch 01",
     },
-    "brigitte-et-louise-blanc": {
-      category: "Aperitivo · 17,5 %",
+    "irie-republique-dominicaine": {
+      category: "Ron · República Dominicana · 41 %",
       descriptor:
-        "Mosto de uva ensamblado con eau-de-vie de cognac de una finca familiar: fruta y flores blancas, amplio y redondo.",
-      frameLabel: "Packshot: Brigitte et Louise Blanc",
+        "Color ámbar, nariz afrutada de mantequilla y vainilla: boca rica y golosa, fruta tropical y fruta amarilla, con final de caramelo de mantequilla.",
+      frameLabel: "Packshot: Irie République Dominicaine",
     },
-    "brigitte-et-louise-rouge": {
-      category: "Aperitivo · 17,5 %",
+    "irie-trinidad-tobago": {
+      category: "Ron · Trinidad y Tobago · 41 %",
       descriptor:
-        "Mosto de merlot y cabernet sauvignon con eau-de-vie de cognac: vivo y redondo, sobre frutos del bosque y fruta de hueso.",
-      frameLabel: "Packshot: Brigitte et Louise Rouge",
+        "Color ámbar, nariz de fruta tropical y plátano flambeado sobre una nota vegetal: boca golosa y estructurada, praliné, plátano y caramelo.",
+      frameLabel: "Packshot: Irie Trinidad & Tobago",
     },
     "maca-rum": {
       category: "Ron especiado",
@@ -334,7 +345,7 @@ export const es = {
         "La denominación de la casa, trabajada para nuestros socios a partir de los crus que rodean Brie-sous-Archiac.",
       intro: [
         "La casa se asienta entre los crus de Petite Champagne y Fins Bois, y el cognac es el espirituoso que lleva más tiempo elaborando. Para nuestros socios, eso significa eaux-de-vie seleccionadas y ensambladas según un brief, y después envejecidas en roble del Limousin hasta la calidad que pide el mercado: VS, VSOP, XO.",
-        "Patte Blanche es su expresión ecológica: certificada por ECOCERT, destilada a mano en Arthenac, sin insumos artificiales de la viña a la copa.",
+        "Puranique es el cognac de la familia. La gama vive en puraniques.com y no aquí.",
       ],
     },
     whisky: {
@@ -354,7 +365,7 @@ export const es = {
         "Destilados de caña de origen extranjero, envejecidos, afinados, ensamblados y vestidos en Francia.",
       intro: [
         "El ron llega como destilado y sale como marca. La casa se abastece en los países productores de caña y realiza aquí, en la Charente, el trabajo que da carácter a un ron: envejecimiento, afinado en madera de cognac, ensamblaje y presentación.",
-        "MACA se destila en Mauricio y se afina en Francia sobre canela y haba tonka; TIJUCA es un ensamblaje brasileño, cobrizo, sobre vainilla, pimienta y miel.",
+        "Irie viene de República Dominicana y de Trinidad y Tobago, color ámbar, sobre fruta tropical, praliné y caramelo; TIJUCA es un ensamblaje brasileño, cobrizo, sobre vainilla, pimienta y miel.",
       ],
     },
     gin: {
@@ -364,7 +375,7 @@ export const es = {
         "El enebro compuesto según el brief de un socio, macerado y destilado en cobre.",
       intro: [
         "Es en la ginebra donde mejor se lee un brief: la lista de botánicos es la marca. La casa macera y destila en cobre, y puede llevar una receta del primer boceto a la caja precintada sin salir del patio.",
-        "Gigi en Provence es ecológica, sobre violeta, romero y una nota discreta de oliva; GIN40 lleva el sello de las Landas: pino y mora silvestre.",
+        "En Hold Up el enebro se encuentra con el haba tonka, el anís y un ligero toque cítrico; GIN40 lleva el sello de las Landas: pino y mora silvestre.",
       ],
     },
     vodka: {
@@ -372,8 +383,8 @@ export const es = {
       title: "Vodka",
       summary: "Un vodka de uva bordelesa, destilado y lanzado por añadas.",
       intro: [
-        "Un vodka no tiene por qué ser neutro de origen. Nade se destila a partir de uvas bordelesas y se lanza por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
-        "La añada 2019 reposó cuatro meses en barricas de vino tinto de Fronsac y se embotelló en menos de 250 botellas numeradas; la 2022 es la última añada que mostramos aquí.",
+        "Un vodka no tiene por qué ser neutro de origen. La casa destila a partir de uvas bordelesas y lanza por añadas: la potencia del cabernet sauvignon, la redondez del merlot, la finura del sémillon.",
+        "Puranique es el vodka de la familia. La gama vive en puraniques.com y no aquí.",
       ],
     },
     aperitifs: {
@@ -383,7 +394,7 @@ export const es = {
         "Productos de uva de menor graduación: aperitivos franceses y bebidas espirituosas a base de cognac.",
       intro: [
         "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido en trago largo, frío o con hielo.",
-        "Sephina es una bebida espirituosa de 30 %: 56 % de cognac VSOP ensamblado con 44 % de Pineau des Charentes y, por tanto, deliberadamente fuera de la denominación Cognac.",
+        "El Pineau des Charentes Puranique es el aperitivo de la familia. La gama vive en puraniques.com y no aquí.",
       ],
     },
   },
@@ -410,9 +421,9 @@ export const es = {
       "Las dos casas junto a la Distillerie Vinet-Puranik: Les Brûleries Modernes, cuyos aperitivos y espirituosos se elaboran en la finca, y Puranique, la marca de la familia.",
     companies: {
       "les-bruleries-modernes": {
-        descriptor: "Aperitivos y espirituosos franceses para el canal HORECA",
+        descriptor: "Ginebra, whisky y ron para el canal HORECA",
         intro:
-          "Fundada en 2019 y construida sobre los alambiques de la destilería, Les Brûleries Modernes reúne una cartera de aperitivos y espirituosos franceses para bares, restaurantes y tiendas independientes. Sus botellas nacen en el mismo patio, en Brie-sous-Archiac.",
+          "Fundada en 2019 y construida sobre los alambiques de la destilería, Les Brûleries Modernes reúne una cartera de espirituosos para bares, restaurantes y tiendas independientes. Sus botellas se afinan y se visten en el mismo patio, en Brie-sous-Archiac.",
         frameLabel: "Packshot: Gin Hold Up",
         linkLabel: "lesbruleriesmodernes.com",
       },
@@ -470,42 +481,9 @@ export const es = {
     title: "Todos los espirituosos, una sola casa",
     intro:
       "Cognac y brandy, whisky, ron, ginebra, vodka, licores y aperitivos. La casa destila, envejece, ensambla y embotella en ocho categorías, para su propia gama y para las marcas de distribución que construye con sus socios.",
-    frameLabel: "Eau-de-vie nueva saliendo del alambique hacia un recipiente de cobre",
+    frameLabel:
+      "Una muestra extraída con pipeta de una barrica de roble de la bodega, con la copa de cata junto al tapón.",
     allProducts: "Todas las categorías",
-  },
-
-  timeline: {
-    kicker: "Herencia",
-    title: "Dos familias, una casa",
-    intro:
-      "De una finca charentesa del siglo XVIII a una casa nacida de una fusión que exporta a más de veinte países.",
-    entries: [
-      {
-        year: "1777",
-        body: "La familia Delpech Fougerat adquiere la finca de Font Gireau y empieza a elaborar sus propias eaux-de-vie.",
-      },
-      { year: "1934", body: "Félix Chartier funda su primera destilería de cognac." },
-      {
-        year: "1972",
-        body: "Félix Chartier transmite la destilería a su sobrino Guy Vinet, que le da su nombre y más tarde la cede a su hija Annie Delannoy y a su yerno Bruno Delannoy.",
-      },
-      {
-        year: "2011",
-        body: "Ambas familias deciden trabajar juntas y fusionarse: nace la Distillerie Vinet-Puranik.",
-      },
-      {
-        year: "2014–2017",
-        body: "Se abren una nueva planta de embotellado y un almacén, con la instalación de una cuarta línea.",
-      },
-      {
-        year: "2018",
-        body: "Jean-Baptiste Delannoy, hijo de Bruno, asume la dirección general de la empresa.",
-      },
-      {
-        year: "2019",
-        body: "Obtención del estatus OEA (operador económico autorizado) y de la certificación ECOCERT.",
-      },
-    ],
   },
 
   leadership: {
@@ -591,12 +569,13 @@ export const es = {
       },
     ],
     alts: {
-      landscape: "Viñas que se extienden hasta una hilera de árboles bajo un cielo azul, cerca de Brie-sous-Archiac.",
+      landscape:
+        "La destilería de Brie-sous-Archiac vista desde el aire: una hilera de depósitos de acero junto a la nave de embotellado, con el pueblo, los campos y las viñas alrededor.",
       rows: "Hileras de viñas hacia el horizonte a finales del verano.",
       grapes: "Uvas blancas maduras en la cepa, pocos días antes de la vendimia.",
     },
     captions: {
-      landscape: "El viñedo alrededor de Brie-sous-Archiac",
+      landscape: "La casa en Brie-sous-Archiac, vista desde el aire",
       rows: "Las viñas a finales del verano",
       grapes: "Antes de la vendimia",
     },
@@ -819,7 +798,6 @@ export const es = {
         "Nuestra historia",
         "Saber hacer e innovación",
         "Nuestra dirección",
-        "Nuestra cronología",
         "Eventos",
       ],
       featuredHeading: "Puertas adentro",
@@ -839,9 +817,9 @@ export const es = {
       overview: "Visión general",
       featuredHeading: "Por categoría",
       featuredFrameLabels: [
-        "Destacado: packshot Patte Blanche",
-        "Destacado: packshot GIN40",
-        "Destacado: packshot ron MACA",
+        "Destacado: packshot Glen Smith",
+        "Destacado: packshot Velorin Vodka",
+        "Destacado: packshot Montlieu X.O",
       ],
       viewAll: "Ver todas las categorías",
     },
@@ -967,7 +945,7 @@ export const es = {
             body: [
               "Este sitio lo edita Distillerie Vinet-Puranik, una {legalForm} con un capital social de {shareCapital}.",
               "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, Francia.",
-              "Teléfono +33 5 46 49 10 10. Correo electrónico contact@vinet-puranik.com.",
+              "Teléfono {phone}. Correo electrónico {email}.",
             ],
           },
           {

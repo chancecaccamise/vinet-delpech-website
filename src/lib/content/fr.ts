@@ -140,7 +140,6 @@ export const fr = {
       },
     ],
     crossLinkTitle: "Découvrir la maison",
-    crossLinkHistory: "Notre chronologie",
     crossLinkTerroir: "Les vignes et la région",
     crossLinkPartnerships: "Les marques que nous façonnons",
   },
@@ -177,6 +176,18 @@ export const fr = {
   },
 
   brands: {
+    "glen-smith": {
+      category: "Blended Scotch whisky · 40 %",
+      descriptor:
+        "Blended Scotch whisky, distillé et vieilli en Écosse, embouteillé sur place à 40 % en 70 cl.",
+      frameLabel: "Packshot : blended Scotch whisky Glen Smith",
+    },
+    "velorin-vodka": {
+      category: "Vodka · élaborée en France",
+      descriptor:
+        "Vodka élaborée en France, habillée des trois mots que porte son étiquette : pureté, tradition, élégance.",
+      frameLabel: "Packshot : Velorin Vodka",
+    },
     "montlieu-xo": {
       category: "Brandy X.O · trois ans minimum",
       descriptor:
@@ -201,17 +212,17 @@ export const fr = {
         "Single malt charentais à double distillation, vieilli au moins trois ans en chêne du Limousin ayant précédemment contenu du cognac.",
       frameLabel: "Packshot : single malt Palisson Batch 01",
     },
-    "brigitte-et-louise-blanc": {
-      category: "Apéritif · 17,5 %",
+    "irie-republique-dominicaine": {
+      category: "Rhum · République dominicaine · 41 %",
       descriptor:
-        "Moût de raisin assemblé à l'eau-de-vie de cognac d'un domaine familial : fruits et fleurs blanches, ample et rond.",
-      frameLabel: "Packshot : Brigitte et Louise Blanc",
+        "Robe ambrée, nez fruité sur le beurre et la vanille : bouche riche et gourmande, fruits exotiques et fruits jaunes, finale de caramel au beurre.",
+      frameLabel: "Packshot : Irie République Dominicaine",
     },
-    "brigitte-et-louise-rouge": {
-      category: "Apéritif · 17,5 %",
+    "irie-trinidad-tobago": {
+      category: "Rhum · Trinidad-et-Tobago · 41 %",
       descriptor:
-        "Moût de merlot et de cabernet-sauvignon assemblé à l'eau-de-vie de cognac : vif et rond, sur les fruits des bois et les fruits à noyau.",
-      frameLabel: "Packshot : Brigitte et Louise Rouge",
+        "Robe ambrée, nez de fruits exotiques et de banane flambée sur une note végétale : bouche gourmande et structurée, praline, banane et caramel.",
+      frameLabel: "Packshot : Irie Trinidad & Tobago",
     },
     "maca-rum": {
       category: "Rhum épicé",
@@ -332,7 +343,7 @@ export const fr = {
         "L'appellation de la maison, travaillée pour nos partenaires à partir des crus qui entourent Brie-sous-Archiac.",
       intro: [
         "La maison se tient au cœur des crus de Petite Champagne et de Fins Bois, et le cognac est le spiritueux qu'elle élabore depuis le plus longtemps. Pour nos partenaires, cela signifie des eaux-de-vie sélectionnées et assemblées selon un cahier des charges, puis vieillies en chêne du Limousin jusqu'à la qualité recherchée : VS, VSOP, XO.",
-        "Patte Blanche en est l'expression bio : certifié ECOCERT, distillé à la main à Arthenac, sans intrant artificiel de la vigne au verre.",
+        "Puranique est le cognac de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
       ],
     },
     whisky: {
@@ -352,7 +363,7 @@ export const fr = {
         "Des distillats de canne sourcés à l'étranger, puis vieillis, affinés, assemblés et habillés en France.",
       intro: [
         "Le rhum arrive comme distillat et repart comme marque. La maison s'approvisionne auprès des pays producteurs de canne, puis mène ici, en Charente, le travail qui donne à un rhum son caractère : vieillissement, affinage en fût de cognac, assemblage et habillage.",
-        "MACA est distillé à l'île Maurice et affiné en France sur la cannelle et la fève tonka ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
+        "Irie vient de République dominicaine et de Trinité-et-Tobago, robe ambrée, sur les fruits exotiques, la praline et le caramel ; TIJUCA est un assemblage brésilien, cuivré, sur la vanille, le poivre et le miel.",
       ],
     },
     gin: {
@@ -362,7 +373,7 @@ export const fr = {
         "Le genièvre composé selon le cahier des charges d'un partenaire, macéré et distillé en cuivre.",
       intro: [
         "C'est dans le gin qu'un cahier des charges se lit le mieux : la liste des botaniques fait la marque. La maison macère et distille en cuivre, et peut mener une recette du premier croquis au carton scellé sans quitter la cour.",
-        "Gigi en Provence est bio, sur la violette, le romarin et une note discrète d'olive ; GIN40 porte les Landes : pin et mûre sauvage.",
+        "Chez Hold Up, le genièvre rencontre la fève tonka, l'anis et une pointe d'agrumes ; GIN40 porte les Landes : pin et mûre sauvage.",
       ],
     },
     vodka: {
@@ -370,8 +381,8 @@ export const fr = {
       title: "Vodka",
       summary: "Une vodka de raisin bordelais, distillée et déclinée par millésime.",
       intro: [
-        "Une vodka n'a pas à être d'origine neutre. Nade est distillée à partir de raisins bordelais et déclinée par millésime : la puissance du cabernet-sauvignon, la rondeur du merlot, la finesse du sémillon.",
-        "Le millésime 2019 a reposé quatre mois en fûts de vin rouge de Fronsac et a été embouteillé en moins de 250 bouteilles numérotées ; le 2022 est le dernier millésime présenté ici.",
+        "Une vodka n'a pas à être d'origine neutre. La maison distille à partir de raisins bordelais et décline par millésime : la puissance du cabernet-sauvignon, la rondeur du merlot, la finesse du sémillon.",
+        "Puranique est la vodka de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
       ],
     },
     aperitifs: {
@@ -381,7 +392,7 @@ export const fr = {
         "Des produits de raisin à degré modéré : apéritifs français et boissons spiritueuses à base de cognac.",
       intro: [
         "Moût de raisin, eaux-de-vie et Pineau des Charentes, composés au degré de l'apéritif. C'est la réponse de la maison aux marchés qui veulent un caractère de cognac servi en long drink, frais ou sur glace.",
-        "Sephina est une boisson spiritueuse à 30 % : 56 % de cognac VSOP assemblé à 44 % de Pineau des Charentes, et donc volontairement hors appellation cognac.",
+        "Le Pineau des Charentes Puranique est l'apéritif de la famille. La gamme vit sur puraniques.com plutôt qu'ici.",
       ],
     },
   },
@@ -408,9 +419,9 @@ export const fr = {
       "Les deux maisons aux côtés de la Distillerie Vinet-Puranik : Les Brûleries Modernes, dont les apéritifs et spiritueux sont élaborés au domaine, et Puranique, la marque de la famille.",
     companies: {
       "les-bruleries-modernes": {
-        descriptor: "Apéritifs et spiritueux français pour les CHR",
+        descriptor: "Gin, whisky et rhum pour les CHR",
         intro:
-          "Fondée en 2019 et construite sur les alambics de la distillerie, Les Brûleries Modernes réunit un portefeuille d'apéritifs et de spiritueux français destinés aux bars, aux restaurants et aux cavistes indépendants. Ses bouteilles naissent dans la même cour, à Brie-sous-Archiac.",
+          "Fondée en 2019 et construite sur les alambics de la distillerie, Les Brûleries Modernes réunit un portefeuille de spiritueux destinés aux bars, aux restaurants et aux cavistes indépendants. Ses bouteilles sont affinées et habillées dans la même cour, à Brie-sous-Archiac.",
         frameLabel: "Packshot : Gin Hold Up",
         linkLabel: "lesbruleriesmodernes.com",
       },
@@ -468,42 +479,9 @@ export const fr = {
     title: "Tous les spiritueux, une seule maison",
     intro:
       "Cognac et brandy, whisky, rhum, gin, vodka, liqueurs et apéritifs. La maison distille, vieillit, assemble et embouteille dans huit catégories, pour sa propre gamme comme pour les marques de distributeur qu'elle construit avec ses partenaires.",
-    frameLabel: "L'eau-de-vie nouvelle coulant de l'alambic dans un récipient de cuivre",
+    frameLabel:
+      "Un prélèvement à la pipette dans un fût de chêne du chai, le verre de dégustation posé près de la bonde.",
     allProducts: "Toutes les catégories",
-  },
-
-  timeline: {
-    kicker: "Héritage",
-    title: "Deux familles, une maison",
-    intro:
-      "D'un domaine charentais du XVIIIᵉ siècle à une maison issue d'une fusion, qui expédie dans plus de vingt pays.",
-    entries: [
-      {
-        year: "1777",
-        body: "La famille Delpech Fougerat acquiert le domaine de Font Gireau et commence à élaborer ses propres eaux-de-vie.",
-      },
-      { year: "1934", body: "Félix Chartier fonde sa première distillerie de cognac." },
-      {
-        year: "1972",
-        body: "Félix Chartier transmet la distillerie à son neveu Guy Vinet, qui lui donne son nom avant de la céder à sa fille Annie Delannoy et à son gendre Bruno Delannoy.",
-      },
-      {
-        year: "2011",
-        body: "Les deux familles décident de travailler ensemble et fusionnent : la Distillerie Vinet-Puranik est née.",
-      },
-      {
-        year: "2014–2017",
-        body: "Ouverture d'un nouveau site d'embouteillage et d'un entrepôt de stockage, avec l'installation d'une quatrième ligne.",
-      },
-      {
-        year: "2018",
-        body: "Jean-Baptiste Delannoy, fils de Bruno, devient directeur général de l'entreprise.",
-      },
-      {
-        year: "2019",
-        body: "Obtention du statut OEA (opérateur économique agréé) et de la certification ECOCERT.",
-      },
-    ],
   },
 
   leadership: {
@@ -589,12 +567,13 @@ export const fr = {
       },
     ],
     alts: {
-      landscape: "Des vignes s'étendant jusqu'à une lisière d'arbres sous un ciel bleu, près de Brie-sous-Archiac.",
+      landscape:
+        "La distillerie de Brie-sous-Archiac vue du ciel : les cuves inox alignées le long du hall d'embouteillage, le village, les champs et les vignes tout autour.",
       rows: "Des rangs de vignes filant vers l'horizon à la fin de l'été.",
       grapes: "Des raisins blancs mûrs sur le cep, quelques jours avant les vendanges.",
     },
     captions: {
-      landscape: "Le vignoble autour de Brie-sous-Archiac",
+      landscape: "La maison à Brie-sous-Archiac, vue du ciel",
       rows: "Les vignes à la fin de l'été",
       grapes: "Avant les vendanges",
     },
@@ -817,7 +796,6 @@ export const fr = {
         "Notre histoire",
         "Savoir-faire et innovation",
         "Notre direction",
-        "Notre chronologie",
         "Événements",
       ],
       featuredHeading: "Dans la maison",
@@ -837,9 +815,9 @@ export const fr = {
       overview: "Vue d'ensemble",
       featuredHeading: "Par catégorie",
       featuredFrameLabels: [
-        "À la une : packshot Patte Blanche",
-        "À la une : packshot GIN40",
-        "À la une : packshot rhum MACA",
+        "À la une : packshot Glen Smith",
+        "À la une : packshot Velorin Vodka",
+        "À la une : packshot Montlieu X.O",
       ],
       viewAll: "Voir toutes les catégories",
     },
@@ -965,7 +943,7 @@ export const fr = {
             body: [
               "Ce site est édité par la Distillerie Vinet-Puranik, {legalForm} au capital de {shareCapital}.",
               "3, impasse Félix Chartier, 17520 Brie-sous-Archiac, France.",
-              "Téléphone +33 5 46 49 10 10. E-mail contact@vinet-puranik.com.",
+              "Téléphone {phone}. E-mail {email}.",
             ],
           },
           {
