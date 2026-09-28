@@ -200,6 +200,18 @@ export const fr = {
         "Sélectionné dans le sud des Highlands, assemblé à un malt non tourbé et vieilli en fût de Bourbon : poire, pomme et raisin.",
       frameLabel: "Packshot : Glen Mac Clay Blended Scotch Whisky",
     },
+    "puranique-pineau-blanc": {
+      category: "Pineau des Charentes · Blanc",
+      descriptor:
+        "Moût de montils et d'ugni blanc assemblé au cognac du vignoble familial : généreux, vif, légèrement acidulé.",
+      frameLabel: "Packshot : Puranique Pineau des Charentes Blanc",
+    },
+    "puranique-pineau-rouge": {
+      category: "Pineau des Charentes · Rouge",
+      descriptor:
+        "Moût de merlot et de cabernet sauvignon et eau-de-vie de Cognac : vif et rond, sur les fruits des bois et à noyau.",
+      frameLabel: "Packshot : Puranique Pineau des Charentes Rouge",
+    },
     "hold-up": {
       category: "Gin · 43 %",
       descriptor:
@@ -247,12 +259,6 @@ export const fr = {
       descriptor:
         "Cognac certifié ECOCERT, distillé à la main à Arthenac sans intrant artificiel, de la vigne au verre : VS, VSOP et XO.",
       frameLabel: "Packshot : cognac bio Patte Blanche",
-    },
-    sephina: {
-      category: "Boisson spiritueuse · 30 %",
-      descriptor:
-        "Assemblage maison : 56 % de cognac VSOP et 44 % de Pineau des Charentes. Pruneau, fruits secs, noix et chêne toasté.",
-      frameLabel: "Packshot : boisson spiritueuse Sephina",
     },
     gin40: {
       category: "Gin · 50 cl",
@@ -311,6 +317,30 @@ export const fr = {
           palate: "Équilibré et souple, malté, sur une poire rafraîchissante",
         },
         storyFrameLabel: "Ambiance : Glen Mac Clay dans un paysage des Highlands",
+      },
+      "puranique-pineau-blanc": {
+        heritage:
+          "Le Pineau des Charentes Puranique est un apéritif français obtenu en assemblant un moût de raisin et du cognac issu du vignoble familial, au cœur de l'aire délimitée et certifié Haute Valeur Environnementale, niveau 3.",
+        story:
+          "Le Blanc est élaboré à partir des cépages montils et ugni blanc. Léger et facile à boire, il se déguste frais, sur glace, en long drink ou en cocktail.",
+        notes: {
+          eye: "Robe or profond",
+          nose: "Intense : fruits et notes de fleurs blanches",
+          palate: "Généreux, vif, souple et légèrement acidulé, sur une superbe finale",
+        },
+        storyFrameLabel: "Ambiance : Pineau blanc servi frais à l'heure de l'apéritif",
+      },
+      "puranique-pineau-rouge": {
+        heritage:
+          "Le Pineau des Charentes Puranique est un apéritif français obtenu en assemblant un moût de raisin et du cognac issu du vignoble familial, au cœur de l'aire délimitée et certifié Haute Valeur Environnementale, niveau 3.",
+        story:
+          "Le Rouge assemble un moût de merlot et de cabernet sauvignon à de l'eau-de-vie de Cognac. Léger et facile à boire, il se déguste frais, sur glace, en long drink ou en cocktail.",
+        notes: {
+          eye: "Robe rubis éclatante",
+          nose: "Aromatique, à la fois boisé et fruité",
+          palate: "Vif et rond sur les fruits des bois et à noyau, finale riche et soutenue",
+        },
+        storyFrameLabel: "Ambiance : Pineau rouge sur glace, accompagné de charcuterie",
       },
     },
   },
@@ -392,7 +422,7 @@ export const fr = {
         "Des produits de raisin à degré modéré : apéritifs français et boissons spiritueuses à base de cognac.",
       intro: [
         "Moût de raisin, eaux-de-vie et Pineau des Charentes, composés au degré de l'apéritif. C'est la réponse de la maison aux marchés qui veulent un caractère de cognac servi en long drink, frais ou sur glace.",
-        "Le Pineau des Charentes Puranique est l'apéritif de la famille. La gamme se découvre sur puraniques.com, pas ici.",
+        "Le Pineau des Charentes Puranique est l'apéritif de la famille : un Blanc de montils et d'ugni blanc, un Rouge de merlot et de cabernet sauvignon.",
       ],
     },
   },

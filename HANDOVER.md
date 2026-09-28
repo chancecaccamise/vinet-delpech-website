@@ -18,7 +18,23 @@ here any more: the vodka, both cognacs, both Pineaux, and both mango liqueurs
 (Jus d'Manguier and Mangeaux). The range lives on **puraniques.com**, and the
 **Partners** section links straight out to it rather than restating it.
 
-The house's own bottles on this site are now **Montlieu X.O and Glen Mac Clay**.
+The house's own bottles on this site are now **Montlieu X.O, Glen Mac Clay and
+the two Puranique Pineaux des Charentes (Blanc and Rouge)**.
+
+**The Pineaux came back on 28 September**, at the house's request, as the
+bottles of the apéritifs category. They replaced **Sephina**, which has left the
+site (its card was the only place it appeared). Both carry the brochure copy
+they had before and the category cover is now the Blanc. Three notes:
+- **No medals were restored.** The four Pineau medals were printed for the
+  range as a whole and never matched to Blanc or Rouge — that question is open
+  again (see below) and must be settled before any medal goes back on.
+- **The packshots are soft.** They are ~520 px web images upscaled to the
+  1000 × 1250 card; originals in `assets/products-source/`. Ask the house for
+  studio files.
+- **The hero's second paragraph changed** from "The range lives on
+  puraniques.com rather than here" to naming the Blanc and Rouge grapes, since
+  the bottles are now on the page. Confirm the HVE level 3 claim in the
+  heritage copy still holds.
 
 **Two Puranique packshots remain as cover images, not as products.** The
 Partners card for Puranique is fronted by the Cognac V.S.O.P bottle, and on

@@ -93,7 +93,7 @@ export function getPrivateLabelBrands(locale: Locale, family?: SpiritFamilySlug)
  * The house's own bottles, with the brochure's long-form copy attached.
  *
  * Driven off `houseBrandAssets` rather than the combined list, so `asset.slug`
- * is the narrow nine-member union and `c.houseBrands.items[...]` resolves to a
+ * is the narrow house-only union and `c.houseBrands.items[...]` resolves to a
  * single uniform shape.
  */
 export function getHouseBrands(locale: Locale, family?: SpiritFamilySlug): HouseBrand[] {

@@ -202,6 +202,18 @@ export const es = {
         "Blended Scotch seleccionado en el sur de las Highlands, ensamblado con una malta sin turba y madurado en barrica de bourbon: pera, manzana y uva.",
       frameLabel: "Packshot: Glen Mac Clay Blended Scotch Whisky",
     },
+    "puranique-pineau-blanc": {
+      category: "Pineau des Charentes · Blanco",
+      descriptor:
+        "Mosto de montils y ugni blanc ensamblado con cognac del viñedo familiar: generoso, vivo y ligeramente acidulado.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Blanco",
+    },
+    "puranique-pineau-rouge": {
+      category: "Pineau des Charentes · Tinto",
+      descriptor:
+        "Mosto de merlot y cabernet sauvignon con eau-de-vie de Cognac: vivo y redondo, sobre frutos del bosque y de hueso.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Tinto",
+    },
     "hold-up": {
       category: "Ginebra · 43 %",
       descriptor:
@@ -249,12 +261,6 @@ export const es = {
       descriptor:
         "Cognac certificado ECOCERT, destilado a mano en Arthenac sin insumos artificiales, de la viña a la copa: VS, VSOP y XO.",
       frameLabel: "Packshot: cognac ecológico Patte Blanche",
-    },
-    sephina: {
-      category: "Bebida espirituosa · 30 %",
-      descriptor:
-        "Ensamblaje de la casa: 56 % de cognac VSOP con 44 % de Pineau des Charentes. Ciruela pasa, fruta seca, nuez y roble tostado.",
-      frameLabel: "Packshot: bebida espirituosa Sephina",
     },
     gin40: {
       category: "Ginebra · 50 cl",
@@ -313,6 +319,30 @@ export const es = {
           palate: "Equilibrado y suave, maltoso, con un fresco recuerdo de pera",
         },
         storyFrameLabel: "Ambiente: Glen Mac Clay en un paisaje de las Highlands",
+      },
+      "puranique-pineau-blanc": {
+        heritage:
+          "El Pineau des Charentes Puranique es un aperitivo francés obtenido ensamblando mosto de uva con cognac del viñedo familiar, en el corazón de la zona de producción delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
+        story:
+          "El Blanco se elabora con las variedades montils y ugni blanc. Ligero y fácil de beber, se disfruta frío, con hielo, en combinado o en coctelería.",
+        notes: {
+          eye: "Color oro intenso",
+          nose: "Intenso: fruta y notas de flores blancas",
+          palate: "Generoso, vivo, suave y ligeramente acidulado, con un final espléndido",
+        },
+        storyFrameLabel: "Ambiente: Pineau blanco servido frío a la hora del aperitivo",
+      },
+      "puranique-pineau-rouge": {
+        heritage:
+          "El Pineau des Charentes Puranique es un aperitivo francés obtenido ensamblando mosto de uva con cognac del viñedo familiar, en el corazón de la zona de producción delimitada y con certificación Haute Valeur Environnementale, nivel 3.",
+        story:
+          "El Tinto ensambla mosto de merlot y cabernet sauvignon con eau-de-vie de Cognac. Ligero y fácil de beber, se disfruta frío, con hielo, en combinado o en coctelería.",
+        notes: {
+          eye: "Color rubí brillante",
+          nose: "Aromático, a la vez amaderado y frutal",
+          palate: "Vivo y redondo sobre frutos del bosque y de hueso, con un final rico y sostenido",
+        },
+        storyFrameLabel: "Ambiente: Pineau tinto con hielo, acompañado de embutidos",
       },
     },
   },
@@ -394,7 +424,7 @@ export const es = {
         "Productos de uva de menor graduación: aperitivos franceses y bebidas espirituosas a base de cognac.",
       intro: [
         "Mosto de uva, eaux-de-vie y Pineau des Charentes, compuestos a graduación de aperitivo. Es la respuesta de la casa a los mercados que buscan un carácter de cognac servido en trago largo, frío o con hielo.",
-        "El Pineau des Charentes Puranique es el aperitivo de la familia. La gama se encuentra en puraniques.com, no aquí.",
+        "El Pineau des Charentes Puranique es el aperitivo de la familia: un Blanco de montils y ugni blanc, un Tinto de merlot y cabernet sauvignon.",
       ],
     },
   },

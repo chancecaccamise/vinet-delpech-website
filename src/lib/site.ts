@@ -169,9 +169,10 @@ export type FeatureDetail = { label: string; body: string };
  * and spirit drinks) rather than invented here — each brand's classification is
  * checked against the producer's own product page.
  *
- * `aperitifs` carries the lower-strength grape products and Sephina, which is
- * sold as a spirit drink rather than a cognac: it is 56% VSOP cognac cut with
- * 44% Pineau des Charentes, so it cannot sit under the AOC.
+ * `aperitifs` carries the lower-strength grape products: today the house's own
+ * Puranique Pineau des Charentes, Blanc and Rouge. The "spirit drinks" half of
+ * the name is the cognac-based blends the house makes to order below cognac
+ * strength, which cannot sit under the AOC.
  *
  * `brandy` and `liqueurs` arrived with the house's own range and are kept
  * separate on purpose. Montlieu X.O is column-distilled and labelled "Finest
@@ -277,16 +278,18 @@ export type HouseBrand = Brand & {
 export type LabelledAward = BrandAward & { label: string };
 
 /**
- * The house's own bottles: Montlieu X.O and Glen Mac Clay. Kept in their own
+ * The house's own bottles: Montlieu X.O, Glen Mac Clay and the two Puranique
+ * Pineaux des Charentes. Kept in their own
  * array rather than interleaved with the partner records so `HouseBrandSlug` is
  * derived rather than hand-listed, and so `origin: "house"` is pinned by the
  * satisfies clause below instead of being typed out twice and trusted.
  *
- * Everything under the Puranique label is deliberately absent — the five
- * Puranique bottles and, since they carry the same Maison D' Puranique mark,
- * both mango liqueurs. That range has its own site (see `siteConfig.brandSite`)
- * and the house does not want the portfolio duplicated here, so Partners links
- * out to puraniques.com rather than restating it.
+ * The rest of the Puranique label is deliberately absent — the cognacs, the
+ * vodka and, since they carry the same Maison D' Puranique mark, both mango
+ * liqueurs. That range has its own site (see `siteConfig.brandSite`) and the
+ * house does not want the portfolio duplicated here, so Partners links out to
+ * puraniques.com rather than restating it. The two Pineaux are the exception,
+ * asked for by the house as the bottles of the apéritifs category.
  *
  * These carry the brochure's long-form copy (`c.houseBrands.items`); partner
  * records do not, which is why the two live in separate dictionary blocks.
@@ -295,8 +298,9 @@ export type LabelledAward = BrandAward & { label: string };
  * with the Puranique range. `getHouseBrands` is written so that stays a fact
  * about the data rather than a compile error.
  *
- * Both bottles here are studio files on white, cut to the 1000 x 1250 card with
- * the bottle at 87% of the frame. Montlieu's ~390 px brochure crop was replaced
+ * Every bottle here is on white, cut to the 1000 x 1250 card with the bottle at
+ * 87% of the frame. The Pineaux are upscaled from ~520 px web packshots (in
+ * `assets/products-source/`), so they are softer than the studio files. Montlieu's ~390 px brochure crop was replaced
  * in September 2026, when the house sent studio shots of it, Glen Smith and
  * Velorin together — but only Montlieu belongs in this array. The other two are
  * white-label bottles the distillery produces for clients and live below.
@@ -324,6 +328,25 @@ export const houseBrandAssets = [
     // content/index.ts). The new URL is what guarantees everyone sees it.
     image: "/spirits/glen-mac-clay-card.webp",
     figures: [{ key: "ageing", value: 3, suffix: "" }],
+  },
+  // Back on 28 September 2026, at the house's request, as the bottles for the
+  // apéritifs category (they replaced Sephina there). Copy is the brochure's,
+  // as carried before the range left in September. The four Pineau medals
+  // were NOT restored: they were printed for the range as a whole and never
+  // matched to an expression — see HANDOVER §1 before adding any.
+  {
+    slug: "puranique-pineau-blanc",
+    name: "Puranique Pineau des Charentes Blanc",
+    family: "aperitifs",
+    origin: "house",
+    image: "/spirits/puranique-pineau-blanc-card.webp",
+  },
+  {
+    slug: "puranique-pineau-rouge",
+    name: "Puranique Pineau des Charentes Rouge",
+    family: "aperitifs",
+    origin: "house",
+    image: "/spirits/puranique-pineau-rouge-card.webp",
   },
 ] as const satisfies readonly {
   slug: string;
@@ -514,14 +537,6 @@ export const partnerBrandAssets = [
     url: "https://www.cognac-expert.com/xo-cognac/patte-blanche-rendez-vous-xo-cognac",
   },
   {
-    slug: "sephina",
-    name: "Sephina",
-    family: "aperitifs",
-    origin: "partner",
-    image: "/products/sephina.jpg",
-    url: "https://sephinaspirits.com/",
-  },
-  {
     slug: "gin40",
     name: "GIN40",
     family: "gin",
@@ -607,7 +622,7 @@ export const familyAssets = [
   // shown, not offered — it has no card, no page and no entry in `brandAssets`.
   // NOTE: the label carries the Maison D' Puranique mark; see HANDOVER §1.
   { slug: "liqueurs", image: "/spirits/jus-d-manguier.webp" },
-  { slug: "aperitifs", image: "/products/sephina.jpg" },
+  { slug: "aperitifs", image: "/spirits/puranique-pineau-blanc-card.webp" },
 ] as const satisfies readonly { slug: SpiritFamilySlug; image: string }[];
 
 export const spiritFamilySlugs = familyAssets.map((family) => family.slug);

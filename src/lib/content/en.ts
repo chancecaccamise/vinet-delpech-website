@@ -177,7 +177,7 @@ export const en = {
     },
   },
 
-  // Keyed by brand slug — all sixteen, the house's own bottles first and the
+  // Keyed by brand slug — every one, the house's own bottles first and the
   // partner brands after, in one uniform shape so `getBrands` sees a single
   // record type. Names stay as they are in every language: they are trade
   // marks, not our copy. The house's long-form brochure copy lives separately
@@ -206,6 +206,18 @@ export const en = {
       descriptor:
         "Selected in the southern Highlands, blended with an unpeated malt and matured in Bourbon casks: pear, apple and grape.",
       frameLabel: "Packshot: Glen Mac Clay Blended Scotch Whisky",
+    },
+    "puranique-pineau-blanc": {
+      category: "Pineau des Charentes · Blanc",
+      descriptor:
+        "Montils and ugni blanc must blended with cognac from the family vineyard: generous, lively and slightly tangy.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Blanc",
+    },
+    "puranique-pineau-rouge": {
+      category: "Pineau des Charentes · Rouge",
+      descriptor:
+        "Merlot and cabernet sauvignon must with cognac eau-de-vie: lively and round, on forest and stone fruit.",
+      frameLabel: "Packshot: Puranique Pineau des Charentes Rouge",
     },
 
     "hold-up": {
@@ -256,12 +268,6 @@ export const en = {
         "ECOCERT-certified cognac, hand-distilled at Arthenac with no artificial input from vine to glass: VS, VSOP and XO.",
       frameLabel: "Packshot: Patte Blanche organic cognac",
     },
-    sephina: {
-      category: "Spirit drink · 30%",
-      descriptor:
-        "Blended in the house: 56% VSOP cognac with 44% Pineau des Charentes. Prune, dried fruit, walnut and toasted oak.",
-      frameLabel: "Packshot: Sephina spirit drink",
-    },
     gin40: {
       category: "Gin · 50 cl",
       descriptor:
@@ -282,7 +288,7 @@ export const en = {
     },
   },
 
-  // The nine house bottles carry the brochure's long-form copy. Only records
+  // The house bottles carry the brochure's long-form copy. Only records
   // marked `origin: "house"` in site.ts appear here; the shared card fields
   // stay in `brands` above, so `getBrands` keeps seeing one uniform shape.
   houseBrands: {
@@ -322,6 +328,30 @@ export const en = {
           palate: "Balanced and smooth, malty, on refreshing pear",
         },
         storyFrameLabel: "Lifestyle: Glen Mac Clay in a Highland landscape",
+      },
+      "puranique-pineau-blanc": {
+        heritage:
+          "Puranique Pineau des Charentes is a French apéritif obtained by blending grape must with cognac from the family vineyard, at the heart of the delimited production area and certified Haute Valeur Environnementale, level 3.",
+        story:
+          "The Blanc is made from the montils and ugni blanc grape varieties. Light and easy-drinking, it is enjoyed chilled, on the rocks, in long drinks or in cocktails.",
+        notes: {
+          eye: "Deep gold appearance",
+          nose: "Intense: fruit and notes of white flowers",
+          palate: "Generous, lively, supple and slightly tangy, with a fantastic finish",
+        },
+        storyFrameLabel: "Lifestyle: Pineau blanc served chilled at the apéritif table",
+      },
+      "puranique-pineau-rouge": {
+        heritage:
+          "Puranique Pineau des Charentes is a French apéritif obtained by blending grape must with cognac from the family vineyard, at the heart of the delimited production area and certified Haute Valeur Environnementale, level 3.",
+        story:
+          "The Rouge blends merlot and cabernet sauvignon must with eau-de-vie de Cognac. Light and easy-drinking, it is enjoyed chilled, on the rocks, in long drinks or in cocktails.",
+        notes: {
+          eye: "Bright ruby appearance",
+          nose: "Aromatic, at once woody and fruity",
+          palate: "Lively and round on forest and stone fruit, with a rich, sustained finish",
+        },
+        storyFrameLabel: "Lifestyle: Pineau rouge served over ice with charcuterie",
       },
     },
   },
@@ -397,7 +427,7 @@ export const en = {
       summary: "Lower-strength grape products: French apéritifs and cognac-based spirit drinks.",
       intro: [
         "Grape must, eaux-de-vie and Pineau des Charentes, composed at apéritif strength. These are the house's answer to markets that want a cognac character served long, chilled or over ice.",
-        "Puranique Pineau des Charentes is the family's own apéritif. The range lives on puraniques.com rather than here.",
+        "Puranique Pineau des Charentes is the family's own apéritif: a Blanc from montils and ugni blanc, a Rouge from merlot and cabernet sauvignon.",
       ],
     },
   },
